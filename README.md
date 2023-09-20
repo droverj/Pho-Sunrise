@@ -1,3 +1,11 @@
+## Compiling SASS
+
+To compile SASS files to CSS, run the following command:
+
+```bash
+npm run compile-sass
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
