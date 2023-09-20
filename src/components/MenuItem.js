@@ -1,11 +1,15 @@
 import React from 'react';
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, addToCart, removeFromCart }) => {
   return (
-    <li className="menu-item">
+    <div className="menu-item">
       <span>{item.name}</span>
-      <span>{item.price}</span>
-    </li>
+      <span>${item.price.toFixed(2)}</span>
+      <div className="item-actions">
+        <button onClick={() => addToCart(item)}>+</button>
+        <button onClick={() => removeFromCart(item)}>-</button>
+      </div>
+    </div>
   );
 };
 
