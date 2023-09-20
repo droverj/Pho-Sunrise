@@ -1,24 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MenuView from './views/MenuView';
-import ContactView from './views/ContactView';
-import HomeView from './views/HomeView';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
-
+import Home from './components/Home';
+import Menu from './components/Menu';
+import Contact from './components/Contact';
+import Cart from './components/Cart';
+import './App.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <Navbar />
-      <Routes>
-        <Route exact path="/" component={HomeView} />
-        <Route path="/menu" component={MenuView} />
-        <Route path="/contact" component={ContactView} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
