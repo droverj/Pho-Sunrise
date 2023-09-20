@@ -1,0 +1,33 @@
+/* Navbar.css */
+
+/* Style for the <nav> element */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Style for the <ul> element */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Style for the <li> elements */
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the <a> elements (links) */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style for the links on hover */
+a:hover {
+  text-decoration: underline;
+}
