@@ -1,0 +1,44 @@
+// $navbar-width: 20%;
+// $navbar-background-color: red;
+// $navbar-text-color: white;
+
+.menu-sections {
+  text-align: center; // Center-align the buttons
+  padding: 0 100px; // Add 100px padding on both sides
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; // Allow the buttons to wrap to the next row
+
+    li {
+      margin: 0;
+      padding: 0;
+      flex: 1; // Distribute the space evenly between buttons
+
+      button {
+        background: none; // Remove background
+        border: none; // Remove borders
+        padding: 10px; // Add padding to the buttons as needed
+        margin: 10px; // Add margin to space the buttons
+
+        font-size: calc(5px + 2vmin); // Responsive font size
+
+        transition: transform 0.3s, color 0.3s; // Add transitions for scaling and color change
+
+        &:hover {
+          transform: scale(1.6); // Scale the button up by 10% on hover
+          color: red; // Change the text color to red on hover
+        }
+      }
+    }
+  }
+}
+
+.menu-button{
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
