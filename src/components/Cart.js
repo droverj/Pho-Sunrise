@@ -20,7 +20,3 @@ const Cart = ({ cart, removeFromCart }) => {
 };
 
 export default Cart;
-
-
-
-// console.log("SHOPPING CART: ", cart);
