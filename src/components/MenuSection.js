@@ -29,7 +29,7 @@ const MenuSection = ({ section }) => {
             <img
               key={index}
               src={image}
-              alt={`${section.title} - Image ${index + 1}`}
+              alt={`${section.title} ${index + 1}`}
               className="section-image"
             />
           ))}
