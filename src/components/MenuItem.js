@@ -7,7 +7,7 @@ const MenuItem = ({ item, addToCart, removeFromCart }) => {
       <span>${item.price.toFixed(2)}</span>
       <div className="item-actions">
         <button onClick={() => addToCart(item)}>+</button>
-        <button onClick={() => removeFromCart(item)}>-</button>
+        <button onClick={() => removeFromCart(item)}>−</button>
       </div>
     </div>
   );

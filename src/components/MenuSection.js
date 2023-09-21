@@ -1,8 +1,16 @@
 import React from 'react';
 import MenuItem from './MenuItem';
 import '../styles/MenuSection.scss';
+import { useCart } from '../components/CartContext';
 
-const MenuSection = ({ section, addToCart, removeFromCart }) => {
+const MenuSection = ({ section }) => {
+  const { addToCart, removeFromCart } = useCart();
+
+  if (!section) {
+    // Handle the case where section is not defined yet (e.g., initial render).
+    return null;
+  }
+
   return (
     <div className="menu-section">
       <h3>{section.title}</h3>

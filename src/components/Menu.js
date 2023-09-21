@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import MenuSection from './MenuSection';
+import { useCart } from '../components/CartContext';
 
-const Menu = ({ addToCart, removeFromCart }) => {
+const Menu = () => {
+  const { addToCart, removeFromCart } = useCart();
   const [sections] = useState([
     {
       title: 'Món Khai Vị - Appetizers',
