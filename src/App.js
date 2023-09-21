@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
-import Cart from './components/Cart';
+import CartPage from './components/CartPage';
 import './App.scss';
 
 function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
+    console.log('Adding item to cart:', item);
     setCart([...cart, item]);
   };
 
   const removeFromCart = (item) => {
-    const updatedCart = cart.filter((cartItem) => cartItem.id !== item.id);
+    const updatedCart = cart.filter((cartItem) => cartItem.name !== item.name);
     setCart(updatedCart);
   };
 
@@ -26,8 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/menu" element={<Menu addToCart={addToCart} />} />
-          <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+          <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} removeFromCart={removeFromCart} />} // Render CartPage component
+          />
         </Routes>
       </div>
     </BrowserRouter>

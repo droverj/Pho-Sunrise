@@ -1,11 +1,8 @@
 import React from 'react';
 
-const Cart = ({ cart = [], removeFromCart }) => {
-  console.log("SHOPPING CART: ", cart);
-
+const Cart = ({ cart, removeFromCart }) => {
   return (
     <div className="cart">
-      <h2>Your Shopping Cart</h2>
       {cart.length === 0 ? (
         <p>Your shopping cart is empty.</p>
       ) : (
@@ -13,7 +10,7 @@ const Cart = ({ cart = [], removeFromCart }) => {
           {cart.map((cartItem, index) => (
             <li key={index}>
               {cartItem.name} - ${cartItem.price.toFixed(2)}
-              <button onClick={() => removeFromCart(cartItem)}>-</button>
+              <button onClick={() => removeFromCart(cartItem)}>Remove</button> {/* Use removeFromCart here */}
             </li>
           ))}
         </ul>
@@ -23,6 +20,7 @@ const Cart = ({ cart = [], removeFromCart }) => {
 };
 
 export default Cart;
+
 
 
 // console.log("SHOPPING CART: ", cart);

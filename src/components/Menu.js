@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import MenuSection from './MenuSection';
-import Cart from './Cart';
 
-const Menu = () => {
+const Menu = ({ addToCart, removeFromCart }) => {
   const [sections] = useState([
     {
       title: 'Món Khai Vị - Appetizers',
@@ -118,18 +117,6 @@ const Menu = () => {
     },
   ]);
 
-  const [cart, setCart] = useState([]);
-
- const addToCart = (item) => {
-  console.log('Adding item to cart:', item);
-  setCart([...cart, item]);
-};
-
-  const removeFromCart = (item) => {
-    const updatedCart = cart.filter((cartItem) => cartItem.name !== item.name);
-    setCart(updatedCart);
-  };
-
   return (
     <div className="menu">
       <div className="menu-sections">
@@ -137,13 +124,11 @@ const Menu = () => {
           <MenuSection
             key={index}
             section={section}
-            cart={cart}
-            addToCart={addToCart} // Pass the addToCart function to MenuSection
+            addToCart={addToCart}
             removeFromCart={removeFromCart}
           />
         ))}
       </div>
-      <Cart cart={cart} removeFromCart={removeFromCart} />
     </div>
   );
 };
