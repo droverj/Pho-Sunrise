@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from './CartContext';
 import cartIcon from '../images/Shopping-Cart.jpg';
 
@@ -7,7 +8,9 @@ const CartTracker = () => {
 
   return (
     <div className="cart-tracker">
-      <img src={cartIcon} alt="Cart Icon" />
+      <Link to="/cart" className="cart-link">
+        <img src={cartIcon} alt="Cart Icon" />
+      </Link>
       <span className="cart-count">{totalItems}</span>
     </div>
   );
