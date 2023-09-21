@@ -1,5 +1,3 @@
-// CartContext.js
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
@@ -13,14 +11,19 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const [totalItems, setTotalItems] = useState(0);
-  const [isCartEmpty, setIsCartEmpty] = useState(true); // Flag to track if the cart is empty
+  // Load cart data from local storage if available
+  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const [cart, setCart] = useState(initialCart);
+
+  const calculateTotalItems = () => {
+    const total = cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+    return total;
+  };
 
   useEffect(() => {
-    const addedCount = cart.reduce((total, item) => total + item.quantity, 0);
-    setTotalItems(addedCount);
-    setIsCartEmpty(cart.length === 0); // Update the flag based on cart length
+    // Save cart data to local storage whenever it changes
+    localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = (item) => {
@@ -33,7 +36,6 @@ export const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, { ...item, quantity: 1 }]);
     }
-    setIsCartEmpty(false); // Cart is not empty after adding an item
   };
 
   const removeFromCart = (item) => {
@@ -41,19 +43,17 @@ export const CartProvider = ({ children }) => {
 
     if (existingItemIndex !== -1) {
       const updatedCart = [...cart];
-      if (updatedCart[existingItemIndex].quantity > 0) {
+      if (updatedCart[existingItemIndex].quantity > 1) {
         updatedCart[existingItemIndex].quantity -= 1;
-        setCart(updatedCart);
-        if (updatedCart[existingItemIndex].quantity === 0) {
-          updatedCart.splice(existingItemIndex, 1); // Remove the item if quantity becomes 0
-          setIsCartEmpty(updatedCart.length === 0); // Check if cart becomes empty
-        }
+      } else {
+        updatedCart.splice(existingItemIndex, 1);
       }
+      setCart(updatedCart);
     }
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems, isCartEmpty }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems: calculateTotalItems() }}>
       {children}
     </CartContext.Provider>
   );
