@@ -2,7 +2,7 @@ import React from 'react';
 import { useCart } from '../components/CartContext';
 
 const Cart = () => {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, isCartEmpty } = useCart();
 
   const handleRemove = (cartItem) => {
     removeFromCart(cartItem);
@@ -10,8 +10,8 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      {cart.length === 0 ? (
-        <p>Your shopping cart is empty.</p>
+      {isCartEmpty ? (
+        <p>Shopping Cart is Empty</p>
       ) : (
         <ul>
           {cart.map((cartItem, index) => (
