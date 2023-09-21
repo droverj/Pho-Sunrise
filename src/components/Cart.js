@@ -1,6 +1,7 @@
+// Cart.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
+import '../styles/Cart.scss';
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -32,16 +33,19 @@ const Cart = () => {
       {cart.length === 0 ? (
         <p>Shopping Cart is Empty</p>
       ) : (
-        <ul>
-          {cart.map((cartItem, index) => (
-            <li key={index}>
-              {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
-              <button onClick={() => handleRemove(cartItem)}>Remove One</button>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="cart-items">
+            {cart.map((cartItem, index) => (
+              <li className="cart-item" key={index}>
+                <div className="item-info">
+                  {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
+                </div>
+                <button className="remove-button" onClick={() => handleRemove(cartItem)}>Remove One</button>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
-      
       <div className="order-form">
         <h2>Customer Information</h2>
         <form onSubmit={handleSubmit}>

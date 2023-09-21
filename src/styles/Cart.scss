@@ -1,0 +1,84 @@
+/* Cart.scss */
+.cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart-items {
+  flex-direction: column;
+  background-color: #e0e0e0;
+  margin-right: 10vw;
+  margin-left: 5vw;
+  width: 50%;
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    padding: 10px;
+    margin: 10px;
+
+    .remove-button {
+      background-color: #ff0000; /* Add your desired button background color */
+      color: #fff; /* Add your desired button text color */
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Add a transition effect for hover */
+      &:hover {
+        background-color: #cc0000; /* Change button background color on hover */
+      }
+    }
+  }
+}
+
+.order-form {
+  flex: 1;
+  background-color: #e0e0e0;
+  padding: 20px;
+  margin-right: 5vw;
+
+  form {
+    /* Styling for the form container */
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
+      /* Styling for form input group (e.g., name, address, deliveryTime) */
+      margin-bottom: 20px;
+
+      label {
+        /* Styling for form label */
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      textarea {
+        /* Styling for text input and textarea */
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      button[type="submit"] {
+        /* Styling for the "Place Order" button */
+        background-color: #007bff; /* Add your desired button background color */
+        color: #fff; /* Add your desired button text color */
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Add a transition effect for hover */
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #0056b3; /* Change button background color on hover */
+        }
+      }
+    }
+  }
+}
