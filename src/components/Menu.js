@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
+import menuData from '../menuData.json'; 
 
 const Menu = () => {
   const { addToCart, removeFromCart } = useCart();
@@ -8,11 +9,11 @@ const Menu = () => {
   return (
     <div className="menu">
       <div className="menu-sections">
-        {sections.map((section, index) => (
+        {menuData.map((section, index) => (
           <MenuSection
             key={index}
             section={section}
-            addToCart={addToCart}
+            addToCart={(item, id) => addToCart(item, id)}
             removeFromCart={removeFromCart}
           />
         ))}
@@ -20,5 +21,6 @@ const Menu = () => {
     </div>
   );
 };
+
 
 export default Menu;

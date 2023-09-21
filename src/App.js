@@ -5,14 +5,13 @@ import Home from './components/Home';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
 import CartPage from './components/CartPage';
-import CartProvider from './components/CartContext';
+import { CartProvider } from './components/CartContext';
 import './App.scss';
 
 function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
-    console.log('Adding item to cart:', item);
     setCart([...cart, item]);
   };
 
@@ -32,7 +31,7 @@ function App() {
             <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
             <Route
               path="/cart"
-              element={<CartPage cart={cart} removeFromCart={removeFromCart} />} // Render CartPage component
+              element={<CartPage cart={cart} removeFromCart={removeFromCart} />} 
             />
           </Routes>
         </div>

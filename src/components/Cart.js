@@ -5,7 +5,6 @@ const Cart = () => {
   const { cart, removeFromCart } = useCart();
 
   const handleRemove = (cartItem) => {
-    // Use removeFromCart to remove the specific item from the cart
     removeFromCart(cartItem);
   };
 
@@ -17,8 +16,8 @@ const Cart = () => {
         <ul>
           {cart.map((cartItem, index) => (
             <li key={index}>
-              {cartItem.name} - ${cartItem.price.toFixed(2)}
-              <button onClick={() => handleRemove(cartItem)}>Remove</button>
+              {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
+              <button onClick={() => handleRemove(cartItem)}>Remove One</button>
             </li>
           ))}
         </ul>

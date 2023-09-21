@@ -1,33 +1,52 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-// Create a context for the cart
+// Create a CartContext
 const CartContext = createContext();
 
-// Custom hook for using the cart context
+// Export a custom hook for using the cart context
 export const useCart = () => {
-  return useContext(CartContext);
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
 };
 
+// Define your CartProvider component
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(() => {
-    // Initialize the cart with the data from localStorage, if available
-    const savedCart = localStorage.getItem('cart');
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
+  const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    // Check if the item is already in the cart
+    const existingItemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
+    
+    if (existingItemIndex !== -1) {
+      // If it exists, increment the quantity
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      // If it doesn't exist, add it with quantity 1
+      setCart([...cart, { ...item, quantity: 1 }]);
+    }
   };
 
   const removeFromCart = (item) => {
-    const updatedCart = cart.filter((cartItem) => cartItem.name !== item.name);
-    setCart(updatedCart);
+    // Check if the item is already in the cart
+    const existingItemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
+    
+    if (existingItemIndex !== -1) {
+      // If it exists, decrement the quantity
+      const updatedCart = [...cart];
+      if (updatedCart[existingItemIndex].quantity > 1) {
+        updatedCart[existingItemIndex].quantity -= 1;
+      } else {
+        // If the quantity is 1, remove the item from the cart
+        updatedCart.splice(existingItemIndex, 1);
+      }
+      setCart(updatedCart);
+    }
   };
-
-  // Use localStorage to save the cart data whenever it changes
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
@@ -35,6 +54,3 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
-
-export default CartProvider;

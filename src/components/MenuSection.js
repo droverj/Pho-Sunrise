@@ -7,7 +7,6 @@ const MenuSection = ({ section }) => {
   const { addToCart, removeFromCart } = useCart();
 
   if (!section) {
-    // Handle the case where section is not defined yet (e.g., initial render).
     return null;
   }
 

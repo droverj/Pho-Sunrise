@@ -1,6 +1,9 @@
 import React from 'react';
+import { useCart } from '../components/CartContext';
 
-const MenuItem = ({ item, addToCart, removeFromCart }) => {
+const MenuItem = ({ item }) => {
+  const { addToCart, removeFromCart } = useCart();
+
   return (
     <div className="menu-item">
       <span>{item.name}</span>
