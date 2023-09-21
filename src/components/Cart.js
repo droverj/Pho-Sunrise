@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 
 const Cart = () => {
@@ -22,6 +23,9 @@ const Cart = () => {
           ))}
         </ul>
       )}
+      <Link to="/order-info">
+        <button className="place-order-button">Place Order</button>
+      </Link>
     </div>
   );
 };
