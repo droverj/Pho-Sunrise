@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 
 // Create a CartContext
 const CartContext = createContext();
@@ -15,11 +15,12 @@ export const useCart = () => {
 // Define your CartProvider component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [removedItemsCount, setRemovedItemsCount] = useState(0);
 
   const addToCart = (item) => {
     // Check if the item is already in the cart
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
-    
+
     if (existingItemIndex !== -1) {
       // If it exists, increment the quantity
       const updatedCart = [...cart];
@@ -34,7 +35,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = (item) => {
     // Check if the item is already in the cart
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
-    
+
     if (existingItemIndex !== -1) {
       // If it exists, decrement the quantity
       const updatedCart = [...cart];
@@ -45,11 +46,17 @@ export const CartProvider = ({ children }) => {
         updatedCart.splice(existingItemIndex, 1);
       }
       setCart(updatedCart);
+      setRemovedItemsCount((count) => count + 1); // Increment removed items count
     }
   };
 
+  // Create a context value that includes cart and removedItemsCount
+  const contextValue = useMemo(() => {
+    return { cart, addToCart, removeFromCart, removedItemsCount };
+  }, [cart, addToCart, removeFromCart, removedItemsCount]);
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={contextValue}>
       {children}
     </CartContext.Provider>
   );

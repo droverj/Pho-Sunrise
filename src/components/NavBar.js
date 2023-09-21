@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CartTracker from './CartTracker';
 import '../styles/Navbar.scss';
 
 function Navbar() {
@@ -18,6 +19,7 @@ function Navbar() {
         <li>
           <Link to="/cart">Cart</Link>
         </li>
+        <CartTracker />
       </ul>
     </nav>
   );
