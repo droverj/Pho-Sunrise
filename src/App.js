@@ -5,7 +5,6 @@ import Home from './components/Home';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
 import CartPage from './components/CartPage';
-import OrderInfo from './components/OrderInfo';
 import { CartProvider } from './components/CartContext';
 import './App.scss';
 
@@ -34,7 +33,6 @@ function App() {
               path="/cart"
               element={<CartPage cart={cart} removeFromCart={removeFromCart} />} 
             />
-            <Route path="/order-information" component={OrderInfo} />
           </Routes>
         </div>
       </BrowserRouter>
