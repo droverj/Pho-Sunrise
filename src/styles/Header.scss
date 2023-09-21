@@ -1,0 +1,23 @@
+.header {
+  background-color: darkred;
+  display: flex;
+  flex-direction: column; /* Align items in a column layout */
+  align-items: center;
+  padding: 10px;
+  color: white;
+
+  .profile-container {
+    margin-right: 10px; /* Add margin to the right for positioning */
+    align-self: flex-end; /* Align the profile to the flex-end (top right corner) */
+  }
+
+  .header-container {
+    text-align: center;
+    .title {
+      font-size: 100px; /* Increase the font size for a very large title */
+      color: white;
+      margin: 0;
+      text-align: center; /* Center the text */
+    }
+  }
+}

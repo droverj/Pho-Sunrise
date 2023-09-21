@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartTracker from './CartTracker';
-import LoginButton from './common/login';
-import LogoutButton from './common/logout';
+import LoginButton from './common/Login';
+import LogoutButton from './common/Logout';
 import '../styles/Navbar.scss';
 
 function Navbar() {

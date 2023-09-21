@@ -26,17 +26,17 @@ function App() {
       <BrowserRouter>
         <div>
           <Navbar />
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
             <Route
               path="/cart"
-              element={<CartPage cart={cart} removeFromCart={removeFromCart} />} 
+              element={<CartPage cart={cart} removeFromCart={removeFromCart} />}
             />
           </Routes>
         </div>
-      <Header />
       </BrowserRouter>
     </CartProvider>
   );
