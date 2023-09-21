@@ -2,14 +2,6 @@ import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
 import '../styles/Cart.scss';
 
-const twilio = require('twilio'); // Import Twilio library
-
-// Initialize Twilio client with your credentials
-const accountSid = 'AC5460ec42270588245f987a890de19231';
-const authToken = 'Ycede625facbef2715baaaae2f93a7f03';
-
-const client = twilio(accountSid, authToken);
-
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
   const [customerInfo, setCustomerInfo] = useState({
