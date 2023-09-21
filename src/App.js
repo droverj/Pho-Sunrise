@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
 import CartPage from './components/CartPage';
+import Header from './components/common/Header';
 import { CartProvider } from './components/CartContext';
 import './App.scss';
 
@@ -35,6 +36,7 @@ function App() {
             />
           </Routes>
         </div>
+      <Header />
       </BrowserRouter>
     </CartProvider>
   );
