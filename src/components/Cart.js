@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
+import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/Cart.scss';
 
 const Cart = () => {
@@ -9,6 +10,7 @@ const Cart = () => {
     pickupTimeOption: 'asap', // Change 'now' to 'asap'
     pickupTime: '', // To store selected pickup time
   });
+  const { isAuthenticated } = useAuth0();
 
   const handleRemove = (cartItem) => {
     removeFromCart(cartItem);
@@ -24,55 +26,23 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission and order placement logic here
   };
 
-// Function to generate time slots
-const generateTimeSlots = () => {
-  const now = new Date();
-  const availableDays = [0, 2, 3, 6]; // Tuesday, Wednesday, Thursday, Sunday
-  const availableStartTime = 1130; // 11:30 AM in military time
-  let availableEndTime = now.getDay() === 5 || now.getDay() === 6 ? 2030 : 1930; // Friday, Saturday: 8:30 PM, other days: 7:30 PM
-  const timeSlots = [];
+  // Function to generate time slots
+  const generateTimeSlots = () => {
+    const now = new Date();
+    const availableDays = [0, 2, 3, 6]; // Tuesday, Wednesday, Thursday, Sunday
+    const availableStartTime = 1130; // 11:30 AM in military time
+    let availableEndTime = now.getDay() === 5 || now.getDay() === 6 ? 2030 : 1930; // Friday, Saturday: 8:30 PM, other days: 7:30 PM
+    const timeSlots = [];
 
-  // Calculate the earliest available time
-  const earliestTime = Math.max(
-    now.getHours() * 100 + now.getMinutes() + 30, // At least 30 minutes from now
-    availableStartTime
-  );
+    // Calculate the earliest available time
+    const earliestTime = Math.max(
+      now.getHours() * 100 + now.getMinutes() + 30, // At least 30 minutes from now
+      availableStartTime
+    );
 
-  for (let time = earliestTime; time <= availableEndTime; ) {
-    const hours = Math.floor(time / 100);
-    let minutes = time % 100;
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-
-    // Ensure minutes are within the range 0-59
-    if (minutes >= 60) {
-      minutes -= 60;
-      time += 100; // Increment hours by 1 if minutes go beyond 59
-    }
-
-    const formattedTime =
-      hours % 12 === 0
-        ? `12:${minutes === 0 ? '00' : minutes} ${ampm}`
-        : `${hours % 12}:${minutes === 0 ? '00' : minutes} ${ampm}`;
-    timeSlots.push(formattedTime);
-
-    // Increment time by 30 minutes
-    if (minutes === 0) {
-      time += 30;
-    } else {
-      time = (hours + 1) * 100;
-    }
-  }
-
-  // Check if it's too late to order for today (after availableEndTime)
-  if (now.getHours() * 100 + now.getMinutes() > availableEndTime) {
-    // It's too late to order for today, so show available times for the next day
-    // Update availableEndTime for the next day (e.g., 7:30 PM)
-    availableEndTime = 1930;
-    // Generate time slots for the next day
-    for (let time = availableStartTime; time <= availableEndTime; ) {
+    for (let time = earliestTime; time <= availableEndTime;) {
       const hours = Math.floor(time / 100);
       let minutes = time % 100;
       const ampm = hours >= 12 ? 'PM' : 'AM';
@@ -96,14 +66,44 @@ const generateTimeSlots = () => {
         time = (hours + 1) * 100;
       }
     }
-  }
 
-  // Conditionally render the "ASAP" radio button
-  const showASAPRadio = now.getHours() * 100 + now.getMinutes() <= availableEndTime;
+    // Check if it's too late to order for today (after availableEndTime)
+    if (now.getHours() * 100 + now.getMinutes() > availableEndTime) {
+      // It's too late to order for today, so show available times for the next day
+      // Update availableEndTime for the next day (e.g., 7:30 PM)
+      availableEndTime = 1930;
+      // Generate time slots for the next day
+      for (let time = availableStartTime; time <= availableEndTime;) {
+        const hours = Math.floor(time / 100);
+        let minutes = time % 100;
+        const ampm = hours >= 12 ? 'PM' : 'AM';
 
-  return { timeSlots, showASAPRadio };
-};
+        // Ensure minutes are within the range 0-59
+        if (minutes >= 60) {
+          minutes -= 60;
+          time += 100; // Increment hours by 1 if minutes go beyond 59
+        }
 
+        const formattedTime =
+          hours % 12 === 0
+            ? `12:${minutes === 0 ? '00' : minutes} ${ampm}`
+            : `${hours % 12}:${minutes === 0 ? '00' : minutes} ${ampm}`;
+        timeSlots.push(formattedTime);
+
+        // Increment time by 30 minutes
+        if (minutes === 0) {
+          time += 30;
+        } else {
+          time = (hours + 1) * 100;
+        }
+      }
+    }
+
+    // Conditionally render the "ASAP" radio button
+    const showASAPRadio = now.getHours() * 100 + now.getMinutes() <= availableEndTime;
+
+    return { timeSlots, showASAPRadio };
+  };
 
   const { timeSlots, showASAPRadio } = generateTimeSlots(); // Destructure the values
 
@@ -129,6 +129,11 @@ const generateTimeSlots = () => {
       )}
       <div className="order-form">
         <h2>Customer Information</h2>
+        {!isAuthenticated && (
+          <p className="login-notice">
+            Please sign in to place an order from Phở Sunrise.
+          </p>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -180,7 +185,9 @@ const generateTimeSlots = () => {
               </select>
             )}
           </div>
-          <button type="submit">Place Order</button>
+          <button type="submit" disabled={!isAuthenticated}>
+            Place Order
+          </button>
         </form>
       </div>
     </div>
