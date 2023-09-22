@@ -52,7 +52,6 @@ const Cart = () => {
   // Function to generate time slots
   const generateTimeSlots = () => {
     const now = new Date();
-    const availableDays = [0, 2, 3, 6]; // Tuesday, Wednesday, Thursday, Sunday
     const availableStartTime = 1130; // 11:30 AM in military time
     const availableEndTime =
       (now.getDay() === 5 || now.getDay() === 6) ? 2045 : 1945; // Friday, Saturday: 8:45 PM, other days: 7:45 PM
