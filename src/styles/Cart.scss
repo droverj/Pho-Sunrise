@@ -47,27 +47,30 @@
 .order-form {
   flex: 1;
   background-color: #e0e0e0;
-  padding: 20px; /* Set padding for order-form */
-  width: 40%; /* Adjust the width as needed */
-  margin-left: 30px; /* Increase left margin for spacing */
-  margin-right: 30px; /* Increase right margin for spacing */
+  padding: 20px;
+  width: 40%;
+  margin-left: 30px;
+  margin-right: 30px;
   .form-group {
     display: flex;
-    flex-direction: column; /* Display labels and inputs in a column */
-    margin-top: 10px; /* Add 10px top margin to labels */
-    margin-bottom: 10px; /* Add 10px bottom margin to labels */
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-top: 10px;
     label {
-      align-self: flex-start; /* Align labels to the left */
+      align-self: flex-start;
       padding-bottom: 10px;
     }
     input[type="text"],
-    input[type="email"],
     textarea {
-      width: 100%; /* Take up the full width of the container */
-      padding: 8px; /* Add some padding to the inputs */
-      border: 1px solid #ccc; /* Add a border to inputs */
-      background: none; /* Remove background for email input */
+      cursor: default;
+      background-color: white; /* Set the background to white for text and textarea inputs */
+    }
+    input#email {
+      cursor: default;
+      outline: none;
+      border: none;
+      background-color: transparent; /* Use transparent for email input */
     }
   }
 }
