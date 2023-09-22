@@ -32,7 +32,7 @@ const Cart = () => {
     const now = new Date();
     const availableDays = [0, 2, 3, 6]; // Tuesday, Wednesday, Thursday, Sunday
     const availableStartTime = 1130; // 11:30 AM in military time
-    const availableEndTime = now.getDay() === 5 || now.getDay() === 6 ? 2030 : 1930; // Friday, Saturday: 8:30 PM, other days: 7:30 PM
+    let availableEndTime = now.getDay() === 5 || now.getDay() === 6 ? 2030 : 1930; // Friday, Saturday: 8:30 PM, other days: 7:30 PM
     const timeSlots = [];
 
     // Calculate the earliest available time
@@ -52,10 +52,31 @@ const Cart = () => {
       timeSlots.push(formattedTime);
     }
 
-    return timeSlots;
+    // Check if it's too late to order for today (after availableEndTime)
+    if (now.getHours() * 100 + now.getMinutes() > availableEndTime) {
+      // It's too late to order for today, so show available times for the next day
+      // Update availableEndTime for the next day (e.g., 7:30 PM)
+      availableEndTime = 1930;
+      // Generate time slots for the next day
+      for (let time = availableStartTime; time <= availableEndTime; time += 30) {
+        const hours = Math.floor(time / 100);
+        const minutes = time % 100;
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const formattedTime =
+          hours % 12 === 0
+            ? `12:${minutes === 0 ? '00' : minutes} ${ampm}`
+            : `${hours % 12}:${minutes === 0 ? '00' : minutes} ${ampm}`;
+        timeSlots.push(formattedTime);
+      }
+    }
+
+    // Conditionally render the "ASAP" radio button
+    const showASAPRadio = now.getHours() * 100 + now.getMinutes() <= availableEndTime;
+
+    return { timeSlots, showASAPRadio };
   };
 
-  const timeSlots = generateTimeSlots();
+  const { timeSlots, showASAPRadio } = generateTimeSlots(); // Destructure the values
 
   return (
     <div className="cart">
@@ -94,16 +115,18 @@ const Cart = () => {
           <div className="form-group">
             <label>Pickup Time</label>
             <div className="radio-group">
-              <label>
-                <input
-                  type="radio"
-                  name="pickupTimeOption"
-                  value="asap"
-                  checked={customerInfo.pickupTimeOption === 'asap'}
-                  onChange={handleChange}
-                />
-                ASAP
-              </label>
+              {showASAPRadio && (
+                <label>
+                  <input
+                    type="radio"
+                    name="pickupTimeOption"
+                    value="asap"
+                    checked={customerInfo.pickupTimeOption === 'asap'}
+                    onChange={handleChange}
+                  />
+                  ASAP
+                </label>
+              )}
               <label>
                 <input
                   type="radio"
