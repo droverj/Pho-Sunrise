@@ -10,7 +10,7 @@ const Cart = () => {
     pickupTimeOption: 'asap', // Change 'now' to 'asap'
     pickupTime: '', // To store selected pickup time
   });
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
 
   const handleRemove = (cartItem) => {
     removeFromCart(cartItem);
@@ -26,6 +26,27 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if the user is authenticated and retrieve their email
+    if (isAuthenticated) {
+      const userEmail = user.email; // Get user's email
+      // Include userEmail in your form data when submitting
+      const orderData = {
+        name: customerInfo.name,
+        email: userEmail, // Include the user's email
+        telephone: customerInfo.telephone,
+        directions: customerInfo.directions,
+        pickupTimeOption: customerInfo.pickupTimeOption,
+        pickupTime: customerInfo.pickupTime,
+      };
+
+      // Perform your order processing logic here
+      console.log("Order Data:", orderData);
+    } else {
+      // Handle the case where the user is not authenticated
+      // Display a message or take appropriate action
+      console.log("User is not authenticated. Please sign in to place an order.");
+    }
   };
 
   // Function to generate time slots
@@ -146,6 +167,40 @@ const Cart = () => {
               required
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="telephone">Phone Number</label>
+            <input
+              type="text"
+              id="telephone"
+              name="telephone"
+              value={customerInfo.telephone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="directions">Special Requests</label>
+            <textarea
+              id="directions"
+              name="directions"
+              value={customerInfo["directions"]}
+              onChange={handleChange}
+              rows="4"
+              placeholder="Any special instructions or directions..."
+            ></textarea>
+          </div>
+          {isAuthenticated && (
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={user.email}
+                readOnly
+              />
+            </div>
+          )}
           <div className="form-group">
             <label>Pickup Time</label>
             <div className="radio-group">
