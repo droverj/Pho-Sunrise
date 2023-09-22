@@ -202,50 +202,55 @@ const Cart = () => {
             </div>
           )}
           <div className="form-group">
-            <label>Pickup Time</label>
-            <div className="radio-group">
-              {showASAPRadio && (
-                <label>
-                  <input
-                    type="radio"
-                    name="pickupTimeOption"
-                    value="asap"
-                    checked={customerInfo.pickupTimeOption === 'asap'}
-                    onChange={handleChange}
-                  />
-                  ASAP
-                </label>
-              )}
+          {!showASAPRadio && (
+            <p className="order-notice">
+              We are no longer accepting orders for today, but you may place an order for pickup for tomorrow.
+            </p>
+          )}
+          <label>Pickup Time</label>
+          <div className="radio-group">
+            {showASAPRadio && (
               <label>
                 <input
                   type="radio"
                   name="pickupTimeOption"
-                  value="later"
-                  checked={customerInfo.pickupTimeOption === 'later'}
+                  value="asap"
+                  checked={customerInfo.pickupTimeOption === 'asap'}
                   onChange={handleChange}
                 />
-                Pickup Later
+                ASAP
               </label>
-            </div>
-            {customerInfo.pickupTimeOption === 'later' && (
-              <select name="pickupTime" value={customerInfo.pickupTime} onChange={handleChange} required>
-                <option value="" disabled>
-                  Select Pickup Time
-                </option>
-                {timeSlots.map((timeSlot, index) => (
-                  <option key={index} value={timeSlot}>
-                    {timeSlot}
-                  </option>
-                ))}
-              </select>
             )}
+            <label>
+              <input
+                type="radio"
+                name="pickupTimeOption"
+                value="later"
+                checked={customerInfo.pickupTimeOption === 'later'}
+                onChange={handleChange}
+              />
+              Pickup Later
+            </label>
           </div>
+          {customerInfo.pickupTimeOption === 'later' && (
+            <select name="pickupTime" value={customerInfo.pickupTime} onChange={handleChange} required>
+              <option value="" disabled>
+                Select Pickup Time
+              </option>
+              {timeSlots.map((timeSlot, index) => (
+                <option key={index} value={timeSlot}>
+                  {timeSlot}
+                </option>
+              ))}
+            </select>
+          )}
           <button type="submit" disabled={!isAuthenticated}>
             Place Order
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
+  </div>
   );
 };
 
