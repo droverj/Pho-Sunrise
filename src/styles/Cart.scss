@@ -73,13 +73,20 @@
       background-color: transparent; /* Use transparent for email input */
     }
   }
+  .order-notice {
+    color: red;
+    font-size: larger;
+  }
   .radio-group {
-    margin: 20px 0; /* Add some padding above the radio buttons */
+    margin-bottom: 20px;
+    margin-top: 5px;
     label {
       margin: 20px 0; /* Add a bit of space between radio buttons and labels */
     }
   }
   button[type="submit"] {
-    margin: 20px 0; /* Add some padding above the "Place Order" button */
+    margin: 20px 0; 
+    padding: 40px;
+    font-size: larger;
   }
 }

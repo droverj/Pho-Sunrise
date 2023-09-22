@@ -180,10 +180,11 @@ const Cart = () => {
           <div className="form-group">
           {!showASAPRadio && (
             <p className="order-notice">
-              We are no longer accepting orders for today, but you may place an order for pickup for tomorrow.
+              We apologize but we are no longer accepting orders for today.<br />
+              Order pickup times are available for tomorrow.
             </p>
           )}
-          <label>Pickup Time</label>
+          <label>Select Pickup Time</label>
           <div className="radio-group">
             {showASAPRadio && (
               <label>
