@@ -53,7 +53,21 @@
   margin-right: 30px; /* Increase right margin for spacing */
   .form-group {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column; /* Display labels and inputs in a column */
+    margin-top: 10px; /* Add 10px top margin to labels */
+    margin-bottom: 10px; /* Add 10px bottom margin to labels */
+    padding-top: 10px;
+    label {
+      align-self: flex-start; /* Align labels to the left */
+      padding-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%; /* Take up the full width of the container */
+      padding: 8px; /* Add some padding to the inputs */
+      border: 1px solid #ccc; /* Add a border to inputs */
+      background: none; /* Remove background for email input */
+    }
   }
 }
