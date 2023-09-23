@@ -12,6 +12,43 @@ const Cart = () => {
   });
   const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
 
+  // Define the available pickup times for each day
+  const availableTimes = {
+    0: [ // Sunday
+      '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM',
+      '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM',
+      '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM'
+    ],
+    1: [], // Monday (closed)
+    2: [ // Tuesday
+      '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM',
+      '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM',
+      '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM'
+    ],
+    3: [ // Wednesday
+      '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM',
+      '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM',
+      '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM'
+    ],
+    4: [ // Thursday
+      '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM',
+      '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM',
+      '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM'
+    ],
+    5: [ // Friday
+      '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM',
+      '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM',
+      '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM',
+      '8:30 PM', '9:00 PM'
+    ],
+    6: [ // Saturday
+      '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM',
+      '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM',
+      '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM',
+      '8:30 PM', '9:00 PM'
+    ],
+  };
+
   const handleRemove = (cartItem) => {
     removeFromCart(cartItem);
   };
@@ -56,47 +93,24 @@ const Cart = () => {
     const availableStartTime = 1130; // 11:30 AM in military time
     const availableEndTime = (currentDay === 5 || currentDay === 6) ? 2045 : 1945; // Friday, Saturday: 8:45 PM, other days: 7:45 PM
     const orderStartTime = 1130; // 11:30 AM in military time
-  
-    const timeSlots = [];
-  
+
+    const timeSlots = availableTimes[currentDay]; // Use the hard-coded times for the current day
+
     // Conditionally render the "ASAP" radio button
     const showASAPRadio = now.getHours() * 100 + now.getMinutes() <= availableEndTime;
-  
+
     if (currentDay === 0 || (now.getHours() * 100 + now.getMinutes() >= availableEndTime)) {
       // If it's Sunday or past the available pickup times, set the next day to Monday (1)
       currentDay = 1;
     }
-  
-    let time = Math.max(now.getHours() * 100 + now.getMinutes() + 30, availableStartTime);
-  
-    while (time <= availableEndTime) {
-      const hours = Math.floor(time / 100);
-      let minutes = time % 100; // Ensure minutes do not exceed 59
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-  
-      // Ensure minutes are within the range 0-59
-      if (minutes >= 60) {
-        minutes -= 60;
-        time += 100; // Increment hours by 1 if minutes go beyond 59
-      }
-  
-      const formattedTime =
-        hours % 12 === 0
-          ? `12:${minutes === 0 ? '00' : minutes} ${ampm}`
-          : `${hours % 12}:${minutes === 0 ? '00' : minutes} ${ampm}`;
-      timeSlots.push(formattedTime);
-  
-      time += 30;
-    }
-  
+
     // Check if it's too early to order (before 11:30 AM)
     if (now.getHours() * 100 + now.getMinutes() < orderStartTime) {
       return { timeSlots, showASAPRadio, showNotice: true };
     }
-  
+
     return { timeSlots, showASAPRadio, showNotice: false };
   };
-  
 
   const { timeSlots, showASAPRadio } = generateTimeSlots(); // Destructure the values
 
