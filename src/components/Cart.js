@@ -49,6 +49,10 @@ const Cart = () => {
     }
   };
 
+  const calculateTotalPrice = () => {
+    return cart.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0);
+  };
+
   return (
     <div className="cart">
       {cart.length === 0 ? (
@@ -67,6 +71,7 @@ const Cart = () => {
               </li>
             ))}
           </ul>
+          <p className="cart-total">Total: ${calculateTotalPrice().toFixed(2)}</p>
         </>
       )}
       <div className="order-form">
