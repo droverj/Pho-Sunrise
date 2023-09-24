@@ -28,6 +28,9 @@ const Cart = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Calculate the total price
+    const total = calculateTotalPrice();
+
     // Check if the user is authenticated and retrieve their email
     if (isAuthenticated) {
       const userEmail = user.email; // Get user's email
@@ -38,6 +41,7 @@ const Cart = () => {
         telephone: customerInfo.telephone,
         directions: customerInfo.directions,
         cart: cart,
+        total: total,
       };
 
       // Perform your order processing logic here
@@ -71,7 +75,6 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <p className="cart-total">Total: ${calculateTotalPrice().toFixed(2)}</p>
         </>
       )}
       <div className="order-form">
@@ -127,6 +130,7 @@ const Cart = () => {
               />
             </div>
           )}
+          <p className="cart-total">Order Total: ${calculateTotalPrice().toFixed(2)}</p>
           <button type="submit" disabled={!isAuthenticated}>
             Place Order
           </button>
