@@ -3,8 +3,8 @@ import { useCart } from '../components/CartContext';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/Cart.scss';
 
-const Cart = ({ subtotal, setSubtotal }) => {
-  const { cart, removeFromCart, totalItems } = useCart();
+const Cart = () => {
+  const { cart, removeFromCart, totalItems, subtotal } = useCart();
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     telephone: '',
@@ -25,26 +25,15 @@ const Cart = ({ subtotal, setSubtotal }) => {
     });
   };
 
-  const calculateSubtotalPrice = () => {
-    const subtotal = cart.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0);
-
-    // Update the subtotal in the parent component CartPage
-    setSubtotal(subtotal);
-    return subtotal;
-  };
-
   const calculateHST = () => {
-    const subtotal = calculateSubtotalPrice();
     return subtotal * 0.13; // 13% HST for Ontario
   };
 
   const calculateGST = () => {
-    const subtotal = calculateSubtotalPrice();
     return subtotal * 0.05; // 5% GST for Ontario
   };
 
   const calculateTotal = () => {
-    const subtotal = calculateSubtotalPrice();
     const hst = calculateHST();
     const gst = calculateGST();
     return subtotal + hst + gst;
@@ -53,7 +42,6 @@ const Cart = ({ subtotal, setSubtotal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const subtotal = calculateSubtotalPrice();
     const total = calculateTotal();
 
     // Check if the user is authenticated and retrieve their email
@@ -153,7 +141,7 @@ const Cart = ({ subtotal, setSubtotal }) => {
               />
             </div>
           )}
-          <p className="cart-total">Order Subtotal: ${calculateSubtotalPrice().toFixed(2)}</p>
+          <p className="cart-total">Order Subtotal: ${subtotal.toFixed(2)}</p>
           <p className="cart-hst">HST: ${calculateHST().toFixed(2)}</p>
           <p className="cart-gst">GST: ${calculateGST().toFixed(2)}</p>
           <div className="cart-details">

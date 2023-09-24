@@ -21,6 +21,12 @@ export const CartProvider = ({ children }) => {
     return total;
   };
 
+  // Calculate subtotal
+  const calculateSubtotal = () => {
+    const subtotal = cart.reduce((accumulator, item) => accumulator + item.price * item.quantity, 0);
+    return subtotal;
+  };
+
   useEffect(() => {
     // Save cart data to local storage whenever it changes
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -53,7 +59,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems: calculateTotalItems() }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems: calculateTotalItems(), subtotal: calculateSubtotal() }}>
       {children}
     </CartContext.Provider>
   );
