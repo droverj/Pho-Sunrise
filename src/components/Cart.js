@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/Cart.scss';
 
 const Cart = () => {
-  const { cart, removeFromCart, totalItems, subtotal } = useCart();
+  const { cart, addToCart, removeFromCart, totalItems, subtotal } = useCart();
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     telephone: '',
@@ -12,6 +12,10 @@ const Cart = () => {
   });
 
   const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
+
+  const handleAdd = (cartItem) => {
+    addToCart(cartItem);
+  };
 
   const handleRemove = (cartItem) => {
     removeFromCart(cartItem);
@@ -70,6 +74,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
+      <div className="menu-items-container">
       {cart.length === 0 ? (
         <p>Shopping Cart is Empty</p>
       ) : (
@@ -80,12 +85,14 @@ const Cart = () => {
                 <div className="item-info">
                   {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
                 </div>
-                <button onClick={() => handleRemove(cartItem)}>Remove One</button>
+                <button onClick={() => handleRemove(cartItem)}>-</button>
+                <button onClick={() => handleAdd(cartItem)}>+</button>
               </li>
             ))}
           </ul>
         </>
       )}
+      </div>
       <div className="order-form">
         <h2>Customer Information</h2>
         {!isAuthenticated && (
