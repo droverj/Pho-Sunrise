@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Cart from './Cart';
+import { useCart } from '../components/CartContext';
 
 const CartPage = () => {
-  // Define a state variable to store the subtotal
-  const [subtotal, setSubtotal] = useState(0);
+  const { subtotal } = useCart();
 
   return (
     <div className="cart-page">
       <h2>Your Shopping Cart</h2>
       <p>Subtotal: ${subtotal.toFixed(2)}</p>
-      <Cart subtotal={subtotal} setSubtotal={setSubtotal} />
+      <Cart />
     </div>
   );
 };
