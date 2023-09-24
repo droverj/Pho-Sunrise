@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
 import { useAuth0 } from '@auth0/auth0-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Cart.scss';
 
 const Cart = () => {
@@ -74,9 +76,13 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <div className="menu-items-container">
+      <div className="cart-items-container">
       {cart.length === 0 ? (
-        <p>Shopping Cart is Empty</p>
+        <div className="empty-cart-container">
+        <h2>Your Shopping Cart is Empty</h2><br />
+        <FontAwesomeIcon icon={faSurprise} />
+        <h3>Browse our menu to begin adding items to your shopping cart.</h3>
+        </div>
       ) : (
         <>
           <ul className="cart-items">
@@ -94,7 +100,7 @@ const Cart = () => {
       )}
       </div>
       <div className="order-form">
-        <h2>Customer Information</h2>
+        <h2 className="order-form-title">Enter Your Order Information</h2>
         {!isAuthenticated && (
           <p>Please sign in to place an order from Phở Sunrise.</p>
         )}

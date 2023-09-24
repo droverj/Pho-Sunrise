@@ -1,35 +1,39 @@
 .cart {
   display: flex;
-  justify-content: space-between;
-  // align-items: flex-start;
-  width: 100%;
-  .menu-items-container {
+  margin: 0 100px;
+
+  .cart-items-container {
     background-color: blue;
-    width: 40%; 
-    margin: 0 2vw;
-  }
-}
+    width: 40%;
+    margin-right: 100px;
+    padding: 30px 0px;
 
-.cart-items {
-  flex-direction: column;
-  min-width: 30%;
-  .cart-item {
-    background-color: pink;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    .cart-items {
+      flex-direction: column;
+      min-width: 30%;
 
-    .item-info {
-      flex-grow: 1;
+      .cart-item {
+        background-color: pink;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+
+        .item-info {
+          flex-grow: 1;
+        }
+      }
     }
 
     button {
       background-color: #ff0000;
       color: #fff;
-      padding: 5px 10px;
-      border: none;
+      width: 2.5vw;
+      height: 2.5vw;
+      margin: 0 2px;
       cursor: pointer;
+      border: 2px solid white;
+      font-size: larger;
       transition: background-color 0.3s ease;
 
       &:hover {
@@ -37,115 +41,131 @@
       }
     }
   }
-}
 
-.empty-cart {
-  width: 40%;
-  min-width: 30%;
-  background-color: #e0e0e0;
-  padding: 20px;
-  text-align: center;
-  margin: 0 30px;
-  p {
-    padding: 10px;
-    margin: 0;
-  }
-}
-
-.order-form {
-  flex: 1;
-  background-color: #e0e0e0;
-  padding: 0 20px;
-  width: 60%;
-  // width: 40%;
-  margin-left: 30px;
-  margin-right: 30px;
-  .form-group {
+  .empty-cart-container {
     display: flex;
+    align-items: center;
+    text-align: center;
     flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    label {
-      align-self: flex-start;
-      padding-bottom: 10px;
+    h2 {
+      background-color: #e0e0e0;
     }
-    input[type="text"],
-    textarea {
-      cursor: default;
-      background-color: white;
+    .face-surprise {
+      color: red;
     }
-    input#email {
-      cursor: default;
-      outline: none;
-      border: none;
-      background-color: transparent;
+    h3 {
+      width: 70%;
+      font-weight: lighter;
+      background-color: orange;
     }
   }
-  .order-notice {
-    color: red;
-    font-size: larger;
-  }
-  .radio-group {
-    margin-bottom: 20px;
-    margin-top: 5px;
-    label {
-      margin: 20px 0;
-    }
-  }
-  button[type="submit"] {
-    margin: 20px 0;
-    padding: 40px;
-    font-size: 2rem;
-  }
-  .cart-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-right: 200px;
-    font-size: larger;
-  }
-}
 
-/* Styles for the "Place Order" button */
-.button-container {
-  .place-order-button {
-    align-self: center;
-    background-color: #fff;
-    background-image: none;
-    background-position: 0 90%;
-    background-repeat: repeat no-repeat;
-    background-size: 4px 3px;
-    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  .order-form {
+    flex: 1;
+    background-color: whitesmoke;
+    padding: 30px 100px;
     border-style: solid;
     border-width: 2px;
-    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-    box-sizing: border-box;
+    // box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
     color: #41403e;
-    cursor: pointer;
-    display: inline-block;
     font-family: Neucha, sans-serif;
-    font-size: 1rem;
-    line-height: 23px;
-    outline: none;
-    padding: 0.75rem;
-    text-decoration: none;
-    transition: all 235ms ease-in-out;
     border-bottom-left-radius: 15px 255px;
     border-bottom-right-radius: 225px 15px;
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 225px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    .order-form-title {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      background-color: yellow;
+      label {
+        align-self: flex-start;
+        padding-bottom: 10px;
+      }
+      input[type="text"],
+      textarea {
+        cursor: default;
+        background-color: white;
+      }
+      input#email {
+        cursor: default;
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
+    }
+    .order-notice {
+      color: red;
+      font-size: larger;
+    }
+    .radio-group {
+      margin-bottom: 20px;
+      margin-top: 5px;
+      label {
+        margin: 20px 0;
+      }
+    }
+    button[type="submit"] {
+      margin: 20px 0;
+      padding: 40px;
+      font-size: 2rem;
+    }
+    .cart-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-right: 200px;
+      font-size: larger;
+    }
   }
 
-  .place-order-button:hover {
-    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
-    transform: translate3d(0, 2px, 0);
-  }
+  /* Styles for the "Place Order" button */
+  .button-container {
+    .place-order-button {
+      align-self: center;
+      background-color: #fff;
+      background-image: none;
+      background-position: 0 90%;
+      background-repeat: repeat no-repeat;
+      background-size: 4px 3px;
+      border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+      border-style: solid;
+      border-width: 2px;
+      box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+      box-sizing: border-box;
+      color: #41403e;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Neucha, sans-serif;
+      font-size: 1rem;
+      line-height: 23px;
+      outline: none;
+      padding: 0.75rem;
+      text-decoration: none;
+      transition: all 235ms ease-in-out;
+      border-bottom-left-radius: 15px 255px;
+      border-bottom-right-radius: 225px 15px;
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 225px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
 
-  .place-order-button:focus {
-    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+    .place-order-button:hover {
+      box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+      transform: translate3d(0, 2px, 0);
+    }
+
+    .place-order-button:focus {
+      box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+    }
   }
 }

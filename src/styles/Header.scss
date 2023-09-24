@@ -1,14 +1,15 @@
 .header {
   background-color: darkred;
   display: flex;
-  flex-direction: column; /* Align items in a column layout */
+  flex-direction: column;
   align-items: center;
   padding: 10px;
   color: white;
 
   .profile-container {
-    margin-right: 10px; /* Add margin to the right for positioning */
-    align-self: flex-end; /* Align the profile to the flex-end (top right corner) */
+    margin-right: 10px; 
+    align-self: flex-end; 
+    font-weight: lighter;
   }
 
   .header-container {
