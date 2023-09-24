@@ -141,13 +141,15 @@ const Cart = () => {
           <p>GST: ${calculateGST().toFixed(2)}</p>
           <p>Items in Cart: {totalItems}</p>
           <p>Order Total: ${calculateTotal().toFixed(2)}</p>
-          <button type="submit" disabled={!isAuthenticated}>
-            Place Order
-          </button>
+          <div className="button-container">
+            <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
+              Place Order
+            </button>
+          </div>
         </form>
       </div>
     </div>
-  );  
+  );
 };
 
 export default Cart;
