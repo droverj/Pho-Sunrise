@@ -1,4 +1,3 @@
-/* Cart.scss */
 .cart {
   display: flex;
   justify-content: space-between;
@@ -8,16 +7,16 @@
 .cart-items {
   flex-direction: column;
   background-color: #e0e0e0;
-  width: 40%; /* Adjust the width as needed */
-  min-width: 30%; /* Adjust the min-width as needed */
-  padding: 20px; /* Set padding for cart-items */
+  width: 40%;
+  min-width: 30%;
+  padding: 20px;
   margin: 0 30px;
   .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    .remove-button {
+    button {
       background-color: #ff0000;
       color: #fff;
       padding: 5px 10px;
@@ -32,10 +31,10 @@
 }
 
 .empty-cart {
-  width: 40%; /* Adjust the width as needed */
-  min-width: 30%; /* Adjust the min-width as needed */
+  width: 40%;
+  min-width: 30%;
   background-color: #e0e0e0;
-  padding: 20px; /* Set padding for empty-cart */
+  padding: 20px;
   text-align: center;
   margin: 0 30px;
   p {
@@ -64,13 +63,13 @@
     input[type="text"],
     textarea {
       cursor: default;
-      background-color: white; /* Set the background to white for text and textarea inputs */
+      background-color: white;
     }
     input#email {
       cursor: default;
       outline: none;
       border: none;
-      background-color: transparent; /* Use transparent for email input */
+      background-color: transparent;
     }
   }
   .order-notice {
@@ -81,7 +80,7 @@
     margin-bottom: 20px;
     margin-top: 5px;
     label {
-      margin: 20px 0; /* Add a bit of space between radio buttons and labels */
+      margin: 20px 0;
     }
   }
   button[type="submit"] {

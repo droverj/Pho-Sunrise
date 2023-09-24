@@ -71,7 +71,7 @@ const Cart = () => {
   return (
     <div className="cart">
       {cart.length === 0 ? (
-        <p className="empty-cart">Shopping Cart is Empty</p>
+        <p>Shopping Cart is Empty</p>
       ) : (
         <>
           <ul className="cart-items">
@@ -80,9 +80,7 @@ const Cart = () => {
                 <div className="item-info">
                   {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
                 </div>
-                <button className="remove-button" onClick={() => handleRemove(cartItem)}>
-                  Remove One
-                </button>
+                <button onClick={() => handleRemove(cartItem)}>Remove One</button>
               </li>
             ))}
           </ul>
@@ -91,9 +89,7 @@ const Cart = () => {
       <div className="order-form">
         <h2>Customer Information</h2>
         {!isAuthenticated && (
-          <p className="login-notice">
-            Please sign in to place an order from Phở Sunrise.
-          </p>
+          <p>Please sign in to place an order from Phở Sunrise.</p>
         )}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -131,30 +127,27 @@ const Cart = () => {
           </div>
           {isAuthenticated && (
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label>Email</label>
               <input
                 type="email"
-                id="email"
                 name="email"
                 value={user.email}
                 readOnly
               />
             </div>
           )}
-          <p className="cart-total">Order Subtotal: ${subtotal.toFixed(2)}</p>
-          <p className="cart-hst">HST: ${calculateHST().toFixed(2)}</p>
-          <p className="cart-gst">GST: ${calculateGST().toFixed(2)}</p>
-          <div className="cart-details">
-            <p className="cart-total">Order Total: ${calculateTotal().toFixed(2)}</p>
-            <p className="cart-quantity">Items in Cart: {totalItems}</p>
-          </div>
+          <p>Subtotal: ${subtotal.toFixed(2)}</p>
+          <p>HST: ${calculateHST().toFixed(2)}</p>
+          <p>GST: ${calculateGST().toFixed(2)}</p>
+          <p>Items in Cart: {totalItems}</p>
+          <p>Order Total: ${calculateTotal().toFixed(2)}</p>
           <button type="submit" disabled={!isAuthenticated}>
             Place Order
           </button>
         </form>
       </div>
     </div>
-  );
+  );  
 };
 
 export default Cart;
