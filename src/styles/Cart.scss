@@ -85,8 +85,15 @@
     }
   }
   button[type="submit"] {
-    margin: 20px 0; 
+    margin: 20px 0;
     padding: 40px;
+    font-size: larger;
+  }
+  .cart-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 200px;
     font-size: larger;
   }
 }

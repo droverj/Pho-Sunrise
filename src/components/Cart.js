@@ -3,14 +3,14 @@ import { useCart } from '../components/CartContext';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/Cart.scss';
 
-const Cart = () => {
+const Cart = ({ subtotal, setSubtotal }) => {
   const { cart, removeFromCart } = useCart();
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     telephone: '',
     directions: '',
   });
-  
+
   const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
 
   const handleRemove = (cartItem) => {
@@ -25,11 +25,43 @@ const Cart = () => {
     });
   };
 
+  const calculateSubtotalPrice = () => {
+    const subtotal = cart.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0);
+
+    // Update the subtotal in the parent component CartPage
+    setSubtotal(subtotal);
+    return subtotal;
+  };
+
+  const calculateHST = () => {
+    const subtotal = calculateSubtotalPrice();
+    return subtotal * 0.13; // 13% HST for Ontario
+  };
+
+  const calculateGST = () => {
+    const subtotal = calculateSubtotalPrice();
+    return subtotal * 0.05; // 5% GST for Ontario
+  };
+
+  const calculateTotal = () => {
+    const subtotal = calculateSubtotalPrice();
+    const hst = calculateHST();
+    const gst = calculateGST();
+    return subtotal + hst + gst;
+  };
+
+  // Calculate the quantity of items in shopping cart
+  const calculateQuantity = () => {
+    return cart.reduce((total, cartItem) => total + cartItem.quantity, 0);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Calculate the total price
-    const total = calculateTotalPrice();
+    const subtotal = calculateSubtotalPrice();
+    const total = calculateTotal();
+    const totalQuantity = calculateQuantity();
 
     // Check if the user is authenticated and retrieve their email
     if (isAuthenticated) {
@@ -41,7 +73,9 @@ const Cart = () => {
         telephone: customerInfo.telephone,
         directions: customerInfo.directions,
         cart: cart,
+        subtotal: total,
         total: total,
+        totalQuantity: totalQuantity,
       };
 
       // Perform your order processing logic here
@@ -53,9 +87,6 @@ const Cart = () => {
     }
   };
 
-  const calculateTotalPrice = () => {
-    return cart.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0);
-  };
 
   return (
     <div className="cart">
@@ -130,7 +161,13 @@ const Cart = () => {
               />
             </div>
           )}
-          <p className="cart-total">Order Total: ${calculateTotalPrice().toFixed(2)}</p>
+            <p className="cart-total">Order Subtotal: ${calculateSubtotalPrice().toFixed(2)}</p>
+            <p className="cart-hst">HST: ${calculateHST().toFixed(2)}</p>
+            <p className="cart-gst">GST: ${calculateGST().toFixed(2)}</p>
+          <div className="cart-details">
+            <p className="cart-total">Order Total: ${calculateTotal().toFixed(2)}</p>
+            <p className="cart-quantity">Items in Cart: {calculateQuantity()}</p>
+          </div>
           <button type="submit" disabled={!isAuthenticated}>
             Place Order
           </button>
