@@ -10,6 +10,7 @@ const Cart = () => {
     telephone: '',
     directions: '',
   });
+  
   const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
 
   const handleRemove = (cartItem) => {
@@ -36,6 +37,7 @@ const Cart = () => {
         email: userEmail, // Include the user's email
         telephone: customerInfo.telephone,
         directions: customerInfo.directions,
+        cart: cart,
       };
 
       // Perform your order processing logic here
