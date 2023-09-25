@@ -77,30 +77,31 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-items-container">
-      {cart.length === 0 ? (
-        <div className="empty-cart-container">
-        <h2>Your Shopping Cart is Empty</h2><br />
-        <FontAwesomeIcon icon={faSurprise} />
-        <h3>Browse our menu to begin adding items to your shopping cart.</h3>
-        </div>
-      ) : (
-        <>
-          <ul className="cart-items">
-            {cart.map((cartItem, index) => (
-              <li className="cart-item" key={index}>
-                <div className="item-info">
-                  {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
-                </div>
-                <button onClick={() => handleRemove(cartItem)}>-</button>
-                <button onClick={() => handleAdd(cartItem)}>+</button>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+        {cart.length === 0 ? (
+          <div className="empty-cart-container">
+            <h2>Your Shopping Cart is Empty</h2><br />
+            <FontAwesomeIcon icon={faSurprise} />
+            <h3>Browse our menu to begin adding items to your shopping cart.</h3>
+          </div>
+        ) : (
+          <>
+          <h2 className="cart-items-heading"> Your Items </h2>
+            <ul className="cart-items">
+              {cart.map((cartItem, index) => (
+                <li className="cart-item" key={index}>
+                  <div className="item-info">
+                    {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
+                  </div>
+                  <button onClick={() => handleRemove(cartItem)}>-</button>
+                  <button onClick={() => handleAdd(cartItem)}>+</button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
       <div className="order-form">
-        <h2 className="order-form-title">Enter Your Order Information</h2>
+        <h1 className="order-form-heading">Enter Your Information</h1>
         {!isAuthenticated && (
           <p>Please sign in to place an order from Phở Sunrise.</p>
         )}
@@ -149,15 +150,19 @@ const Cart = () => {
               />
             </div>
           )}
-          <p>Subtotal: ${subtotal.toFixed(2)}</p>
-          <p>HST: ${calculateHST().toFixed(2)}</p>
-          <p>GST: ${calculateGST().toFixed(2)}</p>
-          <p>Items in Cart: {totalItems}</p>
-          <p>Order Total: ${calculateTotal().toFixed(2)}</p>
-          <div className="button-container">
-            <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
-              Place Order
-            </button>
+          <div className="order-details-container">
+            <div className="order-details">
+              <p>Items in Cart: {totalItems}</p>
+              <p>Subtotal: ${subtotal.toFixed(2)}</p>
+              <p>HST: ${calculateHST().toFixed(2)}</p>
+              <p>GST: ${calculateGST().toFixed(2)}</p>
+              <p>Order Total: <b>${calculateTotal().toFixed(2)}</b></p>
+            </div>
+            <div className="button-container">
+              <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
+                Place Order
+              </button>
+            </div>
           </div>
         </form>
       </div>
