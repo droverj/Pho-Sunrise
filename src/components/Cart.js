@@ -62,7 +62,7 @@ const Cart = () => {
         cart: cart,
         subtotal: subtotal.toFixed(2),
         total: total.toFixed(2),
-        totalItems: totalItems,
+        items: totalItems,
       };
 
       // Perform your order processing logic here
@@ -159,7 +159,7 @@ const Cart = () => {
               <p className="order-total">Total: ${calculateTotal().toFixed(2)}</p>
             <div className="button-container">
               <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
-                Place Order
+                Proceed to Checkout
               </button>
             </div>
         </form>
