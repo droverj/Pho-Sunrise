@@ -2,6 +2,7 @@ import React from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
 import menuData from '../menuData.json'; 
+import '../styles/Menu.scss'
 
 const Menu = () => {
   const { addToCart, removeFromCart } = useCart();

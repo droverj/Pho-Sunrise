@@ -1,30 +1,27 @@
-.header {
+body .header {
   background-color: darkred;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   margin-top: 12vh;
-  width: 100%;
   padding: 30px 0;
   margin-bottom: 100px;
+  text-align: center;
 
-  .header-container {
-    text-align: center;
-    .title {
-      font-size: 80px; /* Increase the font size for a very large title */
-      color: white;
-      margin: 0;
-      text-align: center; /* Center the text */
-    }
-    h2 {
-      font-size: 35px;
-      margin: 0;
-    }
-    h3 {
-      font-weight: lighter;
-      font-size: 20px;
-      font-family: Neucha, sans-serif;
-    }
+  .title {
+    font-size: 80px; /* Increase the font size for a very large title */
+    color: white;
+    margin: 0;
+    text-align: center; /* Center the text */
+  }
+  h2 {
+    font-size: 35px;
+    margin: 0;
+  }
+  h3 {
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: Neucha, sans-serif;
   }
 }

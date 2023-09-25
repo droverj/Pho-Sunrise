@@ -1,6 +1,8 @@
+import '../styles/Contact.scss';
+
 const Contact = () => {
   return (
-    <div>
+    <div className="contact">
       Hello Contact
     </div>
   );
