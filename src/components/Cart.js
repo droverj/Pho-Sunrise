@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -7,14 +7,9 @@ import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Cart.scss';
 
 const Cart = () => {
-  const { cart, addToCart, removeFromCart, totalItems, subtotal } = useCart();
-  const [customerInfo, setCustomerInfo] = useState({
-    name: '',
-    telephone: '',
-    directions: '',
-  });
+  const { cart, addToCart, removeFromCart } = useCart();
 
-  const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
+  const { isAuthenticated } = useAuth0();
 
   const handleAdd = (cartItem) => {
     addToCart(cartItem);
@@ -22,57 +17,6 @@ const Cart = () => {
 
   const handleRemove = (cartItem) => {
     removeFromCart(cartItem);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCustomerInfo({
-      ...customerInfo,
-      [name]: value,
-    });
-  };
-
-  const calculateHST = () => {
-    return subtotal * 0.13; // 13% HST for Ontario
-  };
-
-  const calculateGST = () => {
-    return subtotal * 0.05; // 5% GST for Ontario
-  };
-
-  const calculateTotal = () => {
-    const hst = calculateHST();
-    const gst = calculateGST();
-    return subtotal + hst + gst;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const total = calculateTotal();
-
-    // Check if the user is authenticated and retrieve their email
-    if (isAuthenticated) {
-      const userEmail = user.email; // Get user's email
-      // Include userEmail in your form data when submitting
-      const orderData = {
-        name: customerInfo.name,
-        email: userEmail, // Include the user's email
-        telephone: customerInfo.telephone,
-        directions: customerInfo.directions,
-        cart: cart,
-        subtotal: subtotal.toFixed(2),
-        total: total.toFixed(2),
-        items: totalItems,
-      };
-
-      // Perform your order processing logic here
-      console.log("Order Data:", orderData);
-    } else {
-      // Handle the case where the user is not authenticated
-      // Display a message or take appropriate action
-      console.log("User is not authenticated. Please sign in to place an order.");
-    }
   };
 
   return (
