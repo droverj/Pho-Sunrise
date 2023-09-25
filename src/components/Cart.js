@@ -102,75 +102,11 @@ const Cart = () => {
           </>
         )}
       </div>
-      <div className="order-form">
-        <h1 className="order-form-heading">Enter Your Information</h1>
-        {!isAuthenticated && (
-          <p>Please sign in to place an order from Phở Sunrise.</p>
-        )}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={customerInfo.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="telephone">Phone Number</label>
-            <input
-              type="text"
-              id="telephone"
-              name="telephone"
-              value={customerInfo.telephone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="directions">Special Requests</label>
-            <textarea
-              id="directions"
-              name="directions"
-              value={customerInfo.directions}
-              onChange={handleChange}
-              rows="4"
-              placeholder="Any special instructions or directions..."
-            ></textarea>
-          </div>
-          {isAuthenticated && (
-            <div className="form-group">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                value={user.email}
-                readOnly
-              />
-            </div>
-          )}
-          <div className="order-details">
-            <p>Subtotal: ${subtotal.toFixed(2)}</p>
-            <p>HST: ${calculateHST().toFixed(2)}</p>
-            <p>GST: ${calculateGST().toFixed(2)}</p>
-          </div>
-          <p className="order-total">Total: ${calculateTotal().toFixed(2)}</p>
-          <div className="button-container">
-
-            <Link to="/checkout">
-              <button className="place-order-button" disabled={!isAuthenticated}>
-                Proceed to Checkout
-              </button>
-            </Link>
-            {/* <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
-                Proceed to Checkout
-              </button> */}
-          </div>
-        </form>
-      </div>
+      <Link to="/checkout">
+        <button className="place-order-button" disabled={!isAuthenticated}>
+          Proceed to Checkout
+        </button>
+      </Link>
     </div>
   );
 };
