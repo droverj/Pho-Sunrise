@@ -151,20 +151,17 @@ const Cart = () => {
               />
             </div>
           )}
-          <div className="order-details-container">
             <div className="order-details">
-              <p>Items in Cart: {totalItems}</p>
               <p>Subtotal: ${subtotal.toFixed(2)}</p>
               <p>HST: ${calculateHST().toFixed(2)}</p>
               <p>GST: ${calculateGST().toFixed(2)}</p>
-              <p>Order Total: <b>${calculateTotal().toFixed(2)}</b></p>
             </div>
+              <p className="order-total">Total: ${calculateTotal().toFixed(2)}</p>
             <div className="button-container">
               <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
                 Place Order
               </button>
             </div>
-          </div>
         </form>
       </div>
     </div>
