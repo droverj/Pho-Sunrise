@@ -23,6 +23,9 @@ function Navbar() {
           <li>
             <Link to="/menu">Menu</Link>
           </li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
         </div>
         <div className="right-nav">
           <Profile />
