@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Menu from './components/Menu';
 import Checkout from './components/Checkout';
 import Contact from './components/Contact';
-import CartPage from './components/CartPage';
+import Cart from './components/Cart';
 import { CartProvider } from './components/CartContext';
 import './App.scss';
 
@@ -32,7 +32,7 @@ function App() {
           <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route
             path="/cart"
-            element={<CartPage cart={cart} removeFromCart={removeFromCart} />}
+            element={<Cart cart={cart} removeFromCart={removeFromCart} />}
           />
         </Routes>
       </BrowserRouter>
