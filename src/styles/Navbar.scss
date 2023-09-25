@@ -1,13 +1,12 @@
 nav {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   background-color: #333;
   color: #fff;
   position: fixed;
   top: 0; 
-  left: 10px; /* Add left margin */
-  width: calc(100% - 20px); /* Adjust width */
+  left: 10px;
+  width: calc(100% - 20px);
   z-index: 100;
   font-family: Neucha, sans-serif;
   height: 12vh;
@@ -18,7 +17,6 @@ ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: space-around;
 }
 
 li {
@@ -34,3 +32,29 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  // background-color: pink;
+  padding-left: 150px;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  // background-color: orange;
+  width: 70%;
+  padding-right: 150px;
+}
+
+.cart-tracker {
+  margin: 0 20px;
+}
+
+// .login-buttons {
+
+// }
