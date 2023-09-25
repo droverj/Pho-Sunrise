@@ -4,14 +4,13 @@ nav {
   background-color: #333;
   color: #fff;
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 10px;
   width: calc(100% - 20px);
   z-index: 100;
   font-family: Neucha, sans-serif;
   height: 12vh;
 }
-
 
 ul {
   list-style: none;
@@ -49,12 +48,8 @@ a:hover {
   // background-color: orange;
   width: 70%;
   padding-right: 150px;
+
+  .cart-tracker {
+    margin: 0 20px;
+  }
 }
-
-.cart-tracker {
-  margin: 0 20px;
-}
-
-// .login-buttons {
-
-// }

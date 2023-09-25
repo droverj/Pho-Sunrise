@@ -4,9 +4,12 @@ import CartTracker from './CartTracker';
 import LoginButton from './common/Login';
 import LogoutButton from './common/Logout';
 import Profile from './common/Profile';
+import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/Navbar.scss';
 
 function Navbar() {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <nav>
       <ul>
@@ -22,10 +25,9 @@ function Navbar() {
           </li>
         </div>
         <div className="right-nav">
-          <Profile className="profile" />
+          <Profile />
           <CartTracker className="cart-tracker" />
-          <LoginButton />
-          <LogoutButton />
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
       </ul>
     </nav>
