@@ -1,5 +1,6 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import '../../styles/Profile.scss';
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -10,7 +11,7 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div>
+      <div className="profile">
         <p>{user.email}</p>
       </div>
     )
