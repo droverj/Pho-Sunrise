@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Menu from './components/Menu';
+import Checkout from './components/Checkout';
 import Contact from './components/Contact';
 import CartPage from './components/CartPage';
 import Header from './components/common/Header';
@@ -29,6 +30,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
             <Route

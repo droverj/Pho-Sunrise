@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
+import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
@@ -85,7 +86,7 @@ const Cart = () => {
           </div>
         ) : (
           <>
-          <h2 className="cart-items-heading"> Your Items </h2>
+            <h2 className="cart-items-heading"> Your Items </h2>
             <ul className="cart-items">
               {cart.map((cartItem, index) => (
                 <li className="cart-item" key={index}>
@@ -151,17 +152,23 @@ const Cart = () => {
               />
             </div>
           )}
-            <div className="order-details">
-              <p>Subtotal: ${subtotal.toFixed(2)}</p>
-              <p>HST: ${calculateHST().toFixed(2)}</p>
-              <p>GST: ${calculateGST().toFixed(2)}</p>
-            </div>
-              <p className="order-total">Total: ${calculateTotal().toFixed(2)}</p>
-            <div className="button-container">
-              <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
+          <div className="order-details">
+            <p>Subtotal: ${subtotal.toFixed(2)}</p>
+            <p>HST: ${calculateHST().toFixed(2)}</p>
+            <p>GST: ${calculateGST().toFixed(2)}</p>
+          </div>
+          <p className="order-total">Total: ${calculateTotal().toFixed(2)}</p>
+          <div className="button-container">
+
+            <Link to="/checkout">
+              <button className="place-order-button" disabled={!isAuthenticated}>
                 Proceed to Checkout
               </button>
-            </div>
+            </Link>
+            {/* <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
+                Proceed to Checkout
+              </button> */}
+          </div>
         </form>
       </div>
     </div>
