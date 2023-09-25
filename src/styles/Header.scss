@@ -12,10 +12,19 @@
   .header-container {
     text-align: center;
     .title {
-      font-size: 100px; /* Increase the font size for a very large title */
+      font-size: 80px; /* Increase the font size for a very large title */
       color: white;
       margin: 0;
       text-align: center; /* Center the text */
+    }
+    h2 {
+      font-size: 35px;
+      margin: 0;
+    }
+    h3 {
+      font-weight: lighter;
+      font-size: 20px;
+      font-family: Neucha, sans-serif;
     }
   }
 }
