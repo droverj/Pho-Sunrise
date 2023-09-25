@@ -25,16 +25,18 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          <Route
-            path="/cart"
-            element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-          />
-        </Routes>
+        <div className="main-body">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/menu" element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />} />
+            <Route
+              path="/cart"
+              element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+            />
+          </Routes>
+        </div>
       </BrowserRouter>
     </CartProvider>
   );
