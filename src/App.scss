@@ -1,6 +1,11 @@
-body {
+.main-content-container {
+  margin: 0 150px;
   font-family: Neucha, sans-serif;
   h2 {
     font-weight: lighter;
   }
+}
+
+body {
+  margin: 0 10px;
 }

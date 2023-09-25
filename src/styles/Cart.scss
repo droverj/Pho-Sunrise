@@ -1,12 +1,12 @@
 .cart {
   display: flex;
-  margin: 0 150px;
+  // margin: 0 150px;
   .cart-items-heading {
     text-align: center;
   }
 
   .cart-items-container {
-    margin-right: 100px;
+    margin-right: 50px;
     width: 60%;
     background-color: #f5f5f5;
     padding: 30px;
@@ -83,9 +83,10 @@
   }
 
   .place-order-button {
-    padding: 30px;
-    font-size: 2rem;
+    padding: 20px;
+    font-size: 1.7rem;
     position: fixed;
     bottom: 20px;
+    margin-right: 150px;
   }
 }

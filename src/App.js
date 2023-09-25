@@ -25,9 +25,9 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <div>
-          <Navbar />
-          <Header />
+        <Navbar />
+        <Header />
+        <div className="main-content-container">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
