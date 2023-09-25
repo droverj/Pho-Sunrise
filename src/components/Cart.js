@@ -60,8 +60,8 @@ const Cart = () => {
         telephone: customerInfo.telephone,
         directions: customerInfo.directions,
         cart: cart,
-        subtotal: subtotal,
-        total: total,
+        subtotal: subtotal.toFixed(2),
+        total: total.toFixed(2),
         totalItems: totalItems,
       };
 

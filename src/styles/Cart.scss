@@ -74,11 +74,13 @@
   }
 
   .order-form {
-    flex: 1;
+    // flex: 1;
     background-color: #303030;
     color: white;
     padding: 50px;
     margin-top: 30px;
+    height: 100%;
+    width: 45%;
 
     .order-form-heading {
       text-align: center;
