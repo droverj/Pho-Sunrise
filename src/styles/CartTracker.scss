@@ -1,4 +1,10 @@
-.cart-tracker img {
-  width: 50px; /* Adjust the width to your desired size */
-  height: 50px; /* Adjust the height to your desired size */
+.cart-tracker {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  font-weight: lighter;
+  margin-left: 30px;
+  .cart-link {
+    margin: 0 10px;
+  }
 }
