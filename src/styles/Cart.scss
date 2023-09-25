@@ -31,6 +31,16 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px;
+        .cart-item-quantity {
+          font-family: Neucha, sans-serif;
+          margin-left: 25px;
+          padding: 5px 13px;
+          font-size: x-large;
+          font-weight: bold;
+          background-color: white;
+          border: 1px solid black;
+        }
+
 
         .item-info {
           flex-grow: 1;

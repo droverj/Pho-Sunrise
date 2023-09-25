@@ -90,10 +90,11 @@ const Cart = () => {
               {cart.map((cartItem, index) => (
                 <li className="cart-item" key={index}>
                   <div className="item-info">
-                    {cartItem.name} - ${cartItem.price.toFixed(2)} - Quantity: {cartItem.quantity}
+                    {cartItem.name} - ${cartItem.price.toFixed(2)}
                   </div>
                   <button onClick={() => handleRemove(cartItem)}>-</button>
                   <button onClick={() => handleAdd(cartItem)}>+</button>
+                  <div className="cart-item-quantity">{cartItem.quantity}</div>
                 </li>
               ))}
             </ul>
