@@ -12,13 +12,13 @@ const Home = () => {
         </div>
         <h2>Viet-Thai Restaurant</h2>
         <div className='restaurant-details'>
-          <h3>(519) 579 - 2016</h3>
+          <p>(519) 579 - 2016</p>
           <p>|</p>
-          <h3>1400 Ottawa Street South, Kitchener ON</h3>
+          <p>1400 Ottawa Street South, Kitchener ON</p>
           <p>|</p>
-          <h3><a href="/contact">
+          <p><a href="/contact">
             Hours
-          </a></h3>
+          </a></p>
         </div>
       </div>
       <Link to="/menu">
@@ -27,8 +27,8 @@ const Home = () => {
         </button>
       </Link>
       <p>Please inform us of any allergies prior to ordering. Thank you!</p>
-      <p style={{ fontSize: '10px' }}>Some dishes may contain traces of shellfish or peanuts.</p>
-      <p style={{ fontSize: '10px' }}>Prices subject to change without notice.</p>
+      <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.</p>
+      <p style={{ fontSize: '.7rem' }}>Prices subject to change without notice.</p>
     </div>
   );
 }
