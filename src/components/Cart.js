@@ -7,7 +7,7 @@ import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Cart.scss';
 
 const Cart = () => {
-  const { cart, addToCart, removeFromCart, subtotal, totalItems } = useCart();
+  const { cart, addToCart, removeFromCart, subtotal, totalItems, emptyCart } = useCart();
 
   const { isAuthenticated } = useAuth0();
 
@@ -19,10 +19,19 @@ const Cart = () => {
     removeFromCart(cartItem);
   };
 
+  const handleEmptyCart = () => {
+    emptyCart();
+  };
+
   return (
     <div className="cart">
       <div className="cart-page-heading">
         <h1>Review Your Order</h1>
+
+        <button className="empty-cart-button" onClick={handleEmptyCart}>
+          Empty Cart
+        </button>
+
         <div className="cart-page-details">
           <p>Items in Cart: {totalItems}</p>
           <p>Subtotal: <b>${subtotal.toFixed(2)}</b></p>

@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useAuth0 } from '@auth0/auth0-react'; 
 
 const CartContext = createContext();
 
@@ -17,11 +16,14 @@ export const CartProvider = ({ children }) => {
 
   const [cart, setCart] = useState(initialCart);
 
-  const { logout } = useAuth0(); 
-  
+
   const calculateTotalItems = () => {
     const total = cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
     return total;
+  };
+
+  const emptyCart = () => {
+    setCart([]);
   };
 
   const calculateSubtotal = () => {
@@ -61,7 +63,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems: calculateTotalItems(), subtotal: calculateSubtotal() }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems: calculateTotalItems(), subtotal: calculateSubtotal(), emptyCart }}>
       {children}
     </CartContext.Provider>
   );
