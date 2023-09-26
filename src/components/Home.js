@@ -11,8 +11,15 @@ const Home = () => {
           <h1 className="title">Phở Sunrise</h1>
         </div>
         <h2>Viet-Thai Restaurant</h2>
-        <h3>(519) 579 - 2016</h3>
-        <h3>1400 Ottawa Street South, Kitchener ON</h3>
+        <div className='restaurant-details'>
+          <h3>(519) 579 - 2016</h3>
+          <p>|</p>
+          <h3>1400 Ottawa Street South, Kitchener ON</h3>
+          <p>|</p>
+          <h3><a href="/contact">
+            Hours
+          </a></h3>
+        </div>
       </div>
       <Link to="/menu">
         <button className="place-order-button" >
