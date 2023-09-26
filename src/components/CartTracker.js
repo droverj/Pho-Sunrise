@@ -11,7 +11,7 @@ const CartTracker = () => {
   return (
     <div className="cart-tracker">
       <span className="cart-count">{totalItems}</span>
-      <Link to="/cart" className="cart-link">
+      <Link to="/cart">
         <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: 'white' }} size="2x" />
       </Link>
     </div>

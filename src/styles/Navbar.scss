@@ -14,7 +14,7 @@ nav {
   ul {
     display: flex;
     align-items: center;
-    margin: 0 60px;
+    margin: 0 50px;
     padding: 0;
 
     li {
@@ -34,18 +34,16 @@ nav {
     .links {
       display: flex;
       justify-content: space-between;
-      // align-items: center;
       width: 60%;
 
       .home-links {
         display: flex;
-        // border: 3px solid red;
         padding: 2vh 0;
 
         .pho-sunrise-link {
           font-weight: 600;
           font-size: 1.5rem;
-        }
+        }   
 
         .home-icon {
           height: 9vh;
@@ -67,8 +65,6 @@ nav {
       align-items: center;
       font-weight: 200;
       margin-left: 30px;
-      .cart-link {
-      }
     }
   }
 }
