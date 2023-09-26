@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Home.scss';
 import SteamingBowl from '../images/steaming-bowl.png'
 
@@ -9,12 +10,14 @@ const Home = () => {
         <h2>Viet-Thai Restaurant</h2>
         <h3>(519) 579 - 2016</h3>
         <img src={SteamingBowl} alt="steaming bowl icon" />
+        <Link to="/menu">
+          <button className="place-order-button" >
+            Start Ordering
+          </button>
+        </Link>
         <p>Please inform us of any allergies prior to ordering. Thanks!</p>
         <p>Some dishes may contain traces of shellfish and/or peanuts.</p>
         <p>Prices subject to change without notice.</p>
-      </div>
-      <div className="home-container">
-        Hello Home
       </div>
     </div>
   );

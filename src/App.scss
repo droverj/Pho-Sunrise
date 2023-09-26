@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,600&display=swap');
+
 h2 {
   font-weight: lighter;
 }
 
+button {
+  cursor: pointer;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-family: 'Unbounded';
+  background-color: #02054a;
+  color: white;
+  border: 3px solid white;
+}
+
+button:hover {
+  background-color: #000067; /* Change background color on hover */
+}
+
 .main-body {
-  font-family: Neucha, sans-serif;
+  font-family: 'Montserrat';
   margin: 20vh 15vw;
 }
