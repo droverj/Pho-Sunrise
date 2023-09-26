@@ -2,8 +2,13 @@
 
 h2 {
   font-weight: lighter;
+  padding: 15px;
+  margin: 0;
 }
 
+h3 {
+  margin: 15px;
+}
 button {
   cursor: pointer;
   border-radius: 50px;
@@ -11,7 +16,7 @@ button {
   font-family: 'Unbounded';
   background-color: #02054a;
   color: white;
-  border: 3px solid white;
+  border: 3px solid silver;
 }
 
 button:hover {

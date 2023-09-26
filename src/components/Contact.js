@@ -16,7 +16,6 @@ const Contact = () => {
         </p>
         </div>
       </div>
-      Hello Contact
     </div>
   );
 }

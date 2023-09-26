@@ -1,8 +1,22 @@
-  @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Unbounded:wght@200;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Unbounded:wght@200;500;600&display=swap");
 
 .home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
   .header {
+    display: flex;
+    align-items: end;
+  }
+
+  img {
+    height: 120px;
+    width: 100px;
+    padding-bottom: 10px;
+  }
+
+  .header-container {
     background-color: darkred;
     display: flex;
     flex-direction: column;
@@ -11,33 +25,28 @@
     padding: 30px 0;
     text-align: center;
     border: 10px #333 solid;
+  }
 
-    img {
-      height: 120px;
-      width: 100px;
-    }
+  .title {
+    font-size: 80px; /* Increase the font size for a very large title */
+    color: white;
+    margin: 0;
+    text-align: center; /* Center the text */
+  }
 
-    .title {
-      font-size: 80px; /* Increase the font size for a very large title */
-      color: white;
-      margin: 0;
-      text-align: center; /* Center the text */
-    }
+  button {
+    margin: 2rem;
+    padding: 35px;
+    font-size: 1.5rem;
+  }
 
-    button {
-      margin: 2rem;
-      padding: 35px;
-      font-size: 1.5rem;
-    }
-
-    h2 {
-      font-size: 35px;
-      margin: 0;
-    }
-    h3 {
-      font-weight: lighter;
-      font-size: 20px;
-      font-family: Neucha, sans-serif;
-    }
+  h2 {
+    font-size: 35px;
+    margin: 0;
+  }
+  h3 {
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: Neucha, sans-serif;
   }
 }
