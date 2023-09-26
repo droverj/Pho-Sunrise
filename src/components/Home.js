@@ -19,8 +19,8 @@ const Home = () => {
           Start Ordering
         </button>
       </Link>
-      <p>Please inform us of any allergies prior to ordering. Thanks!</p>
-      <p style={{ fontSize: '10px' }}>Some dishes may contain traces of shellfish and/or peanuts.</p>
+      <p>Please inform us of any allergies prior to ordering. Thank you!</p>
+      <p style={{ fontSize: '10px' }}>Some dishes may contain traces of shellfish or peanuts.</p>
       <p style={{ fontSize: '10px' }}>Prices subject to change without notice.</p>
     </div>
   );
