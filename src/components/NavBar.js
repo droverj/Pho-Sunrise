@@ -5,6 +5,7 @@ import LoginButton from './common/Login';
 import LogoutButton from './common/Logout';
 import Profile from './common/Profile';
 import { useAuth0 } from '@auth0/auth0-react';
+import SteamingBowl from '../images/steaming-bowl.png'
 import '../styles/Navbar.scss';
 
 function Navbar() {
@@ -12,11 +13,21 @@ function Navbar() {
 
   return (
     <nav>
+
       <ul>
         <div className="links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+          <div className='home-links'>
+            <li>
+              <Link to="/" >
+                <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
+              </Link>
+            </li>
+            <li className='pho-sunrise-link'>
+              <Link to="/" >
+                Phở Sunrise
+              </Link>
+            </li>
+          </div>
           <li>
             <Link to="/contact">Contact</Link>
           </li>
@@ -30,7 +41,7 @@ function Navbar() {
         <div className="right-nav">
           <Profile />
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-          <CartTracker />
+          <CartTracker className="cart-tracker" />
         </div>
       </ul>
     </nav>

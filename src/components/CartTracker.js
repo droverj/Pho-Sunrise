@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useCart } from './CartContext';
-import '../styles/CartTracker.scss';
-
+// Styling for CartTracker.js included in Navbar.scss
 
 const CartTracker = () => {
   const { totalItems } = useCart();

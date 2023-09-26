@@ -1,45 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,600&display=swap");
+
 nav {
   background-color: #333;
   color: #fff;
   position: fixed;
   top: 0;
   width: calc(100% - 20px);
-  // z-index: 100;
-  font-family: Neucha, sans-serif;
-  height: 12vh;
-}
+  z-index: 100;
+  font-family: "Montserrat";
+  font-weight: 400;
+  height: 15vh;
 
-ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
 
-// li {
-//   margin: 0;
-//   padding: 0;
-// }
+  li {
+    display: flex;
+    align-items: center;
+  }
 
-a {
-  color: #fff;
-  text-decoration: none;
-}
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 
-a:hover {
-  text-decoration: underline;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
-.links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 30%;
-  padding-left: 3vw;
-}
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
 
-.right-nav {
-  display: flex;
-  justify-content: flex-end;
-  width: 70%;
-  padding-right: 3vw;
+    .home-links {
+      display: flex;
+      // border: 3px solid red;
+      padding: 2vh 0;
+
+      .pho-sunrise-link {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+
+      .home-icon {
+        height: 7vh;
+        width: 3vw;
+        padding-bottom: 2vh;
+      }
+    }
+  }
+
+  .right-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+  }
+
+  .cart-tracker {
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+    margin-left: 30px;
+    .cart-link {
+    }
+  }
 }
