@@ -4,7 +4,7 @@ import '../styles/MenuSection.scss';
 import { useCart } from '../components/CartContext';
 
 const MenuSection = ({ section }) => {
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart } = useCart();
 
   if (!section) {
     return null;
@@ -20,7 +20,6 @@ const MenuSection = ({ section }) => {
               key={index}
               item={item}
               addToCart={addToCart}
-              removeFromCart={removeFromCart}
             />
           ))}
         </div>

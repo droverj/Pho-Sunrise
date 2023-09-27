@@ -5,7 +5,7 @@ import menuData from '../menuData.json';
 import '../styles/Menu.scss'
 
 const Menu = () => {
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <div className="menu">
@@ -15,7 +15,6 @@ const Menu = () => {
             key={index}
             section={section}
             addToCart={(item, id) => addToCart(item, id)}
-            removeFromCart={removeFromCart}
           />
         ))}
       </div>

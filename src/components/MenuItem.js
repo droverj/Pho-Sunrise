@@ -2,7 +2,7 @@ import React from 'react';
 import { useCart } from '../components/CartContext';
 
 const MenuItem = ({ item }) => {
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <div className="menu-item">
@@ -10,7 +10,6 @@ const MenuItem = ({ item }) => {
       <span>${item.price.toFixed(2)}</span>
       <div className="item-actions">
         <button onClick={() => addToCart(item)}>+</button>
-        <button onClick={() => removeFromCart(item)}>−</button>
       </div>
     </div>
   );
