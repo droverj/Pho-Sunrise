@@ -18,8 +18,12 @@ const Contact = () => {
 
         <p className="socials">Connect with us on socials</p>
         <div className='social-icons'>
+        <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
         <img src={InstagramIcon} alt="Instagram Icon" />
+        </a>
+        <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
         <img src={FacebookIcon} alt="Facebook Icon" />
+        </a>
         </div>
       </div>
 
