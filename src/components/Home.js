@@ -18,23 +18,18 @@ const Home = () => {
           <p>|</p>
           <p><a href="/contact">Hours</a></p>
         </div>
-        
+
         <span>Offering Dine-In, Take-Out and (
-        <a href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south" target="_blank" rel="noopener noreferrer">SkipTheDishes</a>
-         ) Delivery</span>
-
-        {/* <div className='restaurant-details'>
-          <p>Dine-In</p>
-          <p>Take-Out</p>
-          <p>
-            <a href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south" target="_blank" rel="noopener noreferrer">SkipTheDishes</a>
-            </p>
-        </div> */}
-
+          <a
+            href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
+            target="_blank"
+            rel="noopener noreferrer">
+            SkipTheDishes</a>
+          ) Delivery</span>
       </div>
       <Link to="/menu">
         <button className="place-order-button" >
-          Start Ordering
+          Order Takeout
         </button>
       </Link>
       <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.</p>
