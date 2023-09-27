@@ -75,6 +75,7 @@ const Checkout = () => {
   return (
     <div className="order-form">
     <h1 className="order-form-heading">Enter Your Information</h1>
+    <p>Please inform us of any allergies prior to ordering. Thank you!</p>
     {!isAuthenticated && (
       <p>Please sign in to place an order from Phở Sunrise.</p>
     )}
@@ -109,7 +110,7 @@ const Checkout = () => {
           value={customerInfo.directions}
           onChange={handleChange}
           rows="4"
-          placeholder="Any special instructions or directions..."
+          placeholder="Any allergies or special instructions..."
         ></textarea>
       </div>
       {isAuthenticated && (

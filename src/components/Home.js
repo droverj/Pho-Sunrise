@@ -16,17 +16,27 @@ const Home = () => {
           <p>|</p>
           <p>1400 Ottawa Street South, Kitchener ON</p>
           <p>|</p>
-          <p><a href="/contact">
-            Hours
-          </a></p>
+          <p><a href="/contact">Hours</a></p>
         </div>
+        
+        <span>Offering Dine-In, Take-Out and (
+        <a href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south" target="_blank" rel="noopener noreferrer">SkipTheDishes</a>
+         ) Delivery</span>
+
+        {/* <div className='restaurant-details'>
+          <p>Dine-In</p>
+          <p>Take-Out</p>
+          <p>
+            <a href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south" target="_blank" rel="noopener noreferrer">SkipTheDishes</a>
+            </p>
+        </div> */}
+
       </div>
       <Link to="/menu">
         <button className="place-order-button" >
           Start Ordering
         </button>
       </Link>
-      <p>Please inform us of any allergies prior to ordering. Thank you!</p>
       <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.</p>
       <p style={{ fontSize: '.7rem' }}>Prices subject to change without notice.</p>
     </div>
