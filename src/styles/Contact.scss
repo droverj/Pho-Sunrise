@@ -13,17 +13,17 @@
     background-color: darkred;
     color: white;
     border: 10px #333 solid;
-    
+
     .header {
       display: flex;
       align-items: flex-end;
-      
+
       img {
         height: 15vh;
         width: 7vw;
         padding-bottom: 10px;
       }
-      
+
       .title {
         color: white;
         margin: 0;
@@ -31,69 +31,79 @@
         text-align: center;
       }
     }
-    
-    .contact-container {
-      display: flex;
-      align-self: flex-start;
-      width: 50%;
-      margin-left: 30px;
-      // background-color: purple;
+  }
 
-      li {
-        padding: 10px 0;
+  .contact-container {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // text-align: center;
+    margin-top: 5vh;
+    // padding: 30px 0;
+    background-color: darkred;
+    color: white;
+    border: 3px #333 solid;
+    // border-top: 0;
+    width: 50%;
+
+    li {
+      padding: 10px 0;
+    }
+
+    .restaurant-details {
+      text-align: start;
+      // width: 100%;
+      // margin-top: 3vh;
+      // background-color: lightblue;
+
+      .contact-subtitle {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.7rem;
+        background-color: #333;
+        font-weight: 600;
+        text-transform: uppercase;
+        // margin: 3vh 0;
+        padding-right: 65%;
+        margin: 0;
       }
 
-      .restaurant-details {
-        text-align: start;
-        width: 100%;
-        margin-top: 3vh;
+      .contact-details-container {
+        display: flex;
+        justify-content: space-around;
         // background-color: lightblue;
 
-        .contact-subtitle {
-          width: 100%;
-          font-size: 1.7rem;
-          text-align: center;
-          background-color: #333;
-          font-weight: 200;
-          text-transform: uppercase;
-          margin: 3vh 0;
-        }
-
-        .contact-details-container {
+        .contact-details-label {
           display: flex;
-          justify-content: space-between;
-          // background-color: lightblue;
-
-          .contact-details-label {
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            width: 35%;
-            padding: 0;
-            // background-color: pink;
-          }
-          .contact-details-info {
-            width: 53%;
-            // background-color: brown;
-          }
+          flex-direction: column;
+          align-items: end;
+          width: 30%;
+          padding: 0;
+          // background-color: pink;
         }
+        .contact-details-info {
+          width: 55%;
+          padding: 0;
+          // background-color: brown;
+        }
+      }
 
-        .hours-container {
+      .hours-container {
+        display: flex;
+        justify-content: space-around;
+        // background-color: teal;
+        .days {
           display: flex;
-          justify-content: space-between;
-          // background-color: teal;
-          .days {
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            width: 35%;
-            padding: 0;
-            // background-color: aqua;
-          }
-          .times {
-            width: 53%;
-            // background-color: skyblue;
-          }
+          flex-direction: column;
+          align-items: end;
+          width: 30%;
+          padding: 0;
+          // background-color: aqua;
+        }
+        .times {
+          width: 55%;
+          padding: 0;
+          // background-color: skyblue;
         }
       }
     }

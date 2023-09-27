@@ -13,8 +13,9 @@ const Contact = () => {
         <h2>Viet-Thai Restaurant</h2>
 
         <p>Facebook Instagram</p>
-        <div className='contact-container'>
+        </div>
 
+        <div className='contact-container'>
           <div className='restaurant-details'>
             <p className='contact-subtitle'>Contact</p>
             <div className='contact-details-container'>
@@ -52,7 +53,6 @@ const Contact = () => {
                 <li>11:00AM - 9:00PM</li>
               </ul>
             </div>
-          </div>
         </div>
       </div>
     </div>
