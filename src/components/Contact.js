@@ -1,5 +1,6 @@
 import '../styles/Contact.scss';
 import SteamingBowl from '../images/steaming-bowl.png'
+import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg'
 
 const Contact = () => {
   return (
@@ -13,8 +14,13 @@ const Contact = () => {
         <h2>Viet-Thai Restaurant</h2>
 
         <p>Facebook Instagram</p>
-        </div>
+      </div>
 
+      <div className='contact-body-container'>
+        <div className='right-side-contact-body'>
+          <p>Call to book your reservation</p>
+          <img src={PhoSunrisePlates} alt="Pho Sunrise Plates" />
+        </div>
         <div className='contact-container'>
           <div className='restaurant-details'>
             <p className='contact-subtitle'>Contact</p>
@@ -53,6 +59,7 @@ const Contact = () => {
                 <li>11:00AM - 9:00PM</li>
               </ul>
             </div>
+          </div>
         </div>
       </div>
     </div>

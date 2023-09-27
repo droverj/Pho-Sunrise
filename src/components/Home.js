@@ -19,7 +19,7 @@ const Home = () => {
           <p><a href="/contact">Hours</a></p>
         </div>
 
-        <span>Offering Dine-In, Take-Out and (
+        <span>Offering Dine-in, Takeout and (
           <a
             href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
             target="_blank"
