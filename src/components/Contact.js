@@ -1,6 +1,8 @@
 import '../styles/Contact.scss';
-import SteamingBowl from '../images/steaming-bowl.png'
-import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg'
+import SteamingBowl from '../images/steaming-bowl.png';
+import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
+import InstagramIcon from '../images/Instagram_Glyph_Gradient.png';
+import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 
 const Contact = () => {
   return (
@@ -13,7 +15,12 @@ const Contact = () => {
 
         <h2>Viet-Thai Restaurant</h2>
 
-        <p>Facebook Instagram</p>
+
+        <p className="socials">Connect with us on socials</p>
+        <div className='social-icons'>
+        <img src={InstagramIcon} alt="Instagram Icon" />
+        <img src={FacebookIcon} alt="Facebook Icon" />
+        </div>
       </div>
 
       <div className='contact-body-container'>
