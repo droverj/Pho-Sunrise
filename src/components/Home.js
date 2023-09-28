@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import '../styles/Home.scss';
 import SteamingBowl from '../images/steaming-bowl.png'
+import '../styles/Home.scss';
 
 const Home = () => {
   return (

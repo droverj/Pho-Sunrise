@@ -1,0 +1,15 @@
+/* Add this to your CSS file */
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 24px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.star:hover {
+  color: gold;
+}
