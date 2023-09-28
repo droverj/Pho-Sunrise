@@ -29,9 +29,9 @@ const ReviewForm = ({ onSubmit }) => {
   return (
     <div>
       <h2>Leave a Review</h2>
+      <p>Hover over the stars to rate, and click to submit your rating.</p>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Rating:</label>
           <StarRating starCount={5} rating={rating} onRatingChange={handleRatingChange} />
         </div>
         <div>

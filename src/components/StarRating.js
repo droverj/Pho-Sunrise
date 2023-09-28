@@ -6,9 +6,6 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
 
   return (
     <div>
-      <h2>Rate this restaurant</h2>
-      <p>Hover over the stars to rate, and click to submit your rating.</p>
-
       <div className="star-rating">
         {[...Array(starCount)].map((_, index) => (
           <Star
