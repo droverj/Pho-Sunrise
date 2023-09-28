@@ -27,8 +27,8 @@ const Reviews = ({ reviews }) => {
       <ul>
         {reversedReviews.map((review) => (
           <li key={review.id}>
-            <p>{review.comment}</p>
-            <p>Rating: {review.rating}</p>
+            <p>"{review.comment}"</p>
+            <p>{review.rating} stars</p>
           </li>
         ))}
       </ul>
