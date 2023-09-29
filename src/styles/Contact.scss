@@ -107,13 +107,33 @@
   .map-and-reviews-container {
     display: flex;
     justify-content: space-between;
+
     .reviews-container {
       margin-top: 5vh;
       width: 60%;
       background-color: darkred;
       border: 3px #333 solid;
       color: white;
+
+      .review-form-subheadings {
+        background-color: #333;
+      }
+
+      .customer-review {
+        // located in Reviews.js
+        background-color: lightcoral;
+        padding: 10px 0;
+        p {
+          font-size: 30px;
+        }
+      }
+
+      h3 {
+        font-size: 15px;
+        background-color: lightgreen;
+      }
     }
+
     iframe {
       margin-top: 5vh;
       width: 40%;
@@ -121,4 +141,32 @@
       height: 400px;
     }
   }
+
+  .review-form {
+    background-color: pink;
+    textarea {
+      background-color: yellow;
+    }
+    label {
+      background-color: blue;
+    }
+  
+    .star-rating {
+      background-color: orange;
+      display: flex;
+      align-items: center;
+    }
+  
+    .star {
+      background-color: skyblue;
+      font-size: 24px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+  
+    .star:hover {
+      color: gold;
+    }
+  }
+  
 }

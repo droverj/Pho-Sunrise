@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import StarRating from './StarRating';
+import '../styles/Contact.scss';
+
 
 const ReviewForm = ({ onSubmit }) => {
   const [rating, setRating] = useState(0);
@@ -59,9 +61,7 @@ const ReviewForm = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <h2>Leave a Review</h2>
-      <p>Hover over the stars to rate, and click to submit your rating.</p>
+    <div className='review-form'>
       <form onSubmit={handleSubmit}>
         <div>
           <StarRating starCount={5} rating={rating} onRatingChange={handleRatingChange} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
 
@@ -8,12 +9,12 @@ const Reviews = ({ reviews }) => {
     {
       id: 1,
       rating: 5,
-      comment: 'Great food and service!',
+      comment: 'Great food and service! -R ',
     },
     {
       id: 2,
       rating: 4,
-      comment: 'Good place, loved the pho!',
+      comment: 'Good place, loved the pho! - R',
     },
     ...reviews, // Include reviews from props
   ];
@@ -23,7 +24,6 @@ const Reviews = ({ reviews }) => {
 
   return (
     <div className='customer-review'>
-      <h2>Customer Reviews</h2>
       <ul>
         {reversedReviews.map((review) => (
           <li key={review.id}>
