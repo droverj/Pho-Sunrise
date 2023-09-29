@@ -130,7 +130,7 @@
     /*
     Section B - Left Side: Headings, Customer Reviews, Review Form, Star and Star Rating
     */
-    .reviews-container {
+    .review-section-container {
       // Headings, Reviews, Direction, Star, Star Rating, Review Form
       margin-top: 5vh;
       width: 60%;
@@ -143,13 +143,20 @@
         background-color: #333;
       }
 
-      .customer-review {
-        // Individual customer reviews
-        // HTML located in Reviews.js
-        background-color: lightcoral;
-        padding: 10px 0;
-        p {
-          font-size: 30px;
+      .reviews-container {
+        // Container for all reviews from customers
+        max-height: 300px; /* Set the maximum height */
+        overflow-y: auto; /* Enable vertical scrolling when content overflows */
+        border: 1px solid #ccc;
+        .customer-review {
+          // Individual customer reviews
+          // HTML located in Reviews.js
+          background-color: lightcoral;
+          padding: 10px 0;
+          p {
+            font-size: 30px;
+            border-bottom: 1px solid #ccc;
+          }
         }
       }
 

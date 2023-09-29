@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Star from './Star';
-// import '../styles/Star.scss';
 
 const StarRating = ({ starCount, rating, onRatingChange }) => {
   const [hoveredRating, setHoveredRating] = useState(0);

@@ -79,11 +79,13 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      
+
       <div className='map-and-reviews-container'>
-        <div className='reviews-container'>
+        <div className='review-section-container'>
           <h2 className='review-form-subheadings'>Customer Reviews - C</h2>
+          <div className='reviews-container'>
           <Reviews reviews={allReviews} />
+          </div>
           <h2 className='review-form-subheadings'>Leave a Review - C </h2>
           <h3>Hover over the stars to rate, and click to submit your rating. - C </h3>
           <ReviewForm onSubmit={handleReviewSubmit} />
