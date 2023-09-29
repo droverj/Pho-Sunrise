@@ -24,19 +24,19 @@ const ReviewForm = ({ onSubmit }) => {
 
     // Check if both rating and comment are missing
     if (rating === 0 && comment.trim().length === 0) {
-      setValidationError('Please select a rating and enter a comment to submit your review. Thank you!');
+      setValidationError('Please select a rating and include a comment to submit your review. Thank you!');
       return;
     }
 
     // Check if only rating is missing
     if (rating === 0) {
-      setValidationError('Please select a rating.');
+      setValidationError('Please select a rating for your review. Thank you!');
       return;
     }
 
     // Check if only comment is missing
     if (comment.trim().length === 0) {
-      setValidationError('Please add a comment to your review.');
+      setValidationError('Please include a comment to submit your review. Thank you!');
       return;
     }
 

@@ -18,7 +18,6 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
           />
         ))}
       </div>
-
       {rating > 0 && <p>You rated this restaurant {rating} stars.</p>}
     </div>
   );

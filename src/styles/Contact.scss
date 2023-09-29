@@ -104,9 +104,21 @@
     }
   }
 
-  iframe {
-    margin-top: 5vh;
-    width: 50%;
-    height: 400px;
+  .map-and-reviews-container {
+    display: flex;
+    justify-content: space-between;
+    .reviews-container {
+      margin-top: 5vh;
+      width: 60%;
+      background-color: darkred;
+      border: 3px #333 solid;
+      color: white;
+    }
+    iframe {
+      margin-top: 5vh;
+      width: 40%;
+      margin-left: 2.5%;
+      height: 400px;
+    }
   }
 }

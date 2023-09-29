@@ -22,7 +22,7 @@ const Reviews = ({ reviews }) => {
   const reversedReviews = [...allReviews].reverse();
 
   return (
-    <div>
+    <div className='customer-review'>
       <h2>Customer Reviews</h2>
       <ul>
         {reversedReviews.map((review) => (
