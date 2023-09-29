@@ -92,7 +92,7 @@ const Contact = () => {
             <h2 className='review-form-subheadings'>Leave a Review</h2>
           ) : (
             <h2 className='review-form-subheadings'>
-            <a href="#" onClick={() => loginWithRedirect()}>Sign In</a> &nbsp;To Leave a Review
+            <a href="#" onClick={() => loginWithRedirect()}>Sign In</a> To Leave a Review
           </h2>
           )}
           <h3>Hover over the stars to rate, and click to submit your rating. - C </h3>
