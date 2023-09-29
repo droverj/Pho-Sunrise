@@ -18,7 +18,8 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
           />
         ))}
       </div>
-      {rating > 0 && <p>You rated this restaurant {rating} stars.</p>}
+      {rating > 0 && <p>You rated Phở Sunrise {rating} stars. <br /> Please tell us more about your experience.</p>
+      }
     </div>
   );
 };

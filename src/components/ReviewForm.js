@@ -74,7 +74,7 @@ const ReviewForm = ({ onSubmit }) => {
             rows="4"
             cols="50"
             placeholder="Write your review here..."
-            maxLength={maxCommentLength} // Limit the comment length
+            maxLength={maxCommentLength}
           />
         </div>
         {validationError && <p className="validation-error">{validationError}</p>}
