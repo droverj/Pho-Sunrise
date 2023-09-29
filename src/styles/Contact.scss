@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
 .contact {
-  /* 
-  Section A of contact Page: Contact Details, Retaurant Hours, Reservation Direction, Food Image, Socials Container
+
+  /*
+  /////////////////////////////////////////////////////////////////////////////////////////
+  Section A of Contact Page: 
+  Contact Details, Retaurant Hours, Reservation Direction, Food Image, Socials Container
+  /////////////////////////////////////////////////////////////////////////////////////////
   */
+
   .main-container {
     // Main Container to separate left/right of Section A
     display: flex;
@@ -119,9 +126,14 @@
     }
   }
 
-  /* 
-  Section B of Contact Page: Customer Reviews, Review Form, Google Map
+
+  /*
+  /////////////////////////////////////////////////////////////////////////////////////////
+  Section B of Contact Page: 
+  Customer Reviews, Review Form, Google 
+  /////////////////////////////////////////////////////////////////////////////////////////
   */
+
   .map-and-reviews-container {
     // Main container to separate left/right for Section B
     display: flex;
@@ -134,20 +146,19 @@
       // Headings, Reviews, Direction, Star, Star Rating, Review Form
       margin-top: 5vh;
       width: 60%;
-      background-color: darkred;
       border: 3px #333 solid;
       color: white;
 
       .review-form-subheadings {
-        // display: flex;
         text-align: center;
-        // justify-content: flex-end;
         font-size: 1.5rem;
         background-color: #333;
         font-weight: 300;
         text-transform: uppercase;
-        // padding-right: 65%;
         margin: 0;
+        a {
+          font-weight: 500;
+        }
       }
 
       .reviews-container {
@@ -158,10 +169,12 @@
         .customer-review {
           // Individual customer reviews
           // HTML located in Reviews.js
-          background-color: lightcoral;
+          background-color: whitesmoke;
+          color: black;
           padding: 10px 0;
           p {
-            font-size: 30px;
+            font-family: 'Klee One';
+            font-size: 20px;
             border-bottom: 1px solid #ccc;
           }
         }
@@ -199,6 +212,16 @@
 
       .star:hover {
         color: gold;
+      }
+    }
+    
+    .logged-out-review-form {
+      // Alternative HTML/CSS for ReviewForm when user is not logged in
+      text-align: center;
+      height: 55%;
+      p {
+        color: black;
+        margin: 40px 0;
       }
     }
 

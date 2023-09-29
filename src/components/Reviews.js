@@ -8,12 +8,12 @@ const Reviews = ({ reviews }) => {
     {
       id: 1,
       rating: 5,
-      comment: 'Great food and service! -R ',
+      comment: 'Great food and service!',
     },
     {
       id: 2,
       rating: 4,
-      comment: 'Good place, loved the pho! - R',
+      comment: 'Good place, loved the pho!',
     },
     ...reviews, // Include reviews from props
   ];
@@ -26,7 +26,7 @@ const Reviews = ({ reviews }) => {
       <ul>
         {reversedReviews.map((review) => (
           <li key={review.id}>
-            <p>"{review.comment}"</p>
+            <p>"{review.comment}"</p> &nbsp;
             <p>{review.rating} stars</p>
           </li>
         ))}
