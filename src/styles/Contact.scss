@@ -139,8 +139,14 @@
       color: white;
 
       .review-form-subheadings {
-        // Customer Reviews and Leave a Review
+        display: flex;
+        // justify-content: flex-end;
+        font-size: 1.5rem;
         background-color: #333;
+        font-weight: 300;
+        text-transform: uppercase;
+        // padding-right: 65%;
+        margin: 0;
       }
 
       .reviews-container {

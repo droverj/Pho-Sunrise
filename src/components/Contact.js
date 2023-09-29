@@ -84,15 +84,15 @@ const Contact = () => {
 
       <div className='map-and-reviews-container'>
         <div className='review-section-container'>
-          <h2 className='review-form-subheadings'>Customer Reviews - C</h2>
+          <h2 className='review-form-subheadings'>Customer Reviews</h2>
           <div className='reviews-container'>
             <Reviews reviews={allReviews} />
           </div>
           {isAuthenticated ? (
-            <h2 className='review-form-subheadings'>Leave a Review - C </h2>
+            <h2 className='review-form-subheadings'>Leave a Review</h2>
           ) : (
             <h2 className='review-form-subheadings'>
-            Please <a href="#" onClick={() => loginWithRedirect()}>Sign In</a> To Leave a Review - C
+            <a href="#" onClick={() => loginWithRedirect()}>Sign In</a> &nbsp;To Leave a Review
           </h2>
           )}
           <h3>Hover over the stars to rate, and click to submit your rating. - C </h3>
