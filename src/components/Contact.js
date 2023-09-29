@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
@@ -9,6 +10,7 @@ import '../styles/Contact.scss';
 const Contact = () => {
   const [allReviews, setAllReviews] = useState([]);
 
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   const handleReviewSubmit = (newReview) => {
     // Create a unique ID for the new review (you can use a library like uuid)
@@ -84,9 +86,15 @@ const Contact = () => {
         <div className='review-section-container'>
           <h2 className='review-form-subheadings'>Customer Reviews - C</h2>
           <div className='reviews-container'>
-          <Reviews reviews={allReviews} />
+            <Reviews reviews={allReviews} />
           </div>
-          <h2 className='review-form-subheadings'>Leave a Review - C </h2>
+          {isAuthenticated ? (
+            <h2 className='review-form-subheadings'>Leave a Review - C </h2>
+          ) : (
+            <h2 className='review-form-subheadings'>
+            Please <a href="#" onClick={() => loginWithRedirect()}>Sign In</a> To Leave a Review - C
+          </h2>
+          )}
           <h3>Hover over the stars to rate, and click to submit your rating. - C </h3>
           <ReviewForm onSubmit={handleReviewSubmit} />
         </div>
