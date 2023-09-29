@@ -22,8 +22,8 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      <div className='main-container'>
 
+      <div className='main-container'>
         <div className='details-container'>
           <p className='contact-subheading'>Contact</p>
           <div className='details-subcontainer'>
@@ -62,7 +62,6 @@ const Contact = () => {
             </ul>
           </div>
         </div>
-
         <div className='right-side-contact-body'>
           <p>Call to book your reservation</p>
           <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
@@ -79,8 +78,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
       </div>
+      
       <div className='map-and-reviews-container'>
         <div className='reviews-container'>
           <h2 className='review-form-subheadings'>Customer Reviews - C</h2>

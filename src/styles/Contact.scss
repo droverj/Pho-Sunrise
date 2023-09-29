@@ -1,7 +1,16 @@
 .contact {
+  /* 
+  Section A of contact Page: Contact Details, Retaurant Hours, Reservation Direction, Food Image, Socials Container
+  */
   .main-container {
+    // Main Container to separate left/right of Section A
     display: flex;
+
+    /*
+  Section A - Left Side: Contact Details and Store Hours 
+  */
     .details-container {
+      // Contact and Hours
       background-color: darkred;
       color: white;
       border: 3px #333 solid;
@@ -12,6 +21,7 @@
       }
 
       .contact-subheading {
+        // Contact Heading, Hours Heading
         display: flex;
         justify-content: flex-end;
         font-size: 1.7rem;
@@ -23,9 +33,9 @@
       }
 
       .details-subcontainer {
+        // Container to separate labels from information
         display: flex;
         justify-content: space-around;
-        // background-color: lightblue;
 
         .details-label {
           display: flex;
@@ -33,25 +43,26 @@
           align-items: flex-end;
           width: 30%;
           padding: 0;
-          // background-color: pink;
         }
         .details {
           width: 55%;
           padding: 0;
           font-weight: 200;
-          // background-color: brown;
         }
       }
     }
 
+    /* 
+   Section A - Right Side: Reservation Direction, Food Image, Socials Container
+    */
     .right-side-contact-body {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       width: 50%;
-      // background-color: blue;
 
       p {
+        // Reservation
         background-color: #333;
         font-size: 1.5rem;
         font-weight: 200;
@@ -63,11 +74,14 @@
         margin-top: 0;
         width: 95%;
       }
+
       .plates-img {
+        // Food Image
         width: 95%;
       }
 
       .socials-container {
+        // Socials Container: Website, Social Media Icons
         display: flex;
         align-items: center;
         background-color: #333;
@@ -87,6 +101,7 @@
         }
 
         p {
+          // Connect With Us
           display: flex;
           justify-content: flex-end;
           text-transform: uppercase;
@@ -104,11 +119,19 @@
     }
   }
 
+  /* 
+  Section B of Contact Page: Customer Reviews, Review Form, Google Map
+  */
   .map-and-reviews-container {
+    // Main container to separate left/right for Section B
     display: flex;
     justify-content: space-between;
 
+    /*
+    Section B - Left Side: Headings, Customer Reviews, Review Form, Star and Star Rating
+    */
     .reviews-container {
+      // Headings, Reviews, Direction, Star, Star Rating, Review Form
       margin-top: 5vh;
       width: 60%;
       background-color: darkred;
@@ -116,11 +139,13 @@
       color: white;
 
       .review-form-subheadings {
+        // Customer Reviews and Leave a Review
         background-color: #333;
       }
 
       .customer-review {
-        // located in Reviews.js
+        // Individual customer reviews
+        // HTML located in Reviews.js
         background-color: lightcoral;
         padding: 10px 0;
         p {
@@ -129,44 +154,49 @@
       }
 
       h3 {
+        // Directions for how to rate
         font-size: 15px;
         background-color: lightgreen;
       }
     }
 
+    .review-form {
+      // Review form including stars for rating
+      background-color: pink;
+      textarea {
+        background-color: yellow;
+      }
+      label {
+        background-color: blue;
+      }
+
+      .star-rating {
+        background-color: orange;
+        display: flex;
+        align-items: center;
+      }
+
+      .star {
+        background-color: skyblue;
+        font-size: 24px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+
+      .star:hover {
+        color: gold;
+      }
+    }
+
+    /*
+    Section B - Right Side: Map
+    */
     iframe {
+      // Google Map Image
       margin-top: 5vh;
       width: 40%;
       margin-left: 2.5%;
       height: 400px;
     }
   }
-
-  .review-form {
-    background-color: pink;
-    textarea {
-      background-color: yellow;
-    }
-    label {
-      background-color: blue;
-    }
-  
-    .star-rating {
-      background-color: orange;
-      display: flex;
-      align-items: center;
-    }
-  
-    .star {
-      background-color: skyblue;
-      font-size: 24px;
-      margin-right: 5px;
-      cursor: pointer;
-    }
-  
-    .star:hover {
-      color: gold;
-    }
-  }
-  
 }
