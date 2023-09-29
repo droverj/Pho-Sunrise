@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
-
   // Combine the mock reviews with the reviews from props
   const allReviews = [
     // Add more mock reviews here if needed
