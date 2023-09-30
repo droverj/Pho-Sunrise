@@ -19,6 +19,16 @@ const Reviews = ({ reviews }) => {
       rating: 1,
       comment: 'Absolutely mediocre.',
     },
+    {
+      id: 4,
+      rating: 5,
+      comment: 'This is a mock review with a 5 stars rating that is the max character limit in length. This review is being included for styling purposes :)',
+    },
+    {
+      id: 5,
+      rating: 1,
+      comment: 'This is a mock review with a 1 star rating that is the max character limit in length. This review is being included for styling purposes. :)',
+    },
     ...reviews, // Include reviews from props
   ];
 
