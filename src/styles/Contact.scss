@@ -224,6 +224,20 @@
       // Alternative HTML/CSS for ReviewForm when user is not logged in
       text-align: center;
       height: 55%;
+      h2 {
+        .review-sign-in {
+          font-size: 1.5rem;
+          font-weight: 300;
+          text-transform: uppercase;
+          color: white;
+          border: none;
+          background: none;
+          cursor: pointer;
+        }
+        .review-sign-in:hover {
+          text-decoration: underline;
+        }
+      }
       p {
         color: black;
         margin: 40px 0;
