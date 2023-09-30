@@ -2,9 +2,8 @@ import React from 'react';
 import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
-  // Combine the mock reviews with the reviews from props
   const allReviews = [
-    // Add more mock reviews here if needed
+    // Mock Reviews
     {
       id: 1,
       rating: 5,
@@ -15,6 +14,11 @@ const Reviews = ({ reviews }) => {
       rating: 4,
       comment: 'Good place, loved the pho!',
     },
+    {
+      id: 3,
+      rating: 1,
+      comment: 'Absolutely mediocre.',
+    },
     ...reviews, // Include reviews from props
   ];
 
@@ -23,21 +27,17 @@ const Reviews = ({ reviews }) => {
 
   // Function to generate a string of stars based on the rating
   const generateStars = (rating) => {
-    const starSymbols = '★★★★★'; // Unicode stars
+    const starSymbols = '★★★★★';
     return starSymbols.slice(0, rating);
   };
 
   return (
-    <div className='customer-review'>
+    <div>
       <ul>
         {reversedReviews.map((review) => (
           <li key={review.id}>
             <p>"{review.comment}"</p> &nbsp;
-            {review.rating > 1 ? (
-              <p>{generateStars(review.rating)} {review.rating} stars</p>
-            ) : (
-              <p>{generateStars(review.rating)} {review.rating} star</p>
-            )}
+            <p className='submitted-review-stars'>{generateStars(review.rating)}</p>
           </li>
         ))}
       </ul>

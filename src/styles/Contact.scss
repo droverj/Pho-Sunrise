@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Klee+One&display=swap");
 
 .contact {
-
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section A of Contact Page: 
@@ -126,7 +125,6 @@
     }
   }
 
-
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section B of Contact Page: 
@@ -163,20 +161,27 @@
 
       .reviews-container {
         // Container for all reviews from customers
-        max-height: 300px; /* Set the maximum height */
-        overflow-y: auto; /* Enable vertical scrolling when content overflows */
+        max-height: 200px;
+        overflow-y: auto;
         border: 1px solid #ccc;
-        .customer-review {
-          // Individual customer reviews
-          // HTML located in Reviews.js
-          background-color: whitesmoke;
-          color: black;
-          padding: 10px 0;
-          p {
-            font-family: 'Klee One';
-            font-size: 20px;
-            border-bottom: 1px solid #ccc;
-          }
+        background-color: whitesmoke;
+        color: black;
+        padding-top: 10px;
+
+        p {
+          font-family: "Klee One";
+          font-size: 1.1rem;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 30px;
+          margin-bottom: 15px;
+        }
+        .submitted-review-stars {
+          display: flex;
+          align-self: flex-start;
+          color: gold;
+          font-size: 0.8rem;
+          border: none;
+          padding-left: 5px;
         }
       }
 
@@ -214,7 +219,7 @@
         color: gold;
       }
     }
-    
+
     .logged-out-review-form {
       // Alternative HTML/CSS for ReviewForm when user is not logged in
       text-align: center;
