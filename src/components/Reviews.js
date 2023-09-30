@@ -21,13 +21,23 @@ const Reviews = ({ reviews }) => {
   // Reverse the order of all reviews
   const reversedReviews = [...allReviews].reverse();
 
+  // Function to generate a string of stars based on the rating
+  const generateStars = (rating) => {
+    const starSymbols = '★★★★★'; // Unicode stars
+    return starSymbols.slice(0, rating);
+  };
+
   return (
     <div className='customer-review'>
       <ul>
         {reversedReviews.map((review) => (
           <li key={review.id}>
             <p>"{review.comment}"</p> &nbsp;
-            <p>{review.rating} stars</p>
+            {review.rating > 1 ? (
+              <p>{generateStars(review.rating)} {review.rating} stars</p>
+            ) : (
+              <p>{generateStars(review.rating)} {review.rating} star</p>
+            )}
           </li>
         ))}
       </ul>
