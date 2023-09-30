@@ -161,7 +161,7 @@
 
       .reviews-container {
         // Container for all reviews from customers
-        max-height: 310px;
+        max-height: 350px;
         overflow-y: auto;
         border: 1px solid #ccc;
         background-color: whitesmoke;
@@ -186,33 +186,35 @@
           padding-left: 5px;
         }
       }
-
-      h3 {
-        // Directions for how to rate
-        font-size: 15px;
-        background-color: lightgreen;
-      }
     }
 
     .review-form {
       // Review form including stars for rating
-      background-color: pink;
-      textarea {
-        background-color: yellow;
+      background-color: darkred;
+      padding: 20px;
+      // padding-bottom: 20px;
+
+      p {
+        font-size: 0.7rem;
       }
+      textarea {
+        padding: 10px;
+        font-size: 1rem;
+        background-color: whitesmoke;
+      }
+
       label {
         background-color: blue;
       }
 
       .star-rating {
-        background-color: orange;
         display: flex;
         align-items: center;
+        padding: 5px 0;
       }
 
       .star {
-        background-color: skyblue;
-        font-size: 24px;
+        font-size: 30px;
         margin-right: 5px;
         cursor: pointer;
       }

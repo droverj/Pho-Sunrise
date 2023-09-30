@@ -68,13 +68,12 @@ const ReviewForm = ({ onSubmit }) => {
           <StarRating starCount={5} rating={rating} onRatingChange={handleRatingChange} />
         </div>
         <div>
-          <label>Comment:</label>
           <textarea
             value={comment}
             onChange={handleCommentChange}
             rows="4"
             cols="50"
-            placeholder="Write your review here..."
+            placeholder="We'd love to hear your feedback!"
             maxLength= "140"
           />
         </div>

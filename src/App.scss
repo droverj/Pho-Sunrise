@@ -41,6 +41,14 @@
   a:hover {
     text-decoration: underline;
   }
+  
+  textarea {
+    font-family: "Montserrat";
+  }
+
+  textarea::placeholder {
+  font-family: "Montserrat";
+  }
 }
 
 // button {
