@@ -159,28 +159,13 @@
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section C of Contact Page: 
-  Customer Reviews, Review Form, Google 
+  Customer Reviews, Review Form
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
-  // .reviews-and-review-form-container {
-  // Main container to separate left/right for Section B
-  // display: flex;
-  // justify-content: space-between;
-
-  /*
-    Section B - Left Side: Headings, Customer Reviews, Review Form, Star and Star Rating
-    */
-  // .review-section-container {
-  // Headings, Reviews, Direction, Star, Star Rating, Review Form
-  // margin-top: 5vh;
-  // width: 60%;
-  // border: 3px #333 solid;
-  // color: white;
-
   .reviews-heading {
+    // Heading for Customer Reviews
     background-color: #333;
-    // background-color: darkred;
     border: 3px #333 solid;
     color: white;
     font-weight: 200;
@@ -190,10 +175,10 @@
   }
 
   .review-form-heading {
-    // signed in and signed out
+    // Heading for Review Form - Signed In and Signed Out
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background-color: #333;
     font-weight: 300;
     text-transform: uppercase;
@@ -223,68 +208,73 @@
       padding-left: 5px;
     }
   }
-}
 
-.review-form {
-  // Review form including stars for rating
-  // background-color: darkred;
-  padding: 20px;
-  // padding-bottom: 20px;
-
-  p {
-    font-size: 0.7rem;
-  }
-  textarea {
-    padding: 10px;
-    font-size: 1rem;
-    background-color: whitesmoke;
-  }
-
-  label {
-    background-color: blue;
-  }
-
-  .star-rating {
+  .review-form {
+    // Review form including stars for rating
+    // HTML in ReviewForm.
     display: flex;
-    align-items: center;
-    padding: 5px 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    p {
+      font-size: 0.7rem;
+    }
+    textarea {
+      padding: 10px;
+      font-size: 1rem;
+      background-color: whitesmoke;
+    }
+    .star-rating {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+    }
+
+    .star {
+      font-size: 40px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .star:hover {
+      color: gold;
+    }
+    .thank-you {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-size: 3.5rem;
+      color: darkred;
+      font-family: "WindSong";
+      width: 50%;
+      margin-bottom: 20px;
+    }
   }
 
-  .star {
-    font-size: 30px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-
-  .star:hover {
-    color: gold;
-  }
-}
-
-.logged-out-review-form {
-  // Alternative HTML/CSS for ReviewForm when user is not logged in
-  // Heading styled in class: .review-form-heading
-  text-align: center;
-  border-bottom: 1px solid #333;
-  .review-sign-in {
-    // Sign in link in heading
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: white;
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin: 0;
-  }
-  .review-sign-in:hover {
-    text-decoration: underline;
-  }
-  p {
-    // font-family: "WindSong";
-    font-size: 20px;
-    font-weight: 100;
-    padding: 30px;
-    margin: 0;
+  .logged-out-review-form {
+    // Alternative HTML/CSS for ReviewForm when user is not logged in
+    // Heading styled in class: .review-form-heading
+    text-align: center;
+    border-bottom: 1px solid #333;
+    .review-sign-in {
+      // Sign in link in heading
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: white;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 0;
+    }
+    .review-sign-in:hover {
+      text-decoration: underline;
+    }
+    p {
+      // font-family: "WindSong";
+      font-size: 20px;
+      font-weight: 100;
+      padding: 30px;
+      margin: 0;
+    }
   }
 }
