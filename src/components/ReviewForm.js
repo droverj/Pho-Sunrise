@@ -39,7 +39,7 @@ const ReviewForm = ({ onSubmit }) => {
 
     // Check if only rating is missing
     if (rating === 0) {
-      setValidationError('Please select a rating for your review. Thank you!');
+      setValidationError('Please select a star rating for your review. Thank you!');
       return;
     }
 

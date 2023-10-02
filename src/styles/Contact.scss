@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Klee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=WindSong&display=swap");
 
 .contact {
   /*
@@ -8,7 +9,7 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
-  .main-container {
+  .information-container {
     // Main Container to separate left/right of Section A
     display: flex;
 
@@ -126,7 +127,6 @@
     }
   }
 
-
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section B of Contact Page: 
@@ -141,7 +141,7 @@
     text-align: center;
     text-transform: uppercase;
   }
-  
+
   .location-images {
     // Pho Sunrise Building and Map - Container
     display: flex;
@@ -155,7 +155,6 @@
       width: 43%;
     }
   }
-  
 
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
@@ -164,124 +163,128 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
-  .map-and-reviews-container {
-    // Main container to separate left/right for Section B
-    display: flex;
-    justify-content: space-between;
+  // .reviews-and-review-form-container {
+  // Main container to separate left/right for Section B
+  // display: flex;
+  // justify-content: space-between;
 
-    /*
+  /*
     Section B - Left Side: Headings, Customer Reviews, Review Form, Star and Star Rating
     */
-    .review-section-container {
-      // Headings, Reviews, Direction, Star, Star Rating, Review Form
-      margin-top: 5vh;
-      width: 60%;
-      border: 3px #333 solid;
-      color: white;
+  // .review-section-container {
+  // Headings, Reviews, Direction, Star, Star Rating, Review Form
+  // margin-top: 5vh;
+  // width: 60%;
+  // border: 3px #333 solid;
+  // color: white;
 
-      .review-form-subheadings {
-        text-align: center;
-        font-size: 1.5rem;
-        background-color: #333;
-        font-weight: 300;
-        text-transform: uppercase;
-        margin: 0;
-        a {
-          font-weight: 500;
-        }
-      }
+  .reviews-heading {
+    background-color: #333;
+    // background-color: darkred;
+    border: 3px #333 solid;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 35px;
+  }
 
-      .reviews-container {
-        // Container for all reviews from customers
-        max-height: 350px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        background-color: whitesmoke;
-        color: black;
-        // padding: 0 20px;
-        padding-top: 10px;
+  .review-form-heading {
+    // signed in and signed out
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    background-color: #333;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 
-        p {
-          font-family: "Klee One";
-          max-width: 80%;
-          font-size: 1rem;
-          border-bottom: 1px solid #ccc;
-          padding-bottom: 30px;
-          margin-bottom: 15px;
-        }
-        .submitted-review-stars {
-          display: flex;
-          align-self: flex-start;
-          color: gold;
-          font-size: 0.8rem;
-          border: none;
-          padding-left: 5px;
-        }
-      }
+  .reviews-container {
+    // Container for all reviews from customers
+    max-height: 350px;
+    overflow-y: auto;
+    margin-bottom: 35px;
+    padding-top: 10px;
+
+    p {
+      font-family: "Klee One";
+      max-width: 80%;
+      font-size: 1rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 30px;
+      margin-bottom: 15px;
     }
-
-    .review-form {
-      // Review form including stars for rating
-      background-color: darkred;
-      padding: 20px;
-      // padding-bottom: 20px;
-
-      p {
-        font-size: 0.7rem;
-      }
-      textarea {
-        padding: 10px;
-        font-size: 1rem;
-        background-color: whitesmoke;
-      }
-
-      label {
-        background-color: blue;
-      }
-
-      .star-rating {
-        display: flex;
-        align-items: center;
-        padding: 5px 0;
-      }
-
-      .star {
-        font-size: 30px;
-        margin-right: 5px;
-        cursor: pointer;
-      }
-
-      .star:hover {
-        color: gold;
-      }
+    .submitted-review-stars {
+      display: flex;
+      align-self: flex-start;
+      color: gold;
+      font-size: 0.8rem;
+      border: none;
+      padding-left: 5px;
     }
+  }
+}
 
-    .logged-out-review-form {
-      // Alternative HTML/CSS for ReviewForm when user is not logged in
-      text-align: center;
-      height: 55%;
-      h2 {
-        .review-sign-in {
-          font-size: 1.5rem;
-          font-weight: 300;
-          text-transform: uppercase;
-          color: white;
-          border: none;
-          background: none;
-          cursor: pointer;
-        }
-        .review-sign-in:hover {
-          text-decoration: underline;
-        }
-      }
-      p {
-        color: black;
-        margin: 40px 0;
-      }
-    }
+.review-form {
+  // Review form including stars for rating
+  // background-color: darkred;
+  padding: 20px;
+  // padding-bottom: 20px;
 
-    /*
-    Section B - Right Side: Map
-    */
+  p {
+    font-size: 0.7rem;
+  }
+  textarea {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: whitesmoke;
+  }
+
+  label {
+    background-color: blue;
+  }
+
+  .star-rating {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  .star {
+    font-size: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .star:hover {
+    color: gold;
+  }
+}
+
+.logged-out-review-form {
+  // Alternative HTML/CSS for ReviewForm when user is not logged in
+  // Heading styled in class: .review-form-heading
+  text-align: center;
+  border-bottom: 1px solid #333;
+  .review-sign-in {
+    // Sign in link in heading
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+  }
+  .review-sign-in:hover {
+    text-decoration: underline;
+  }
+  p {
+    // font-family: "WindSong";
+    font-size: 20px;
+    font-weight: 100;
+    padding: 30px;
+    margin: 0;
   }
 }
