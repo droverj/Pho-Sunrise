@@ -97,7 +97,7 @@ const Contact = () => {
       </div>
       {reviewSubmitted ? (
         <div className='thank-you-message'>
-          <p>Your Phở Sunrise review has been submitted.<br /><span>Thank you.</span></p>
+          <p>Your Phở Sunrise review has been successfully submitted.<br /><span>Thank you</span></p>
         </div>
       ) : (
         isAuthenticated ? (
