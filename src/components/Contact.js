@@ -11,6 +11,7 @@ import '../styles/Contact.scss';
 
 const Contact = () => {
   const [allReviews, setAllReviews] = useState([]);
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
@@ -20,7 +21,7 @@ const Contact = () => {
 
     // Update the list of reviews by adding the new review
     setAllReviews([newReviewWithId, ...allReviews]);
-
+    setReviewSubmitted(true);
     console.log('Submitted review data:', newReview);
   };
 
@@ -94,18 +95,24 @@ const Contact = () => {
       <div className='reviews-container'>
         <Reviews reviews={allReviews} />
       </div>
-      {isAuthenticated ? (
-        <div>
-          <h2 className='review-form-heading'>Tell us about your experience</h2>
-          <ReviewForm onSubmit={handleReviewSubmit} />
+      {reviewSubmitted ? (
+        <div className='thank-you-message'>
+          <p>Your Phở Sunrise review has been submitted.<br /><span>Thank you.</span></p>
         </div>
       ) : (
-        <div className='logged-out-review-form'>
-          <h2 className='review-form-heading'>
-            <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>To Leave a Review
-          </h2>
-          <p>We welcome and appreciate your feedback.</p>
-        </div>
+        isAuthenticated ? (
+          <div>
+            <h2 className='review-form-heading'>Tell us about your experience</h2>
+            <ReviewForm onSubmit={handleReviewSubmit} />
+          </div>
+        ) : (
+          <div className='logged-out-review-form'>
+            <h2 className='review-form-heading'>
+              <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>To Leave a Review
+            </h2>
+            <p>We welcome and appreciate your feedback.</p>
+          </div>
+        )
       )}
     </div>
   );

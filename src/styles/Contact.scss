@@ -191,6 +191,7 @@
     margin-bottom: 35px;
     padding-top: 10px;
     padding-left: 0;
+
     p {
       font-family: "Reenie Beanie";
       max-width: 80%;
@@ -278,6 +279,20 @@
       font-weight: 100;
       padding: 30px;
       margin: 0;
+    }
+  }
+
+  .thank-you-message {
+    background-color: #333;
+    color: white;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+    padding: 5px;
+    span {
+      font-size: 3.5rem;
+      color: darkred;
+      font-family: "WindSong";
     }
   }
 }
