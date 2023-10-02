@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Klee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=WindSong&display=swap");
 
 .contact {
@@ -190,15 +190,16 @@
     overflow-y: auto;
     margin-bottom: 35px;
     padding-top: 10px;
-
+    padding-left: 0;
     p {
-      font-family: "Klee One";
+      font-family: "Reenie Beanie";
       max-width: 80%;
-      font-size: 1rem;
+      font-size: 1.7rem;
       border-bottom: 1px solid #ccc;
       padding-bottom: 30px;
       margin-bottom: 15px;
     }
+
     .submitted-review-stars {
       display: flex;
       align-self: flex-start;
@@ -247,6 +248,8 @@
       font-family: "WindSong";
       width: 50%;
       margin-bottom: 20px;
+      padding-right: 7%;
+      padding-left: 10%;
     }
   }
 
