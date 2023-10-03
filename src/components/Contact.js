@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './common/Login';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Checkout = () => {
-  const { cart, addToCart, removeFromCart, totalItems, subtotal } = useCart();
+  const { cart, totalItems, subtotal } = useCart();
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     telephone: '',
@@ -12,14 +12,6 @@ const Checkout = () => {
   });
 
   const { isAuthenticated, user } = useAuth0(); // Destructure the user variable
-
-  const handleAdd = (cartItem) => {
-    addToCart(cartItem);
-  };
-
-  const handleRemove = (cartItem) => {
-    removeFromCart(cartItem);
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -137,9 +129,6 @@ const Checkout = () => {
             Proceed to Checkout
           </button>
         </Link>
-        {/* <button className="place-order-button" type="submit" disabled={!isAuthenticated}>
-            Proceed to Checkout
-          </button> */}
       </div>
     </form>
   </div>
