@@ -12,11 +12,6 @@ import './App.scss';
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [items, setItems] = useState([]);
-
-  const api = axios.create({
-    baseURL: 'http://localhost:1000', // Replace with server's base URL
-  });
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -26,16 +21,6 @@ function App() {
     const updatedCart = cart.filter((cartItem) => cartItem.name !== item.name);
     setCart(updatedCart);
   };
-
-  useEffect(() => {
-    api.get('/api/items') // You don't need to specify the full URL here
-      .then((response) => {
-        setItems(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, [api]);
 
   return (
     <CartProvider>
@@ -55,12 +40,6 @@ function App() {
               element={<Cart cart={cart} removeFromCart={removeFromCart} />}
             />
           </Routes>
-          <h1>Items from Server</h1>
-          <ul>
-            {items.map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
         </div>
       </BrowserRouter>
     </CartProvider>
