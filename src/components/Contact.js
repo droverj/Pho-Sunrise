@@ -8,7 +8,8 @@ import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
-const Contact = () => {
+const Contact = ({reviews}) => {
+  console.log(reviews);
   const [allReviews, setAllReviews] = useState([]);
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
@@ -92,7 +93,7 @@ const Contact = () => {
 
       <h2 className='reviews-heading'>What our guests are saying</h2>
       <div className='reviews-container'>
-        <Reviews reviews={allReviews} />
+        <Reviews reviews={reviews} />
       </div>
       {reviewSubmitted ? (
         <div className='thank-you-message'>

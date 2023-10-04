@@ -12,6 +12,7 @@ import './App.scss';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // API data
   const [users, setUsers] = useState([]);
@@ -37,6 +38,9 @@ function App() {
 
         const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
         setReviews(reviewsResponse.data);
+
+        // All data has been fetched
+        setIsLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
         // Handle errors here (e.g., display error message to the user)
@@ -61,19 +65,26 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <div className="main-body">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/menu"
-              element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />}
-            />
-            <Route
-              path="/cart"
-              element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-            />
-          </Routes>
+          {isLoading ? ( 
+            <p>Loading...</p> // replace this with a loading spinner
+          ) : (
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route
+                path="/contact"
+                element={<Contact reviews={reviews} />}
+              />
+              <Route
+                path="/menu"
+                element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />}
+              />
+              <Route
+                path="/cart"
+                element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+              />
+            </Routes>
+          )}
         </div>
       </BrowserRouter>
     </CartProvider>
