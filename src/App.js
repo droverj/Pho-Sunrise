@@ -15,11 +15,11 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { isAuthenticated, user } = useAuth0();
+  const { user } = useAuth0();
+
+  const userId = user ? user.sub : null;
 
   // API data
-  const [users, setUsers] = useState([]);
-  const [userData, setUserData] = useState(null);
   const [items, setItems] = useState([]);
   const [orders, setOrders] = useState([]);
   const [orderItems, setOrderItems] = useState([]);
@@ -28,13 +28,6 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (isAuthenticated) {
-          const userEmail = user.email;
-
-          const userDataResponse = await axios.get(`http://localhost:8080/api/users?email=${userEmail}`);
-          setUserData(userDataResponse.data);
-        }
-
         const itemsResponse = await axios.get('http://localhost:8080/api/items');
         setItems(itemsResponse.data);
 
@@ -56,8 +49,11 @@ function App() {
     };
 
     fetchData();
-  }, [isAuthenticated, user]);
+  }, []);
 
+  const updateReviews = (newReview) => {
+    setReviews([newReview, ...reviews]);
+  };
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -73,7 +69,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <div className="main-body">
-          {isLoading ? ( 
+          {isLoading ? (
             <p>Loading...</p> // replace this with a loading spinner
           ) : (
             <Routes>
@@ -81,7 +77,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route
                 path="/contact"
-                element={<Contact reviews={reviews} user={userData} />}
+                element={<Contact userId={userId} reviews={reviews} updateReviews={updateReviews} />}
               />
               <Route
                 path="/menu"

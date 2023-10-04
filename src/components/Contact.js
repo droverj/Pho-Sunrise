@@ -9,14 +9,10 @@ import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
-const Contact = ({ reviews, user }) => {
-  console.log("reviews in Contact: ", reviews);
-  const [allReviews, setAllReviews] = useState(reviews || []);
+const Contact = ({ reviews, userId, updateReviews }) => {
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-  // Check if the user object is not null before accessing its properties
-  const userId = user ? parseInt(Object.keys(user)[0]) : null;
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   useEffect(() => {
     // Check if the user has already submitted a review based on user_id
@@ -26,20 +22,10 @@ const Contact = ({ reviews, user }) => {
       // If the user has submitted a review, set reviewSubmitted to true
       setReviewSubmitted(true);
     }
-  }, [allReviews, userId]);
+  }, [reviews, userId]);
 
   const handleReviewSubmit = async (newReview) => {
     try {
-      // Update the client-side state immediately
-      const createdReview = {
-        user_id: userId,
-        rating: newReview.rating,
-        comment: newReview.comment,
-        // You can generate other properties like id, created_at, etc., as needed
-      };
-      setAllReviews([createdReview, ...allReviews]);
-      setReviewSubmitted(true);
-
       // Make a POST request to your API endpoint to submit the review
       await axios.post('http://localhost:8080/api/reviews', {
         user_id: userId,
@@ -47,6 +33,16 @@ const Contact = ({ reviews, user }) => {
         comment: newReview.comment,
       });
 
+      // Update the client-side state only after a successful request
+      const createdReview = {
+        user_id: userId,
+        rating: newReview.rating,
+        comment: newReview.comment,
+      };
+      setReviewSubmitted(true);
+
+      updateReviews(createdReview);
+    
       console.log('Review submitted successfully');
     } catch (error) {
       console.error('Error submitting review:', error);
