@@ -9,9 +9,13 @@ import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
-const Contact = ({reviews, user }) => {
-  // console.log(reviews);
-  console.log(user)
+const Contact = ({ reviews, user }) => {
+  // Check if the user object is not null before accessing its properties
+  const userIdKey = user ? Object.keys(user)[0] : null; // user id
+  const userId = userIdKey ? user[userIdKey] : null; // user object
+
+  // console.log(userId);
+  // console.log(userIdKey);
 
   const [allReviews, setAllReviews] = useState([]);
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
@@ -22,7 +26,7 @@ const handleReviewSubmit = async (newReview) => {
   try {
     // Create a new review object with user_id, rating, and comment properties
     const reviewData = {
-      user_id: newReview.user_id, // Replace with the actual user ID
+      user_id: userIdKey, // Replace with the actual user ID
       rating: newReview.rating,
       comment: newReview.comment,
     };
