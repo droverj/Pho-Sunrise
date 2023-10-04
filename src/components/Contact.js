@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios'; 
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
@@ -10,20 +11,45 @@ import '../styles/Contact.scss';
 
 const Contact = ({reviews}) => {
   console.log(reviews);
+
   const [allReviews, setAllReviews] = useState([]);
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-  const handleReviewSubmit = (newReview) => {
-    // Create a unique ID for the new review (you can use a library like uuid)
-    const newReviewWithId = { ...newReview, id: Date.now() };
+const handleReviewSubmit = async (newReview) => {
+  try {
+    // Create a new review object with user_id, rating, and comment properties
+    const reviewData = {
+      user_id: newReview.user_id, // Replace with the actual user ID
+      rating: newReview.rating,
+      comment: newReview.comment,
+    };
 
-    // Update the list of reviews by adding the new review
-    setAllReviews([newReviewWithId, ...allReviews]);
-    setReviewSubmitted(true);
-    console.log('Submitted review data:', newReview);
-  };
+    // Make a POST request to your API endpoint to submit the review
+    const response = await axios.post('http://localhost:8080/api/reviews', reviewData);
+
+    // Check if the POST request was successful
+    if (response.status === 200) {
+      // Assuming the server responds with the newly created review data, you can update your state
+      const createdReview = response.data;
+
+      // Update the list of reviews by adding the new review to the front
+      setAllReviews([createdReview, ...allReviews]);
+
+      // Set the reviewSubmitted state to true to show the success message
+      setReviewSubmitted(true);
+
+      console.log('Submitted review data:', createdReview);
+    } else {
+      console.error('Failed to submit review.');
+      // Handle the error (e.g., display an error message)
+    }
+  } catch (error) {
+    console.error('Error submitting review:', error);
+    // Handle any other errors that occur during the POST request
+  }
+};
 
   return (
     <div className="contact">

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
-  console.log(Array.isArray(reviews))
 
   const reviewArray = Object.values(reviews);
 
@@ -27,9 +26,8 @@ const Reviews = ({ reviews }) => {
   );
 };
 
-// Add prop type validation for reviews
 Reviews.propTypes = {
-  reviews: PropTypes.object.isRequired, // Assuming reviews is an object
+  reviews: PropTypes.array.isRequired,
 };
 
 export default Reviews;
