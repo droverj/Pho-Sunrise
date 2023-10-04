@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Menu from './components/Menu';
@@ -44,7 +44,7 @@ function App() {
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
 
   const addToCart = (item) => {
