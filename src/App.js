@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -14,8 +15,11 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { isAuthenticated, user } = useAuth0();
+
   // API data
   const [users, setUsers] = useState([]);
+  const [userData, setUserData] = useState(null);
   const [items, setItems] = useState([]);
   const [orders, setOrders] = useState([]);
   const [orderItems, setOrderItems] = useState([]);
@@ -24,8 +28,12 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const usersResponse = await axios.get('http://localhost:8080/api/users');
-        setUsers(usersResponse.data);
+        if (isAuthenticated) {
+          const userEmail = user.email;
+
+          const userDataResponse = await axios.get(`http://localhost:8080/api/users?email=${userEmail}`);
+          setUserData(userDataResponse.data);
+        }
 
         const itemsResponse = await axios.get('http://localhost:8080/api/items');
         setItems(itemsResponse.data);
@@ -48,7 +56,7 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [isAuthenticated, user]);
 
 
   const addToCart = (item) => {
@@ -73,7 +81,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route
                 path="/contact"
-                element={<Contact reviews={reviews} />}
+                element={<Contact reviews={reviews} user={userData} />}
               />
               <Route
                 path="/menu"

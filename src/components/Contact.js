@@ -9,8 +9,9 @@ import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
-const Contact = ({reviews}) => {
-  console.log(reviews);
+const Contact = ({reviews, user }) => {
+  // console.log(reviews);
+  console.log(user)
 
   const [allReviews, setAllReviews] = useState([]);
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
