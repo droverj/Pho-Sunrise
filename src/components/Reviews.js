@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
-
-  const reviewArray = Object.values(reviews);
+  console.log("reviews in Reviews: ", reviews);
 
   // Function to generate a string of stars based on the rating
   const generateStars = (rating) => {
@@ -15,7 +14,7 @@ const Reviews = ({ reviews }) => {
   return (
     <div>
       <ul>
-        {reviewArray.map((review) => (
+        {reviews.map((review) => (
           <li key={review.id}>
             <p>"{review.comment}"</p> &nbsp;
             <p className='submitted-review-stars'>{generateStars(review.rating)}</p>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios'; 
+import axios from 'axios';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
@@ -10,51 +10,53 @@ import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
 const Contact = ({ reviews, user }) => {
-  // Check if the user object is not null before accessing its properties
-  const userIdKey = user ? Object.keys(user)[0] : null; // user id
-  const userId = userIdKey ? user[userIdKey] : null; // user object
-
-  // console.log(userId);
-  // console.log(userIdKey);
-
-  const [allReviews, setAllReviews] = useState([]);
+  console.log("reviews in Contact: ", reviews);
+  const [allReviews, setAllReviews] = useState(reviews || []);
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
-
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-const handleReviewSubmit = async (newReview) => {
-  try {
-    // Create a new review object with user_id, rating, and comment properties
-    const reviewData = {
-      user_id: userIdKey, // Replace with the actual user ID
-      rating: newReview.rating,
-      comment: newReview.comment,
-    };
+  // Check if the user object is not null before accessing its properties
+  const userId = user ? parseInt(Object.keys(user)[0]) : null;
 
-    // Make a POST request to your API endpoint to submit the review
-    const response = await axios.post('http://localhost:8080/api/reviews', reviewData);
+  useEffect(() => {
+    // Check if the user has already submitted a review based on user_id
+    const userHasSubmittedReview = reviews.some((review) => review.user_id === userId);
 
-    // Check if the POST request was successful
-    if (response.status === 200) {
-      // Assuming the server responds with the newly created review data, you can update your state
-      const createdReview = response.data;
+    if (userHasSubmittedReview) {
+      // If the user has submitted a review, set reviewSubmitted to true
+      setReviewSubmitted(true);
+    }
+  }, [allReviews, userId]);
 
-      // Update the list of reviews by adding the new review to the front
+  const handleReviewSubmit = async (newReview) => {
+    try {
+      // Update the client-side state immediately
+      const createdReview = {
+        user_id: userId,
+        rating: newReview.rating,
+        comment: newReview.comment,
+        // You can generate other properties like id, created_at, etc., as needed
+      };
       setAllReviews([createdReview, ...allReviews]);
-
-      // Set the reviewSubmitted state to true to show the success message
       setReviewSubmitted(true);
 
-      console.log('Submitted review data:', createdReview);
-    } else {
-      console.error('Failed to submit review.');
-      // Handle the error (e.g., display an error message)
+      // Make a POST request to your API endpoint to submit the review
+      await axios.post('http://localhost:8080/api/reviews', {
+        user_id: userId,
+        rating: newReview.rating,
+        comment: newReview.comment,
+      });
+
+      console.log('Review submitted successfully');
+    } catch (error) {
+      console.error('Error submitting review:', error);
+
+      // Handle specific error responses from the server, if available
+      if (error.response && error.response.data) {
+        console.error('Server error:', error.response.data);
+      }
     }
-  } catch (error) {
-    console.error('Error submitting review:', error);
-    // Handle any other errors that occur during the POST request
-  }
-};
+  };
 
   return (
     <div className="contact">
