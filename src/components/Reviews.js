@@ -10,10 +10,12 @@ const Reviews = ({ reviews }) => {
     return starSymbols.slice(0, rating);
   };
 
+  const reversedReviews = [...reviews].reverse();
+
   return (
     <div>
       <ul>
-        {reviews.map((review) => (
+        {reversedReviews.map((review) => (
           <li key={review.id}>
             <p>"{review.comment}"</p> &nbsp;
             <p className='submitted-review-stars'>{generateStars(review.rating)}</p>
