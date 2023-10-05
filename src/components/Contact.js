@@ -12,6 +12,9 @@ import '../styles/Contact.scss';
 const Contact = ({ reviews, userId, updateReviews }) => {
   // Limits user to one review
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
+  const [reviewToDelete, setReviewToDelete] = useState(null);
+
+  console.log(reviewToDelete);
 
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
@@ -50,6 +53,28 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       }
     }
   };
+
+  const handleDeleteReview = async (review) => {
+    try {
+      // Make a DELETE request to your API endpoint to delete the review
+      await axios.delete(`http://localhost:8080/api/reviews/${review.id}`);
+  
+      // After the review has been deleted, update the reviews
+      updateReviews();
+  
+      // Reset the reviewToDelete state and close the confirmation dialog
+      setReviewToDelete(null);
+  
+      console.log('Review deleted successfully');
+    } catch (error) {
+      console.error('Error deleting review:', error);
+  
+      // Handle specific error responses from the server, if available
+      if (error.response && error.response.data) {
+        console.error('Server error:', error.response.data);
+      }
+    }
+  };  
 
   return (
     <div className="contact">
@@ -123,7 +148,19 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       </div>
       {reviewSubmitted ? (
         <div className='thank-you-message'>
+          {/* Display a message with the option to delete the review */}
           <p>Your Phở Sunrise review has been successfully submitted.<br /><span>Thank you</span></p>
+          {reviews.map((review) => (
+            review.user_id === userId && (
+              <div key={review.id} className='delete-review'>
+                <p>You rated Pho Sunrise {review.rating} stars.</p>
+                <p>You commented: {review.comment}</p>
+                <p>Are you sure you would like to delete your review?</p>
+                <button onClick={() => handleDeleteReview(review)}>Yes</button>
+                <button onClick={() => setReviewToDelete(null)}>No</button>
+              </div>
+            )
+          ))}
         </div>
       ) : (
         isAuthenticated ? (
