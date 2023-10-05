@@ -85,11 +85,16 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         {deleteConfirmed ? (
           reviews.map((review) => (
             review.user_id === userId && (
-              <div key={review.id} className='delete-review'>
-                <p>You rated Pho Sunrise {review.rating} stars.</p>
-                <p>You commented: {review.comment}</p>
-                <p>Are you sure you want to delete your review? This action is final.</p>
-                <button onClick={() => handleDeleteReview(review)}>Yes</button>
+              <div key={review.id} className='delete-review-preview'>
+                <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
+                <p>{review.rating}/5 stars</p>
+                <p>"{review.comment}"</p>
+                <div className='confirmation'>
+                <p>Delete your review?</p>
+                <p className='warning'>This action is final.</p>
+                </div>
+                <button onClick={() => setDeleteConfirmed(null)}>return</button>
+                <button className="danger-btn" onClick={() => handleDeleteReview(review)}>delete</button>
               </div>
             )
           ))
