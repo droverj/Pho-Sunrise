@@ -25,6 +25,8 @@ function App() {
   const [orderItems, setOrderItems] = useState([]);
   const [reviews, setReviews] = useState([]);
 
+  console.log(items);
+
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -13,6 +13,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
   const [deleteConfirmed, setDeleteConfirmed] = useState(null);
+  // eslint-disable-next-line
   const [reviewDeleted, setReviewDeleted] = useState(false);
 
   useEffect(() => {

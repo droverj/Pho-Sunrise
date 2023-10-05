@@ -10,6 +10,7 @@ const MenuItem = ({ item }) => {
   return (
     <div className="menu-item">
       <span>{item.name}</span>
+      <span>{item.vietnamese}</span>
       <span>${price.toFixed(2)}</span>
       <div className="item-actions">
         <button onClick={() => addToCart(item)}>+</button>
