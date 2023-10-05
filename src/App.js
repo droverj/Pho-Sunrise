@@ -63,10 +63,6 @@ function App() {
       console.error('Error fetching updated reviews:', error);
     }
   };
-  
-
-  console.log(reviews)
-
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -94,7 +90,7 @@ function App() {
               />
               <Route
                 path="/menu"
-                element={<Menu addToCart={addToCart} removeFromCart={removeFromCart} />}
+                element={<Menu items={items} addToCart={addToCart} removeFromCart={removeFromCart} />}
               />
               <Route
                 path="/cart"

@@ -1,26 +1,34 @@
 import React from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
-import menuData from '../menuData.json'; 
-import '../styles/Menu.scss'
+import '../styles/Menu.scss';
 
-const Menu = () => {
+const Menu = ({ items }) => {
   const { addToCart } = useCart();
+
+  // Group items by section
+  const sections = {};
+  items.forEach((item) => {
+    if (!sections[item.section]) {
+      sections[item.section] = [];
+    }
+    sections[item.section].push(item);
+  });
 
   return (
     <div className="menu">
       <div className="menu-sections">
-        {menuData.map((section, index) => (
+        {Object.entries(sections).map(([section, items], index) => (
           <MenuSection
             key={index}
-            section={section}
-            addToCart={(item, id) => addToCart(item, id)}
+            sectionTitle={section}
+            items={items}
+            addToCart={(item) => addToCart(item)}
           />
         ))}
       </div>
     </div>
   );
 };
-
 
 export default Menu;
