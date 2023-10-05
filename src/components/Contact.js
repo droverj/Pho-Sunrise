@@ -10,44 +10,32 @@ import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
 const Contact = ({ reviews, userId, updateReviews }) => {
-  // Limits user to one review
-  const [reviewSubmitted, setReviewSubmitted] = useState(false);
-  const [reviewToDelete, setReviewToDelete] = useState(null);
-
-  console.log(reviewToDelete);
-
   const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
+  const [deleteConfirmed, setDeleteConfirmed] = useState(null);
+  const [reviewDeleted, setReviewDeleted] = useState(false);
 
   useEffect(() => {
-    // Check if the user has already submitted a review based on user_id
     const userHasSubmittedReview = reviews.some((review) => review.user_id === userId);
-
-    if (userHasSubmittedReview) {
-      // If the user has submitted a review, set reviewSubmitted to true
-      setReviewSubmitted(true);
-    }
+    setReviewSubmitted(userHasSubmittedReview);
   }, [reviews, userId]);
 
   const handleReviewSubmit = async (newReview) => {
     try {
-      // Make a POST request to your API endpoint to submit the review
+      const { rating, comment } = newReview;
+
       await axios.post('http://localhost:8080/api/reviews', {
         user_id: userId,
-        rating: newReview.rating,
-        comment: newReview.comment,
+        rating,
+        comment,
       });
 
-      // After the user has submitted a review, set reviewSubmitted to true
       setReviewSubmitted(true);
-
-      // Call updateReviews function from App.js through props
+      setReviewDeleted(false);
       updateReviews();
-
       console.log('Review submitted successfully');
     } catch (error) {
       console.error('Error submitting review:', error);
-
-      // Handle specific error responses from the server, if available
       if (error.response && error.response.data) {
         console.error('Server error:', error.response.data);
       }
@@ -56,26 +44,74 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   const handleDeleteReview = async (review) => {
     try {
-      // Make a DELETE request to your API endpoint to delete the review
       await axios.delete(`http://localhost:8080/api/reviews/${review.id}`);
-  
-      // After the review has been deleted, update the reviews
+
       updateReviews();
-  
-      // Reset the reviewToDelete state and close the confirmation dialog
-      setReviewToDelete(null);
-  
+      setDeleteConfirmed(null);
+      setReviewDeleted(true);
       console.log('Review deleted successfully');
     } catch (error) {
       console.error('Error deleting review:', error);
-  
-      // Handle specific error responses from the server, if available
       if (error.response && error.response.data) {
         console.error('Server error:', error.response.data);
       }
     }
-  };  
+  };
 
+  const renderReviewForm = () => {
+    return (
+      <div>
+        <h2 className='review-form-heading'>Tell us about your experience</h2>
+        <ReviewForm onSubmit={handleReviewSubmit} />
+      </div>
+    );
+  };
+
+  const renderLoggedOutReviewForm = () => {
+    return (
+      <div className='logged-out-review-form'>
+        <h2 className='review-form-heading'>
+          <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>
+          To Leave a Review
+        </h2>
+        <p>We welcome and appreciate your feedback.</p>
+      </div>
+    );
+  };
+
+  const renderReviewInteractionMessage = () => {
+    return (
+      <div className='review-interaction-message'>
+        {deleteConfirmed ? (
+          reviews.map((review) => (
+            review.user_id === userId && (
+              <div key={review.id} className='delete-review'>
+                <p>You rated Pho Sunrise {review.rating} stars.</p>
+                <p>You commented: {review.comment}</p>
+                <p>Are you sure you want to delete your review? This action is final.</p>
+                <button onClick={() => handleDeleteReview(review)}>Yes</button>
+              </div>
+            )
+          ))
+        ) : (
+          <>
+            <p>
+              {reviewSubmitted && 'Your Phở Sunrise review has been successfully submitted.'}
+              <br />
+              <span>Thank you</span>
+            </p>
+            {!deleteConfirmed && (
+              <div className='delete-review'>
+                <p>Delete your review?</p>
+                <button onClick={() => setDeleteConfirmed(true)}>Yes</button>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    );
+  };
+  
   return (
     <div className="contact">
 
@@ -146,37 +182,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       <div className='reviews-container'>
         <Reviews reviews={reviews} />
       </div>
-      {reviewSubmitted ? (
-        <div className='thank-you-message'>
-          {/* Display a message with the option to delete the review */}
-          <p>Your Phở Sunrise review has been successfully submitted.<br /><span>Thank you</span></p>
-          {reviews.map((review) => (
-            review.user_id === userId && (
-              <div key={review.id} className='delete-review'>
-                <p>You rated Pho Sunrise {review.rating} stars.</p>
-                <p>You commented: {review.comment}</p>
-                <p>Are you sure you would like to delete your review?</p>
-                <button onClick={() => handleDeleteReview(review)}>Yes</button>
-                <button onClick={() => setReviewToDelete(null)}>No</button>
-              </div>
-            )
-          ))}
-        </div>
-      ) : (
-        isAuthenticated ? (
-          <div>
-            <h2 className='review-form-heading'>Tell us about your experience</h2>
-            <ReviewForm onSubmit={handleReviewSubmit} />
-          </div>
-        ) : (
-          <div className='logged-out-review-form'>
-            <h2 className='review-form-heading'>
-              <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>To Leave a Review
-            </h2>
-            <p>We welcome and appreciate your feedback.</p>
-          </div>
-        )
-      )}
+      {reviewSubmitted ? renderReviewInteractionMessage() : (isAuthenticated ? renderReviewForm() : renderLoggedOutReviewForm())}
     </div>
   );
 }
