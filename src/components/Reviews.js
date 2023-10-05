@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
-  console.log("reviews in Reviews: ", reviews);
 
   // Function to generate a string of stars based on the rating
   const generateStars = (rating) => {

@@ -10,6 +10,7 @@ import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
 const Contact = ({ reviews, userId, updateReviews }) => {
+  // Limits user to one review
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
   const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -33,16 +34,12 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         comment: newReview.comment,
       });
 
-      // Update the client-side state only after a successful request
-      const createdReview = {
-        user_id: userId,
-        rating: newReview.rating,
-        comment: newReview.comment,
-      };
+      // After the user has submitted a review, set reviewSubmitted to true
       setReviewSubmitted(true);
 
-      updateReviews(createdReview);
-    
+      // Call updateReviews function from App.js through props
+      updateReviews();
+
       console.log('Review submitted successfully');
     } catch (error) {
       console.error('Error submitting review:', error);

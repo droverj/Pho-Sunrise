@@ -51,9 +51,22 @@ function App() {
     fetchData();
   }, []);
 
-  const updateReviews = (newReview) => {
-    setReviews([newReview, ...reviews]);
+  const updateReviews = async () => {
+    try {
+      // Make a GET request to fetch the latest reviews from the server
+      const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
+      const updatedReviews = reviewsResponse.data;
+  
+      // Update the state with the latest reviews
+      setReviews(updatedReviews);
+    } catch (error) {
+      console.error('Error fetching updated reviews:', error);
+    }
   };
+  
+
+  console.log(reviews)
+
 
   const addToCart = (item) => {
     setCart([...cart, item]);
