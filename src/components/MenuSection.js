@@ -12,11 +12,7 @@ const MenuSection = ({ sectionTitle, items }) => {
       <div className="section-content">
         <div className="menu-items">
           {items.map((item, index) => (
-            <MenuItem
-              key={index}
-              item={item}
-              addToCart={addToCart}
-            />
+            <MenuItem key={index} item={item} />
           ))}
         </div>
       </div>
