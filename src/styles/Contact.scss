@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=WindSong&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,600&display=swap");
 
 .contact {
   /*
@@ -245,6 +246,11 @@
       border-radius: 5px;
       padding: 5px;
       cursor: pointer;
+      text-transform: uppercase;
+      font-family: "Unbounded";
+    }
+    button:hover {
+      background-color: #02054a;
     }
   }
 

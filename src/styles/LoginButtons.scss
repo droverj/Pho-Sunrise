@@ -1,3 +1,15 @@
 .login-buttons {
-  height: 5vh;
+  text-transform: uppercase;
+  font-family: "Unbounded";
+  background-color: #02054a;
+  color: silver;
+  padding: 7px;
+  border-radius: 10px;
+  border: 2px solid silver;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.login-buttons:hover {
+  background-color: #000C66;
 }
