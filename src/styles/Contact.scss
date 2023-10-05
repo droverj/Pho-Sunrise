@@ -213,8 +213,7 @@
 
   .review-form {
     // Review form including stars for rating
-    // HTML in ReviewForm.
-    display: flex;
+    // HTML in ReviewForm.js
     border-bottom: 1px solid #333;
     padding-bottom: 15px;
     p {
@@ -240,17 +239,12 @@
     .star:hover {
       color: gold;
     }
-    .thank-you {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      font-size: 3.5rem;
-      color: darkred;
-      font-family: "WindSong";
-      width: 50%;
-      margin-bottom: 20px;
-      padding-right: 7%;
-      padding-left: 10%;
+    button {
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      padding: 5px;
+      cursor: pointer;
     }
   }
 
@@ -282,12 +276,17 @@
     }
   }
 
-  .review-interaction-message {
+  .submitted-review {
+    // Thank you message for submitting review
+    // Option to delete review with button
     background-color: #333;
     color: white;
     font-size: 1.5rem;
     font-weight: 100;
     text-align: center;
+    padding: 50px 10px;
+    padding-bottom: 10px;
+
     p {
       margin: 0;
       padding-bottom: 10px;
@@ -297,49 +296,68 @@
       color: darkred;
       font-family: "WindSong";
     }
-
-    .delete-review-preview {
-      text-align: start;
-      padding: 30px 80px;
-      background-color: whitesmoke;
-      color: black;
-      border: 2px solid red;
-      h3 {
-        margin: 0;
-        padding-bottom: 30px;
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: #333;
-      }
-      p {
-        font-weight: 400;
-        font-size: 1.2rem;
-        padding: 10px 0;
-      }
-      .confirmation {
-        display: flex;
-        padding-top: 20px;
-        .warning {
-          color: red;
-          padding-left: 10px;
-          font-weight: 600;
-        }
-      }
+    .delete-review {
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      font-size: 0.7rem;
       button {
-        font-size: 1.5rem;
-        width: 15%;
-        margin-right: 10px;
-        margin-top: 10px;
-        padding: 10px;
         border: 2px solid #333;
         border-radius: 10px;
-        background-color:	#009900;
+        background-color: red;
         color: white;
+        padding: 5px;
+        margin-left: 10px;
       }
-      button.danger-btn {
-                background-color: red;
-              }
+    }
+    .thank-you {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-size: 3.5rem;
+      color: darkred;
+      font-family: "WindSong";
+      width: 50%;
+      margin-bottom: 20px;
+      padding-right: 7%;
+      padding-left: 10%;
+    }
+  }
 
+  .delete-review-confirmation {
+    // Preview of user's review with option to delete or return
+    text-align: start;
+    padding: 30px 80px;
+    background-color: whitesmoke;
+    border: 3px solid red;
+    h3 {
+      margin: 0;
+      padding-bottom: 10px;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .confirmation {
+      display: flex;
+      .warning {
+        color: red;
+        padding-left: 10px;
+        font-weight: 600;
+      }
+    }
+    button {
+      font-size: 1.5rem;
+      width: 15%;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      background-color: #009900;
+      color: white;
+    }
+    button.danger-btn {
+      background-color: red;
     }
   }
 }

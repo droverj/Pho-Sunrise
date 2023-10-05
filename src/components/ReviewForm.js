@@ -80,7 +80,6 @@ const ReviewForm = ({ onSubmit }) => {
         {validationError && <p className="validation-error">{validationError}</p>}
         <button type="submit">Submit</button>
       </form>
-      <p className='thank-you'>Thank You!</p>
     </div>
   );
 };

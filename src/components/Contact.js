@@ -81,36 +81,35 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   const renderReviewInteractionMessage = () => {
     return (
-      <div className='review-interaction-message'>
+      <div>
         {deleteConfirmed ? (
           reviews.map((review) => (
             review.user_id === userId && (
-              <div key={review.id} className='delete-review-preview'>
+              <div key={review.id} className='delete-review-confirmation'>
                 <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
                 <p>{review.rating}/5 stars</p>
                 <p>"{review.comment}"</p>
                 <div className='confirmation'>
-                <p>Delete your review?</p>
-                <p className='warning'>This action is final.</p>
+                  <p>Delete your review?</p>
+                  <p className='warning'>This action is final.</p>
                 </div>
-                <button onClick={() => setDeleteConfirmed(null)}>return</button>
-                <button className="danger-btn" onClick={() => handleDeleteReview(review)}>delete</button>
+                <button onClick={() => setDeleteConfirmed(null)}>Return</button>
+                <button className="danger-btn" onClick={() => handleDeleteReview(review)}>Delete</button>
               </div>
             )
           ))
         ) : (
           <>
-            <p>
-              {reviewSubmitted && 'Your Phở Sunrise review has been successfully submitted.'}
-              <br />
-              <span>Thank you</span>
-            </p>
-            {!deleteConfirmed && (
-              <div className='delete-review'>
-                <p>Delete your review?</p>
-                <button onClick={() => setDeleteConfirmed(true)}>Yes</button>
-              </div>
-            )}
+            <div className='submitted-review'>
+              {reviewSubmitted ? 'Your Phở Sunrise review has been successfully submitted.' : null}
+              <br/><span>Thank you</span>
+              {!deleteConfirmed && (
+                <div className='delete-review'>
+                  <p>Delete your review?</p>
+                  <button onClick={() => setDeleteConfirmed(true)}>Delete</button>
+                </div>
+              )}
+            </div>
           </>
         )}
       </div>
