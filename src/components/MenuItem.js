@@ -15,11 +15,7 @@ const MenuItem = ({ itemOptions }) => {
             <div key={optionId}>
               {item.item_option && <span>{item.item_option}</span>}
               <div className="option-actions">
-                {item.price_adjustment !== null ? (
-                  <span>${(parseFloat(item.base_price) + parseFloat(item.price_adjustment)).toFixed(2)}</span>
-                ) : (
-                  <span>${parseFloat(item.base_price).toFixed(2)}</span>
-                )}
+                <span>${parseFloat(item.price).toFixed(2)}</span>
                 <button
                   onClick={() =>
                     addToCart({
@@ -28,7 +24,7 @@ const MenuItem = ({ itemOptions }) => {
                       vietnamese: item.vietnamese,
                       optionId,
                       item_option: item.item_option,
-                      price: (parseFloat(item.base_price) + parseFloat(item.price_adjustment)).toFixed(2),
+                      price: parseFloat(item.price).toFixed(2),
                     })
                   }
                 >
