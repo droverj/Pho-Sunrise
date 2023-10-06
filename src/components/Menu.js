@@ -4,6 +4,7 @@ import { useCart } from '../components/CartContext';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
+  console.log(items);
   const { addToCart } = useCart();
 
   // Group items by section and name
@@ -13,9 +14,12 @@ const Menu = ({ items }) => {
       groupedItems[item.section] = {};
     }
     if (!groupedItems[item.section][item.name]) {
-      groupedItems[item.section][item.name] = [];
+      groupedItems[item.section][item.name] = {
+        options: [],
+        name_vietnamese: item.name_vietnamese, // Add the Vietnamese name here
+      };
     }
-    groupedItems[item.section][item.name].push(item);
+    groupedItems[item.section][item.name].options.push(item);
   });
 
   return (
@@ -24,11 +28,12 @@ const Menu = ({ items }) => {
         {Object.entries(groupedItems).map(([section, sectionItems], sectionIndex) => (
           <div key={sectionIndex}>
             <h2>{section}</h2>
-            {Object.entries(sectionItems).map(([itemName, itemOptions], index) => (
+            {Object.entries(sectionItems).map(([itemName, itemData], index) => (
               <MenuSection
                 key={index}
                 itemName={itemName}
-                itemOptions={itemOptions}
+                itemOptions={itemData.options} // Pass the options array
+                vietnameseName={itemData.name_vietnamese} // Pass the Vietnamese name
                 addToCart={(item) => addToCart(item)}
               />
             ))}
