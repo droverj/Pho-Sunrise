@@ -11,24 +11,29 @@ const MenuItem = ({ item }) => {
       <span>{item.vietnamese}</span>
       <div className="item-options">
         {item.options &&
-          item.options.map((option, index) => (
-            <div key={index}>
-              {option.size && <span>{option.size}</span>}
-              {option.quantity && <span>{option.quantity} pieces </span>}
-              {option.ingredient && <span>+ {option.ingredient}</span>}
-              <div className="option-actions">
-                {option.price_adjustment !== null ? (
-                  <span>${(basePrice + option.price_adjustment).toFixed(2)}</span>
-                ) : (
-                  <span>${basePrice.toFixed(2)}</span>
-                )}
-                <button onClick={() => addToCart({ ...item, price: (basePrice + parseFloat(option.price_adjustment)).toFixed(2) })}>+</button>
+          item.options.map((option, index) => {
+            // Generate a unique identifier for each option
+            const optionId = `${item.id}_${index}`;
+            return (
+              <div key={optionId}>
+                {option.size && <span>{option.size}</span>}
+                {option.pieces && <span>{option.pieces} pieces </span>}
+                {option.ingredient && <span>+ {option.ingredient}</span>}
+                <div className="option-actions">
+                  {option.price_adjustment !== null ? (
+                    <span>${(basePrice + option.price_adjustment).toFixed(2)}</span>
+                  ) : (
+                    <span>${basePrice.toFixed(2)}</span>
+                  )}
+                  <button onClick={() => addToCart({ ...item, optionId, size: option.size, pieces: option.pieces, ingredient: option.ingredient, price: (basePrice + parseFloat(option.price_adjustment)).toFixed(2) })}>+</button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
       </div>
     </div>
   );
 };
+
 
 export default MenuItem;

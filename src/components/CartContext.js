@@ -37,19 +37,21 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   const addToCart = (item) => {
-    const existingItemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
+    console.log(item);
+    const existingItemIndex = cart.findIndex((cartItem) => cartItem.optionId === item.optionId);
   
     if (existingItemIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
     } else {
-      // Calculate the price, including the price_adjustment (defaulting to 0 if not provided)
       const basePrice = parseFloat(item.base_price);
       const price = basePrice + (item.price_adjustment || 0);
+      
       setCart([...cart, { ...item, quantity: 1, price }]);
     }
-  };  
+  };
+  
 
   const removeFromCart = (item) => {
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
