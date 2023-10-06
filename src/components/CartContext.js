@@ -37,8 +37,6 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   const addToCart = (item) => {
-    console.log(item);
-
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
   
     if (existingItemIndex !== -1) {
@@ -46,7 +44,6 @@ export const CartProvider = ({ children }) => {
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
     } else {
-      // Calculate the price, including the price_adjustment (defaulting to 0 if not provided)
       const price = parseFloat(item.price);
       setCart([...cart, { ...item, quantity: 1, price }]);
     }

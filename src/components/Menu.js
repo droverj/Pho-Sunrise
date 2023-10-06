@@ -6,25 +6,33 @@ import '../styles/Menu.scss';
 const Menu = ({ items }) => {
   const { addToCart } = useCart();
 
-  // Group items by section
-  const sections = {};
+  // Group items by section and name
+  const groupedItems = {};
   items.forEach((item) => {
-    if (!sections[item.section]) {
-      sections[item.section] = [];
+    if (!groupedItems[item.section]) {
+      groupedItems[item.section] = {};
     }
-    sections[item.section].push(item);
+    if (!groupedItems[item.section][item.name]) {
+      groupedItems[item.section][item.name] = [];
+    }
+    groupedItems[item.section][item.name].push(item);
   });
 
   return (
     <div className="menu">
       <div className="menu-sections">
-        {Object.entries(sections).map(([section, items], index) => (
-          <MenuSection
-            key={index}
-            sectionTitle={section}
-            items={items}
-            addToCart={(item) => addToCart(item)}
-          />
+        {Object.entries(groupedItems).map(([section, sectionItems], sectionIndex) => (
+          <div key={sectionIndex}>
+            <h2>{section}</h2>
+            {Object.entries(sectionItems).map(([itemName, itemOptions], index) => (
+              <MenuSection
+                key={index}
+                itemName={itemName}
+                itemOptions={itemOptions}
+                addToCart={(item) => addToCart(item)}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </div>
