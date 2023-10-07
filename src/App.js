@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import stripePromise from './stripe'; 
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
