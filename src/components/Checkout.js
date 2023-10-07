@@ -14,7 +14,34 @@ const Checkout = () => {
   const calculateTotal = () => subtotal + calculateHST() + calculateGST();
   const total = calculateTotal().toFixed(2);
 
-  const onSubmitOrder = (orderData) => {
+  const submitOrder = async (orderData) => {
+    try {
+      const response = await fetch('/api/submit-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (response.ok) {
+        // Order was successfully submitted
+        const responseData = await response.json(); // If the server sends a response payload
+        console.log('Order submitted successfully');
+        // Handle any further actions or redirects
+      } else {
+        // Handle HTTP errors (e.g., 404 Not Found, 500 Internal Server Error)
+        console.error('Error submitting order:', response.statusText);
+        // You can also parse the response body for more specific error details if your server sends them
+      }
+    } catch (error) {
+      // Handle network errors or exceptions
+      console.error('Network error:', error);
+    }
+  };
+
+  const onSubmitOrder = async (orderData) => {
+    await submitOrder(orderData);
     console.log(orderData);
     // Here, you can send the orderData to the server for processing and storage
     // You can use fetch or an API library to send a POST request to your server
