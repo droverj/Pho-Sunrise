@@ -14,6 +14,14 @@ const Checkout = () => {
   const calculateTotal = () => subtotal + calculateHST() + calculateGST();
   const total = calculateTotal().toFixed(2);
 
+  const onSubmitOrder = (orderData) => {
+    console.log(orderData);
+    // Here, you can send the orderData to the server for processing and storage
+    // You can use fetch or an API library to send a POST request to your server
+    // Example: fetch('/api/submit-order', { method: 'POST', body: JSON.stringify(orderData) })
+    // After successfully submitting the order, you can handle any further actions or redirects.
+  };
+
   return (
     <div className="order-form">
       <h1 className="order-form-heading">Enter Your Information</h1>
@@ -25,7 +33,7 @@ const Checkout = () => {
       </div>
       <p className="order-total">Total: ${total}</p>
       <Elements stripe={stripePromise}>
-        <PaymentForm subtotal={subtotal} total={total} cart={cart} totalItems={totalItems} />
+        <PaymentForm subtotal={subtotal} total={total} cart={cart} totalItems={totalItems} onSubmitOrder={onSubmitOrder} />
       </Elements>
     </div>
   );

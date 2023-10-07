@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useCart } from '../components/CartContext';
+import * as yup from 'yup';
 
-const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
+const validationSchema = yup.object().shape({
+  name: yup.string().required('Name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  phoneNumber: yup
+    .string()
+    .matches(/^[0-9]{10}$/, 'Phone number must be 10 digits')
+    .required('Phone number is required'),
+  directions: yup.string(),
+});
 
+const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItems }) => {
+  const [validationErrors, setValidationErrors] = useState({});
   const stripe = useStripe();
   const elements = useElements();
+
+  const [orderInfo, setOrderInfo] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    directions: '',
+  });
+
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     email: '',
     phoneNumber: '',
-    directions: ''
   });
 
   const handleSubmit = async (event) => {
@@ -20,23 +37,32 @@ const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
       return;
     }
 
+    // Validate the billing information
+    try {
+      await validationSchema.validate(customerInfo, { abortEarly: false });
+    } catch (errors) {
+      console.error(errors);
+      setValidationErrors(
+        errors.inner.reduce((acc, error) => {
+          acc[error.path] = error.message;
+          return acc;
+        }, {})
+      );
+      return;
+    }
+
     const cardElement = elements.getElement(CardElement);
 
-    const { name, email, phoneNumber, directions } = customerInfo;
+    const { name, email, phoneNumber } = customerInfo;
 
     // Use Stripe.js to create a payment method
     const result = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
       billing_details: {
-        name, 
-        email, 
+        name,
+        email,
         phone: phoneNumber,
-        directions,
-        cart,
-        subtotal,
-        total,
-        items: totalItems,
       },
     });
 
@@ -49,10 +75,26 @@ const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
     }
   };
 
+  const handleOrderSubmit = () => {
+    const orderData = {
+      ...orderInfo,
+      cart,
+      subtotal,
+      total,
+      quantity: totalItems,
+    };
+
+    onSubmitOrder(orderData);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCustomerInfo({
       ...customerInfo,
+      [name]: value,
+    });
+    setOrderInfo({
+      ...orderInfo,
       [name]: value,
     });
   };
@@ -69,6 +111,9 @@ const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
           onChange={handleInputChange}
           required
         />
+        {validationErrors.name && (
+          <p className="error">{validationErrors.name}</p>
+        )}
       </div>
       <div className="form-group">
         <label htmlFor="email">Email</label>
@@ -80,6 +125,9 @@ const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
           onChange={handleInputChange}
           required
         />
+        {validationErrors.email && (
+          <p className="error">{validationErrors.email}</p>
+        )}
       </div>
       <div className="form-group">
         <label htmlFor="phoneNumber">Phone Number</label>
@@ -91,18 +139,19 @@ const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
           onChange={handleInputChange}
           required
         />
+        {validationErrors.phoneNumber && (
+          <p className="error">{validationErrors.phoneNumber}</p>
+        )}
       </div>
       <div className="form-group">
         <label htmlFor="directions">Note From Customer</label>
-        <input
-          type="textarea"
+        <textarea
           id="directions"
           name="directions"
           value={customerInfo.directions}
           rows="4"
           placeholder="Please inform us of any allergies or special requests here."
           onChange={handleInputChange}
-          required
         />
       </div>
       <div className="form-group">
@@ -113,7 +162,7 @@ const PaymentForm = ({ onSubmit, subtotal, total, cart, totalItems }) => {
           }}
         />
       </div>
-      <button type="submit">Submit Payment</button>
+      <button type="submit" onClick={handleOrderSubmit}>Submit Payment</button>
     </form>
   );
 };
