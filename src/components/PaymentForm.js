@@ -5,29 +5,40 @@ import * as yup from 'yup';
 const validationSchema = yup.object().shape({
   name: yup.string().required('Name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
-  phoneNumber: yup
+  phone_number: yup
     .string()
     .matches(/^[0-9]{10}$/, 'Phone number must be 10 digits')
     .required('Phone number is required'),
   directions: yup.string(),
 });
 
-const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItems }) => {
+const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, totalItems }) => {
   const [validationErrors, setValidationErrors] = useState({});
   const stripe = useStripe();
   const elements = useElements();
 
+  const formattedSubtotal = parseFloat(subtotal);
+  const formattedTotal = parseFloat(total);
+  const formattedCart = cart.map(item => ({
+    ...item,
+    price: parseFloat(item.price),
+  }));
+
+
+  console.log(userId);
+
   const [orderInfo, setOrderInfo] = useState({
+    user_id: userId,
     name: '',
     email: '',
-    phoneNumber: '',
-    directions: '',
+    phone_number: '',
+    instructions: '',
   });
 
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     email: '',
-    phoneNumber: '',
+    phone_number: '',
   });
 
   const handleSubmit = async (event) => {
@@ -53,7 +64,7 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItem
 
     const cardElement = elements.getElement(CardElement);
 
-    const { name, email, phoneNumber } = customerInfo;
+    const { name, email, phone_number } = customerInfo;
 
     // Use Stripe.js to create a payment method
     const result = await stripe.createPaymentMethod({
@@ -62,7 +73,7 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItem
       billing_details: {
         name,
         email,
-        phone: phoneNumber,
+        phone: phone_number,
       },
     });
 
@@ -78,13 +89,20 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItem
   const handleOrderSubmit = () => {
     const orderData = {
       ...orderInfo,
-      cart,
-      subtotal,
-      total,
-      quantity: totalItems,
+      cart: formattedCart,
+      subtotal: formattedSubtotal,
+      total: formattedTotal,
+      items_quantity: totalItems,
     };
 
-    onSubmitOrder(orderData);
+    const orderItems = cart.map((item) => ({
+      id: item.id,
+      quantity: item.quantity,
+      name: item.name,
+      price: parseFloat(item.price),
+    }));
+
+    onSubmitOrder(orderData, orderItems);
   };
 
   const handleInputChange = (e) => {
@@ -100,6 +118,7 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItem
   };
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="name">Name</label>
@@ -130,17 +149,17 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItem
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="phoneNumber">Phone Number</label>
+        <label htmlFor="phone_number">Phone Number</label>
         <input
           type="tel"
-          id="phoneNumber"
-          name="phoneNumber"
-          value={customerInfo.phoneNumber}
+          id="phone_number"
+          name="phone_number"
+          value={customerInfo.phone_number}
           onChange={handleInputChange}
           required
         />
-        {validationErrors.phoneNumber && (
-          <p className="error">{validationErrors.phoneNumber}</p>
+        {validationErrors.phone_number && (
+          <p className="error">{validationErrors.phone_number}</p>
         )}
       </div>
       <div className="form-group">
@@ -164,6 +183,8 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, subtotal, total, cart, totalItem
       </div>
       <button type="submit" onClick={handleOrderSubmit}>Submit Payment</button>
     </form>
+    <button type="submit" onClick={handleOrderSubmit}>Submit Order</button>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
 
   const calculateSubtotal = () => {
     const subtotal = cart.reduce((accumulator, item) => accumulator + item.price * item.quantity, 0);
-    return subtotal;
+    return subtotal.toFixed(2);
   };
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
     } else {
-      const price = parseFloat(item.price);
+      const price = parseFloat(item.price).toFixed(2);
       setCart([...cart, { ...item, quantity: 1, price }]);
     }
   };  

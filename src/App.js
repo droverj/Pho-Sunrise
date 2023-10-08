@@ -83,7 +83,7 @@ function App() {
           ) : (
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/checkout" element={<Checkout userId={userId} />} />
               <Route
                 path="/contact"
                 element={<Contact userId={userId} reviews={reviews} updateReviews={updateReviews} />}
