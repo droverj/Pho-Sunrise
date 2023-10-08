@@ -99,6 +99,7 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, t
       id: item.id,
       quantity: item.quantity,
       name: item.name,
+      item_option: item.item_option,
       price: parseFloat(item.price),
     }));
 

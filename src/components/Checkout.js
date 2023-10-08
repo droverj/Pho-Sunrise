@@ -89,6 +89,7 @@ const Checkout = ({ userId }) => {
               item_id: orderItem.id,
               quantity: orderItem.quantity,
               item_name: orderItem.name,
+              item_option: orderItem.item_option,
               price: orderItem.price,
             }),
           });
