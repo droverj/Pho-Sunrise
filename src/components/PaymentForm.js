@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import * as yup from 'yup';
-
-const validationSchema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  email: yup.string().email('Invalid email').required('Email is required'),
-  phone_number: yup
-    .string()
-    .matches(/^[0-9]{10}$/, 'Phone number must be 10 digits')
-    .required('Phone number is required'),
-  directions: yup.string(),
-});
+import { paymentFormSchema } from '../utilities/validationSchemas';
 
 const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, totalItems }) => {
   const [validationErrors, setValidationErrors] = useState({});
@@ -50,7 +40,7 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, t
 
     // Validate the billing information
     try {
-      await validationSchema.validate(customerInfo, { abortEarly: false });
+      await paymentFormSchema.validate(customerInfo, { abortEarly: false });
     } catch (errors) {
       console.error(errors);
       setValidationErrors(
