@@ -2,28 +2,10 @@ import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { paymentFormSchema } from '../utilities/validationSchemas';
 
-const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, totalItems }) => {
+const PaymentForm = ({ onSubmit }) => {
   const [validationErrors, setValidationErrors] = useState({});
   const stripe = useStripe();
   const elements = useElements();
-
-  const formattedSubtotal = parseFloat(subtotal);
-  const formattedTotal = parseFloat(total);
-  const formattedCart = cart.map(item => ({
-    ...item,
-    price: parseFloat(item.price),
-  }));
-
-
-  console.log(userId);
-
-  const [orderInfo, setOrderInfo] = useState({
-    user_id: userId,
-    name: '',
-    email: '',
-    phone_number: '',
-    instructions: '',
-  });
 
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
@@ -76,43 +58,18 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, t
     }
   };
 
-  const handleOrderSubmit = () => {
-    const orderData = {
-      ...orderInfo,
-      cart: formattedCart,
-      subtotal: formattedSubtotal,
-      total: formattedTotal,
-      items_quantity: totalItems,
-    };
-
-    const orderItems = cart.map((item) => ({
-      id: item.id,
-      quantity: item.quantity,
-      name: item.name,
-      item_option: item.item_option,
-      price: parseFloat(item.price),
-    }));
-
-    onSubmitOrder(orderData, orderItems);
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCustomerInfo({
       ...customerInfo,
       [name]: value,
     });
-    setOrderInfo({
-      ...orderInfo,
-      [name]: value,
-    });
   };
 
   return (
-    <div>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Cardholder Name</label>
         <input
           type="text"
           id="name"
@@ -154,17 +111,6 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, t
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="directions">Note From Customer</label>
-        <textarea
-          id="directions"
-          name="directions"
-          value={customerInfo.directions}
-          rows="4"
-          placeholder="Please inform us of any allergies or special requests here."
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
         <label>Card details</label>
         <CardElement
           options={{
@@ -172,10 +118,8 @@ const PaymentForm = ({ onSubmit, onSubmitOrder, userId, subtotal, total, cart, t
           }}
         />
       </div>
-      <button type="submit" onClick={handleOrderSubmit}>Submit Payment</button>
+      <button type="submit">Submit Payment</button>
     </form>
-    <button type="submit" onClick={handleOrderSubmit}>Submit Order</button>
-    </div>
   );
 };
 

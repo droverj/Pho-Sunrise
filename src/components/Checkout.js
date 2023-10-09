@@ -1,6 +1,7 @@
 import React from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import PaymentForm from './PaymentForm';
+import OrderForm from './OrderForm';
 import { useCart } from '../components/CartContext';
 import stripePromise from '../utilities/stripe';
 
@@ -69,14 +70,14 @@ const Checkout = ({ userId }) => {
         },
         body: JSON.stringify(orderData),
       });
-  
+
       if (orderResponse.ok) {
         const orderResponseData = await orderResponse.json();
         console.log('Order submitted successfully');
-  
+
         // Step 2: Extract the order_id from the response
         const orderId = orderResponseData.order.id;
-  
+
         // Step 3: Iterate through the order items and send each one to the "/order-items" endpoint
         for (const orderItem of orderItems) {
           const orderItemResponse = await fetch(`${API_BASE_URL}/order-items`, {
@@ -93,13 +94,13 @@ const Checkout = ({ userId }) => {
               price: orderItem.price,
             }),
           });
-  
+
           if (!orderItemResponse.ok) {
             handleHttpError(orderItemResponse);
             return; // Handle the error and optionally break the loop if needed
           }
         }
-  
+
         // Handle any further actions or redirects
       } else {
         handleHttpError(orderResponse);
@@ -108,7 +109,7 @@ const Checkout = ({ userId }) => {
       handleNetworkError(error);
     }
   };
-  
+
 
   const onSubmitOrder = async (orderData, orderItems) => {
     await submitOrder(orderData, orderItems);
@@ -127,15 +128,17 @@ const Checkout = ({ userId }) => {
         <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
       </div>
       <p className="order-total">Total: ${total}</p>
+      <OrderForm
+        userId={userId}
+        onSubmitOrder={onSubmitOrder}
+        subtotal={subtotal}
+        total={total}
+        cart={cart}
+        totalItems={totalItems}
+      />
       <Elements stripe={stripePromise}>
         <PaymentForm
-          userId={userId}
           onSubmit={onSubmit}
-          onSubmitOrder={onSubmitOrder}
-          subtotal={subtotal}
-          total={total}
-          cart={cart}
-          totalItems={totalItems}
         />
       </Elements>
     </div>
