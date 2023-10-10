@@ -12,6 +12,7 @@ const API_BASE_URL = 'http://localhost:8080/api';
 const Checkout = ({ userId }) => {
   const { cart, totalItems, subtotal } = useCart();
   const total = calculateTotal(subtotal);
+  const totalInCents = total * 100;
 
   async function handleNetworkError(error) {
     console.error('Network error:', error);
@@ -24,10 +25,21 @@ const Checkout = ({ userId }) => {
   }
 
   async function onSubmit(paymentMethod) {
+    console.log(paymentMethod)
+
     const paymentData = {
       payment_method: paymentMethod.id,
+      amount: parseInt(totalInCents),
+      currency: 'cad',
+      return_url: 'https://www.google.ca/',
+      automatic_payment_methods: {
+        enabled: true,
+        allow_redirects: 'never',
+      },
       // Add any other relevant payment data here
     };
+
+    console.log(paymentData);
 
     try {
       const response = await fetch(`${API_BASE_URL}/stripe/process-payment`, {
@@ -137,7 +149,7 @@ const Checkout = ({ userId }) => {
         totalItems={totalItems}
       />
       <Elements stripe={stripePromise}>
-        <PaymentForm onSubmit={onSubmit} />
+        <PaymentForm amount={totalInCents} />
       </Elements>
     </div>
   );
