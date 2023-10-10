@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { paymentFormSchema } from '../utilities/validationSchemas';
 
-const PaymentForm = ({amount}) => {
+const PaymentForm = ({ amount }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -17,29 +16,41 @@ const PaymentForm = ({amount}) => {
 
     const cardElement = elements.getElement(CardElement);
 
-    // Create a PaymentMethod
+    // Collect additional cardholder information
+    const billingDetails = {
+      name: event.target.name.value, // Cardholder's name
+      address: {
+        line1: event.target.address.value, // Billing address
+        postal_code: event.target.postalCode.value,
+      },
+      email: event.target.email.value, // Cardholder's email (optional)
+      phone: event.target.phone.value, // Cardholder's phone number (optional)
+    };
+
+    // Create a PaymentMethod with billing details
     const { paymentMethod, error } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
+      billing_details: billingDetails,
     });
 
     if (error) {
       console.error(error);
       setPaymentError(error.message);
     } else {
-      // Send the paymentMethod.id to the server for processing
+      // Send the paymentMethod.id and the order total to your server for processing
       try {
         const response = await fetch('http://localhost:8080/api/stripe/process-payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ 
+          body: JSON.stringify({
             paymentMethodId: paymentMethod.id,
             amount,
           }),
         });
-  
+
         if (response.ok) {
           // Payment succeeded, handle success on the frontend (e.g., show a confirmation message)
           console.log('Payment succeeded!');
@@ -50,8 +61,8 @@ const PaymentForm = ({amount}) => {
         }
       } catch (error) {
         // Handle network errors or other issues
-        console.error('Error sending payment to server:', error);
-        setPaymentError('Error sending payment to server');
+        console.error('Error sending payment to the server:', error);
+        setPaymentError('Error sending payment to the server');
       }
     }
   };
@@ -59,6 +70,26 @@ const PaymentForm = ({amount}) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Cardholder's Name</label>
+          <input type="text" name="name" required />
+        </div>
+        <div className="form-group">
+          <label>Billing Address</label>
+          <input type="text" name="address" required />
+        </div>
+        <div className="form-group">
+          <label>Postal Code</label>
+          <input type="text" name="postalCode" required />
+        </div>
+        <div className="form-group">
+          <label>Email (optional)</label>
+          <input type="email" name="email" />
+        </div>
+        <div className="form-group">
+          <label>Phone Number (optional)</label>
+          <input type="tel" name="phone" />
+        </div>
         <div className="form-group">
           <label>Card Details</label>
           <CardElement
