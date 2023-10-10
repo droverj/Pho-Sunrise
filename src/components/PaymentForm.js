@@ -7,6 +7,18 @@ const PaymentForm = ({ amount }) => {
 
   const [paymentError, setPaymentError] = useState(null);
 
+  // Define initial state for form fields
+  const initialFormState = {
+    name: '',
+    addressLine1: '', // Line 1: Billing address
+    addressLine2: '', // Line 2: Billing address (optional)
+    postalCode: '',
+    email: '',
+    phone: '',
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -18,13 +30,14 @@ const PaymentForm = ({ amount }) => {
 
     // Collect additional cardholder information
     const billingDetails = {
-      name: event.target.name.value, // Cardholder's name
+      name: formData.name, // Cardholder's name
       address: {
-        line1: event.target.address.value, // Billing address
-        postal_code: event.target.postalCode.value,
+        line1: formData.addressLine1, // Line 1: Billing address
+        line2: formData.addressLine2, // Line 2: Billing address
+        postal_code: formData.postalCode,
       },
-      email: event.target.email.value, // Cardholder's email (optional)
-      phone: event.target.phone.value, // Cardholder's phone number (optional)
+      email: formData.email, // Cardholder's email (optional)
+      phone: formData.phone, // Cardholder's phone number (optional)
     };
 
     // Create a PaymentMethod with billing details
@@ -54,6 +67,9 @@ const PaymentForm = ({ amount }) => {
         if (response.ok) {
           // Payment succeeded, handle success on the frontend (e.g., show a confirmation message)
           console.log('Payment succeeded!');
+
+          // Clear form fields on successful payment
+          setFormData(initialFormState);
         } else {
           // Payment failed on the server, handle the error
           console.error('Payment failed on the server');
@@ -67,28 +83,38 @@ const PaymentForm = ({ amount }) => {
     }
   };
 
+  const handleInputChange = (event) => {
+    // Update form field values as they change
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Cardholder's Name</label>
-          <input type="text" name="name" required />
+          <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
         </div>
         <div className="form-group">
           <label>Billing Address</label>
-          <input type="text" name="address" required />
+          <input type="text" name="addressLine1" value={formData.addressLine1} onChange={handleInputChange} required placeholder="Line 1" required />
+          <input type="text" name="addressLine2" value={formData.addressLine2} onChange={handleInputChange} placeholder="Line 2 (optional)" />
         </div>
         <div className="form-group">
           <label>Postal Code</label>
-          <input type="text" name="postalCode" required />
+          <input type="text" name="postalCode" value={formData.postalCode} onChange={handleInputChange} required />
         </div>
         <div className="form-group">
-          <label>Email (optional)</label>
-          <input type="email" name="email" />
+          <label>Email</label>
+          <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
         </div>
         <div className="form-group">
           <label>Phone Number (optional)</label>
-          <input type="tel" name="phone" />
+          <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} />
         </div>
         <div className="form-group">
           <label>Card Details</label>

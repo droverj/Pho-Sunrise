@@ -24,43 +24,6 @@ const Checkout = ({ userId }) => {
     // You can also parse the response body for more specific error details if your server sends them
   }
 
-  async function onSubmit(paymentMethod) {
-    console.log(paymentMethod)
-
-    const paymentData = {
-      payment_method: paymentMethod.id,
-      amount: parseInt(totalInCents),
-      currency: 'cad',
-      return_url: 'https://www.google.ca/',
-      automatic_payment_methods: {
-        enabled: true,
-        allow_redirects: 'never',
-      },
-      // Add any other relevant payment data here
-    };
-
-    console.log(paymentData);
-
-    try {
-      const response = await fetch(`${API_BASE_URL}/stripe/process-payment`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(paymentData),
-      });
-
-      if (response.ok) {
-        console.log('Payment submitted successfully');
-        submitOrder();
-      } else {
-        handleHttpError(response);
-      }
-    } catch (error) {
-      handleNetworkError(error);
-    }
-  }
-
   async function submitOrder(orderData, orderItems) {
     try {
       // Step 1: Submit the order data to the "/orders" endpoint
