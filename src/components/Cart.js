@@ -52,7 +52,7 @@ const Cart = () => {
               {cart.map((cartItem) => (
                 <li className="cart-item" key={cartItem.id}>
                   <div className="item-info">
-                  {cartItem.name} - {cartItem.item_option} ${cartItem.price}
+                    {cartItem.name} - {cartItem.item_option} ${cartItem.price}
                   </div>
                   <button onClick={() => handleRemove(cartItem)}>-</button>
                   <button onClick={() => handleAdd(cartItem)}>+</button>
@@ -64,7 +64,7 @@ const Cart = () => {
         )}
       </div>
       <Link to="/checkout">
-        <button className="place-order-button" disabled={!isAuthenticated}>
+        <button className="place-order-button">
           Proceed to Checkout
         </button>
       </Link>

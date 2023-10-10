@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const OrderForm = ({ onSubmitOrder, userId, subtotal, total, cart, totalItems }) => {
   const [validationErrors, setValidationErrors] = useState({});
+  console.log(userId);
 
   const formattedSubtotal = parseFloat(subtotal);
   const formattedTotal = parseFloat(total);
@@ -11,7 +12,6 @@ const OrderForm = ({ onSubmitOrder, userId, subtotal, total, cart, totalItems })
   }));
 
   const [orderInfo, setOrderInfo] = useState({
-    user_id: userId,
     name: '',
     email: '',
     phone_number: '',
@@ -23,11 +23,14 @@ const OrderForm = ({ onSubmitOrder, userId, subtotal, total, cart, totalItems })
 
     const orderData = {
       ...orderInfo,
+      user_id: userId,
       cart: formattedCart,
       subtotal: formattedSubtotal,
       total: formattedTotal,
       items_quantity: totalItems,
     };
+
+    console.log(orderData);
 
     const orderItems = cart.map((item) => ({
       id: item.id,

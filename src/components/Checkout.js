@@ -11,30 +11,19 @@ const API_BASE_URL = 'http://localhost:8080/api';
 
 const Checkout = ({ userId }) => {
   const { cart, totalItems, subtotal } = useCart();
+  const total = calculateTotal(subtotal);
 
-  const calculateTax = (subtotal, rate) => (subtotal * rate).toFixed(2);
-
-  const calculateTotal = () => {
-    const subtotalNumber = parseFloat(subtotal);
-    const hstNumber = parseFloat(calculateTax(subtotalNumber, HST_RATE));
-    const gstNumber = parseFloat(calculateTax(subtotalNumber, GST_RATE));
-    const totalNumber = subtotalNumber + hstNumber + gstNumber;
-    return totalNumber.toFixed(2);
-  };
-
-  const total = parseFloat(calculateTotal(subtotal));
-
-  const handleNetworkError = (error) => {
+  async function handleNetworkError(error) {
     console.error('Network error:', error);
     // Handle network errors
-  };
+  }
 
-  const handleHttpError = (response) => {
+  function handleHttpError(response) {
     console.error('Error:', response.statusText);
     // You can also parse the response body for more specific error details if your server sends them
-  };
+  }
 
-  const onSubmit = async (paymentMethod) => {
+  async function onSubmit(paymentMethod) {
     const paymentData = {
       payment_method: paymentMethod.id,
       // Add any other relevant payment data here
@@ -58,9 +47,9 @@ const Checkout = ({ userId }) => {
     } catch (error) {
       handleNetworkError(error);
     }
-  };
+  }
 
-  const submitOrder = async (orderData, orderItems) => {
+  async function submitOrder(orderData, orderItems) {
     try {
       // Step 1: Submit the order data to the "/orders" endpoint
       const orderResponse = await fetch(`${API_BASE_URL}/orders`, {
@@ -108,15 +97,26 @@ const Checkout = ({ userId }) => {
     } catch (error) {
       handleNetworkError(error);
     }
-  };
+  }
 
-
-  const onSubmitOrder = async (orderData, orderItems) => {
+  async function onSubmitOrder(orderData, orderItems) {
     await submitOrder(orderData, orderItems);
-    console.log("orderData: ", orderData);
-    console.log("orderItems: ", orderItems);
+    console.log('orderData: ', orderData);
+    console.log('orderItems: ', orderItems);
     // Handle further actions or redirects after submitting the order
-  };
+  }
+
+  function calculateTotal(subtotal) {
+    const subtotalNumber = parseFloat(subtotal);
+    const hstNumber = parseFloat(calculateTax(subtotalNumber, HST_RATE));
+    const gstNumber = parseFloat(calculateTax(subtotalNumber, GST_RATE));
+    const totalNumber = subtotalNumber + hstNumber + gstNumber;
+    return totalNumber.toFixed(2);
+  }
+
+  function calculateTax(subtotal, rate) {
+    return (subtotal * rate).toFixed(2);
+  }
 
   return (
     <div className="order-form">
@@ -137,13 +137,10 @@ const Checkout = ({ userId }) => {
         totalItems={totalItems}
       />
       <Elements stripe={stripePromise}>
-        <PaymentForm
-          onSubmit={onSubmit}
-        />
+        <PaymentForm onSubmit={onSubmit} />
       </Elements>
     </div>
   );
 };
 
 export default Checkout;
-
