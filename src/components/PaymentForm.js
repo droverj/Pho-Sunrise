@@ -15,7 +15,7 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
     addressLine1: '',
     addressLine2: '',
     city: '',
-    region: '',
+    state: '',
     country: '',
     postalCode: '',
     email: '',
@@ -44,7 +44,7 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
         line1: formData.addressLine1,
         line2: formData.addressLine2,
         city: formData.city,
-        region: formData.region,
+        state: formData.state,
         country: formData.country.toUpperCase(),
         postal_code: formData.postalCode,
       },
@@ -150,19 +150,19 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
       </div>
       <div className="form-group">
         <input type="text" name="city" value={formData.city} onChange={handleInputChange} required />
-        <label>City</label>
+        <label>City *</label>
       </div>
       <div className="form-group">
-        <input type="text" name="region" value={formData.region} onChange={handleInputChange} required />
-        <label>Province</label>
+        <input type="text" name="state" value={formData.state} onChange={handleInputChange} required />
+        <label>Province *</label>
       </div>
       <div className="form-group">
-        <input type="text" name="country" value={formData.country} onChange={handleInputChange} required maxLength="2" />
-        <label>Country</label>
+        <input type="text" name="country" value={formData.country} onChange={handleInputChange} required maxLength="2" placeholder="e.g. 'CA' or 'US'" />
+        <label>Country * </label>
       </div>
       <div className="form-group">
         <input type="text" name="postalCode" value={formData.postalCode} onChange={handleInputChange} required />
-        <label>Postal Code</label>
+        <label>Postal Code * </label>
       </div>
       <div className="form-group">
         <label>Card Details</label>

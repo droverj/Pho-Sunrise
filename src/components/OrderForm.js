@@ -53,7 +53,6 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
   return (
     <form onSubmit={handleOrderSubmit}>
       <div className="form-group">
-        <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
@@ -62,12 +61,12 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           onChange={handleInputChange}
           required
         />
+         <label htmlFor="name">Name</label>
         {validationErrors.name && (
           <p className="error">{validationErrors.name}</p>
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
@@ -76,12 +75,12 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           onChange={handleInputChange}
           required
         />
+         <label htmlFor="email">Email</label>
         {validationErrors.email && (
           <p className="error">{validationErrors.email}</p>
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="phone_number">Phone Number</label>
         <input
           type="tel"
           id="phone_number"
@@ -90,6 +89,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           onChange={handleInputChange}
           required
         />
+        <label htmlFor="phone_number">Phone Number</label>
         {validationErrors.phone_number && (
           <p className="error">{validationErrors.phone_number}</p>
         )}
