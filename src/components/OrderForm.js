@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const OrderForm = ({ onSubmitOrder, userId, subtotal, total, cart, totalItems }) => {
+const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, total, cart, totalItems }) => {
   const [validationErrors, setValidationErrors] = useState({});
 
   const formattedSubtotal = parseFloat(subtotal);
@@ -37,7 +37,9 @@ const OrderForm = ({ onSubmitOrder, userId, subtotal, total, cart, totalItems })
       price: parseFloat(item.price),
     }));
 
-    onSubmitOrder(orderData, orderItems);
+    setOrderData(orderData);
+    setOrderItems(orderItems);
+    setStep(2);
   };
 
   const handleInputChange = (e) => {
@@ -103,7 +105,7 @@ const OrderForm = ({ onSubmitOrder, userId, subtotal, total, cart, totalItems })
           onChange={handleInputChange}
         />
       </div>
-      <button type="submit">Submit Order</button>
+      <button type="submit">Proceed to Payment</button>
     </form>
   );
 };

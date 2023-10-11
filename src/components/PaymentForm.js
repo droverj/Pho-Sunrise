@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const PaymentForm = ({ amount }) => {
+const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime, orderData, orderItems }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -69,9 +69,15 @@ const PaymentForm = ({ amount }) => {
           console.log('Payment succeeded!');
 
           // Clear form fields on successful payment
+          onSubmitOrder(orderData, orderItems);
           setFormData(initialFormState);
+          setStep(3);
+          setStatus(true);
+          setCurrentTime(getCurrentTime());
         } else {
           // Payment failed on the server, handle the error
+          setStep(3);
+          setStatus(false);
           console.error('Payment failed on the server');
           setPaymentError('Payment failed on the server');
         }
@@ -90,6 +96,14 @@ const PaymentForm = ({ amount }) => {
       ...formData,
       [name]: value,
     });
+  };
+
+  const getCurrentTime = () => {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0'); // Get hours (0-23)
+    const minutes = now.getMinutes().toString().padStart(2, '0'); // Get minutes
+    const seconds = now.getSeconds().toString().padStart(2, '0'); // Get seconds
+    return `${hours}:${minutes}:${seconds}`;
   };
 
   return (

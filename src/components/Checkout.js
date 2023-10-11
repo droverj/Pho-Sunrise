@@ -13,6 +13,7 @@ const API_BASE_URL = 'http://localhost:8080/api';
 const Checkout = ({ userId }) => {
   const [step, setStep] = useState(1); // Step 1: OrderForm, Step 2: PaymentForm, Step 3: PaymentStatus
   const [orderData, setOrderData] = useState(null);
+  const [orderItems, setOrderItems] = useState(null);
   const [status, setStatus] = useState(true);
   const [currentTime, setCurrentTime] = useState([]);
 
@@ -30,7 +31,9 @@ const Checkout = ({ userId }) => {
     // You can also parse the response body for more specific error details if your server sends them
   }
 
-  async function submitOrder(orderData, orderItems) {
+  async function onSubmitOrder(orderData, orderItems) {
+    console.log("Order Data: ", orderData);
+    console.log("Order items: ", orderItems);
     try {
       // Step 1: Submit the order data to the "/orders" endpoint
       const orderResponse = await fetch(`${API_BASE_URL}/orders`, {
@@ -80,13 +83,6 @@ const Checkout = ({ userId }) => {
     }
   }
 
-  async function onSubmitOrder(orderData, orderItems) {
-    await submitOrder(orderData, orderItems);
-    console.log('orderData: ', orderData);
-    console.log('orderItems: ', orderItems);
-    // Handle further actions or redirects after submitting the order
-  }
-
   function calculateTotal(subtotal) {
     const subtotalNumber = parseFloat(subtotal);
     const hstNumber = parseFloat(calculateTax(subtotalNumber, HST_RATE));
@@ -121,7 +117,9 @@ const Checkout = ({ userId }) => {
           <p className="order-total">Total: ${total}</p>
           <OrderForm
             userId={userId}
-            onSubmitOrder={onSubmitOrder}
+            setOrderData={setOrderData}
+            setOrderItems={setOrderItems}
+            setStep={setStep}
             subtotal={subtotal}
             total={total}
             cart={cart}
@@ -139,11 +137,24 @@ const Checkout = ({ userId }) => {
           </div>
           <p className="order-total">Total: ${total}</p>
           <Elements stripe={stripePromise}>
-            <PaymentForm amount={totalInCents} />
+            <PaymentForm
+              amount={totalInCents}
+              onSubmitOrder={onSubmitOrder}
+              setStep={setStep}
+              setStatus={setStatus}
+              setCurrentTime={setCurrentTime}
+              orderData={orderData}
+              orderItems={orderItems}
+            />
           </Elements>
         </div>
       )}
-      {step === 3 && <PaymentStatus status={status} currentTime={currentTime} />}
+      {step === 3 && <PaymentStatus
+        status={status}
+        setStep={setStep}
+        currentTime={currentTime}
+      />
+      }
     </div>
   );
 };
