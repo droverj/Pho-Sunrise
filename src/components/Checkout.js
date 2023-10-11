@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import PaymentForm from './PaymentForm';
 import OrderForm from './OrderForm';
+import PaymentStatus from './PaymentStatus';
 import { useCart } from '../components/CartContext';
 import stripePromise from '../utilities/stripe';
 
@@ -10,6 +11,9 @@ const GST_RATE = 0.05; // 5% GST for Ontario
 const API_BASE_URL = 'http://localhost:8080/api';
 
 const Checkout = ({ userId }) => {
+  const [status, setStatus] = useState(true);
+  const [currentTime, setCurrentTime] = useState([]);
+  
   const { cart, totalItems, subtotal } = useCart();
   const total = calculateTotal(subtotal);
   const totalInCents = total * 100;
@@ -93,6 +97,14 @@ const Checkout = ({ userId }) => {
     return (subtotal * rate).toFixed(2);
   }
 
+  const getCurrentTime = () => {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0'); // Get hours (0-23)
+    const minutes = now.getMinutes().toString().padStart(2, '0'); // Get minutes
+    const seconds = now.getSeconds().toString().padStart(2, '0'); // Get seconds
+    return `${hours}:${minutes}:${seconds}`;
+  };
+
   return (
     <div className="order-form">
       <h1 className="order-form-heading">Enter Your Information</h1>
@@ -114,6 +126,7 @@ const Checkout = ({ userId }) => {
       <Elements stripe={stripePromise}>
         <PaymentForm amount={totalInCents} />
       </Elements>
+      <PaymentStatus status={status} currentTime={currentTime} />
     </div>
   );
 };
