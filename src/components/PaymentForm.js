@@ -101,7 +101,7 @@ const PaymentForm = ({ amount }) => {
         </div>
         <div className="form-group">
           <label>Billing Address</label>
-          <input type="text" name="addressLine1" value={formData.addressLine1} onChange={handleInputChange} required placeholder="Line 1" required />
+          <input type="text" name="addressLine1" value={formData.addressLine1} onChange={handleInputChange} required placeholder="Line 1" />
           <input type="text" name="addressLine2" value={formData.addressLine2} onChange={handleInputChange} placeholder="Line 2 (optional)" />
         </div>
         <div className="form-group">

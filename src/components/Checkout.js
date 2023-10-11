@@ -11,9 +11,11 @@ const GST_RATE = 0.05; // 5% GST for Ontario
 const API_BASE_URL = 'http://localhost:8080/api';
 
 const Checkout = ({ userId }) => {
+  const [step, setStep] = useState(1); // Step 1: OrderForm, Step 2: PaymentForm, Step 3: PaymentStatus
+  const [orderData, setOrderData] = useState(null);
   const [status, setStatus] = useState(true);
   const [currentTime, setCurrentTime] = useState([]);
-  
+
   const { cart, totalItems, subtotal } = useCart();
   const total = calculateTotal(subtotal);
   const totalInCents = total * 100;
@@ -106,27 +108,42 @@ const Checkout = ({ userId }) => {
   };
 
   return (
-    <div className="order-form">
-      <h1 className="order-form-heading">Enter Your Information</h1>
-      <p>Please inform us of any allergies prior to ordering. Thank you!</p>
-      <div className="order-details">
-        <p>Subtotal: ${subtotal}</p>
-        <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
-        <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
-      </div>
-      <p className="order-total">Total: ${total}</p>
-      <OrderForm
-        userId={userId}
-        onSubmitOrder={onSubmitOrder}
-        subtotal={subtotal}
-        total={total}
-        cart={cart}
-        totalItems={totalItems}
-      />
-      <Elements stripe={stripePromise}>
-        <PaymentForm amount={totalInCents} />
-      </Elements>
-      <PaymentStatus status={status} currentTime={currentTime} />
+    <div className="checkout">
+      {step === 1 && (
+        <div>
+          <h1 className="form-heading">Enter Your Contact Information</h1>
+          <p>Please inform us of any allergies prior to ordering. Thank you!</p>
+          <div className="order-details">
+            <p>Subtotal: ${subtotal}</p>
+            <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
+            <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
+          </div>
+          <p className="order-total">Total: ${total}</p>
+          <OrderForm
+            userId={userId}
+            onSubmitOrder={onSubmitOrder}
+            subtotal={subtotal}
+            total={total}
+            cart={cart}
+            totalItems={totalItems}
+          />
+        </div>
+      )}
+      {step === 2 && (
+        <div>
+          <h1 className="form-heading">Enter Your Billing Information</h1>
+          <div className="order-details">
+            <p>Subtotal: ${subtotal}</p>
+            <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
+            <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
+          </div>
+          <p className="order-total">Total: ${total}</p>
+          <Elements stripe={stripePromise}>
+            <PaymentForm amount={totalInCents} />
+          </Elements>
+        </div>
+      )}
+      {step === 3 && <PaymentStatus status={status} currentTime={currentTime} />}
     </div>
   );
 };
