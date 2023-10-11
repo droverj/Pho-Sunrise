@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
+import { useCart } from '../components/CartContext';
 import PaymentForm from './PaymentForm';
+import stripePromise from '../utilities/stripe';
 import OrderForm from './OrderForm';
 import PaymentStatus from './PaymentStatus';
-import { useCart } from '../components/CartContext';
-import stripePromise from '../utilities/stripe';
+import '../styles/Checkout.scss';
 
 const HST_RATE = 0.13; // 13% HST for Ontario
 const GST_RATE = 0.05; // 5% GST for Ontario
@@ -104,52 +106,59 @@ const Checkout = ({ userId }) => {
   };
 
   return (
-    <div className="checkout">
+    <div className='checkout'>
+      <Link to="/cart">
+        <button>
+          Return to Cart
+        </button>
+      </Link>
       {step === 1 && (
-        <div>
-          <h1 className="form-heading">Enter Your Contact Information</h1>
-          <p>Please inform us of any allergies prior to ordering. Thank you!</p>
-          <div className="order-details">
+        <div className='price-and-form-container'>
+          <div className="price-summary">
             <p>Subtotal: ${subtotal}</p>
             <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
             <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
+            <p className="order-total">Total: ${total}</p>
           </div>
-          <p className="order-total">Total: ${total}</p>
-          <OrderForm
-            userId={userId}
-            setOrderData={setOrderData}
-            setOrderItems={setOrderItems}
-            setStep={setStep}
-            subtotal={subtotal}
-            total={total}
-            cart={cart}
-            totalItems={totalItems}
-          />
+          <div className='checkout-form'>
+            <h2 className="form-heading">Enter Your Contact Information</h2>
+            <p>Please inform us of any allergies prior to ordering. Thank you!</p>
+            <OrderForm className='checkout-form'
+              userId={userId}
+              setOrderData={setOrderData}
+              setOrderItems={setOrderItems}
+              setStep={setStep}
+              subtotal={subtotal}
+              total={total}
+              cart={cart}
+              totalItems={totalItems}
+            />
+          </div>
         </div>
       )}
       {step === 2 && (
-        <div>
-          <h1 className="form-heading">Enter Your Billing Information</h1>
-          <div className="order-details">
-            <p>Subtotal: ${subtotal}</p>
-            <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
-            <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
+        <div className='price-and-form-container'>
+          <div className="price-summary">
+            <p className="order-total">Total: ${total}</p>
           </div>
-          <p className="order-total">Total: ${total}</p>
-          <Elements stripe={stripePromise}>
-            <PaymentForm
-              amount={totalInCents}
-              onSubmitOrder={onSubmitOrder}
-              setStep={setStep}
-              setStatus={setStatus}
-              setCurrentTime={setCurrentTime}
-              orderData={orderData}
-              orderItems={orderItems}
-            />
-          </Elements>
+          <div className='checkout-form'>
+            <h2 className="form-heading">Enter Your Billing Information</h2>
+            <Elements stripe={stripePromise}>
+              <PaymentForm className='checkout-form'
+                amount={totalInCents}
+                onSubmitOrder={onSubmitOrder}
+                setStep={setStep}
+                setStatus={setStatus}
+                setCurrentTime={setCurrentTime}
+                orderData={orderData}
+                orderItems={orderItems}
+              />
+            </Elements>
+          </div>
         </div>
       )}
-      {step === 3 && <PaymentStatus
+      {step === 3 && 
+      <PaymentStatus
         status={status}
         setStep={setStep}
         currentTime={currentTime}

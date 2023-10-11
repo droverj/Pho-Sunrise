@@ -9,9 +9,14 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
 
   // Define initial state for form fields
   const initialFormState = {
-    name: '',
-    addressLine1: '', // Line 1: Billing address
-    addressLine2: '', // Line 2: Billing address (optional)
+    firstName: '',
+    lastName: '',
+    initial: '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    region: '',
+    country: '',
     postalCode: '',
     email: '',
     phone: '',
@@ -28,12 +33,19 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
 
     const cardElement = elements.getElement(CardElement);
 
-    // Collect additional cardholder information
+    // Cardholder's Formatted Name - with or without middle initial 
+    const name = [formData.firstName, formData.initial, formData.lastName]
+      .filter(Boolean)
+      .join(' ');
+
     const billingDetails = {
-      name: formData.name, // Cardholder's name
+      name, // Cardholder's name
       address: {
-        line1: formData.addressLine1, // Line 1: Billing address
-        line2: formData.addressLine2, // Line 2: Billing address
+        line1: formData.addressLine1,
+        line2: formData.addressLine2,
+        city: formData.city,
+        region: formData.region,
+        country: formData.country.toUpperCase(),
         postal_code: formData.postalCode,
       },
       email: formData.email, // Cardholder's email (optional)
@@ -107,58 +119,79 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Cardholder's Name</label>
-          <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
-        </div>
-        <div className="form-group">
-          <label>Billing Address</label>
-          <input type="text" name="addressLine1" value={formData.addressLine1} onChange={handleInputChange} required placeholder="Line 1" />
-          <input type="text" name="addressLine2" value={formData.addressLine2} onChange={handleInputChange} placeholder="Line 2 (optional)" />
-        </div>
-        <div className="form-group">
-          <label>Postal Code</label>
-          <input type="text" name="postalCode" value={formData.postalCode} onChange={handleInputChange} required />
-        </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
-        </div>
-        <div className="form-group">
-          <label>Phone Number (optional)</label>
-          <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>Card Details</label>
-          <CardElement
-            options={{
-              style: {
-                base: {
-                  fontSize: '16px',
-                  color: '#424770',
-                  '::placeholder': {
-                    color: '#aab7c4',
-                  },
-                },
-                invalid: {
-                  color: '#9e2146',
+    <form onSubmit={handleSubmit}>
+      <p>Cardholder's Name</p>
+      <div className="form-group">
+        <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
+        <label>First Name *</label>
+      </div>
+      <div className="form-group">
+        <input type="text" name="initial" value={formData.initial} onChange={handleInputChange} />
+        <label>Initial</label>
+      </div>
+      <div className="form-group">
+        <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
+        <label>Last Name *</label>
+      </div>
+      <div className="form-group">
+      <p>Cardholder's Email</p>
+        <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+      </div>
+      <div className="form-group">
+        <p>Cardholder's Phone Number</p>
+        <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} />
+      </div>
+      <div className="form-group">
+        <p>Billing Address</p>
+        <input type="text" name="addressLine1" value={formData.addressLine1} onChange={handleInputChange} required />
+        <label>Line 1 *</label>
+        <input type="text" name="addressLine2" value={formData.addressLine2} onChange={handleInputChange} />
+        <label>Line 2</label>
+      </div>
+      <div className="form-group">
+        <input type="text" name="city" value={formData.city} onChange={handleInputChange} required />
+        <label>City</label>
+      </div>
+      <div className="form-group">
+        <input type="text" name="region" value={formData.region} onChange={handleInputChange} required />
+        <label>Province</label>
+      </div>
+      <div className="form-group">
+        <input type="text" name="country" value={formData.country} onChange={handleInputChange} required maxLength="2" />
+        <label>Country</label>
+      </div>
+      <div className="form-group">
+        <input type="text" name="postalCode" value={formData.postalCode} onChange={handleInputChange} required />
+        <label>Postal Code</label>
+      </div>
+      <div className="form-group">
+        <label>Card Details</label>
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: '16px',
+                color: '#424770',
+                '::placeholder': {
+                  color: '#aab7c4',
                 },
               },
-            }}
-          />
+              invalid: {
+                color: '#9e2146',
+              },
+            },
+          }}
+        />
+      </div>
+      {paymentError && (
+        <div className="error-message">
+          Payment failed: {paymentError}
         </div>
-        {paymentError && (
-          <div className="error-message">
-            Payment failed: {paymentError}
-          </div>
-        )}
-        <button type="submit" className="btn btn-primary">
-          Pay Now
-        </button>
-      </form>
-    </div>
+      )}
+      <button type="submit">
+        Pay Now
+      </button>
+    </form>
   );
 };
 
