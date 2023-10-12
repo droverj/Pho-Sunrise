@@ -21,7 +21,7 @@ const Checkout = ({ userId }) => {
 
   const { cart, totalItems, subtotal } = useCart();
   const total = calculateTotal(subtotal);
-  const totalInCents = total * 100;
+  const totalInCents = Math.round(total * 100)
 
   async function handleNetworkError(error) {
     console.error('Network error:', error);
@@ -98,42 +98,41 @@ const Checkout = ({ userId }) => {
   return (
     <div className='checkout'>
       {step === 1 && (
-          <div className='price-and-form-container'>
-            <div className="price-summary">
-          <Link to="/cart">
-            <button>
-              Return to Cart
-            </button>
-          </Link>
-              <p>Subtotal: ${subtotal}</p>
-              <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
-              <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
-              <p className="order-total">Total: ${total}</p>
-            </div>
-            <div className='form-container'>
-              <div>
-                <h2 className="form-heading">Enter Your Contact Information</h2>
-                <p>Please inform us of any allergies prior to ordering.</p>
-                <OrderForm
-                  userId={userId}
-                  setOrderData={setOrderData}
-                  setOrderItems={setOrderItems}
-                  setStep={setStep}
-                  subtotal={subtotal}
-                  total={total}
-                  cart={cart}
-                  totalItems={totalItems}
-                />
-              </div>
+        <div className='price-and-form-container'>
+          <div className="price-summary">
+            <Link to="/cart">
+              <button>Return to Cart</button>
+            </Link>
+            <p>Subtotal: ${subtotal}</p>
+            <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
+            <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
+            <p className="order-total">Total: ${total}</p>
+          </div>
+          <div className='form-container'>
+            <div>
+              <h2 className="form-heading">Enter Your Contact Information</h2>
+              <p>Please inform us of any allergies prior to ordering.</p>
+              <OrderForm
+                userId={userId}
+                setOrderData={setOrderData}
+                setOrderItems={setOrderItems}
+                setStep={setStep}
+                subtotal={subtotal}
+                total={total}
+                cart={cart}
+                totalItems={totalItems}
+              />
             </div>
           </div>
+        </div>
       )}
       {step === 2 && (
         <div className='price-and-form-container'>
           <div className="price-summary">
+            <button onClick={() => setStep(1)}>Return to Customer Details</button>
             <p className="order-total">Total: ${total}</p>
           </div>
-          <div className='checkout-form'>
+          <div className='form-container'>
             <h2 className="form-heading">Enter Your Billing Information</h2>
             <Elements stripe={stripePromise}>
               <PaymentForm
