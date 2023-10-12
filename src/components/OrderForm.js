@@ -61,8 +61,8 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           onChange={handleInputChange}
           required
         />
-        <br/>
-         <label htmlFor="name">Name</label>
+        <br />
+        <label htmlFor="name">Name</label>
         {validationErrors.name && (
           <p className="error">{validationErrors.name}</p>
         )}
@@ -76,8 +76,8 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           onChange={handleInputChange}
           required
         />
-        <br/>
-         <label htmlFor="email">Email</label>
+        <br />
+        <label htmlFor="email">Email</label>
         {validationErrors.email && (
           <p className="error">{validationErrors.email}</p>
         )}
@@ -91,14 +91,13 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           onChange={handleInputChange}
           required
         />
-        <br/>
+        <br />
         <label htmlFor="phone_number">Phone Number</label>
         {validationErrors.phone_number && (
           <p className="error">{validationErrors.phone_number}</p>
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="directions">Note From Customer</label>
         <textarea
           id="directions"
           name="directions"
@@ -107,8 +106,10 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
           placeholder="Please inform us of any allergies or special requests here."
           onChange={handleInputChange}
         />
+        <br />
+        <label htmlFor="directions">Note From Customer</label>
       </div>
-      <button type="submit">Proceed to Payment</button>
+      <button className="next-step-button" type="submit">Proceed to Payment</button>
     </form>
   );
 };

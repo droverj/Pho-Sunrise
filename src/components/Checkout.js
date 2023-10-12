@@ -98,14 +98,13 @@ const Checkout = ({ userId }) => {
   return (
     <div className='checkout'>
       {step === 1 && (
-        <div>
+          <div className='price-and-form-container'>
+            <div className="price-summary">
           <Link to="/cart">
             <button>
               Return to Cart
             </button>
           </Link>
-          <div className='price-and-form-container'>
-            <div className="price-summary">
               <p>Subtotal: ${subtotal}</p>
               <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
               <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
@@ -128,7 +127,6 @@ const Checkout = ({ userId }) => {
               </div>
             </div>
           </div>
-        </div>
       )}
       {step === 2 && (
         <div className='price-and-form-container'>
