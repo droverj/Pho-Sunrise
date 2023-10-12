@@ -25,12 +25,10 @@ const Checkout = ({ userId }) => {
 
   async function handleNetworkError(error) {
     console.error('Network error:', error);
-    // Handle network errors
   }
 
   function handleHttpError(response) {
     console.error('Error:', response.statusText);
-    // You can also parse the response body for more specific error details if your server sends them
   }
 
   async function onSubmitOrder(orderData, orderItems) {
@@ -97,42 +95,38 @@ const Checkout = ({ userId }) => {
     return (subtotal * rate).toFixed(2);
   }
 
-  const getCurrentTime = () => {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0'); // Get hours (0-23)
-    const minutes = now.getMinutes().toString().padStart(2, '0'); // Get minutes
-    const seconds = now.getSeconds().toString().padStart(2, '0'); // Get seconds
-    return `${hours}:${minutes}:${seconds}`;
-  };
-
   return (
     <div className='checkout'>
-      <Link to="/cart">
-        <button>
-          Return to Cart
-        </button>
-      </Link>
       {step === 1 && (
-        <div className='price-and-form-container'>
-          <div className="price-summary">
-            <p>Subtotal: ${subtotal}</p>
-            <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
-            <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
-            <p className="order-total">Total: ${total}</p>
-          </div>
-          <div className='checkout-form'>
-            <h2 className="form-heading">Enter Your Contact Information</h2>
-            <p>Please inform us of any allergies prior to ordering. Thank you!</p>
-            <OrderForm className='checkout-form'
-              userId={userId}
-              setOrderData={setOrderData}
-              setOrderItems={setOrderItems}
-              setStep={setStep}
-              subtotal={subtotal}
-              total={total}
-              cart={cart}
-              totalItems={totalItems}
-            />
+        <div>
+          <Link to="/cart">
+            <button>
+              Return to Cart
+            </button>
+          </Link>
+          <div className='price-and-form-container'>
+            <div className="price-summary">
+              <p>Subtotal: ${subtotal}</p>
+              <p>HST: ${calculateTax(subtotal, HST_RATE)}</p>
+              <p>GST: ${calculateTax(subtotal, GST_RATE)}</p>
+              <p className="order-total">Total: ${total}</p>
+            </div>
+            <div className='form-container'>
+              <div>
+                <h2 className="form-heading">Enter Your Contact Information</h2>
+                <p>Please inform us of any allergies prior to ordering.</p>
+                <OrderForm
+                  userId={userId}
+                  setOrderData={setOrderData}
+                  setOrderItems={setOrderItems}
+                  setStep={setStep}
+                  subtotal={subtotal}
+                  total={total}
+                  cart={cart}
+                  totalItems={totalItems}
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -144,7 +138,7 @@ const Checkout = ({ userId }) => {
           <div className='checkout-form'>
             <h2 className="form-heading">Enter Your Billing Information</h2>
             <Elements stripe={stripePromise}>
-              <PaymentForm className='checkout-form'
+              <PaymentForm
                 amount={totalInCents}
                 onSubmitOrder={onSubmitOrder}
                 setStep={setStep}
@@ -157,12 +151,12 @@ const Checkout = ({ userId }) => {
           </div>
         </div>
       )}
-      {step === 3 && 
-      <PaymentStatus
-        status={status}
-        setStep={setStep}
-        currentTime={currentTime}
-      />
+      {step === 3 &&
+        <PaymentStatus
+          status={status}
+          setStep={setStep}
+          currentTime={currentTime}
+        />
       }
     </div>
   );

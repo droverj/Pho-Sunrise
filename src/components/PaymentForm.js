@@ -119,7 +119,7 @@ const PaymentForm = ({ amount, onSubmitOrder, setStep, setStatus, setCurrentTime
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='checkout-form' onSubmit={handleSubmit}>
       <p>Cardholder's Name</p>
       <div className="form-group">
         <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required />

@@ -1,29 +1,49 @@
 .checkout {
+  button {
+    text-transform: uppercase;
+    font-family: "Unbounded";
+    background-color: #02054a;
+    color: silver;
+    padding: 7px;
+    border-radius: 10px;
+    border: 2px solid silver;
+    font-weight: 100;
+    cursor: pointer;
+  }
+
   .price-and-form-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
     .price-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
       font-weight: 100;
+      width: 14%;
+      .order-total {
+        font-weight: 600;
+      }
     }
-    .checkout-form {
-      text-align: center;
+
+    .form-container {
       background-color: darkred;
       color: white;
-      margin-left: 70px;
-
+      text-align: center;
+      width: 75%;
       h2 {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
         height: 70px;
         background-color: #333;
         color: white;
         padding: 0;
       }
-
       p {
-        font-size: 20px;
+        font-size: 15px;
+        font-weight: 100;
       }
     }
   }
