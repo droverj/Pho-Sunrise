@@ -6,6 +6,8 @@ import PaymentForm from './PaymentForm';
 import stripePromise from '../utilities/stripe';
 import OrderForm from './OrderForm';
 import PaymentStatus from './PaymentStatus';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Checkout.scss';
 
 const HST_RATE = 0.13; // 13% HST for Ontario
@@ -105,8 +107,8 @@ const Checkout = ({ userId }) => {
             <Link to="/cart">
               <button>Cart</button>
             </Link>
-            <span> arrow </span>
-            <span>contact info</span>
+            <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
+            <span>Contact Info</span>
           </div>
           <div className='form-container'>
             <p>Please inform us of any allergies prior to ordering.</p>
@@ -129,7 +131,7 @@ const Checkout = ({ userId }) => {
             <Link to="/cart">
               <button>Cart</button>
             </Link>
-            <span> arrow </span>
+            <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: '#333', transform: 'scaleX(3)' }} size="1x" /></div>
             <span>checkout</span>
           </div>
           <div className='form-container'>

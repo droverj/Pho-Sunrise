@@ -1,0 +1,28 @@
+@import "variables";
+
+.checkout-navigation-container {
+  display: flex;
+  font-weight: 600;
+
+  button {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 600;
+    color: silver;
+    border: none;
+    background-color: $background-colour;
+    margin-right: 15px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    text-decoration: underline;
+
+  }
+
+  span {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+}
