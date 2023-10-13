@@ -29,7 +29,7 @@ const Home = () => {
       </div>
       <Link to="/menu">
         <button className="place-order-button" >
-          Order Takeout
+          ORDER TAKEOUT
         </button>
       </Link>
       <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.</p>

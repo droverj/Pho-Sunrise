@@ -51,65 +51,70 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
   };
 
   return (
-    <form className='checkout-form' onSubmit={handleOrderSubmit}>
-      <div className="form-group">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={orderInfo.name}
-          onChange={handleInputChange}
-          required
-        />
-        <br />
-        <label htmlFor="name">Name</label>
-        {validationErrors.name && (
-          <p className="error">{validationErrors.name}</p>
-        )}
+    <form onSubmit={handleOrderSubmit}>
+      <div className='order-form'>
+        <div className="form-group">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={orderInfo.name}
+            onChange={handleInputChange}
+            required
+          />
+          <br />
+          <label htmlFor="name">Name</label>
+          {validationErrors.name && (
+            <p className="error">{validationErrors.name}</p>
+          )}
+        </div>
+        <div className="form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={orderInfo.email}
+            onChange={handleInputChange}
+            required
+          />
+          <br />
+          <label htmlFor="email">Email</label>
+          {validationErrors.email && (
+            <p className="error">{validationErrors.email}</p>
+          )}
+        </div>
+        <div className="form-group">
+          <input
+            type="tel"
+            id="phone_number"
+            name="phone_number"
+            value={orderInfo.phone_number}
+            onChange={handleInputChange}
+            required
+          />
+          <br />
+          <label htmlFor="phone_number">Phone Number</label>
+          {validationErrors.phone_number && (
+            <p className="error">{validationErrors.phone_number}</p>
+          )}
+        </div>
+        <div className="form-group">
+          <textarea
+            id="directions"
+            name="directions"
+            value={orderInfo.directions}
+            rows="4"
+            placeholder="Please inform us of any allergies or special requests here."
+            onChange={handleInputChange}
+          />
+          <br />
+          <label htmlFor="directions">Note From Customer</label>
+        </div>
       </div>
-      <div className="form-group">
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={orderInfo.email}
-          onChange={handleInputChange}
-          required
-        />
-        <br />
-        <label htmlFor="email">Email</label>
-        {validationErrors.email && (
-          <p className="error">{validationErrors.email}</p>
-        )}
+      <div className="price-summary-container">
+        <p>Subtotal: ${subtotal}</p>
+        <button type="submit">Proceed to Payment</button>
       </div>
-      <div className="form-group">
-        <input
-          type="tel"
-          id="phone_number"
-          name="phone_number"
-          value={orderInfo.phone_number}
-          onChange={handleInputChange}
-          required
-        />
-        <br />
-        <label htmlFor="phone_number">Phone Number</label>
-        {validationErrors.phone_number && (
-          <p className="error">{validationErrors.phone_number}</p>
-        )}
-      </div>
-      <div className="form-group">
-        <textarea
-          id="directions"
-          name="directions"
-          value={orderInfo.directions}
-          rows="4"
-          placeholder="Please inform us of any allergies or special requests here."
-          onChange={handleInputChange}
-        />
-        <br />
-        <label htmlFor="directions">Note From Customer</label>
-      </div>
-      <button className="next-step-button" type="submit">Proceed to Payment</button>
     </form>
   );
 };

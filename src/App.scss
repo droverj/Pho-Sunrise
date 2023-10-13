@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Unbounded:wght@200;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+
+body {
+  // background-color: #FAF9F6;
+  // background-color: #FAFAFA;
+  background-color: #FDFCFA;
+}
 
 .main-body {
-  width: 70vw; /* 80% of the viewport width */
-  max-width: 1200px; /* Maximum width for larger screens */
-  margin: 20vh auto; /* Center the container horizontally */
+  width: 70vw;
+  max-width: 1200px;
+  margin: 20vh auto;
   font-family: "Montserrat";
   font-size: 16px;
 
@@ -54,18 +62,3 @@
   font-family: "Montserrat";
   }
 }
-
-// button {
-//   cursor: pointer;
-//   border-radius: 50px;
-//   text-transform: uppercase;
-//   font-family: "Unbounded";
-//   background-color: #02054a;
-//   color: white;
-//   border: 3px solid silver;
-// }
-
-// button:hover {
-//   background-color: #000067; /* Change background color on hover */
-// }
-

@@ -1,3 +1,5 @@
+@import 'variables';
+
 .home {
   display: flex;
   flex-direction: column;
@@ -52,8 +54,19 @@
   }
 
   button {
-    margin: 2rem;
-    padding: 35px;
-    font-size: 1.5rem;
+    margin: 5vh 0;
+    padding: 15px 60px;
+    font-size: 3rem;
+    border: none;
+    background-color: $button-colour;
+    color: white;
+    border-radius: 50px;
+    font-family: $button-font;
+    box-shadow: $button-box-shadow;
+  }
+
+  button:hover {
+    background-color: $hover-button-colour;
+    box-shadow: $hover-box-shadow;
   }
 }
