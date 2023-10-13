@@ -130,7 +130,6 @@ const Checkout = ({ userId }) => {
               </p>
             </div>
             <div className='form-container'>
-              <p>Please inform us of any allergies prior to ordering.</p>
               <OrderForm
                 userId={userId}
                 setOrderData={setOrderData}
@@ -141,6 +140,8 @@ const Checkout = ({ userId }) => {
                 cart={cart}
                 totalItems={totalItems}
               />
+              <p>Please inform us of any allergies prior to ordering.</p>
+              <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.**</p>
             </div>
           </div>
         </div>
@@ -151,7 +152,7 @@ const Checkout = ({ userId }) => {
             <Link to="/cart">
               <button>Cart</button>
             </Link>
-            <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: '#333', transform: 'scaleX(3)' }} size="1x" /></div>
+            <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
             <span>checkout</span>
           </div>
           <div className='form-container'>

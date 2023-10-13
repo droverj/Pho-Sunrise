@@ -53,6 +53,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
   return (
     <form onSubmit={handleOrderSubmit}>
       <div className='order-form'>
+        <p>Contact Info</p>
         <div className="form-group">
           <input
             type="text"
@@ -60,6 +61,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             name="name"
             value={orderInfo.name}
             onChange={handleInputChange}
+            placeholder='name'
             required
           />
           <br />
@@ -75,6 +77,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             name="email"
             value={orderInfo.email}
             onChange={handleInputChange}
+            placeholder='email'
             required
           />
           <br />
@@ -90,6 +93,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             name="phone_number"
             value={orderInfo.phone_number}
             onChange={handleInputChange}
+            placeholder='phone number'
             required
           />
           <br />
@@ -98,6 +102,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             <p className="error">{validationErrors.phone_number}</p>
           )}
         </div>
+        <p>Note From Customer</p>
         <div className="form-group">
           <textarea
             id="directions"
@@ -107,13 +112,8 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             placeholder="Please inform us of any allergies or special requests here."
             onChange={handleInputChange}
           />
-          <br />
-          <label htmlFor="directions">Note From Customer</label>
         </div>
-      </div>
-      <div className="price-summary-container">
-        <p>Subtotal: ${subtotal}</p>
-        <button type="submit">Proceed to Payment</button>
+      <button type="submit">Proceed to Payment</button>
       </div>
     </form>
   );
