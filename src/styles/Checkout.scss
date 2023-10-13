@@ -92,7 +92,6 @@
       // border: $container-border;
       // box-shadow: $form-box-shadow;
       // background-color: #ffffff;
-      border-radius: 30px;
       padding-right: 30px;
       margin-right: 20px;
 
@@ -108,14 +107,13 @@
           height: 30px;
           border: 0.5px solid blue;
           background-color: #ffffff;
-          // border: $container-border;
           border-radius: 7px;
           padding: 7px;
           font-size: 18px;
         }
         input::placeholder {
-          background-color: #f9f9f9;
-          color: #f9f9f9;
+          background-color: #ededed;
+          color: #ededed;
         }
         input:hover {
           box-shadow: $hover-box-shadow;
@@ -124,10 +122,32 @@
           display: block;
           font-size: 12px;
           margin-bottom: 15px;
+          margin-top: 2px;
         }
         textarea {
           width: 100%;
-          border: $container-border;
+          border: 0.5px solid blue;
+          border-radius: 7px;
+          padding: 10px;
+          // border: $container-border;
+        }
+
+        button {
+          background-color: $button-colour;
+          color: silver;
+          font-family: $primary-font;
+          font-weight: 200;
+          font-size: 16px;
+          padding: 10px;
+          margin-top: 30px;
+          border: 1px solid silver;
+          border-radius: 10px;
+          box-shadow: $button-box-shadow;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: $hover-button-colour;
+          box-shadow: none;
         }
       }
     }

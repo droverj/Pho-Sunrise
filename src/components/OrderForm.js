@@ -102,7 +102,7 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             <p className="error">{validationErrors.phone_number}</p>
           )}
         </div>
-        <p>Note From Customer</p>
+        <p>Instructions</p>
         <div className="form-group">
           <textarea
             id="directions"
@@ -113,7 +113,8 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
             onChange={handleInputChange}
           />
         </div>
-      <button type="submit">Proceed to Payment</button>
+        <p style={{ fontSize: '.7rem', fontWeight: '400', margin: 0 }}>Some dishes may contain traces of shellfish or peanuts.**</p>
+        <button type="submit">Proceed to Payment</button>
       </div>
     </form>
   );

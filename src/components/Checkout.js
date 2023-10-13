@@ -140,8 +140,6 @@ const Checkout = ({ userId }) => {
                 cart={cart}
                 totalItems={totalItems}
               />
-              <p>Please inform us of any allergies prior to ordering.</p>
-              <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.**</p>
             </div>
           </div>
         </div>
