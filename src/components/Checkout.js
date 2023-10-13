@@ -111,7 +111,7 @@ const Checkout = ({ userId }) => {
             <span>Contact Info</span>
           </div>
           <div className='receipt-and-form-container'>
-            <div className='receipt'>
+            <div className='order-summary'>
               <ul className="cart-items">
                 {cart.map((cartItem) => (
                   <li className="cart-item" key={cartItem.id}>

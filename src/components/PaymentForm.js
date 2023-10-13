@@ -6,13 +6,6 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
   const stripe = useStripe();
   const elements = useElements();
 
-  const initialFormState = {
-    email: '',
-    phone: '',
-  };
-
-  const [formData, setFormData] = useState(initialFormState);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -32,8 +25,6 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
       card: cardElement,
       billing_details: {
         address,
-        email: formData.email,
-        phone: formData.phone,
       },
     });
 
@@ -51,8 +42,6 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
           body: JSON.stringify({
             paymentMethodId: paymentMethod.id,
             amount,
-            email: formData.email,
-            phone: formData.phone,
           }),
         });
 
@@ -61,7 +50,6 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
           console.log('Payment succeeded!');
 
           // Clear form fields on successful payment
-          setFormData(initialFormState);
           onSubmitOrder(orderData, orderItems);
           setStep(3);
           setStatus(true);
@@ -81,14 +69,6 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
     }
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
   const getCurrentTime = () => {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
@@ -98,7 +78,14 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='receipt-and-form-container' onSubmit={handleSubmit}>
+      <div className="payment-summary">
+        <p>Subtotal: ${subtotal}</p>
+        <p>HST: ${HST}</p>
+        <p>GST: ${GST}</p>
+        <p className="total">Total: ${total}</p>
+        <button type="submit">Pay Now</button>
+      </div>
       <div className='payment-form'>
         <div className="form-group">
           <h4>Billing Details</h4>
@@ -127,26 +114,11 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
             }}
           />
         </div>
-        <div className="form-group">
-          <h4>Cardholder Email</h4>
-          <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
-        </div>
-        <div className="form-group">
-          <h4>Cardholder Phone Number</h4>
-          <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required />
-        </div>
         {paymentError && (
           <div className="error-message">
             Payment failed: {paymentError}
           </div>
         )}
-      </div>
-      <div className="price-summary-container">
-        <p>Subtotal: ${subtotal}</p>
-        <p>HST: ${HST}</p>
-        <p>GST: ${GST}</p>
-        <p className="total">Total: ${total}</p>
-        <button type="submit">Pay Now</button>
       </div>
     </form>
   );
