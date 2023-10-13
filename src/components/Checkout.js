@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
 import { useCart } from '../components/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import PaymentForm from './PaymentForm';
 import stripePromise from '../utilities/stripe';
 import OrderForm from './OrderForm';
 import PaymentStatus from './PaymentStatus';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Checkout.scss';
 
 const HST_RATE = 0.13; // 13% HST for Ontario
@@ -100,7 +100,7 @@ const Checkout = ({ userId }) => {
   }
 
   return (
-    <div>
+    <div className='checkout'>
       {step === 1 && (
         <div>
           <div className='checkout-navigation-container'>
@@ -110,6 +110,18 @@ const Checkout = ({ userId }) => {
             <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
             <span>Contact Info</span>
           </div>
+          <p>Items</p>
+          <ul className="cart-items">
+            {cart.map((cartItem) => (
+              <li className="cart-item" key={cartItem.id}>
+                <div className="item-info">
+                  {cartItem.name} - {cartItem.item_option}
+                </div>
+                <div className="item-quantity">{cartItem.quantity} @ </div>
+                <div className='item-price'>${cartItem.price}</div>
+              </li>
+            ))}
+          </ul>
           <div className='form-container'>
             <p>Please inform us of any allergies prior to ordering.</p>
             <OrderForm

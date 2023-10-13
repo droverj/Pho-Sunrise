@@ -1,28 +1,46 @@
 @import "variables";
 
-.checkout-navigation-container {
-  display: flex;
-  font-weight: 600;
-
-  button {
-    font-family: $primary-font;
-    font-size: 14px;
+.checkout {
+  .checkout-navigation-container {
+    display: flex;
     font-weight: 600;
-    color: silver;
-    border: none;
-    background-color: $background-colour;
-    margin-right: 15px;
+
+    button {
+      font-family: $primary-font;
+      font-size: 14px;
+      font-weight: 600;
+      color: silver;
+      border: none;
+      background-color: $background-colour;
+      margin-right: 15px;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    button:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      font-size: 14px;
+      margin-left: 15px;
+    }
+  }
+
+  ul {
     padding: 0;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    text-decoration: underline;
 
-  }
+    .item-quantity {
+      margin-right: 20px;
+      font-weight: 400;
+      // width: 15px; // Some numbers are wider than others, pushing the item-info
+      // background-color: pink;
+    }
 
-  span {
-    font-size: 14px;
-    margin-left: 15px;
+    .item-info {
+      display: flex;
+      width: 60%;
+      // background-color: yellow;
+    }
   }
 }

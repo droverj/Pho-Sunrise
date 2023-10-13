@@ -56,7 +56,7 @@ const Cart = () => {
                   </div>
                   <button onClick={() => handleRemove(cartItem)}>-</button>
                   <button onClick={() => handleAdd(cartItem)}>+</button>
-                  <div className="cart-item-quantity">{cartItem.quantity}</div>
+                  <div className="item-quantity">{cartItem.quantity}</div>
                 </li>
               ))}
             </ul>
