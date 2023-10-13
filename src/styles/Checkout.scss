@@ -27,20 +27,52 @@
     }
   }
 
-  ul {
-    padding: 0;
+  .receipt-and-form-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
 
-    .item-quantity {
-      margin-right: 20px;
-      font-weight: 400;
-      // width: 15px; // Some numbers are wider than others, pushing the item-info
-      // background-color: pink;
-    }
+    .receipt {
+      padding: 10px 20px;
+      height: 100%;
+      width: 35%;
+      background-color: #ffffff;
+      border: $container-border;
+      border-radius: 30px;
+      box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.11);
+      ul {
+        padding: 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #333;
+        margin-bottom: 0;
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          // background-color: pink;
+          font-size: 12px;
 
-    .item-info {
-      display: flex;
-      width: 60%;
-      // background-color: yellow;
+          .items {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .item-info {
+              width: 85%;
+              margin-right: 15px;
+            }
+            .item-price {
+              width: 10%;
+            }
+          }
+        }
+      }
+      .subtotal {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 5px;
+      }
     }
   }
 }

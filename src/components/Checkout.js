@@ -110,30 +110,38 @@ const Checkout = ({ userId }) => {
             <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
             <span>Contact Info</span>
           </div>
-          <p>Items</p>
-          <ul className="cart-items">
-            {cart.map((cartItem) => (
-              <li className="cart-item" key={cartItem.id}>
-                <div className="item-info">
-                  {cartItem.name} - {cartItem.item_option}
-                </div>
-                <div className="item-quantity">{cartItem.quantity} @ </div>
-                <div className='item-price'>${cartItem.price}</div>
-              </li>
-            ))}
-          </ul>
-          <div className='form-container'>
-            <p>Please inform us of any allergies prior to ordering.</p>
-            <OrderForm
-              userId={userId}
-              setOrderData={setOrderData}
-              setOrderItems={setOrderItems}
-              setStep={setStep}
-              subtotal={subtotal}
-              total={total}
-              cart={cart}
-              totalItems={totalItems}
-            />
+          <div className='receipt-and-form-container'>
+            <div className='receipt'>
+              <ul className="cart-items">
+                {cart.map((cartItem) => (
+                  <li className="cart-item" key={cartItem.id}>
+                    {Array.from({ length: cartItem.quantity }).map((_, index) => (
+                      <div className="items" key={index}>
+                        <div className='item-info'>{cartItem.name} - {cartItem.item_option}</div>
+                        <div className='item-price'>${cartItem.price}</div>
+                      </div>
+                    ))}
+                  </li>
+                ))}
+              </ul>
+              <p className='subtotal'>
+                <div>subtotal:</div>
+                <div>${subtotal}</div>
+              </p>
+            </div>
+            <div className='form-container'>
+              <p>Please inform us of any allergies prior to ordering.</p>
+              <OrderForm
+                userId={userId}
+                setOrderData={setOrderData}
+                setOrderItems={setOrderItems}
+                setStep={setStep}
+                subtotal={subtotal}
+                total={total}
+                cart={cart}
+                totalItems={totalItems}
+              />
+            </div>
           </div>
         </div>
       )}
