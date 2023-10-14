@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartTracker from './CartTracker';
-import LoginButton from './common/Login';
-import LogoutButton from './common/Logout';
-import Profile from './common/Profile';
+import CartTracker from '../CartTracker';
+import LoginButton from './Login';
+import LogoutButton from './Logout';
+import Profile from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
-import SteamingBowl from '../images/steaming-bowl.png'
-import '../styles/Navbar.scss';
+import SteamingBowl from '../../images/steaming-bowl.png'
+import '../../styles/Navbar.scss';
 
 function Navbar() {
   const { isAuthenticated } = useAuth0();
