@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Checkout from './components/Checkout';
@@ -56,7 +57,7 @@ function App() {
       // Make a GET request to fetch the latest reviews from the server
       const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
       const updatedReviews = reviewsResponse.data;
-  
+
       // Update the state with the latest reviews
       setReviews(updatedReviews);
     } catch (error) {
@@ -99,6 +100,7 @@ function App() {
             </Routes>
           )}
         </div>
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   );

@@ -1,0 +1,52 @@
+@import "variables";
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  height: 10vh;
+  padding-bottom: 5px;
+  width: 100%;
+  color: #fff;
+  font-family: $primary-font;
+  background-color: #404040;
+
+  .home-icon {
+    width: 45px;
+    height: 55px;
+    padding-left: 30px;
+  }
+
+  .content-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 50px;
+    margin-left: 15px;
+    padding-bottom: 3px;
+    p {
+      margin: 0;
+      font-weight: 100;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .connect-container {
+      text-align: center;
+      img {
+        width: 30px;
+        padding: 0 5px;
+      }
+    }
+  }
+}

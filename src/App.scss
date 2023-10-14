@@ -5,29 +5,33 @@
 // Cursive Font for: 'Thank You' in submitted review form on contact page
 @import url("https://fonts.googleapis.com/css2?family=WindSong&display=swap");
 // Font for: ORDER TAKEOUT button on home page
-@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nixie+One&display=swap");
 // Other
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Unbounded:wght@200;500;600&display=swap");
 
 body {
   // background-color: #FAF9F6;
   // background-color: #FAFAFA;
-  
-  // -- BEST OFF WHITE
-  background-color: #FDFCFA; 
-  
   // background-color: #f8f8ff;
   // background-color: #f2f3f4;
   // background-color: whitesmoke;
+
+  // -- BEST OFF WHITE
+  background-color: #fdfcfa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
 }
 
 .main-body {
+  flex: 1;
   width: 70vw;
   max-width: 1200px;
   margin: auto;
   margin-top: 13vh;
-  margin-bottom: 0;
+  // margin-bottom: 0;
   font-family: "Montserrat";
   font-size: 16px;
 
@@ -51,12 +55,12 @@ body {
     display: flex;
     align-items: center;
   }
-  
+
   a {
     color: #fff;
     text-decoration: none;
   }
-  
+
   a:hover {
     text-decoration: underline;
   }
@@ -68,12 +72,12 @@ body {
   input {
     font-family: "Montserrat";
   }
-  
+
   textarea {
     font-family: "Montserrat";
   }
 
   textarea::placeholder {
-  font-family: "Montserrat";
+    font-family: "Montserrat";
   }
 }
