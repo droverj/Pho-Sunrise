@@ -8,7 +8,9 @@
   width: 100%;
   color: #fff;
   font-family: $primary-font;
-  background-color: #404040;
+  // background-color: #404040;
+  // background-color: #e4e4e4;
+  background-color: rgba(51,51,51, .9);
 
   .home-icon {
     width: 45px;
@@ -45,7 +47,7 @@
       text-align: center;
       img {
         width: 30px;
-        padding: 0 5px;
+        padding: 0 2px;
       }
     }
   }
