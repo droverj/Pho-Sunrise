@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import InstagramIcon from '../../images/Instagram_Glyph_Gradient.png';
-import FacebookIcon from '../../images/Facebook_Logo_Primary.png';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import SteamingBowl from '../../images/steaming-bowl.png'
 import '../../styles/Footer.scss';
 
@@ -23,10 +23,10 @@ function Footer() {
         </div>
         <div className='connect-container'>
           <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
-            <img src={InstagramIcon} alt="Instagram Icon" />
+          <FontAwesomeIcon icon={faInstagram}  style={{ color: 'white' }} size="1x" />
           </a>
           <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
-            <img src={FacebookIcon} alt="Facebook Icon" />
+          <FontAwesomeIcon icon={faFacebook} style={{ color: 'white' }} size="1x" />
           </a>
           <p>connect</p>
         </div>

@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .home {
   display: flex;
@@ -16,23 +16,19 @@
     padding-bottom: 15px;
     background-color: darkred;
     color: white;
-    border: 5px #333 solid;
+    border: 3px #333 solid;
+    box-shadow: $container-box-shadow;
 
-    .header {
-      display: flex;
-      align-items: flex-end;
-
-      img {
-        height: 15vh;
-        width: 7vw;
-        padding-bottom: 10px;
-      }
-      .title {
-        color: white;
-        margin: 0;
-        padding-right: 7vw;
-        text-align: center;
-      }
+    img {
+      height: 15vh;
+      width: 7vw;
+      padding-bottom: 10px;
+    }
+    .title {
+      color: white;
+      margin: 0;
+      padding-right: 7vw;
+      text-align: center;
     }
 
     .restaurant-details {

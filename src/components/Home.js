@@ -6,10 +6,8 @@ const Home = () => {
   return (
     <div className="home">
       <div className="header-container">
-        <div className="header">
-          <img src={SteamingBowl} alt="steaming bowl icon" />
-          <h1 className="title">Phở Sunrise</h1>
-        </div>
+        <img src={SteamingBowl} alt="steaming bowl icon" />
+        <h1 className="title">Phở Sunrise</h1>
         <h2>Viet-Thai Restaurant</h2>
         <div className='restaurant-details'>
           <p>(519) 579 - 2016</p>
@@ -18,7 +16,6 @@ const Home = () => {
           <p>|</p>
           <p><a href="/contact">Hours</a></p>
         </div>
-
         <span>Offering Dine-in, Takeout and (
           <a
             href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
