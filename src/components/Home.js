@@ -7,7 +7,7 @@ const Home = () => {
     <div className="home">
       <div className="header-container">
         <img src={SteamingBowl} alt="steaming bowl icon" />
-        <h1 className="title">Phở Sunrise</h1>
+        <h1>Phở Sunrise</h1>
         <h2>Viet-Thai Restaurant</h2>
         <div className='restaurant-details'>
           <p>(519) 579 - 2016</p>
