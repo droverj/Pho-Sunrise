@@ -1,22 +1,25 @@
 @import "variables";
+// @import url('../images/pho-sunrise-building.jpeg');
 
 .home {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 40px 0;
+  padding-top: 5px;
   margin-bottom: 0;
+  // background-image: url('../images/steaming-bowl.png');
 
   .header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 15px;
     background-color: $primary-colour;
     color: white;
     border: 3px #333 solid;
+    // border-top: none;
     box-shadow: $container-box-shadow;
 
     img {
@@ -37,7 +40,7 @@
       margin-bottom: 6vh;
       background-color: $secondary-colour;
       width: 100%;
-      height: 10vh;
+      height: 70px;
       p {
         font-size: 1.3rem;
         margin: 1vh 0;

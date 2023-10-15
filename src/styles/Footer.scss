@@ -11,6 +11,7 @@
   // background-color: #404040;
   // background-color: #e4e4e4;
   background-color: $light-colour;
+  background-color: $secondary-colour;
 
   .home-icon {
     width: 45px;
@@ -47,7 +48,7 @@
       font-size: .7rem;
       text-align: center;
       padding-right: 70px; // to center
-      padding-bottom: 10px; // to center
+      padding-bottom: 5px; // to center
     }
 
     .connect-container {

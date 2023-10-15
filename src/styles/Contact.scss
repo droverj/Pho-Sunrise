@@ -267,7 +267,7 @@
       font-family: $primary-font;
     }
     button:hover {
-      background-color: #0a0082;
+      background-color: $primary-colour;
     }
   }
 
@@ -333,18 +333,6 @@
         margin-left: 10px;
       }
     }
-    // .thank-you {
-    //   display: flex;
-    //   justify-content: flex-end;
-    //   align-items: flex-end;
-    //   font-size: 3.5rem;
-    //   // color: darkred;
-    //   // font-family: "WindSong";
-    //   width: 50%;
-    //   margin-bottom: 20px;
-    //   padding-right: 7%;
-    //   padding-left: 10%;
-    // }
   }
 
   .delete-review-confirmation {
