@@ -29,8 +29,6 @@ const Home = () => {
           ORDER TAKEOUT
         </button>
       </Link>
-      <p style={{ fontSize: '.7rem' }}>Some dishes may contain traces of shellfish or peanuts.</p>
-      <p style={{ fontSize: '.7rem' }}>Prices subject to change without notice.</p>
     </div>
   );
 }

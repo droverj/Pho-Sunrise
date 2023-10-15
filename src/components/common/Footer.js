@@ -21,12 +21,16 @@ function Footer() {
           <Link to="/contact">Contact Us <FontAwesomeIcon icon={faPhone} className="cart-icon" style={{ color: 'white' }} size="1x" /></Link>
           <p>phosunrise.ca</p>
         </div>
+        <div className='notices-container'>
+          <p>Some dishes may contain traces of shellfish or peanuts.</p>
+          <p>Prices subject to change without notice.</p>
+        </div>
         <div className='connect-container'>
           <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faInstagram}  style={{ color: 'white', margin: '2px' }} size="2x" />
+            <FontAwesomeIcon icon={faInstagram} style={{ color: 'white', margin: '2px' }} size="2x" />
           </a>
           <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faFacebook} style={{ color: 'white', margin: '2px' }} size="2x" />
+            <FontAwesomeIcon icon={faFacebook} style={{ color: 'white', margin: '2px' }} size="2x" />
           </a>
           <p>connect</p>
         </div>

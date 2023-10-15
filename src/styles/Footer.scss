@@ -24,7 +24,7 @@
     justify-content: space-between;
     width: 100%;
     margin-right: 50px;
-    margin-left: 15px;
+    margin-left: 20px;
     padding-bottom: 3px;
     p {
       margin: 0;
@@ -41,6 +41,13 @@
       a:hover {
         text-decoration: underline;
       }
+    }
+
+    .notices-container {
+      font-size: .7rem;
+      text-align: center;
+      padding-right: 70px; // to center
+      padding-bottom: 10px; // to center
     }
 
     .connect-container {
