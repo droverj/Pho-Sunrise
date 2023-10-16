@@ -1,5 +1,7 @@
+@import 'variables';
+
 nav {
-  background-color: #333;
+  background-color: $secondary-colour;
   color: #fff;
   position: fixed;
   top: 0;

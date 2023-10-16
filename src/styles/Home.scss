@@ -1,42 +1,142 @@
 @import "variables";
-// @import url('../images/pho-sunrise-building.jpeg');
 
 .home {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding-top: 5px;
+  background-color: white;
+  background-color: #333;
   margin-bottom: 0;
-  // background-image: url('../images/steaming-bowl.png');
 
-  .header-container {
+  .heading {
+    display: flex;
+    width: 83%;
+    // margin-bottom: 50px;
+    margin-top: 40px;
+    position: relative;
+
+    .restaurant-name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+      color: white;
+      background-color: $primary-colour;
+      height: 180px;
+      width: 100%;
+      margin-top: 30px;
+      margin-left: 200px;
+      padding-left: 50px;
+      border: 7px solid $light-colour;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: -1px 5px 18px 1px rgba(0, 0, 0, 0.75);
+
+      h1 {
+        font-size: 5vw;
+        margin: 0;
+        padding-top: 20px;
+        padding-right: 30px;
+      }
+      h2 {
+        font-size: 2vw;
+        padding: 0;
+        padding-right: 30px;
+      }
+    }
+    .circle-container {
+      display: flex;
+      justify-content: center;
+      background-color: $secondary-colour;
+      width: 250px;
+      height: 250px;
+      border-radius: 100%;
+      position: absolute;
+      box-shadow: -13px 12px 18px 1px rgba(0, 0, 0, 0.75);
+
+      img {
+        padding-top: 15px;
+        width: 170px;
+        height: 210px;
+      }
+    }
+  }
+
+  // Button and left/right arrows
+  .takeout-button-container {
+    display: flex;
+    align-items: center;
+    .arrow {
+      width: 80px;
+    }
+
+    button {
+      margin: 5vh 2vw;
+      padding: 15px 40px;
+      font-size: 3rem;
+      border: none;
+      background-color: $button-colour;
+      color: white;
+      border-radius: 50px;
+      font-family: $order-takeout-button-font;
+      box-shadow: $order-takeout-button-box-shadow;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: $hover-button-colour;
+      box-shadow: $hover-box-shadow;
+    }
+  }
+
+  .home-body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+
+    .description-container {
+      background-color: $primary-colour;
+      border: 10px solid $light-colour;
+      padding: 20px;
+      width: 30%;
+      font-size: 12px;
+
+      .restaurant-description {
+        text-align: center;
+        color: white;
+        border: 30px solid white;
+        padding: 50px;
+        opacity: 70%;
+        font-weight: 100;
+      }
+    }
+
+    .poster {
+      img {
+        width: 60%;
+      }
+    }
+  }
+
+  .restaurant-details-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 40px;
     padding-bottom: 15px;
     background-color: $primary-colour;
     color: white;
-    border: 3px #333 solid;
-    // border-top: none;
+    // border: 10px #333 solid;
+    border-radius: 50px;
     box-shadow: $container-box-shadow;
-
-    img {
-      height: 110px;
-      width: 95px;
-      padding-bottom: 10px;
-    }
-    h1 {
-      color: white;
-      margin: 0;
-    }
 
     .restaurant-details {
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin-top: 4vh;
+      justify-content: center;
       margin-bottom: 6vh;
       background-color: $secondary-colour;
       width: 100%;
@@ -50,22 +150,5 @@
     span {
       font-size: 0.9rem;
     }
-  }
-
-  button {
-    margin: 5vh 0;
-    padding: 15px 60px;
-    font-size: 3rem;
-    border: none;
-    background-color: $button-colour;
-    color: white;
-    border-radius: 50px;
-    font-family: $order-takeout-button-font;
-    box-shadow: $order-takeout-button-box-shadow;
-  }
-
-  button:hover {
-    background-color: $hover-button-colour;
-    box-shadow: $hover-box-shadow;
   }
 }
