@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom';
-import SteamingBowl from '../images/steaming-bowl.png'
-import Poster from '../images/pho-sunrise-poster.png'
-import RightArrow from '../images/right-arrow.jpg'
-import LeftArrow from '../images/left-arrow.jpg'
+import SteamingBowl from '../images/steaming-bowl.png';
+import PhoSoup from '../images/pho-soup.jpg';
+import Description from '../images/pho-sunrise-description.png';
+import Hours from '../images/pho-sunrise-hours.png';
+import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
+import ShrimpBottomRight from '../images/shrimp-tail-bottom-right.png';
 import '../styles/Home.scss';
 
 const Home = () => {
   return (
     <div className="home">
+
+      {/* <img src={PhoSoup} alt="pho soup" /> */}
+      {/* <img src={ShrimpTopLeft} alt="shrimp tail" /> */}
+      {/* <img src={ShrimpBottomRight} alt="shrimp tail" /> */}
 
       <div className='heading'>
         <div className='circle-container'>
@@ -19,45 +25,38 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='home-body'>
-          <div className='description-container'>
-            <div className='restaurant-description'>Indulge your senses in an exquisite fusion of Vietnamese and Thai flavors at our restaurant.
-              Discover a world of culinary artistry where vibrant spices, fragrant herbs, and fresh ingredients
-              unite to create an unforgettable dining experience. From savory Pho to zesty Pad Thai, each dish is a
-              harmonious blend of traditions, brought to life by our passionate chefs. Join us and savor the best of
-              both worlds, where every bite is a journey through the heart of Southeast Asia.
-            </div>
-          </div>
-        <div className='poster'>
-          <img src={Poster} alt="pho sunrise poster" />
-        </div>
-      </div>
-
       <div className="restaurant-details-container">
         <div className='restaurant-details'>
-          <p>(519) 579 - 2016</p>
-          <p>|</p>
-          <p>1400 Ottawa Street South, Kitchener ON</p>
-          <p>|</p>
-          <p><a href="/contact">Hours</a></p>
+          <p className='phone-number'>(519) 579 - 2016</p>
+          <span>|</span>
+          <p className='address'>1400 Ottawa Street South, Kitchener ON</p>
         </div>
-        <span>Offering Dine-in, Takeout and (
+        <span>
+          Offering Dine-in, Takeout and (
           <a
             href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
             target="_blank"
             rel="noopener noreferrer">
             SkipTheDishes</a>
-          ) Delivery</span>
+          ) Delivery
+        </span>
       </div>
 
       <div className='takeout-button-container'>
-        <img src={RightArrow} className='arrow' alt="right arrow" />
+        <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
         <Link to="/menu">
           <button className="place-order-button" >
             ORDER TAKEOUT
           </button>
         </Link>
-        <img src={LeftArrow} className='arrow' alt="left arrow" />
+        <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
+      </div>
+
+      <img src={Hours} className='restaurant-hours' alt="restaurant-hours" />
+
+      <div className='description-and-image'>
+        <img src={PhoSoup} className='pho-soup-image' alt="pho soup" />
+        <img src={Description} className='restaurant-description' alt="restaurant description" />
       </div>
 
     </div>
