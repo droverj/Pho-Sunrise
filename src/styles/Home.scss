@@ -6,7 +6,6 @@
   align-items: center;
   text-align: center;
   background-color: #333;
-  padding-bottom: 30px;
   border-bottom: 2px solid $primary-colour;
 
   // Pho Sunserise Viet-Thai Restaurant
@@ -71,10 +70,8 @@
     margin-top: 70px;
     color: white;
     width: 90%;
-
     .restaurant-details {
       display: flex;
-      align-items: baseline;
       justify-content: center;
       p {
         font-size: 2vw;
@@ -122,7 +119,7 @@
       padding: 15px 40px;
       font-size: 3vw;
       border: none;
-      background-color: $button-colour;
+      background-color: $sunrise-red;
       color: white;
       border-radius: 50px;
       font-family: $order-takeout-button-font;
@@ -131,7 +128,7 @@
     }
 
     button:hover {
-      background-color: $hover-button-colour;
+      background-color: $light-colour;
       box-shadow: $hover-box-shadow;
     }
   }
@@ -139,23 +136,43 @@
   // OPEN Hours + Boba Drink
   .restaurant-hours {
     width: 90%;
+    height: 30vw;
+    // padding: 10px;
+    // border-radius: 30px;
+    // background-color: white;
   }
 
-  // Restaurant description and pho soup image
-  .description-and-image {
+  // Chef image and Chef's Special
+  .chefs-choice {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 90%;
-    .pho-soup-image {
-      width: 30vw;
-      border: 10px solid white;
-      border-radius: 5px;
-      background-color: $primary-colour;
-      padding: 2px;
+    margin: 30px 0;
+    color: white;
+    
+    .chef {
+      width: 15vw;
     }
-    .restaurant-description {
-      width: 27vw;
+    
+    h2 {
+      font-family: $cursive-font;
+      font-size: 4vw;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    .choice {
+      display: flex;
+      flex-direction: column;
+      .name {
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: 1.5vw;
+      }
+      .price {
+        font-family: $cursive-font;
+        font-size: 5vw;
+      }
     }
   }
 }

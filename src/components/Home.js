@@ -5,6 +5,7 @@ import Description from '../images/pho-sunrise-description.png';
 import Hours from '../images/pho-sunrise-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right.png';
+import Chef from '../images/chef-image.png';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -54,9 +55,13 @@ const Home = () => {
 
       <img src={Hours} className='restaurant-hours' alt="restaurant-hours" />
 
-      <div className='description-and-image'>
-        <img src={PhoSoup} className='pho-soup-image' alt="pho soup" />
-        <img src={Description} className='restaurant-description' alt="restaurant description" />
+      <div className='chefs-choice'>
+        <img src={Chef} className='chef' alt="chef image" />
+          <div className='choice'>
+          <h2>Chef's Choice</h2>
+            <span className='name'>Sunrise Special House Beef Noodle Soup</span>
+            <span className='price'>$14.99</span>
+          </div>
       </div>
 
     </div>
