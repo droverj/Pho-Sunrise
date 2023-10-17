@@ -88,7 +88,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
             review.user_id === userId && (
               <div key={review.id} className='delete-review-confirmation'>
                 <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
-                <p>{review.rating}/5 stars</p>
+                <p>You rated Phở Sunrise {review.rating}/5 stars.</p>
                 <p>"{review.comment}"</p>
                 <div className='confirmation'>
                   <p>Delete your review?</p>

@@ -49,15 +49,11 @@ const ReviewForm = ({ onSubmit }) => {
       return;
     }
 
-    // Here, you can submit the rating and comment to your backend or perform any desired action.
-    // You can pass these values to the onSubmit prop function.
-
     // Clear the form fields and validation error after submission
     setRating(0);
     setComment('');
     setValidationError('');
 
-    // Call the onSubmit prop function with the rating and comment
     onSubmit({ rating, comment });
   };
 

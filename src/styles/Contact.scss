@@ -315,9 +315,11 @@
       margin: 0;
       padding-bottom: 10px;
     }
+    
+    // 'Thank You'
     span {
       font-size: 3.5rem;
-      color: darkred;
+      color: $sunrise-red;
       font-family: "WindSong";
     }
     .delete-review {
@@ -332,6 +334,7 @@
         color: white;
         padding: 5px;
         margin-left: 10px;
+        cursor: pointer;
       }
     }
   }
@@ -340,8 +343,9 @@
     // Preview of user's review with option to delete or return
     text-align: start;
     padding: 30px 80px;
-    background-color: whitesmoke;
-    border: 3px solid red;
+    border: 2px solid red;
+    background-color: #FFCCCB;
+
     h3 {
       margin: 0;
       padding-bottom: 10px;
@@ -364,11 +368,20 @@
       margin-top: 10px;
       padding: 10px;
       border: 2px solid #333;
-      border-radius: 10px;
-      background-color: #009900;
+      border-radius: 5px;
+      background-color: green;
+      box-shadow: $button-box-shadow;
       color: white;
+      cursor: pointer;
     }
     button.danger-btn {
+      background-color: $sunrise-red;
+    }
+    button:hover {
+      background-color: #009900;
+      box-shadow: none;
+    }
+    button.danger-btn:hover {
       background-color: red;
     }
   }
