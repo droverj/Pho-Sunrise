@@ -13,21 +13,23 @@ function Navbar() {
 
   return (
     <nav>
-
       <ul>
-        <div className="links">
-          <div className='home-links'>
-            <li>
-              <Link to="/" >
-                <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
-              </Link>
-            </li>
-            <li className='pho-sunrise-link'>
-              <Link to="/" >
-                Phở Sunrise
-              </Link>
-            </li>
-          </div>
+
+        <div className='left-nav'>
+        <div className='home-links'>
+          <li>
+            <Link to="/" >
+              <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
+            </Link>
+          </li>
+          <li className='pho-sunrise-link'>
+            <Link to="/" >
+              Phở Sunrise
+            </Link>
+          </li>
+        </div>
+
+        <div className='page-links'>
           <li>
             <Link to="/contact">Contact</Link>
           </li>
@@ -38,11 +40,14 @@ function Navbar() {
             <Link to="/cart">Cart</Link>
           </li>
         </div>
+        </div>
+
         <div className="right-nav">
           <Profile />
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
           <CartTracker className="cart-tracker" />
         </div>
+
       </ul>
     </nav>
   );
