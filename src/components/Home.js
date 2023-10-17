@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import SteamingBowl from '../images/steaming-bowl.png';
 import PhoSoup from '../images/pho-soup.jpg';
-import Description from '../images/pho-sunrise-description.png';
 import Hours from '../images/pho-sunrise-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right.png';
@@ -11,10 +10,6 @@ import '../styles/Home.scss';
 const Home = () => {
   return (
     <div className="home">
-
-      {/* <img src={PhoSoup} alt="pho soup" /> */}
-      {/* <img src={ShrimpTopLeft} alt="shrimp tail" /> */}
-      {/* <img src={ShrimpBottomRight} alt="shrimp tail" /> */}
 
       <div className='heading'>
         <div className='circle-container'>
@@ -57,11 +52,11 @@ const Home = () => {
 
       <div className='chefs-choice'>
         <img src={Chef} className='chef' alt="chef image" />
-          <div className='choice'>
+        <div className='choice'>
           <h2>Chef's Choice</h2>
-            <span className='name'>Sunrise Special House Beef Noodle Soup</span>
-            <span className='price'>$14.99</span>
-          </div>
+          <span className='name'>Sunrise Special House Beef Noodle Soup</span>
+          <span className='price'>$14.99</span>
+        </div>
       </div>
 
     </div>
