@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
   const { addToCart } = useCart();
+  const menuSectionsRef = useRef([]);
 
   // Group items by section and name
   const groupedItems = {};
@@ -26,17 +27,37 @@ const Menu = ({ items }) => {
 
   return (
     <div className="menu">
+      <h1>MENU</h1>
       <div className="menu-sections">
+        <div className="menu-index">
+          <ul>
+            {Object.entries(groupedItems).map(([section], sectionIndex) => (
+              <li key={sectionIndex}>
+                <a
+                  href={`#section-${sectionIndex}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {section}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
         {Object.entries(groupedItems).map(([section, sectionData], sectionIndex) => (
-          <div key={sectionIndex}>
-            <h2>{section} - {sectionData.section_vietnamese}</h2>
+          <div key={sectionIndex} ref={(ref) => (menuSectionsRef.current[sectionIndex] = ref)}>
+            <h2 id={`section-${sectionIndex}`}>
+              {section} - {sectionData.section_vietnamese}
+            </h2>
             {Object.entries(sectionData.items).map(([itemName, itemData], index) => (
               <MenuSection
                 key={index}
                 itemName={itemName}
                 itemOptions={itemData.options}
                 vietnameseName={itemData.name_vietnamese}
-                addToCart={(item) => addToCart(item)}
+                addToCart={addToCart}
               />
             ))}
           </div>
@@ -47,3 +68,4 @@ const Menu = ({ items }) => {
 };
 
 export default Menu;
+

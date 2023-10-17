@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import SteamingBowl from '../images/steaming-bowl.png';
-import PhoSoup from '../images/pho-soup.jpg';
+import Banner from '../images/pho-sunrise-banner.png';
 import Hours from '../images/pho-sunrise-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right.png';
@@ -11,7 +11,9 @@ const Home = () => {
   return (
     <div className="home">
 
-      <div className='heading'>
+      <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" />
+
+      {/* <div className='heading'>
         <div className='circle-container'>
           <img src={SteamingBowl} alt="steaming bowl icon" />
         </div>
@@ -19,7 +21,7 @@ const Home = () => {
           <h1>Phở Sunrise</h1>
           <h2>Viet-Thai Restaurant</h2>
         </div>
-      </div>
+      </div> */}
 
       <div className="restaurant-details-container">
         <div className='restaurant-details'>
@@ -51,14 +53,15 @@ const Home = () => {
       <img src={Hours} className='restaurant-hours' alt="restaurant-hours" />
 
       <div className='chefs-choice'>
-        <img src={Chef} className='chef' alt="chef image" />
-        <div className='choice'>
+        <div className='chef'>
           <h2>Chef's Choice</h2>
-          <span className='name'>Sunrise Special House Beef Noodle Soup</span>
+          <img src={Chef} className='chef-image' alt="chef image" />
+        </div>
+        <div className='choice'>
+          <span className='name'> Sunrise Special Beef Noodle Soup</span>
           <span className='price'>$14.99</span>
         </div>
       </div>
-
     </div>
   );
 }

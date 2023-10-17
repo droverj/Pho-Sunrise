@@ -8,21 +8,53 @@
   font-weight: 100;
   border-bottom: 2px solid $primary-colour;
 
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .menu-index {
+    width: 220px;
+    margin-top: 74px;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    position: fixed; /* Set the menu-index to a fixed position */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Position it at the left of the viewport */
+    background-color: white;
+    ul {
+      padding-left: 0;
+      text-align: end;
+    }
+    a {
+      width: 100%;
+      color: $primary-colour;
+      padding: 15px 0;
+      padding-right: 10px;
+      font-weight: 600;
+      background-color: $lighter-colour;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    a:hover {
+      background-color: white;
+      text-decoration: none;
+    }
+  }
+
   h2 {
     text-align: center;
   }
 
   .menu-section {
-    // background-color: pink;
     margin: 0 10%;
     margin-top: 10px;
     h3 {
       font-size: 20px;
       margin: 0;
       background-color: $lighter-colour;
-      padding: 10px;
+      padding: 10px 20px;
     }
-
+    
     h3.english-section-title {
       font-weight: 400;
       padding-bottom: 0;
@@ -42,7 +74,7 @@
       font-size: 20px;
       width: 50%;
       // background-color: blue;
-      margin-left: 10px;
+      padding-left: 20px;
       .option {
         display: flex;
         justify-content: space-between;
