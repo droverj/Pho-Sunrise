@@ -8,8 +8,32 @@
   background-color: #333;
   border-bottom: 2px solid $primary-colour;
 
-  .pho-sunrise-banner {
-    width: 90%;
+  // Serving Dine-in, takeout, delivery
+  .serving-container {
+    position: relative;
+    .serving {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      width: 15vw;
+      height: 17vw;
+      padding: 20px 0;
+      background-color: black;
+      opacity: 70%;
+
+      span {
+        color: white;
+        font-size: 1.5vw;
+      }
+    }
+
+    // Main Pho Sunrise banner
+    .pho-sunrise-banner {
+      width: 100%;
+    }
   }
 
   // Pho Sunserise Viet-Thai Restaurant
@@ -66,30 +90,35 @@
   //   }
   // }
 
+  span {
+    font-size: 1.1vw;
+    color: white;
+    a {
+      color: rgb(231, 143, 37);
+    }
+  }
+
   // Phone Number | Address
   // Offering ...
   .restaurant-details-container {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 10px;
     color: white;
-    width: 90%;
+    width: 80%;
     .restaurant-details {
       display: flex;
       justify-content: center;
+      // background-color: pink;
       p {
-        font-size: 2vw;
+        font-size: 1.8vw;
         font-weight: 100;
         margin: 0;
-        margin-bottom: 15px;
       }
       span {
         font-size: 2vw;
         width: 10%;
       }
-    }
-    span {
-      font-size: 1.1vw;
     }
   }
 
