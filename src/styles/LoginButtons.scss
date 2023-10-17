@@ -3,8 +3,8 @@
 .login-buttons {
   text-transform: uppercase;
   font-family: $primary-font;
-  background-color: $secondary-colour;
-  color: silver;
+  background-color: $light-colour;
+  color: white;
   border: 0;
   border-radius: 10px;
   padding: 10px;
@@ -15,5 +15,5 @@
 }
 
 .login-buttons:hover {
-  background-color: $primary-colour;
+  background-color: $lighter-colour;
 }
