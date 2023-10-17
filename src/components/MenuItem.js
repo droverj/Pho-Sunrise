@@ -12,7 +12,7 @@ const MenuItem = ({ itemOptions }) => {
           // Generate a unique identifier for each option
           const optionId = `${item.id}_${index}`;
           return (
-            <div key={optionId}>
+            <div key={optionId} className='option'>
               {item.item_option && <span>{item.item_option}</span>}
               <div className="option-actions">
                 <span>${parseFloat(item.price).toFixed(2)}</span>

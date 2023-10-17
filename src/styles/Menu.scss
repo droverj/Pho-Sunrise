@@ -1,4 +1,71 @@
+@import "variables";
+
 .menu {
   padding: 40px 0;
   margin-bottom: 0;
+  background-color: #333;
+  color: white;
+  font-weight: 100;
+  border-bottom: 2px solid $primary-colour;
+
+  h2 {
+    text-align: center;
+  }
+
+  .menu-section {
+    // background-color: pink;
+    margin: 0 10%;
+    margin-top: 10px;
+    h3 {
+      font-size: 20px;
+      margin: 0;
+      background-color: $lighter-colour;
+      padding: 10px;
+    }
+
+    h3.english-section-title {
+      font-weight: 400;
+      padding-bottom: 0;
+    }
+    h3.vietnamese-section-title {
+      font-family: "Montserrat";
+      font-weight: 100;
+      font-style: italic;
+      margin-bottom: 5px;
+      padding-top: 0;
+    }
+  }
+
+  .menu-item {
+    display: flex;
+    .item-options {
+      font-size: 20px;
+      width: 50%;
+      // background-color: blue;
+      margin-left: 10px;
+      .option {
+        display: flex;
+        justify-content: space-between;
+        text-align: end;
+        margin-bottom: 10px;
+        // background-color: orange;
+      }
+    }
+    .option-actions {
+      display: flex;
+      align-items: center;
+      button {
+        margin: 0 20px;
+        padding: 2px 6px;
+        color: white;
+        cursor: pointer;
+        border: 0.5px solid white;
+        background-color: $secondary-colour;
+      }
+      button:hover {
+        background-color: $light-colour;
+      }
+      // background-color: cadetblue;
+    }
+  }
 }

@@ -131,7 +131,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
             <ul className='details'>
               <li>(519) 579 - 2016</li>
               <li>
-                1400 Ottawa Street South - Unit B22 <br />
+                1400 Ottawa Street South <br />Unit B22 <br />
                 Kitchener, ON, Canada <br />
                 N2E 4E2
               </li>
