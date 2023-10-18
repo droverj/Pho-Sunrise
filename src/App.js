@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import ScrollToTop from './components/common/ScrollToTop';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Checkout from './components/Checkout';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
-import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './components/CartContext';
 import './App.scss';
 
