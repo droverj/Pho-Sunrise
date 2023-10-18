@@ -1,16 +1,15 @@
 @import "variables";
 
 .menu {
-  padding: 40px 0;
   margin-bottom: 0;
   background-color: #333;
   color: white;
   font-weight: 100;
   border-bottom: 2px solid $primary-colour;
 
-  h1 {
-    text-align: center;
-    margin: 20px 0;
+  .pho-sunrise-menu-banner {
+    width: 100%;
+    margin-top: 10px;
   }
 
   .menu-index {
@@ -43,12 +42,19 @@
   }
 
   h2 {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin-top: 80px;
+    background-color: $primary-colour;
+    text-shadow: -2px 2px 2px #000000;
+    box-shadow: $button-box-shadow;
   }
 
   .menu-section {
     margin: 0 10%;
-    margin-top: 10px;
+    margin-top: 15px;
     h3 {
       font-size: 20px;
       margin: 0;
@@ -59,6 +65,7 @@
     h3.english-section-title {
       font-weight: 400;
       padding-bottom: 0;
+    text-shadow: -2px 1px 2px rgba(0,0,0,0.82);
     }
     h3.vietnamese-section-title {
       font-family: "Montserrat";
@@ -80,7 +87,6 @@
         display: flex;
         justify-content: space-between;
         text-align: end;
-        margin-bottom: 10px;
         // background-color: orange;
       }
     }

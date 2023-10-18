@@ -1,12 +1,13 @@
 import React, { useRef } from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
+import MenuBanner from '../images/pho-sunrise-menu-banner.png';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
   const { addToCart } = useCart();
   const menuSectionsRef = useRef([]);
-
+  
   // Group items by section and name
   const groupedItems = {};
   items.forEach((item) => {
@@ -24,10 +25,11 @@ const Menu = ({ items }) => {
     }
     groupedItems[item.section].items[item.name].options.push(item);
   });
-
+  
   return (
     <div className="menu">
-      <h1>MENU</h1>
+      <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" />
+
       <div className="menu-sections">
         <div className="menu-index">
           <ul>

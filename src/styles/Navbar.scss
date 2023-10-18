@@ -34,7 +34,7 @@ nav {
         display: flex;
         align-items: flex-end;
         padding-bottom: 20px;
-        width: 16vw;
+        width: 17vw;
         // background-color: pink;
         .pho-sunrise-link {
           font-weight: 600;
@@ -47,15 +47,18 @@ nav {
 
       .page-links {
         display: flex;
-        li {
+        
+        a {
           display: flex;
-          align-items: flex-end;
-          padding-bottom: 20px;
           justify-content: center;
-          width: 8vw;
+          width: 11vw;
           font-weight: 100;
           text-transform: uppercase;
+          padding-bottom: 40px;
+          align-items: flex-end;
+          height: 100%;
         }
+
         li:hover {
           background-color: $lighter-colour;
         }
