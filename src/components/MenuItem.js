@@ -28,7 +28,7 @@ const MenuItem = ({ itemOptions }) => {
                     })
                   }
                 >
-                  +
+                  add to order
                 </button>
               </div>
             </div>
