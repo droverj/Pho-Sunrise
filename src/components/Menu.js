@@ -32,8 +32,8 @@ const Menu = ({ items }) => {
       {/* <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" /> */}
      
       <Link to="/cart">
-        <button className="review-order-button">
-          Review Your Order
+        <button className="review-order">
+          Review Order
         </button>
       </Link>
 

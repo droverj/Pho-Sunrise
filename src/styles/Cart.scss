@@ -1,8 +1,27 @@
+@import 'variables';
+
 .cart {
   display: flex;
   flex-direction: column;
   padding: 40px 0;
   margin-bottom: 0;
+
+  button.return-to-cart {
+    background-color: $secondary-colour;
+    color: white;
+    font-weight: 400;
+    font-size: 25px;
+    font-family: $primary-font;
+    border-radius: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+  }
+
+  button.return-to-cart:hover {
+    background-color: $lighter-colour;
+  }
 
   .cart-items-heading {
     text-align: center;
