@@ -92,9 +92,9 @@
     background-color: #333;
     color: white;
 
+    ///////////////////// TEST IMAGE
     .test {
-      height: 200px;
-      width: 200px;
+      width: 25%;
       background-color: pink;
     }
 
@@ -127,7 +127,7 @@
           font-size: 20px;
           font-family: $primary-font;
           font-weight: 100;
-
+          margin-right: 40px; // this margin is for the item count 
 
           // circle button styling
           // align-items: center;
@@ -143,12 +143,19 @@
         }
 
         .quantity-added-container {
-          width: 13vw;
-          background-color: lightblue;
-          p.quantity-added {
-            font-size: 20px;
-            font-weight: 100;
-            margin: 0;
+          // width: 2vw;
+          .quantity-added{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 5vw;
+            // background-color: lightblue;
+            .count {
+              font-weight: 400;
+              font-size: 20px;
+              margin: 0;
+              margin-right: 2px;
+            }
           }
         }
       }

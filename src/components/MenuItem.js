@@ -1,6 +1,8 @@
 // MenuItem.js
 import React from 'react';
 import { useCart } from '../components/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const MenuItem = ({ itemOptions }) => {
   const { addToCart, removeFromCart, cart } = useCart();
@@ -41,9 +43,12 @@ const MenuItem = ({ itemOptions }) => {
                 </button>
 
                 <div className='quantity-added-container'>
-                {itemCount > 0 ? (
-                  <p className="quantity-added">{itemCount} added to cart</p>
-                ) : null}
+                  {itemCount > 0 ? (
+                    <div className='quantity-added'>
+                      <p className="count">{itemCount}</p>
+                      <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: 'white' }} size="2x" />
+                    </div>
+                  ) : null}
                 </div>
 
               </div>
