@@ -34,16 +34,17 @@
     }
     a {
       width: 100%;
-      color: $primary-colour;
+      color: white;
       padding: 15px 0;
       padding-right: 10px;
       font-weight: 600;
-      background-color: $lighter-colour;
+      background-color: $primary-colour;
       text-decoration: none;
       text-transform: uppercase;
     }
     a:hover {
       background-color: white;
+      background-color: $lighter-colour;
       text-decoration: none;
     }
   }
@@ -55,7 +56,7 @@
     justify-content: center;
     height: 80px;
     margin: 0;
-    background-color: $primary-colour;
+    background-color: #333;
     text-shadow: -2px 2px 2px #000000;
     box-shadow: $button-box-shadow;
   }
@@ -88,6 +89,8 @@
     display: flex;
     background-color: #dbe0e0;
     color: $secondary-colour;
+    background-color: #333;
+    color: white;
 
     .test {
       height: 200px;
@@ -113,28 +116,30 @@
         // background-color: pink;
         button {
           margin: 0 20px;
-          // padding: 5px 9px;
+          padding: 5px 15px;
           color: white;
           cursor: pointer;
           border: 0.5px solid white;
-          background-color: $secondary-colour;
+          background-color: #333;
+          background-color: $light-colour;
           border: none;
-          // border-radius: 10px;
-          // font-size: 20px;
-          // font-family: $primary-font;
-          // font-weight: 100;
+          border-radius: 10px;
+          font-size: 20px;
+          font-family: $primary-font;
+          font-weight: 100;
 
-          align-items: center;
-          border-radius: 100%;
-          // font-family: inherit;
-          font-size: 1.5rem;
-          font-weight: 400;
-          height: 2.5rem;
-          padding: 0;
-          width: 2.5rem;
+
+          // circle button styling
+          // align-items: center;
+          // border-radius: 100%;
+          // font-size: 1.5rem;
+          // font-weight: 400;
+          // height: 2.5rem;
+          // padding: 0;
+          // width: 2.5rem;
         }
         button:hover {
-          background-color: $primary-colour;
+          background-color: $lighter-colour;
         }
 
         .quantity-added-container {

@@ -37,7 +37,7 @@ const MenuItem = ({ itemOptions }) => {
                     })
                   }
                 >
-                  +
+                  order
                 </button>
 
                 <div className='quantity-added-container'>
