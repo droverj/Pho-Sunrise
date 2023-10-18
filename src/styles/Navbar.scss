@@ -73,8 +73,10 @@ nav {
         align-items: center;
         align-items: flex-end;
         padding-bottom: 20px;
-        // .cart-count {
-        // }
+        .cart-count {
+          width: 1vw;
+          margin-right: 1px;
+        }
       }
     }
   }
