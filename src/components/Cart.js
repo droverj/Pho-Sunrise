@@ -1,14 +1,13 @@
 import React from 'react';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Cart.scss';
 
 const Cart = () => {
   const { cart, addToCart, removeFromCart, subtotal, totalItems, emptyCart } = useCart();
-  const { isAuthenticated } = useAuth0();
 
   const handleAdd = (cartItem) => {
     addToCart(cartItem);
@@ -27,8 +26,16 @@ const Cart = () => {
   return (
     <div className="cart">
 
+      <div className='order-navigation-container'>
+        <Link to="/menu">
+          <button className='back-btn'>Menu</button>
+        </Link>
+        <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
+        <span>Cart</span>
+      </div>
+
       <Link to="/menu">
-        <button className="return-to-cart">
+        <button className="return-to-menu">
           Return to Menu
         </button>
       </Link>

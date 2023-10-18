@@ -12,22 +12,7 @@
   }
 
   button.review-order {
-    position: fixed; /* Set the menu-index to a fixed position */
-    bottom: 0; /* Position it at the top of the viewport */
-    right: 0; /* Position it at the left of the viewport */
-    width: 10vw;
-    margin-bottom: 80px;
-    margin-right: 30px;
-    background-color: $secondary-colour;
-    color: white;
-    font-weight: 400;
-    font-size: 25px;
-    font-family: $primary-font;
-    border-radius: 20px;
-    padding: 10px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
+    @include right-panel-btn;
   }
 
   button.review-order:hover {

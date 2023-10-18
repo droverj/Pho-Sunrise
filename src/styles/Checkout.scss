@@ -6,24 +6,13 @@
   background-color: white;
 
   .checkout-navigation-container {
-    display: flex;
-    font-weight: 600;
-    margin-bottom: 15px;
-    margin-left: 20px;
+    @include page-back-nav-container;
 
-    button {
-      font-family: $primary-font;
-      font-size: 14px;
-      font-weight: 600;
-      color: silver;
-      border: none;
-      background-color: white;
-      margin-right: 15px;
-      padding: 0;
-      cursor: pointer;
+    button.back-btn {
+      @include back-btn;
     }
 
-    button:hover {
+    button.back-btn:hover {
       text-decoration: underline;
     }
 
@@ -99,7 +88,7 @@
       margin-top: 20px;
       border-radius: 30px;
       box-shadow: $form-box-shadow;
-      
+
       .total {
         font-weight: 800;
       }
@@ -192,7 +181,7 @@
       width: 50%;
       padding: 10px 30px;
       padding-bottom: 30px;
-      border: .5px solid silver;
+      border: 0.5px solid silver;
       border-radius: 10px;
       box-shadow: $hover-box-shadow;
       margin-top: 20px;

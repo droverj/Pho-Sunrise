@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .cart {
   display: flex;
@@ -6,20 +6,28 @@
   padding: 40px 0;
   margin-bottom: 0;
 
-  button.return-to-cart {
-    background-color: $secondary-colour;
-    color: white;
-    font-weight: 400;
-    font-size: 25px;
-    font-family: $primary-font;
-    border-radius: 20px;
-    padding: 10px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
+  .order-navigation-container {
+    @include page-back-nav-container;
+
+    button.back-btn {
+      @include back-btn;
+    }
+
+    button.back-btn:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      font-size: 14px;
+      margin-left: 15px;
+    }
   }
 
-  button.return-to-cart:hover {
+  button.return-to-menu {
+    @include right-panel-btn;
+  }
+
+  button.return-to-menu:hover {
     background-color: $lighter-colour;
   }
 
@@ -32,14 +40,13 @@
     justify-content: space-between;
     align-items: baseline;
   }
-    .cart-page-details {
-      display: flex;
-      p {
-        margin-right: 30px;
-        font-size: large;
-      }
+  .cart-page-details {
+    display: flex;
+    p {
+      margin-right: 30px;
+      font-size: large;
+    }
   }
-
 
   .cart-items-container {
     margin-right: 50px;
