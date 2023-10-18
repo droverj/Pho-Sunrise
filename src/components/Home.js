@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import SteamingBowl from '../images/steaming-bowl.png';
 import Banner from '../images/pho-sunrise-banner.png';
 import Hours from '../images/pho-sunrise-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
@@ -73,7 +72,7 @@ const Home = () => {
       <div className='chefs-choice'>
         <div className='chef'>
           <h2>Chef's Choice</h2>
-          <img src={Chef} className='chef-image' alt="chef image" />
+          <img src={Chef} className='chef-image' alt="chef" />
         </div>
         <div className='choice'>
           <span className='name'> Sunrise Special Beef Noodle Soup</span>
