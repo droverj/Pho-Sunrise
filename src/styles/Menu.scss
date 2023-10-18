@@ -1,7 +1,6 @@
 @import "variables";
 
 .menu {
-  margin-bottom: 0;
   background-color: #333;
   color: white;
   font-weight: 100;
@@ -41,26 +40,28 @@
     }
   }
 
+// SECTION HEADINGS
   h2 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80px;
-    margin-top: 70px;
+    // margin-top: 70px;
     margin-bottom: 0;
     background-color: $primary-colour;
     text-shadow: -2px 2px 2px #000000;
     box-shadow: $button-box-shadow;
   }
 
+  // ITEM HEADINGS
   .menu-section {
-    margin: 0 10%;
-    margin-top: 15px;
+    // margin: 0 10%;
+    // margin-top: 15px;
     h3 {
       font-size: 20px;
       margin: 0;
       background-color: $lighter-colour;
-      padding: 10px 20px;
+      padding: 10px 80px;
     }
 
     h3.english-section-title {
@@ -92,7 +93,7 @@
         // background-color: $lighter-colour;
         // background-color: orange;
         // border-bottom: .5px solid white;
-        padding: 5px 20px;
+        padding: 5px 80px;
       }
     }
     .option-actions {

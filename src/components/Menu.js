@@ -28,9 +28,10 @@ const Menu = ({ items }) => {
   
   return (
     <div className="menu">
-      <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" />
+      {/* <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" /> */}
 
       <div className="menu-sections">
+       {/* Menu navigation bar */}
         <div className="menu-index">
           <ul>
             {Object.entries(groupedItems).map(([section], sectionIndex) => (
