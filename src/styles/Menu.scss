@@ -72,13 +72,15 @@
       font-family: "Montserrat";
       font-weight: 100;
       font-style: italic;
-      margin-bottom: 5px;
       padding-top: 0;
     }
   }
 
   .menu-item {
     display: flex;
+    background-color: #dbe0e0;
+    color: $secondary-colour;
+
     .item-options {
       font-size: 20px;
       width: 75%;
