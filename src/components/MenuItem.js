@@ -3,7 +3,14 @@ import React from 'react';
 import { useCart } from '../components/CartContext';
 
 const MenuItem = ({ itemOptions }) => {
-  const { addToCart } = useCart();
+  const { addToCart, cart } = useCart();
+
+  // Function to get the count of a specific item in the cart
+  const getItemCount = (itemId) => {
+    return cart.reduce((count, cartItem) => {
+      return cartItem.id === itemId ? count + cartItem.quantity : count;
+    }, 0);
+  };
 
   return (
     <div className="menu-item">
@@ -11,6 +18,8 @@ const MenuItem = ({ itemOptions }) => {
         {itemOptions.map((item, index) => {
           // Generate a unique identifier for each option
           const optionId = `${item.id}_${index}`;
+          const itemCount = getItemCount(item.id);
+
           return (
             <div key={optionId} className='option'>
               {item.item_option && <span>{item.item_option}</span>}
@@ -28,13 +37,22 @@ const MenuItem = ({ itemOptions }) => {
                     })
                   }
                 >
-                  add to order
+                  +
                 </button>
+
+                <div className='quantity-added-container'>
+                {itemCount > 0 ? (
+                  <p className="quantity-added">{itemCount} added to cart</p>
+                ) : null}
+                </div>
+
               </div>
             </div>
           );
         })}
       </div>
+      {/* PICTURE HERE */}
+      <div className='test'>test</div>
     </div>
   );
 };

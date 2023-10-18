@@ -40,14 +40,13 @@
     }
   }
 
-// SECTION HEADINGS
+  // SECTION HEADINGS
   h2 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80px;
-    // margin-top: 70px;
-    margin-bottom: 0;
+    margin: 0;
     background-color: $primary-colour;
     text-shadow: -2px 2px 2px #000000;
     box-shadow: $button-box-shadow;
@@ -82,6 +81,12 @@
     background-color: #dbe0e0;
     color: $secondary-colour;
 
+    .test {
+      height: 200px;
+      width: 200px;
+      background-color: pink;
+    }
+
     .item-options {
       font-size: 20px;
       width: 75%;
@@ -90,35 +95,51 @@
         align-items: center;
         justify-content: space-between;
         text-align: end;
-        // background-color: $lighter-colour;
-        // background-color: orange;
-        // border-bottom: .5px solid white;
         padding: 5px 80px;
       }
-    }
-    .option-actions {
-      display: flex;
-      align-items: center;
-      font-weight: 400;
-      font-size: 10px;
-      // background-color: pink;
-      button {
-        margin: 0 20px;
-        padding: 5px 9px;
-        color: white;
-        cursor: pointer;
-        border: 0.5px solid white;
-        background-color: $secondary-colour;
-        background-color: $sunrise-red;
-        border: none;
-        border-radius: 10px;
-        font-size: 20px;
-        font-family: $primary-font;
-        font-weight: 100;
-      }
-      button:hover {
-        background-color: $lighter-colour;
-        background-color: red;
+      .option-actions {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 10px;
+        // background-color: pink;
+        button {
+          margin: 0 20px;
+          // padding: 5px 9px;
+          color: white;
+          cursor: pointer;
+          border: 0.5px solid white;
+          // background-color: $secondary-colour;
+          background-color: $sunrise-red;
+          border: none;
+          // border-radius: 10px;
+          // font-size: 20px;
+          // font-family: $primary-font;
+          // font-weight: 100;
+
+          align-items: center;
+          border-radius: 100%;
+          // font-family: inherit;
+          font-size: 1.5rem;
+          font-weight: 400;
+          height: 2.5rem;
+          padding: 0;
+          width: 2.5rem;
+        }
+        button:hover {
+          background-color: $lighter-colour;
+          background-color: red;
+        }
+
+        .quantity-added-container {
+          width: 13vw;
+          background-color: lightblue;
+          p.quantity-added {
+            font-size: 20px;
+            font-weight: 100;
+            margin: 0;
+          }
+        }
       }
     }
   }
