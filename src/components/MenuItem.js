@@ -3,7 +3,7 @@ import React from 'react';
 import { useCart } from '../components/CartContext';
 
 const MenuItem = ({ itemOptions }) => {
-  const { addToCart, cart } = useCart();
+  const { addToCart, removeFromCart, cart } = useCart();
 
   // Function to get the count of a specific item in the cart
   const getItemCount = (itemId) => {

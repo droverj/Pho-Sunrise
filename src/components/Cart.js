@@ -26,6 +26,13 @@ const Cart = () => {
 
   return (
     <div className="cart">
+
+      <Link to="/menu">
+        <button className="return-button">
+          Return to Menu
+        </button>
+      </Link>
+
       <div className="cart-page-heading">
         <h1>Review Your Order</h1>
         <button className="empty-cart-button" onClick={handleEmptyCart}>

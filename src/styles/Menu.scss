@@ -109,8 +109,7 @@
           color: white;
           cursor: pointer;
           border: 0.5px solid white;
-          // background-color: $secondary-colour;
-          background-color: $sunrise-red;
+          background-color: $secondary-colour;
           border: none;
           // border-radius: 10px;
           // font-size: 20px;
@@ -127,8 +126,7 @@
           width: 2.5rem;
         }
         button:hover {
-          background-color: $lighter-colour;
-          background-color: red;
+          background-color: $primary-colour;
         }
 
         .quantity-added-container {

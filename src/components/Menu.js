@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
+import { Link } from 'react-router-dom';
 import MenuBanner from '../images/pho-sunrise-menu-banner.png';
 import '../styles/Menu.scss';
 
@@ -29,6 +30,12 @@ const Menu = ({ items }) => {
   return (
     <div className="menu">
       {/* <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" /> */}
+     
+      <Link to="/cart">
+        <button className="review-order-button">
+          Review Your Order
+        </button>
+      </Link>
 
       <div className="menu-sections">
        {/* Menu navigation bar */}
