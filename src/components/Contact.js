@@ -160,11 +160,11 @@ const Contact = ({ reviews, userId, updateReviews }) => {
           </div>
         </div>
         <div className='right-side-contact-body'>
-          <p>Call to book your reservation</p>
+          <p className='reservation'>Call to book your reservation</p>
           <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
           <div className="socials-container">
             <p className='website-url'>phosunrise.ca</p>
-            <p>Connect With Us</p>
+            <p className='connect'>Connect With Us</p>
             <div className='social-icons'>
               <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
                 <img src={InstagramIcon} alt="Instagram Icon" />
