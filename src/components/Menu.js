@@ -8,7 +8,7 @@ import '../styles/Menu.scss';
 const Menu = ({ items }) => {
   const { addToCart } = useCart();
   const menuSectionsRef = useRef([]);
-  
+
   // Group items by section and name
   const groupedItems = {};
   items.forEach((item) => {
@@ -26,11 +26,11 @@ const Menu = ({ items }) => {
     }
     groupedItems[item.section].items[item.name].options.push(item);
   });
-  
+
   return (
     <div className="menu">
       {/* <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" /> */}
-     
+
       <Link to="/cart">
         <button className="review-order">
           Review Order
@@ -38,7 +38,7 @@ const Menu = ({ items }) => {
       </Link>
 
       <div className="menu-sections">
-       {/* Menu navigation bar */}
+        {/* Menu navigation bar */}
         <div className="menu-index">
           <ul>
             {Object.entries(groupedItems).map(([section], sectionIndex) => (

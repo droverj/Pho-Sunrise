@@ -34,27 +34,6 @@ const Home = () => {
         <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" />
       </div>
 
-      {/* <div className='heading'>
-        <div className='circle-container'>
-          <img src={SteamingBowl} alt="steaming bowl icon" />
-        </div>
-        <div className='restaurant-name'>
-          <h1>Phở Sunrise</h1>
-          <h2>Viet-Thai Restaurant</h2>
-        </div>
-      </div> */}
-
-
-      {/* <span>
-          Offering Dine-in, Takeout and (
-          <a
-            href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
-            target="_blank"
-            rel="noopener noreferrer">
-            SkipTheDishes</a>
-          ) Delivery
-        </span> */}
-
       <div className="restaurant-details-container">
         <div className='restaurant-details'>
           <p className='phone-number'>(519) 579 - 2016</p>
