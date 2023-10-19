@@ -46,7 +46,7 @@ const MenuItem = ({ itemOptions }) => {
                   {itemCount > 0 ? (
                     <div className='quantity-added'>
                       <p className="count">{itemCount}</p>
-                      <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: 'white' }} size="2x" />
+                      <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="2x" />
                     </div>
                   ) : null}
                 </div>
