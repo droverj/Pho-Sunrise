@@ -119,7 +119,20 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   return (
     <div className="contact">
-      
+
+      <div className="socials-container">
+        <p className='website-url'>phosunrise.ca</p>
+        <p className='connect'>Connect With Us</p>
+        <div className='social-icons'>
+          <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
+            <img src={InstagramIcon} alt="Instagram Icon" />
+          </a>
+          <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
+            <img src={FacebookIcon} alt="Facebook Icon" />
+          </a>
+        </div>
+      </div>
+
       <div className='restaurant-info-container'>
         <div className='heading-container'>
           <h4 className='restaurant-info-heading'>Contact</h4>
@@ -172,19 +185,6 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       </div>
 
       <div className='right-side-contact-body'>
-
-        <div className="socials-container">
-          <p className='website-url'>phosunrise.ca</p>
-          <p className='connect'>Connect With Us</p>
-          <div className='social-icons'>
-            <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
-              <img src={InstagramIcon} alt="Instagram Icon" />
-            </a>
-            <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
-              <img src={FacebookIcon} alt="Facebook Icon" />
-            </a>
-          </div>
-        </div>
       </div>
 
 

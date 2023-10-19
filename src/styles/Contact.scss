@@ -12,8 +12,46 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
+  // Socials Container: Website, Social Media Icons
+  .socials-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    font-weight: 100;
 
+    .social-icons {
+      display: flex;
+      justify-content: space-evenly;
+      padding-right: 10px;
+      img {
+        width: 30px;
+        padding: 0 5px;
+      }
+    }
 
+    p.connect {
+      // Connect With Us
+      display: flex;
+      justify-content: flex-end;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding: 0;
+      padding-right: 10px;
+      margin: 0;
+    }
+    p.website-url {
+      font-size: 0.7rem;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
+  }
+
+  // Contact & Hours
   .restaurant-info-container {
     margin-left: 5%;
     justify-content: center;
@@ -63,20 +101,27 @@
     }
   }
 
+  // Image & Banner
   .reservation {
     width: 90%;
     margin-left: 5%;
-    position: relative; /* Add relative positioning to the container */
-  
+    margin-bottom: 5px;
+    position: relative;
+
     h3 {
       display: flex;
       justify-content: center;
       align-items: center;
-      position: absolute; /* Add absolute positioning to the h3 */
-      top: 50%; /* Vertically center the h3 within the container */
-      left: 50%; /* Horizontally center the h3 within the container */
-      transform: translate(-50%, -50%); /* Center the h3 accurately */
-      background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.9
+      );
       font-weight: 100;
       font-size: 1.7vw;
       color: $primary-colour;
@@ -84,305 +129,266 @@
       width: 100%;
       height: 10vw;
       margin: 0;
-      z-index: 1; /* Ensure the h3 appears over the image */
+      z-index: 1;
     }
-  
+
     .plates-img {
       width: 100%;
     }
   }
-  
 
-  .socials-container {
-    // Socials Container: Website, Social Media Icons
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 40px 0;
-    width: 100%;
-
-    .social-icons {
-      display: flex;
-      justify-content: space-evenly;
-      padding-right: 10px;
-      img {
-        width: 30px;
-        padding: 0 5px;
-      }
-    }
-
-    p.connect {
-      // Connect With Us
-      display: flex;
-      justify-content: flex-end;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      padding: 0;
-      padding-right: 10px;
-      margin: 0;
-    }
-    p.website-url {
-      font-size: 0.7rem;
-      display: flex;
-      justify-content: flex-start;
-      padding-left: 10px;
-    }
-  }
-}
-
-/*
+  /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section B of Contact Page: 
   Sunrise Shopping Plaza Heading, Location Images
   /////////////////////////////////////////////////////////////////////////////////////////
   */
-.shopping-centre {
-  // h3 "Located in the Sunrise Shopping Plaza"
-  background-color: #333;
-  border: 3px solid #333;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.location-images {
-  // Pho Sunrise Building and Map - Container
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  .building-img {
-    width: 55%;
+  .shopping-centre {
+    // h3 "Located in the Sunrise Shopping Plaza"
+    background-color: #333;
+    border: 3px solid #333;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
   }
-  iframe {
-    // Google Map Image
-    width: 43%;
-  }
-}
 
-/*
+  .location-images {
+    // Pho Sunrise Building and Map - Container
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    .building-img {
+      width: 55%;
+    }
+    iframe {
+      // Google Map Image
+      width: 43%;
+    }
+  }
+
+  /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section C of Contact Page: 
   Customer Reviews, Review Form
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
-.reviews-heading {
-  // Heading for Customer Reviews
-  background-color: #333;
-  border: 3px #333 solid;
-  color: white;
-  font-weight: 200;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 35px;
-}
-
-.review-form-heading {
-  // Heading for Review Form - Signed In and Signed Out
-  text-align: center;
-  color: white;
-  font-size: 1.3rem;
-  background-color: #333;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.reviews-container {
-  // Container for all reviews from customers
-  max-height: 300px;
-  overflow-y: auto;
-  margin-bottom: 60px;
-  padding-top: 10px;
-  padding-left: 0;
-  background-color: white;
-  border: $container-border;
-  box-shadow: $container-box-shadow;
-
-  p {
-    font-family: "Reenie Beanie";
-    max-width: 80%;
-    font-size: 1.7rem;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 30px;
-    margin-bottom: 15px;
-  }
-
-  .submitted-review-stars {
-    display: flex;
-    align-self: flex-start;
-    color: gold;
-    font-size: 0.8rem;
-    border: none;
-    padding-left: 5px;
-  }
-}
-
-.review-form {
-  // Review form including stars for rating
-  // HTML in ReviewForm.js
-  padding-bottom: 15px;
-  padding-left: 25px;
-  background-color: white;
-  border: $container-border;
-  box-shadow: $container-box-shadow;
-
-  p {
-    font-size: 0.7rem;
-  }
-  textarea {
-    width: 40vw;
-    padding: 20px 10px;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    font-size: 1rem;
-    background-color: #ffffff;
-    border: $container-border;
-  }
-  textarea:hover {
-    box-shadow: $hover-box-shadow;
-  }
-
-  .star-rating {
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-  }
-
-  .star {
-    font-size: 40px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-
-  .star:hover {
-    color: gold;
-  }
-  button {
+  .reviews-heading {
+    // Heading for Customer Reviews
     background-color: #333;
+    border: 3px #333 solid;
     color: white;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
+    font-weight: 200;
+    text-align: center;
     text-transform: uppercase;
-    font-family: $primary-font;
+    margin-top: 35px;
   }
-  button:hover {
-    background-color: $primary-colour;
-  }
-}
 
-.logged-out-review-form {
-  // Alternative HTML/CSS for ReviewForm when user is not logged in
-  // Heading styled in class: .review-form-heading
-  text-align: center;
-  border-bottom: 1px solid #333;
-  .review-sign-in {
-    // Sign in link in heading
-    font-size: 1.5rem;
+  .review-form-heading {
+    // Heading for Review Form - Signed In and Signed Out
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    background-color: #333;
     font-weight: 300;
     text-transform: uppercase;
-    color: white;
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin: 0;
-  }
-  .review-sign-in:hover {
-    text-decoration: underline;
-  }
-  p {
-    // font-family: "WindSong";
-    font-size: 20px;
-    font-weight: 100;
-    padding: 30px;
-    margin: 0;
-  }
-}
-
-.submitted-review {
-  // Thank you message for submitting review
-  // Option to delete review with button
-  background-color: #333;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 100;
-  text-align: center;
-  padding: 50px 10px;
-  padding-bottom: 10px;
-
-  p {
-    margin: 0;
-    padding-bottom: 10px;
   }
 
-  // 'Thank You'
-  span {
-    font-size: 3.5rem;
-    color: $sunrise-red;
-    font-family: "WindSong";
+  .reviews-container {
+    // Container for all reviews from customers
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 60px;
+    padding-top: 10px;
+    padding-left: 0;
+    background-color: white;
+    border: $container-border;
+    box-shadow: $container-box-shadow;
+
+    p {
+      font-family: "Reenie Beanie";
+      max-width: 80%;
+      font-size: 1.7rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 30px;
+      margin-bottom: 15px;
+    }
+
+    .submitted-review-stars {
+      display: flex;
+      align-self: flex-start;
+      color: gold;
+      font-size: 0.8rem;
+      border: none;
+      padding-left: 5px;
+    }
   }
-  .delete-review {
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    font-size: 0.7rem;
-    button {
-      border: 2px solid #333;
-      border-radius: 10px;
-      background-color: red;
-      color: white;
-      padding: 5px;
-      margin-left: 10px;
+
+  .review-form {
+    // Review form including stars for rating
+    // HTML in ReviewForm.js
+    padding-bottom: 15px;
+    padding-left: 25px;
+    background-color: white;
+    border: $container-border;
+    box-shadow: $container-box-shadow;
+
+    p {
+      font-size: 0.7rem;
+    }
+    textarea {
+      width: 40vw;
+      padding: 20px 10px;
+      margin-bottom: 15px;
+      margin-top: 5px;
+      font-size: 1rem;
+      background-color: #ffffff;
+      border: $container-border;
+    }
+    textarea:hover {
+      box-shadow: $hover-box-shadow;
+    }
+
+    .star-rating {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+    }
+
+    .star {
+      font-size: 40px;
+      margin-right: 5px;
       cursor: pointer;
     }
-  }
-}
 
-.delete-review-confirmation {
-  // Preview of user's review with option to delete or return
-  text-align: start;
-  padding: 30px 80px;
-  border: 2px solid red;
-  background-color: #ffcccb;
-
-  h3 {
-    margin: 0;
-    padding-bottom: 10px;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  .confirmation {
-    display: flex;
-    .warning {
-      color: red;
-      padding-left: 10px;
-      font-weight: 600;
+    .star:hover {
+      color: gold;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      padding: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: $primary-font;
+    }
+    button:hover {
+      background-color: $primary-colour;
     }
   }
-  button {
-    font-size: 1.5rem;
-    width: 15%;
-    margin-right: 10px;
-    margin-top: 10px;
-    padding: 10px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    background-color: green;
-    box-shadow: $button-box-shadow;
+
+  .logged-out-review-form {
+    // Alternative HTML/CSS for ReviewForm when user is not logged in
+    // Heading styled in class: .review-form-heading
+    text-align: center;
+    border-bottom: 1px solid #333;
+    .review-sign-in {
+      // Sign in link in heading
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: white;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 0;
+    }
+    .review-sign-in:hover {
+      text-decoration: underline;
+    }
+    p {
+      // font-family: "WindSong";
+      font-size: 20px;
+      font-weight: 100;
+      padding: 30px;
+      margin: 0;
+    }
+  }
+
+  .submitted-review {
+    // Thank you message for submitting review
+    // Option to delete review with button
+    background-color: #333;
     color: white;
-    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+    padding: 50px 10px;
+    padding-bottom: 10px;
+
+    p {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+
+    // 'Thank You'
+    span {
+      font-size: 3.5rem;
+      color: $sunrise-red;
+      font-family: "WindSong";
+    }
+    .delete-review {
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      font-size: 0.7rem;
+      button {
+        border: 2px solid #333;
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    }
   }
-  button.danger-btn {
-    background-color: $sunrise-red;
-  }
-  button:hover {
-    background-color: #009900;
-    box-shadow: none;
-  }
-  button.danger-btn:hover {
-    background-color: red;
+
+  .delete-review-confirmation {
+    // Preview of user's review with option to delete or return
+    text-align: start;
+    padding: 30px 80px;
+    border: 2px solid red;
+    background-color: #ffcccb;
+
+    h3 {
+      margin: 0;
+      padding-bottom: 10px;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .confirmation {
+      display: flex;
+      .warning {
+        color: red;
+        padding-left: 10px;
+        font-weight: 600;
+      }
+    }
+    button {
+      font-size: 1.5rem;
+      width: 15%;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background-color: green;
+      box-shadow: $button-box-shadow;
+      color: white;
+      cursor: pointer;
+    }
+    button.danger-btn {
+      background-color: $sunrise-red;
+    }
+    button:hover {
+      background-color: #009900;
+      box-shadow: none;
+    }
+    button.danger-btn:hover {
+      background-color: red;
+    }
   }
 }
