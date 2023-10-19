@@ -20,6 +20,7 @@ nav {
     li {
       display: flex;
       align-items: center; // center aligns from top to bottom
+      transition: background-color 0.5s ease; 
     }
 
     a {
@@ -58,8 +59,9 @@ nav {
           align-items: flex-end;
           height: 100%;
         }
-
+        
         li:hover {
+          transition: background-color 0.5s ease; 
           background-color: $lighter-colour;
         }
       }
