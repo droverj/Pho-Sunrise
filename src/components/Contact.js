@@ -62,7 +62,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const renderReviewForm = () => {
     return (
       <div>
-        <h2 className='review-form-heading'>Tell us about your experience</h2>
+        <h2 className='review-form-info-heading'>Tell us about your experience</h2>
         <ReviewForm onSubmit={handleReviewSubmit} />
       </div>
     );
@@ -71,7 +71,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const renderLoggedOutReviewForm = () => {
     return (
       <div className='logged-out-review-form'>
-        <h2 className='review-form-heading'>
+        <h2 className='review-form-info-heading'>
           <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>
           To Leave a Review
         </h2>
@@ -103,7 +103,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
           <>
             <div className='submitted-review'>
               {reviewSubmitted ? 'Your Phở Sunrise review has been successfully submitted.' : null}
-              <br/><span>Thank you</span>
+              <br /><span>Thank you</span>
               {!deleteConfirmed && (
                 <div className='delete-review'>
                   <p>Delete your review?</p>
@@ -116,66 +116,81 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       </div>
     );
   };
-  
+
   return (
     <div className="contact">
+      <div className='restaurant-info-container'>
 
-      <div className='information-container'>
-        <div className='details-container'>
-          <p className='contact-subheading'>Contact</p>
-          <div className='details-subcontainer'>
-            <ul className='details-label'>
-              <li>Phone Number:</li>
-              <li>Address:</li>
-            </ul>
-            <ul className='details'>
-              <li>(519) 579 - 2016</li>
-              <li>
-                1400 Ottawa Street South <br />Unit B22 <br />
-                Kitchener, ON, Canada <br />
-                N2E 4E2
-              </li>
-            </ul>
-          </div>
-          <p className='contact-subheading'>Hours</p>
-          <div className='details-subcontainer'>
-            <ul className='details-label'>
-              <li>Sunday:</li>
-              <li>Monday:</li>
-              <li>Tuesday:</li>
-              <li>Wednesday:</li>
-              <li>Thursday:</li>
-              <li>Friday:</li>
-              <li>Saturday:</li>
-            </ul>
-            <ul className='details'>
-              <li>11:00AM - 8:00PM</li>
-              <li>CLOSED</li>
-              <li>11:00AM - 8:00PM</li>
-              <li>11:00AM - 8:00PM</li>
-              <li>11:00AM - 8:00PM</li>
-              <li>11:00AM - 9:00PM</li>
-              <li>11:00AM - 9:00PM</li>
-            </ul>
-          </div>
+        <div className='heading-container'>
+          <h4 className='restaurant-info-heading'>Contact</h4>
         </div>
-        <div className='right-side-contact-body'>
-          <p className='reservation'>Call to book your reservation</p>
-          <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
-          <div className="socials-container">
-            <p className='website-url'>phosunrise.ca</p>
-            <p className='connect'>Connect With Us</p>
-            <div className='social-icons'>
-              <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
-                <img src={InstagramIcon} alt="Instagram Icon" />
-              </a>
-              <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
-                <img src={FacebookIcon} alt="Facebook Icon" />
-              </a>
-            </div>
+
+        <div className='restaurant-info'>
+          <p className='label'>Phone:</p>
+          <p className='info'>(519) 579 - 2016</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Address:</p>
+          <p className='info'>
+            1400 Ottawa Street South -Unit B22 <br />
+            Kitchener, ON, Canada &nbsp; N2E 4E2
+          </p>
+        </div>
+
+        <div className='heading-container'>
+          <h4 className='restaurant-info-heading'>Hours</h4>
+        </div>
+
+        <div className='restaurant-info'>
+          <p className='label'>Sunday:</p>
+          <p className='info'>11:00AM - 8:00PM</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Monday:</p>
+          <p className='info' id='monday'>CLOSED</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Tuesday:</p>
+          <p className='info'>11:00AM - 8:00PM</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Wednesday:</p>
+          <p className='info'>11:00AM - 8:00PM</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Thursday:</p>
+          <p className='info'>11:00AM - 8:00PM</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Friday:</p>
+          <p className='info'>11:00AM - 9:00PM</p>
+        </div>
+        <div className='restaurant-info'>
+          <p className='label'>Saturday:</p>
+          <p className='info'>11:00AM - 9:00PM</p>
+        </div>
+      </div>
+
+      <h3 className='reservation'>Call to book your reservation</h3>
+
+
+      <div className='right-side-contact-body'>
+
+        <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
+        <div className="socials-container">
+          <p className='website-url'>phosunrise.ca</p>
+          <p className='connect'>Connect With Us</p>
+          <div className='social-icons'>
+            <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
+              <img src={InstagramIcon} alt="Instagram Icon" />
+            </a>
+            <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
+              <img src={FacebookIcon} alt="Facebook Icon" />
+            </a>
           </div>
         </div>
       </div>
+
 
       <h2 className='shopping-centre'><b>Located in the Sunrise Shopping Centre</b></h2>
       <div className='location-images'>
@@ -183,7 +198,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         <iframe title="google-maps-pho-sunrise" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.143805010259!2d-80.51546618411915!3d43.41582207913015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf597d52d08d5%3A0x1669b8de11730844!2s1400+Ottawa+St+S%2C+Kitchener%2C+ON+N2E+4E2%2C+Canada!5e0!3m2!1sen!2sru!4v1490866950787"></iframe>
       </div>
 
-      <h2 className='reviews-heading'>What our guests are saying</h2>
+      <h2 className='reviews-info-heading'>What our guests are saying</h2>
       <div className='reviews-container'>
         <Reviews reviews={reviews} />
       </div>

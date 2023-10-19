@@ -1,8 +1,11 @@
 @import "variables";
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #333;
-  padding-top: 30px;
+  color: white;
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section A of Contact Page: 
@@ -10,9 +13,71 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
+
+
+  .restaurant-info-container {
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    .heading-container {
+      width: 100%;
+      background-color: $primary-colour;
+      margin-top: 10px;
+      h4.restaurant-info-heading {
+        display: flex;
+        font-weight: 400;
+        justify-content: flex-end;
+        margin: 0;
+        width: 20%;
+        text-transform: uppercase;
+        padding: 2px 0;
+      }
+    }
+
+    .restaurant-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 15px;
+      font-weight: 100;
+      p.label {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 20%;
+        margin: 0;
+        padding-top: 10px;
+      }
+      p.info {
+        font-weight: 100;
+        width: 75%;
+        margin: 0;
+        padding-top: 10px;
+      }
+      #monday {
+        color: $sunrise-red;
+        font-weight: 200;
+      }
+    }
+  }
+
+  h3.reservation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-colour;
+    font-weight: 100;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 90%;
+    height: 60px;
+    margin: 0;
+  }
+
   .plates-img {
-    // Food Image
-    width: 50%;
+    width: 90%;
+    margin-left: 5%;
   }
 
   .socials-container {
