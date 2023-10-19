@@ -87,19 +87,13 @@
 
   .menu-item {
     display: flex;
-    background-color: #dbe0e0;
-    color: $secondary-colour;
-    // color: #333;
-    // background-color: #333;
-    // color: white;
-    font-weight: 400;
 
     ///////////////////// TEST IMAGE
     .test {
       width: 25%;
       background-color: pink;
     }
-    
+
     .item-options {
       font-size: 20px;
       width: 75%;
@@ -109,6 +103,14 @@
         justify-content: space-between;
         text-align: end;
         padding: 5px 80px;
+        background-color: #dbe0e0;
+        color: $secondary-colour;
+        font-weight: 400;
+        transition: background-color 0.3s ease; 
+      }
+      .option:hover {
+        background-color: #e2e6e6;
+        // transition: background-color 0.3s ease; 
       }
       .option-actions {
         display: flex;
@@ -136,7 +138,7 @@
 
         .quantity-added-container {
           width: 2vw;
-          .quantity-added{
+          .quantity-added {
             display: flex;
             align-items: center;
             justify-content: flex-end;
