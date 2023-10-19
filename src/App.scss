@@ -25,13 +25,15 @@ body {
   max-width: 1200px;
   margin: auto;
   margin-top: 13vh;
-  // margin-bottom: 0;
   font-family: "Montserrat";
-  font-size: 16px;
 
   a {
     color: #fff;
     text-decoration: none;
+  }
+
+  li {
+    display: flex;
   }
 
   input {

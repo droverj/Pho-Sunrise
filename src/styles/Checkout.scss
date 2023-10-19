@@ -10,6 +10,7 @@
 
     button.back-btn {
       @include back-btn;
+      background-color: white;
     }
 
     button.back-btn:hover {

@@ -30,7 +30,7 @@ const Cart = () => {
         <Link to="/menu">
           <button className='back-btn'>Menu</button>
         </Link>
-        <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
+        <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: '#899A99', transform: 'scaleX(1)' }} size="1x" /></div>
         <span>Cart</span>
       </div>
 
