@@ -31,7 +31,7 @@ function Navbar() {
 
           <div className='page-links'>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
