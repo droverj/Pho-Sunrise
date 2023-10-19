@@ -16,30 +16,33 @@ function Navbar() {
       <ul>
 
         <div className='left-nav'>
-        <div className='home-links'>
-          <li>
-            <Link to="/" >
-              <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
-            </Link>
-          </li>
-          <li className='pho-sunrise-link'>
-            <Link to="/" >
-              Phở Sunrise
-            </Link>
-          </li>
-        </div>
+          <div className='home-links'>
+            <li>
+              <Link to="/" >
+                <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
+              </Link>
+            </li>
+            <li className='pho-sunrise-link'>
+              <Link to="/" >
+                Phở Sunrise
+              </Link>
+            </li>
+          </div>
 
-        <div className='page-links'>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/menu">Menu</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-        </div>
+          <div className='page-links'>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
+          </div>
         </div>
 
         <div className="right-nav">
