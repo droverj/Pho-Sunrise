@@ -119,8 +119,8 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   return (
     <div className="contact">
+      
       <div className='restaurant-info-container'>
-
         <div className='heading-container'>
           <h4 className='restaurant-info-heading'>Contact</h4>
         </div>
@@ -171,12 +171,8 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         </div>
       </div>
 
-      <h3 className='reservation'>Call to book your reservation</h3>
-
-
       <div className='right-side-contact-body'>
 
-        <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
         <div className="socials-container">
           <p className='website-url'>phosunrise.ca</p>
           <p className='connect'>Connect With Us</p>
@@ -203,6 +199,11 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         <Reviews reviews={reviews} />
       </div>
       {reviewSubmitted ? renderReviewInteractionMessage() : (isAuthenticated ? renderReviewForm() : renderLoggedOutReviewForm())}
+
+      <div className='reservation'>
+        <h3>Call to book your reservation</h3>
+        <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
+      </div>
     </div>
   );
 }
