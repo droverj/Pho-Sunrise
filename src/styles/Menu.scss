@@ -131,9 +131,11 @@
           font-size: 20px;
           font-family: $primary-font;
           font-weight: 400;
+          opacity: 80%;
         }
         button:hover {
-          background-color: $lighter-colour;
+          // background-color: #455251;
+          opacity: 100%;
         }
 
         .quantity-added-container {
