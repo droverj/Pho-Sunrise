@@ -25,11 +25,10 @@
 
     .social-icons {
       display: flex;
-      justify-content: space-evenly;
-      padding-right: 10px;
+      align-items: center;
       img {
         width: 30px;
-        padding: 0 5px;
+        padding: 0 4px;
       }
     }
 
@@ -54,11 +53,9 @@
   // Contact & Hours
   .restaurant-info-container {
     margin-left: 5%;
+    margin-bottom: 20px;
     justify-content: center;
     width: 90%;
-    padding-top: 20px;
-    padding-bottom: 50px;
-
     .heading-container {
       width: 100%;
       background-color: $primary-colour;
@@ -143,11 +140,14 @@
   Sunrise Shopping Plaza Heading, Location Images
   /////////////////////////////////////////////////////////////////////////////////////////
   */
-  .shopping-centre {
-    // h3 "Located in the Sunrise Shopping Plaza"
-    background-color: #333;
-    border: 3px solid #333;
+  h2.shopping-centre {
+    // "Located in the Sunrise Shopping Plaza"
+    background-color: $primary-colour;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px 0;
     color: white;
+    font-weight: 300;
     text-align: center;
     text-transform: uppercase;
   }
