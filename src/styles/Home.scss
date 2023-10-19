@@ -8,6 +8,14 @@
   background-color: #333;
   border-bottom: 2px solid $primary-colour;
 
+  button.see-menu {
+    @include right-panel-btn;
+  }
+
+  button.see-menu:hover {
+    background-color: $lighter-colour;
+  }
+
   // Serving Dine-in, takeout, delivery
   .serving-container {
     position: relative;
@@ -126,9 +134,6 @@
     0% {
       transform: rotate(0deg);
     }
-    // 50% {
-    //   transform: rotate(360deg);
-    // }
     100% {
       transform: rotate(360deg);
     }
@@ -142,7 +147,7 @@
     margin-top: 30px;
     padding: 0 40px;
     .shrimp {
-      animation: shrimpAnimation 10s linear infinite;
+      animation: shrimpAnimation 15s linear infinite;
       width: 5vw;
       padding: 0 20px;
     }

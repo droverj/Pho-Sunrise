@@ -10,22 +10,28 @@ const Home = () => {
   return (
     <div className="home">
 
+      <Link to="/menu">
+        <button className="see-menu">
+          Menu
+        </button>
+      </Link>
+
       <div className='serving-container'>
-      <div className='serving'>
-      <span>
-          <b>SERVING</b> <br />
-          Dine-in <br />
-          Takeout <br/> <br></br>
-           (
-          <a
-            href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
-            target="_blank"
-            rel="noopener noreferrer">
-            SkipTheDishes</a>
-          ) Delivery
-        </span>
-      </div>
-      <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" />
+        <div className='serving'>
+          <span>
+            <b>SERVING</b> <br />
+            Dine-in <br />
+            Takeout <br /> <br></br>
+            (
+            <a
+              href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
+              target="_blank"
+              rel="noopener noreferrer">
+              SkipTheDishes</a>
+            ) Delivery
+          </span>
+        </div>
+        <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" />
       </div>
 
       {/* <div className='heading'>
@@ -39,7 +45,7 @@ const Home = () => {
       </div> */}
 
 
-        {/* <span>
+      {/* <span>
           Offering Dine-in, Takeout and (
           <a
             href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
