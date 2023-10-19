@@ -15,10 +15,6 @@ body {
 
   // BEST DARK
   background-color: #282828;
-
-  // display: flex;
-  // flex-direction: column;
-  // min-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -33,37 +29,9 @@ body {
   font-family: "Montserrat";
   font-size: 16px;
 
-  h1 {
-    font-size: 4.5rem;
-  }
-
-  h2 {
-    font-weight: lighter;
-    font-size: 2rem;
-    padding: 5px;
-  }
-
-  h3 {
-    font-size: 1rem;
-    margin: 15px;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-  }
-
   a {
     color: #fff;
     text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  label {
-    font-family: "Montserrat";
   }
 
   input {
