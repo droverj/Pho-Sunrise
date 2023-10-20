@@ -8,7 +8,7 @@
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section A of Contact Page: 
-  Contact Details, Retaurant Hours, Reservation Direction, Food Image, Socials Container
+  Socials, Contact Info, Restaurant Hours
   /////////////////////////////////////////////////////////////////////////////////////////
   */
 
@@ -98,42 +98,6 @@
     }
   }
 
-  // Image & Banner
-  .reservation {
-    width: 90%;
-    margin-left: 5%;
-    margin-bottom: 5px;
-    position: relative;
-
-    h3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(
-        255,
-        255,
-        255,
-        0.9
-      );
-      font-weight: 100;
-      font-size: 1.7vw;
-      color: $primary-colour;
-      text-transform: uppercase;
-      width: 100%;
-      height: 10vw;
-      margin: 0;
-      z-index: 1;
-    }
-
-    .plates-img {
-      width: 100%;
-    }
-  }
-
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section B of Contact Page: 
@@ -144,10 +108,12 @@
     // "Located in the Sunrise Shopping Plaza"
     background-color: $primary-colour;
     width: 90%;
+    margin: 0;
+    margin-bottom: 5px;
     margin-left: 5%;
     padding: 10px 0;
     color: white;
-    font-weight: 300;
+    font-weight: 500;
     text-align: center;
     text-transform: uppercase;
   }
@@ -156,13 +122,14 @@
     // Pho Sunrise Building and Map - Container
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
     .building-img {
-      width: 55%;
+      width: 50%;
+      margin-left: 5%;
     }
     iframe {
       // Google Map Image
-      width: 43%;
+      width: 39%;
+      margin-right: 5%;
     }
   }
 
@@ -175,38 +142,46 @@
 
   .reviews-heading {
     // Heading for Customer Reviews
-    background-color: #333;
-    border: 3px #333 solid;
+    background-color: $primary-colour;
     color: white;
     font-weight: 200;
     text-align: center;
     text-transform: uppercase;
+    margin: 0;
     margin-top: 35px;
+    width: 90%;
+    margin-left: 5%;
   }
 
   .review-form-heading {
     // Heading for Review Form - Signed In and Signed Out
     text-align: center;
+    background-color: $primary-colour;
     color: white;
     font-size: 1.3rem;
-    background-color: #333;
     font-weight: 300;
     text-transform: uppercase;
+    width: 90%;
+    margin: 0;
+    margin-left: 5%;
   }
 
   .reviews-container {
     // Container for all reviews from customers
     max-height: 300px;
     overflow-y: auto;
-    margin-bottom: 60px;
+    margin-bottom: 5px;
     padding-top: 10px;
     padding-left: 0;
     background-color: white;
     border: $container-border;
     box-shadow: $container-box-shadow;
+    width: 90%;
+    margin-left: 5%;
 
     p {
       font-family: "Reenie Beanie";
+      color: $primary-colour;
       max-width: 80%;
       font-size: 1.7rem;
       border-bottom: 1px solid #ccc;
@@ -228,10 +203,12 @@
     // Review form including stars for rating
     // HTML in ReviewForm.js
     padding-bottom: 15px;
-    padding-left: 25px;
+    color: $primary-colour;
     background-color: white;
     border: $container-border;
     box-shadow: $container-box-shadow;
+    width: 90%;
+    margin-left: 5%;
 
     p {
       font-size: 0.7rem;
@@ -240,6 +217,7 @@
       width: 40vw;
       padding: 20px 10px;
       margin-bottom: 15px;
+      margin-left: 20px;
       margin-top: 5px;
       font-size: 1rem;
       background-color: #ffffff;
@@ -253,6 +231,7 @@
       display: flex;
       align-items: center;
       padding: 5px 0;
+      margin-left: 20px;
     }
 
     .star {
@@ -272,6 +251,7 @@
       cursor: pointer;
       text-transform: uppercase;
       font-family: $primary-font;
+      margin-left: 20px;
     }
     button:hover {
       background-color: $primary-colour;
@@ -389,6 +369,43 @@
     }
     button.danger-btn:hover {
       background-color: red;
+    }
+  }
+
+  /*
+  /////////////////////////////////////////////////////////////////////////////////////////
+  Section C of Contact Page: 
+  Image & Book Reservation Banner
+  /////////////////////////////////////////////////////////////////////////////////////////
+  */
+
+  .reservation {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5px;
+    position: relative;
+
+    h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      font-weight: 100;
+      font-size: 1.7vw;
+      color: $primary-colour;
+      text-transform: uppercase;
+      width: 100%;
+      height: 10vw;
+      margin: 0;
+      z-index: 1;
+    }
+
+    .plates-img {
+      width: 100%;
     }
   }
 }

@@ -62,7 +62,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const renderReviewForm = () => {
     return (
       <div>
-        <h2 className='review-form-info-heading'>Tell us about your experience</h2>
+        <h2 className='review-form-heading'>Tell us about your experience</h2>
         <ReviewForm onSubmit={handleReviewSubmit} />
       </div>
     );
@@ -71,7 +71,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const renderLoggedOutReviewForm = () => {
     return (
       <div className='logged-out-review-form'>
-        <h2 className='review-form-info-heading'>
+        <h2 className='review-form-heading'>
           <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>
           To Leave a Review
         </h2>
@@ -123,7 +123,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       <div className="socials-container">
         <p className='website-url'>phosunrise.ca</p>
         <div className='social-icons'>
-        <p className='connect'>Connect With Us</p>
+          <p className='connect'>Connect With Us</p>
           <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
             <img src={InstagramIcon} alt="Instagram Icon" />
           </a>
@@ -194,7 +194,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         <iframe title="google-maps-pho-sunrise" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.143805010259!2d-80.51546618411915!3d43.41582207913015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf597d52d08d5%3A0x1669b8de11730844!2s1400+Ottawa+St+S%2C+Kitchener%2C+ON+N2E+4E2%2C+Canada!5e0!3m2!1sen!2sru!4v1490866950787"></iframe>
       </div>
 
-      <h2 className='reviews-info-heading'>What our guests are saying</h2>
+      <h2 className='reviews-heading'>What our guests are saying</h2>
       <div className='reviews-container'>
         <Reviews reviews={reviews} />
       </div>
