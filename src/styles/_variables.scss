@@ -30,7 +30,7 @@ $cursive-font: 'WindSong';
   right: 0;
   width: 10vw;
   margin-top: 120px;
-  margin-right: 30px;
+  margin-right: 65px;
   padding: 10px;
   background-color: $sunrise-red;
   color: white;
@@ -41,6 +41,10 @@ $cursive-font: 'WindSong';
   text-transform: uppercase;
   cursor: pointer;
   border: 2px solid white;
+
+  @media (max-width: 1200px) {
+    margin-right: 23px; /* Updated margin-right for max-width 1200px */
+  }
 }
 
 @mixin page-back-nav-container {
