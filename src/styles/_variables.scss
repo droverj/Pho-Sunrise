@@ -42,15 +42,23 @@ $cursive-font: "WindSong";
   cursor: pointer;
   border: 2px solid white;
 
-  // @media (max-width: 1200px) {
-  //   margin-right: 23px;
-  // margin-top: 100px;
-  // }
-  // @media (max-width: 1000px) {
-  //   margin-right: 0;
-  //   width: 9vw;
-  //   padding: 5px;
-  // }
+  @media (max-width: 1300px) {
+    margin-top: 110px;
+  }
+  @media (max-width: 1200px) {
+    margin-right: 40px;
+    margin-top: 100px;
+  }
+
+  @media (max-width: 1000px) {
+    margin-right: 20px;
+    width: 10vw;
+    padding: 10px;
+  }
+
+  @media (max-width: 899px) {
+    display: none;
+  }
 }
 
 @mixin page-back-nav-container {
