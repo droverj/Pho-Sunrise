@@ -32,7 +32,7 @@ $cursive-font: 'WindSong';
   margin-top: 120px;
   margin-right: 30px;
   padding: 10px;
-  background-color: $light-colour;
+  background-color: $sunrise-red;
   color: white;
   font-weight: 400;
   font-size: 2vw;
@@ -40,7 +40,7 @@ $cursive-font: 'WindSong';
   border-radius: 20px;
   text-transform: uppercase;
   cursor: pointer;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
 @mixin page-back-nav-container {
