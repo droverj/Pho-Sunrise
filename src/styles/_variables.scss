@@ -31,16 +31,16 @@ $cursive-font: 'WindSong';
   width: 10vw;
   margin-top: 120px;
   margin-right: 30px;
-  background-color: $secondary-colour;
+  padding: 10px;
+  background-color: $light-colour;
   color: white;
   font-weight: 400;
   font-size: 2vw;
   font-family: $primary-font;
   border-radius: 20px;
-  padding: 10px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   cursor: pointer;
-  border: none;
+  border: 3px solid white;
 }
 
 @mixin page-back-nav-container {

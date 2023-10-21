@@ -33,11 +33,13 @@ const Menu = ({ items }) => {
     <div className="menu">
       {/* <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" /> */}
 
-      <Link to="/cart">
-        <button className="review-order">
-          Review Order
-        </button>
-      </Link>
+      {totalItems > 0 && (
+        <Link to="/cart">
+          <button className="review-order">
+            Review Order
+          </button>
+        </Link>
+      )}
 
       <div className="menu-sections">
         {/* Menu navigation bar */}
