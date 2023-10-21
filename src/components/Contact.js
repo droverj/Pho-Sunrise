@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
@@ -119,6 +120,12 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   return (
     <div className="contact">
+
+      <Link to="/menu">
+        <button className="menu">
+          Menu
+        </button>
+      </Link>
 
       <div className="socials-container">
         <p className='website-url'>phosunrise.ca</p>
