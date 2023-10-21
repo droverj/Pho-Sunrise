@@ -36,7 +36,7 @@ const Cart = () => {
 
       <Link to="/menu">
         <button className="return-to-menu">
-          Return to Menu
+        {totalItems === 0 ? 'Start Your Order' : 'Back to Menu'}
         </button>
       </Link>
 
@@ -53,7 +53,7 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart-items-container">
-        {cart.length === 0 ? (
+        {totalItems === 0 ? (
           <div className="empty-cart-container">
             <h2>Your Shopping Cart is Empty</h2>
             <FontAwesomeIcon icon={faSurprise} />

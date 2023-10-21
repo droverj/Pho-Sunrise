@@ -36,7 +36,7 @@ const Menu = ({ items }) => {
       {totalItems > 0 && (
         <Link to="/cart">
           <button className="review-order">
-            Review Order
+            View Your Order
           </button>
         </Link>
       )}
