@@ -6,8 +6,10 @@ import MenuBanner from '../images/pho-sunrise-menu-banner.png';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
-  const { addToCart } = useCart();
+  const { addToCart, totalItems } = useCart();
   const menuSectionsRef = useRef([]);
+
+  console.log(totalItems)
 
   // Group items by section and name
   const groupedItems = {};

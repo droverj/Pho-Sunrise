@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const MenuItem = ({ itemOptions }) => {
-  const { addToCart, removeFromCart, cart } = useCart();
+  const { addToCart, cart } = useCart();
 
   // Function to get the count of a specific item in the cart
   const getItemCount = (itemId) => {
