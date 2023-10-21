@@ -12,7 +12,7 @@ const CartTracker = () => {
     <div className="cart-tracker">
       <span className="cart-count">{totalItems}</span>
       <Link to="/cart">
-        <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: 'white' }} size="2x" />
+        <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: 'white' }} size="xl" />
       </Link>
     </div>
   );

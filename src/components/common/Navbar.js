@@ -46,9 +46,9 @@ function Navbar() {
         </div>
 
         <div className="right-nav">
-          <Profile />
-          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
           <CartTracker className="cart-tracker" />
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+          <Profile />
         </div>
 
       </ul>
