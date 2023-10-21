@@ -1,27 +1,27 @@
 // primaries
-$primary-font: 'Montserrat';
-$primary-colour: #3C4755;
-$secondary-colour: 	#39404E;
-$lighter-colour: #899A99;
+$primary-font: "Montserrat";
+$primary-colour: #3c4755;
+$secondary-colour: #39404e;
+$lighter-colour: #899a99;
 $light-colour: #576766;
-$sunrise-red: #DA231C;
+$sunrise-red: #da231c;
 
 // forms and containers
-$container-border: .5px solid silver;
-$container-box-shadow: -5px 5px 12px -1px rgba(0,0,0,0.21);
-$hover-box-shadow: 0px 0px 11px -6px rgba(0,0,0,0.39);
+$container-border: 0.5px solid silver;
+$container-box-shadow: -5px 5px 12px -1px rgba(0, 0, 0, 0.21);
+$hover-box-shadow: 0px 0px 11px -6px rgba(0, 0, 0, 0.39);
 $form-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.11);
 
 // button variables
 $button-colour: #0a0082;
-$button-box-shadow: -5px 3px 8px -3px rgba(0,0,0,0.68);
+$button-box-shadow: -5px 3px 8px -3px rgba(0, 0, 0, 0.68);
 
-$order-takeout-button-font: 'Nixie One';
-$order-takeout-button-box-shadow: -4px 4px 10px 3px rgba(0,0,0,0.48);
+$order-takeout-button-font: "Nixie One";
+$order-takeout-button-box-shadow: -4px 4px 10px 3px rgba(0, 0, 0, 0.48);
 
 // other
-$background-colour:  #FDFCFA;
-$cursive-font: 'WindSong';
+$background-colour: #fdfcfa;
+$cursive-font: "WindSong";
 
 // Right Panel Buttons
 @mixin right-panel-btn {
@@ -42,9 +42,15 @@ $cursive-font: 'WindSong';
   cursor: pointer;
   border: 2px solid white;
 
-  @media (max-width: 1200px) {
-    margin-right: 23px; /* Updated margin-right for max-width 1200px */
-  }
+  // @media (max-width: 1200px) {
+  //   margin-right: 23px;
+  // margin-top: 100px;
+  // }
+  // @media (max-width: 1000px) {
+  //   margin-right: 0;
+  //   width: 9vw;
+  //   padding: 5px;
+  // }
 }
 
 @mixin page-back-nav-container {
