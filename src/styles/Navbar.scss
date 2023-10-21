@@ -16,6 +16,7 @@ nav {
     justify-content: space-between; // Separates the left nav from the right nav
     padding: 0;
     margin: 0 25px;
+    width: 40vw;
 
     li {
       display: flex;
@@ -35,11 +36,13 @@ nav {
         display: flex;
         align-items: flex-end;
         padding-bottom: 20px;
-        width: 18vw;
+        background-color: pink;
+        // width: 10vw;
         text-shadow: -2px 2px 2px #000000;
         .pho-sunrise-link {
           font-weight: 600;
-          font-size: 25px;
+          font-size: 20px;
+          width: 130px;
         }
         .home-icon {
           width: 40px;
@@ -70,6 +73,7 @@ nav {
     .right-nav {
       display: flex;
       align-items: flex-end;
+      width: 20vw;
       .cart-tracker {
         display: flex;
         align-items: center;
@@ -84,4 +88,49 @@ nav {
       }
     }
   }
+
+  .steam-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .steam {
+    position: absolute;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: steam-rise 4s infinite linear;
+  }
+  
+  .steam:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    left: 50px;
+    animation: steam-rise 4s 1s infinite linear;
+  }
+  
+  .steam:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    left: 20px;
+    animation: steam-rise 4s 2s infinite linear;
+  }
+  
+  @keyframes steam-rise {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.5);
+    }
+    20% {
+      opacity: 0.6;
+      transform: translateY(-10px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px) scale(1.5);
+    }
+  }
+  
 }
