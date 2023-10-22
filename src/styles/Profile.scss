@@ -3,6 +3,9 @@
   font-weight: lighter;
   font-size: 8px;
   padding-bottom: 20px;
+  @media (max-width: 899px) {
+    display: none;
+  }
   p {
     margin: 0;
   }

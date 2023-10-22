@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import CartTracker from '../CartTracker';
 import LoginButton from './Login';
 import LogoutButton from './Logout';
 import Profile from './Profile';
-import { useAuth0 } from '@auth0/auth0-react';
 import SteamingBowl from '../../images/steaming-bowl.png'
 import '../../styles/Navbar.scss';
 
 function Navbar() {
   const { isAuthenticated } = useAuth0();
 
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(showDropdown);
+  };
+
   return (
     <nav>
       <ul>
-
+        <div className="fa-bars-icon" onClick={toggleDropdown}>
+          <FontAwesomeIcon icon={faBars} className="bars-icon" style={{ color: 'white' }} size="4x" />
+        </div>
         <div className='left-nav'>
           <div className='home-links'>
             <li>
@@ -29,7 +39,7 @@ function Navbar() {
             </li>
           </div>
 
-          <div className='page-links'>
+          <div className="page-links">
             <li>
               <Link to="/">Home</Link>
             </li>
