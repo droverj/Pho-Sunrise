@@ -106,24 +106,32 @@ nav {
       background-color: $light-colour;
       color: white;
       width: 100px;
-      height: 25%;
+      height: 35%;
       padding: 20px;
       animation: slideDown 1s;
-      p {
-        font-size: 16px;
-        margin: 5px 0;
-        padding: 10px 5px;
-        text-transform: uppercase;
-        background-color: $lighter-colour;
-      }
-      p:hover {
-        background-color: lightblue;
-      }
+      // p {
+      //   font-size: 16px;
+      //   margin: 5px 0;
+      //   padding: 10px 5px;
+      //   text-transform: uppercase;
+      //   background-color: $lighter-colour;
+      // }
+      // p:hover {
+      //   background-color: lightblue;
+      // }
       a {
         display: flex;
         flex-direction: column;
+        font-size: 16px;
+        padding: 10px 5px;
+        text-transform: uppercase;
+        background-color: $lighter-colour;
         color: white;
         text-decoration: none;
+      }
+      a:hover {
+        background-color: #dbe0e0;
+        color: $primary-colour;
       }
     }
   }
