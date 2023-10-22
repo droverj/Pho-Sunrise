@@ -8,8 +8,6 @@
   width: 100%;
   color: #fff;
   font-family: $primary-font;
-  // background-color: #404040;
-  // background-color: #e4e4e4;
   background-color: $light-colour;
   background-color: $secondary-colour;
 
@@ -45,14 +43,23 @@
     }
 
     .notices-container {
-      font-size: .7rem;
+      font-size: 0.7rem;
       text-align: center;
-      padding-right: 70px; // to center
-      padding-bottom: 5px; // to center
+      @media (max-width: 899px) {
+        font-size: 8px;
+        width: 40vw;
+      }
     }
 
     .connect-container {
       text-align: center;
+      @media (max-width: 899px) {
+        width: 7vw;
+      }
     }
+  }
+
+  @media (max-width: 899px) {
+    font-size: 8px;
   }
 }
