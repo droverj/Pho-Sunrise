@@ -28,7 +28,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer">
               SkipTheDishes</a>
-            ) Delivery
+            ) <br></br>Delivery
           </span>
         </div>
         <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" />

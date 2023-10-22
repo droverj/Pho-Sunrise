@@ -7,13 +7,17 @@
   text-align: center;
   background-color: #333;
   border-bottom: 2px solid $primary-colour;
+  width: 100%;
+  @media (max-width: 600px) {
+    width: 97.3%;
+  }
 
   button.menu {
     @include right-panel-btn;
-  }
 
-  button.menu:hover {
-    background-color: red;
+    &:hover {
+      background-color: red;
+    }
   }
 
   // Serving Dine-in, takeout, delivery
@@ -22,19 +26,33 @@
     .serving {
       display: flex;
       align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       right: 0;
       z-index: 1;
       width: 15vw;
-      height: 17vw;
-      padding: 20px 0;
+      height: 18vw;
       background-color: black;
       opacity: 70%;
+      @media (max-width: 1200px) {
+        width: 15vw;
+        height: 19vw;
+      }
+      @media (max-width: 1000px) {
+        height: 21vw;
+      }
+      @media (max-width: 899px) {
+        width: 22vw;
+        height: 28vw;
+      }
 
       span {
         color: white;
         font-size: 1.5vw;
+        @media (max-width: 899px) {
+          font-size: 2.5vw;
+        }
       }
     }
 
@@ -50,6 +68,9 @@
     a {
       color: rgb(231, 143, 37);
     }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   // Phone Number | Address
@@ -63,11 +84,13 @@
     .restaurant-details {
       display: flex;
       justify-content: center;
-      // background-color: pink;
       p {
-        font-size: 1.8vw;
+        font-size: 1.5vw;
         font-weight: 100;
         margin: 0;
+        @media (max-width: 899px) {
+          font-size: 2.5vw;
+        }
       }
       span {
         font-size: 2vw;
@@ -89,19 +112,29 @@
   .takeout-button-container {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    margin-top: 30px;
+    margin: 30px;
     padding: 0 40px;
+    @media (max-width: 899px) {
+      margin: 35px 0;
+    }
+    @media (max-width: 600px) {
+      margin: 25px 0;
+    }
+
     .shrimp {
       animation: shrimpAnimation 15s linear infinite;
       width: 5vw;
       padding: 0 20px;
+      @media (max-width: 899px) {
+        width: 7vw;
+      }
     }
 
     button {
-      margin: 5vh 2vw;
-      padding: 15px 40px;
-      font-size: 3vw;
+      padding: 15px 0;
+      width: 35vw;
+      font-size: 2.8vw;
+      margin: 0 20px;
       border: none;
       background-color: $sunrise-red;
       color: white;
@@ -109,11 +142,14 @@
       font-family: $order-takeout-button-font;
       box-shadow: $order-takeout-button-box-shadow;
       cursor: pointer;
+      @media (max-width: 899px) {
+        width: 50vw;
+      }
     }
 
     button:hover {
       background-color: red;
-      box-shadow: $hover-box-shadow;
+      box-shadow: none;
     }
   }
 
@@ -129,8 +165,12 @@
     color: white;
     padding: 0 30px;
     padding-top: 50px;
-    margin: 30px 0;
+    margin-bottom: 30px;
     box-shadow: 0px 0px 15px 12px rgba(0, 0, 0, 0.75);
+    @media (max-width: 899px) {
+      margin-bottom: 20px;
+    }
+
     .chef {
       h2 {
         text-shadow: -4px 4px 2px #000000;
@@ -152,7 +192,6 @@
       flex-direction: column;
       align-self: flex-end;
       margin-bottom: 10px;
-      // background-color: pink;
       .name {
         font-weight: 100;
         text-transform: uppercase;
