@@ -92,12 +92,56 @@ nav {
   }
 }
 
+// navbar styling at max-width 899px
 nav {
   ul {
     @media (max-width: 899px) {
-      width: 99%;
+      width: 100%;
+    }
+
+    .dropdown-page-links {
+      position: fixed;
+      top: 0;
+      left: 90px;
+      background-color: $light-colour;
+      color: white;
+      width: 100px;
+      height: 25%;
+      padding: 20px;
+      animation: slideDown 1s;
+    }
+
+    .dropdown-page-links-hide {
+      position: fixed;
+      top: 0;
+      left: 90px;
+      background-color: #333;
+      color: white;
+      width: 100px;
+      height: 25%;
+      padding: 20px;
+      animation: slideUp 1s;
+    }
+
+    .dropdown-page-links a {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .page-link{
+      font-size: 16px;
+      margin: 5px 0;
+      padding: 10px 5px;
+      text-transform: uppercase;
+      background-color: $lighter-colour;
+      &.page-link:hover {
+        background-color: lightblue;
+      }
     }
   }
+
   .fa-bars-icon {
     display: none;
 
@@ -110,5 +154,28 @@ nav {
       cursor: pointer;
       color: white;
     }
+  }
+}
+
+// Animations to slide navigation links in and out of focus
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }

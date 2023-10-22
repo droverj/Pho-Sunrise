@@ -16,7 +16,7 @@ function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
-    setShowDropdown(showDropdown);
+    setShowDropdown(!showDropdown);
   };
 
   return (
@@ -54,6 +54,25 @@ function Navbar() {
             </li>
           </div>
         </div>
+
+        {/* Page links for max-width 899px */}
+        {showDropdown && (
+          <div className='dropdown-page-links'>
+            <p className='page-link'><Link to="/">Home</Link></p>
+            <p className='page-link'><Link to="/contact">Contact</Link></p>
+            <p className='page-link'><Link to="/menu">Menu</Link></p>
+            <p className='page-link'><Link to="/cart">Cart</Link></p>
+          </div>
+        )}
+
+        {!showDropdown && (
+          <div className='dropdown-page-links-hide'>
+            <p className='page-link'><Link to="/">Home</Link></p>
+            <p className='page-link'><Link to="/contact">Contact</Link></p>
+            <p className='page-link'><Link to="/menu">Menu</Link></p>
+            <p className='page-link'><Link to="/cart">Cart</Link></p>
+          </div>
+        )}
 
         <div className="right-nav">
           <CartTracker className="cart-tracker" />
