@@ -29,7 +29,7 @@ nav {
       text-decoration: none;
     }
 
-    .left-nav {
+    .main-nav {
       display: flex;
 
       .home-links {
@@ -77,7 +77,7 @@ nav {
       }
     }
 
-    .right-nav {
+    .nav-imports{
       display: flex;
       align-items: flex-end;
       .cart-tracker {
@@ -92,47 +92,11 @@ nav {
   }
 }
 
-// navbar styling at max-width 899px
+// Navbar styling at max-width 899px
 nav {
   ul {
     @media (max-width: 899px) {
       width: 100%;
-    }
-
-    .dropdown-page-links {
-      position: fixed;
-      top: 0;
-      left: 90px;
-      background-color: $light-colour;
-      color: white;
-      width: 100px;
-      height: 35%;
-      padding: 20px;
-      animation: slideDown 1s;
-      // p {
-      //   font-size: 16px;
-      //   margin: 5px 0;
-      //   padding: 10px 5px;
-      //   text-transform: uppercase;
-      //   background-color: $lighter-colour;
-      // }
-      // p:hover {
-      //   background-color: lightblue;
-      // }
-      a {
-        display: flex;
-        flex-direction: column;
-        font-size: 16px;
-        padding: 10px 5px;
-        text-transform: uppercase;
-        background-color: $lighter-colour;
-        color: white;
-        text-decoration: none;
-      }
-      a:hover {
-        background-color: #dbe0e0;
-        color: $primary-colour;
-      }
     }
   }
 
@@ -141,24 +105,16 @@ nav {
 
     @media (max-width: 899px) {
       display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
       align-items: flex-end;
       padding-bottom: 12px;
       margin-left: 20px;
+      margin-top: 25px;
       font-size: 14px;
       cursor: pointer;
       color: white;
     }
-  }
-}
-
-// Animations to slide navigation links into focus
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }

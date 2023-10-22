@@ -7,25 +7,27 @@ import CartTracker from '../CartTracker';
 import LoginButton from './Login';
 import LogoutButton from './Logout';
 import Profile from './Profile';
+import SideNav from './SideNav';
 import SteamingBowl from '../../images/steaming-bowl.png'
 import '../../styles/Navbar.scss';
 
 function Navbar() {
   const { isAuthenticated } = useAuth0();
+  const [wid, setWid] = useState('0%');
 
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const openSidenav = () => {
+    setWid('25%');
   };
+
+  const closeSidenav = () => {
+    setWid('0%');
+  };
+
 
   return (
     <nav>
       <ul>
-        <div className="fa-bars-icon" onClick={toggleDropdown}>
-          <FontAwesomeIcon icon={faBars} className="bars-icon" style={{ color: 'white' }} size="4x" />
-        </div>
-        <div className='left-nav'>
+        <div className='main-nav'>
           <div className='home-links'>
             <li>
               <Link to="/" >
@@ -56,16 +58,12 @@ function Navbar() {
         </div>
 
         {/* Page links for max-width 899px */}
-        {showDropdown && (
-          <div className='dropdown-page-links'>
-            <p><Link to="/">Home</Link></p>
-            <p><Link to="/contact">Contact</Link></p>
-            <p><Link to="/menu">Menu</Link></p>
-            <p><Link to="/cart">Cart</Link></p>
-          </div>
-        )}
+        <div className="fa-bars-icon" onClick={openSidenav}>
+          <FontAwesomeIcon icon={faBars} className="bars-icon" style={{ color: 'white' }} size="4x" />
+        </div>
+          <SideNav width={wid} closeNav={closeSidenav} />
 
-        <div className="right-nav">
+        <div className="nav-imports">
           <CartTracker className="cart-tracker" />
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
           <Profile />
