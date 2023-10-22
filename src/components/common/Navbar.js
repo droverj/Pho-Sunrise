@@ -58,19 +58,10 @@ function Navbar() {
         {/* Page links for max-width 899px */}
         {showDropdown && (
           <div className='dropdown-page-links'>
-            <p className='page-link'><Link to="/">Home</Link></p>
-            <p className='page-link'><Link to="/contact">Contact</Link></p>
-            <p className='page-link'><Link to="/menu">Menu</Link></p>
-            <p className='page-link'><Link to="/cart">Cart</Link></p>
-          </div>
-        )}
-
-        {!showDropdown && (
-          <div className='dropdown-page-links-hide'>
-            <p className='page-link'><Link to="/">Home</Link></p>
-            <p className='page-link'><Link to="/contact">Contact</Link></p>
-            <p className='page-link'><Link to="/menu">Menu</Link></p>
-            <p className='page-link'><Link to="/cart">Cart</Link></p>
+            <p><Link to="/">Home</Link></p>
+            <p><Link to="/contact">Contact</Link></p>
+            <p><Link to="/menu">Menu</Link></p>
+            <p><Link to="/cart">Cart</Link></p>
           </div>
         )}
 
