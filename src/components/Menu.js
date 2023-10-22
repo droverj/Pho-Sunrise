@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
-import MenuBanner from '../images/pho-sunrise-menu-banner.png';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
@@ -29,7 +28,6 @@ const Menu = ({ items }) => {
 
   return (
     <div className="menu">
-      {/* <img src={MenuBanner} className='pho-sunrise-menu-banner' alt="pho sunrise menu banner" /> */}
 
       {totalItems > 0 && (
         <Link to="/cart">
