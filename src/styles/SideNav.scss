@@ -1,49 +1,21 @@
-@import 'variables';
-
-// Animations to slide navigation links into focus
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  70% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
+@import "variables";
 
 .sidenav {
   display: none;
 
   @media (max-width: 899px) {
-    height: 100%;
-    width: 25%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #232323;
-    transition: 0.5s ease;
-    overflow-x: hidden;
-    padding-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    padding-top: 20px;
+    background-color: $light-colour;
+    transition: 0.9s ease;
 
     a {
       display: flex;
@@ -52,12 +24,42 @@
       padding: 10px 5px;
       text-transform: uppercase;
       background-color: $lighter-colour;
+      width: 100%;
       color: white;
       text-decoration: none;
     }
     a:hover {
       background-color: #dbe0e0;
       color: $primary-colour;
+    }
+
+    button {
+      // width: 2.5rem;
+      // height: 2.5rem;
+      // margin-bottom: 20px;
+      height: 24px;
+      border: 2px outset white;
+      cursor: pointer;
+      background-color: $lighter-colour;
+      color: white;
+      width: 24px;
+      box-shadow: none;
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+    button:hover {
+      color: $primary-colour;
+    }
+
+    a.active {
+      background-color: pink;
+      color: white;
+      cursor: default;
+    }
+    a.active:hover {
+      background-color: none;
     }
   }
 }

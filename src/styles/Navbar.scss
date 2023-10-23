@@ -16,11 +16,11 @@ nav {
 
   ul {
     display: flex;
-    justify-content: space-between; // Separates the left nav from the right nav
+    justify-content: space-between;
     padding: 0;
     li {
       display: flex;
-      align-items: center; // center aligns from top to bottom
+      align-items: center;
       transition: background-color 0.5s ease;
     }
 
