@@ -187,31 +187,45 @@
     max-height: 300px;
     overflow-y: auto;
     margin-bottom: 5px;
-    padding-top: 10px;
-    padding-left: 0;
+    padding: 0;
+    padding: 20px 0;
     background-color: white;
     border: $container-border;
     box-shadow: $container-box-shadow;
     width: 90%;
     margin-left: 5%;
+     ul {
+      padding: 0;
+      margin: 0;
+     }
+    .user-image {
+      display: flex;
+      align-self: center;
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 100%;
+      background-color: pink;
+      margin: 5px 20px;
+    }
 
     p {
+      display: flex;
+      align-items: center;
       font-family: "Reenie Beanie";
       color: $primary-colour;
-      max-width: 80%;
-      font-size: 1.7rem;
+      max-width: 65%;
+      font-size: 1.6rem;
       border-bottom: 1px solid #ccc;
-      padding-bottom: 30px;
-      margin-bottom: 15px;
+      margin: 0;
+      margin-left: 10px;
     }
 
     .submitted-review-stars {
-      display: flex;
-      align-self: flex-start;
       color: gold;
       font-size: 0.8rem;
       border: none;
-      padding-left: 5px;
+      margin: 0;
+      margin-left: 5px;
     }
   }
 

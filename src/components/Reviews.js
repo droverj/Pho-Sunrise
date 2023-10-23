@@ -17,6 +17,7 @@ const Reviews = ({ reviews }) => {
       <ul>
         {reversedReviews.map((review) => (
           <li key={review.id}>
+            <div className='user-image'></div>
             <p>"{review.comment}"</p> &nbsp;
             <p className='submitted-review-stars'>{generateStars(review.rating)}</p>
           </li>
