@@ -203,9 +203,9 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       </div>
 
       <h2 className='reviews-heading'>See what our guests are saying</h2>
-      <div className='reviews-container'>
+      {/* <div className='reviews-container'> */}
         <Reviews reviews={reviews} />
-      </div>
+      {/* </div> */}
       {reviewSubmitted ? renderReviewInteractionMessage() : (isAuthenticated ? renderReviewForm() : renderLoggedOutReviewForm())}
 
       <div className='reservation'>
