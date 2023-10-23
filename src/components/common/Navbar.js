@@ -16,13 +16,12 @@ function Navbar() {
   const [wid, setWid] = useState('0%');
 
   const openSidenav = () => {
-    setWid('25%');
+    setWid('35%');
   };
 
   const closeSidenav = () => {
     setWid('0%');
   };
-
 
   return (
     <nav>

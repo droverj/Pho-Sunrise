@@ -29,7 +29,7 @@ const Reviews = ({ reviews }) => {
               src={review.user_image ? review.user_image : UserIcon}
               alt="profile"
             />
-            <p>"{review.comment}"</p> &nbsp;
+            <p className='review-comment'>"{review.comment}"</p>
             <p className='submitted-review-stars'>{generateStars(review.rating)}</p>
           </li>
         ))}
