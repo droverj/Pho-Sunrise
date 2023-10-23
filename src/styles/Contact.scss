@@ -395,6 +395,9 @@
     padding-bottom: 10px;
     width: 90%;
     margin-left: 5%;
+    @media (max-width: 400px) {
+      font-size: .8rem;
+    }
 
     p {
       margin: 0;
@@ -406,6 +409,9 @@
       font-size: 3.5rem;
       color: $sunrise-red;
       font-family: "WindSong";
+      @media (max-width: 400px) {
+        font-size: 1.5rem;
+      }
     }
     .delete-review {
       display: flex;
@@ -428,10 +434,15 @@
     // Preview of user's review with option to delete or return
     text-align: start;
     color: black;
-    padding: 30px 80px;
+    padding: 30px 5%;
     border: 2px solid red;
     background-color: #ffcccb;
     margin-top: 25px;
+    width: 80%;
+    margin-left: 5%;
+    @media (max-width: 500px) {
+      font-size: .7rem;
+    }
 
     h3 {
       margin: 0;
@@ -439,13 +450,22 @@
       font-weight: 400;
       font-size: 1.5rem;
       color: #333;
+      @media (max-width: 500px) {
+        font-size: .7rem;
+      }
     }
     .confirmation {
       display: flex;
+      @media (max-width: 300px) {
+        flex-direction: column;
+      }
       .warning {
         color: red;
         padding-left: 10px;
         font-weight: 600;
+        @media (max-width: 300px) {
+          padding-left: 0;
+        }
       }
     }
     button {
@@ -460,6 +480,10 @@
       box-shadow: $button-box-shadow;
       color: white;
       cursor: pointer;
+      @media (max-width: 500px) {
+        font-size: .9rem;
+        width: 80px;
+      }
     }
     button.danger-btn {
       background-color: $sunrise-red;
@@ -496,18 +520,32 @@
       transform: translate(-50%, -50%);
       background-color: rgba(255, 255, 255, 0.9);
       font-weight: 100;
-      font-size: 1.7vw;
+      font-size: 1.7rem;
       color: $primary-colour;
       text-transform: uppercase;
       width: 100%;
       height: 10vw;
       margin: 0;
       z-index: 1;
+      @media (max-width: 580px) {
+        font-size: 1.4rem;
+      }
+      @media (max-width: 460px) {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+      @media (max-width: 350px) {
+        font-size: .7rem;
+        font-weight: 400;
+      }
     }
 
     .plates-img {
       width: 100%;
       margin-top: 30px;
+      @media (max-width: 400px) {
+        margin-top: 15px;
+      }
     }
   }
 }
