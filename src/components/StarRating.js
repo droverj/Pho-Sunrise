@@ -15,7 +15,7 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
     } else if (rating > 2) {
       return (
         <>
-          <p>You gave Phở Sunrise {rating} star rating!</p>
+          <p>You gave Phở Sunrise a {rating} star rating!</p>
           <p>We are pleased you enjoyed your experience with us.</p>
         </>
       );

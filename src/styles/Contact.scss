@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   background-color: #333;
-  background-color: #808076;
+  // background-color: #808076;
 
   color: white;
 
@@ -159,7 +159,7 @@
     text-align: center;
     text-transform: uppercase;
     margin: 0;
-    margin-top: 35px;
+    margin-top: 30px;
     width: 90%;
     margin-left: 5%;
   }
@@ -172,8 +172,8 @@
     font-size: 1.3rem;
     font-weight: 300;
     text-transform: uppercase;
-    width: 90%;
     margin: 0;
+    width: 90%;
     margin-left: 5%;
   }
 
@@ -238,11 +238,15 @@
       box-shadow: $hover-box-shadow;
     }
 
-    .star-rating {
+    .star-rating-container {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      // align-items: center;
       padding: 5px 0;
       margin-left: 20px;
+      p {
+        margin: 0;
+      }
     }
 
     .star {
@@ -273,6 +277,10 @@
     // ReviewForm when user is not logged in
     // Heading styled in class: .review-form-heading
     text-align: center;
+    background-color: white;
+    width: 90%;
+    margin-left: 5%;
+    color: $primary-colour;
     .review-sign-in {
       // Sign in link in heading
       font-size: 1.5rem;
@@ -299,13 +307,15 @@
   .submitted-review {
     // Thank you message for submitting review
     // Option to delete review with button
-    background-color: #333;
+    background-color: $secondary-colour;
     color: white;
     font-size: 1.5rem;
     font-weight: 100;
     text-align: center;
-    padding: 50px 10px;
+    padding: 20px 0;
     padding-bottom: 10px;
+    width: 90%;
+    margin-left: 5%;
 
     p {
       margin: 0;
@@ -329,7 +339,7 @@
         background-color: red;
         color: white;
         padding: 5px;
-        margin-left: 10px;
+        margin: 0 5px;
         cursor: pointer;
       }
     }
@@ -338,9 +348,11 @@
   .delete-review-confirmation {
     // Preview of user's review with option to delete or return
     text-align: start;
+    color: black;
     padding: 30px 80px;
     border: 2px solid red;
     background-color: #ffcccb;
+    margin-top: 25px;
 
     h3 {
       margin: 0;
@@ -359,7 +371,7 @@
     }
     button {
       font-size: 1.5rem;
-      width: 15%;
+      width: 120px;
       margin-right: 10px;
       margin-top: 10px;
       padding: 10px;
@@ -416,6 +428,7 @@
 
     .plates-img {
       width: 100%;
+      margin-top: 30px;
     }
   }
 }

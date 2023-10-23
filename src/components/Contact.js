@@ -103,7 +103,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         ) : (
           <>
             <div className='submitted-review'>
-              {reviewSubmitted ? 'Your Phở Sunrise review has been successfully submitted.' : null}
+              {reviewSubmitted ? 'Your Phở Sunrise review has been submitted successfully.' : null}
               <br /><span>Thank you</span>
               {!deleteConfirmed && (
                 <div className='delete-review'>
