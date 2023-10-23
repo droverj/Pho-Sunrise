@@ -175,6 +175,9 @@
     margin-top: 30px;
     width: 90%;
     margin-left: 5%;
+    @media (min-width: 899px) {
+      padding: 20px 0;
+    }
     @media (max-width: 600px) {
       font-size: 4.5vw;
       margin-top: 15px;
@@ -192,6 +195,9 @@
     margin: 0;
     width: 90%;
     margin-left: 5%;
+    @media (min-width: 899px) {
+      padding: 20px 0;
+    }
     @media (max-width: 600px) {
       font-size: 4.5vw;
     }

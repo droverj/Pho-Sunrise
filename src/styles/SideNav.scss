@@ -37,7 +37,6 @@ nav {
       top: 0;
       left: 0;
       height: 100%;
-      width: 25%;
       padding-top: 50px;
       background-color: $light-colour;
       transition: 0.9s ease;
@@ -45,7 +44,7 @@ nav {
       a {
         display: flex;
         flex-direction: column;
-        font-size: 16px;
+        font-size: 3.5vw;
         padding: 10px 5px;
         text-transform: uppercase;
         background-color: $light-colour;
@@ -53,6 +52,12 @@ nav {
         color: white;
         text-decoration: none;
         transition: background-color 0.3s ease;
+        padding-left: 30px;
+
+        @media (max-width: 550px) {
+          font-size: 4.5vw;
+          padding-left: 10px;
+        }
       }
       a:hover {
         background-color: #dbe0e0;
