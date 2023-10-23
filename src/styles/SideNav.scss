@@ -1,65 +1,90 @@
 @import "variables";
 
-.sidenav {
-  display: none;
+// Navbar styling at max-width 899px
+nav {
+  ul {
+    @media (max-width: 899px) {
+      width: 100%;
+    }
+  }
 
-  @media (max-width: 899px) {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    z-index: 1;
-    overflow-x: hidden;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 25%;
-    padding-top: 20px;
-    background-color: $light-colour;
-    transition: 0.9s ease;
+  .fa-bars-icon {
+    display: none;
 
-    a {
+    @media (max-width: 899px) {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      align-items: flex-end;
+      padding-bottom: 12px;
+      margin-left: 20px;
+      margin-top: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      color: white;
+    }
+  }
+  .sidenav {
+    display: none;
+  
+    @media (max-width: 899px) {
       display: flex;
       flex-direction: column;
-      font-size: 16px;
-      padding: 10px 5px;
-      text-transform: uppercase;
-      background-color: $lighter-colour;
-      width: 100%;
-      color: white;
-      text-decoration: none;
-    }
-    a:hover {
-      background-color: #dbe0e0;
-      color: $primary-colour;
-    }
-
-    button {
-      // width: 2.5rem;
-      // height: 2.5rem;
-      // margin-bottom: 20px;
-      height: 24px;
-      border: 2px outset white;
-      cursor: pointer;
-      background-color: $lighter-colour;
-      color: white;
-      width: 24px;
-      box-shadow: none;
-      display: block;
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-    }
-    button:hover {
-      color: $primary-colour;
-    }
-
-    a.active {
-      background-color: pink;
-      color: white;
-      cursor: default;
-    }
-    a.active:hover {
-      background-color: none;
+      position: fixed;
+      z-index: 1;
+      overflow-x: hidden;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 25%;
+      padding-top: 50px;
+      background-color: $light-colour;
+      transition: 0.9s ease;
+  
+      a {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        padding: 10px 5px;
+        text-transform: uppercase;
+        background-color: $light-colour;
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      a:hover {
+        background-color: #dbe0e0;
+        color: $primary-colour;
+      }
+  
+      button {
+        height: 24px;
+        width: 24px;
+        border: 2px outset white;
+        cursor: pointer;
+        background-color: $lighter-colour;
+        color: white;
+        box-shadow: none;
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+      button:hover {
+        color: $primary-colour;
+      }
+  
+      a.active {
+        background-color: $lighter-colour;
+        color: white;
+        cursor: default;
+      }
+      a.active:hover {
+        background-color: none;
+      }
     }
   }
 }
+
