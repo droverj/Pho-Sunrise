@@ -40,7 +40,9 @@ $cursive-font: "WindSong";
   border-radius: 20px;
   text-transform: uppercase;
   cursor: pointer;
-  border: 2px solid white;
+  border: none;
+  box-shadow: $button-box-shadow;
+  transition: background-color 0.3s ease;
 
   @media (max-width: 1300px) {
     margin-top: 110px;

@@ -4,9 +4,13 @@
   display: flex;
   flex-direction: column;
   background-color: #333;
-  // background-color: #808076;
-
+  // background-color: #808076; // concrete grey
   color: white;
+
+  .avatar {
+    width: 10%;
+    border-radius: 100%;
+  }
 
   button.menu {
     @include right-panel-btn;
@@ -14,6 +18,7 @@
 
   button.menu:hover {
     background-color: red;
+    box-shadow: none;
   }
   
   /*

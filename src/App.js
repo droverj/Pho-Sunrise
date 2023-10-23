@@ -18,7 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const { user } = useAuth0();
-
+  
   const userId = user ? user.sub : null;
 
   // API data

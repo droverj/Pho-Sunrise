@@ -16,6 +16,7 @@
   width: 90px;
   height: 90px;
   margin: 0 10px;
+  transition: background-color 0.3s ease;
   @media (max-width: 899px) {
     margin-right: 0;
     margin-left: 20px;

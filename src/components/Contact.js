@@ -11,7 +11,7 @@ import Building from '../images/pho-sunrise-building.jpeg';
 import '../styles/Contact.scss';
 
 const Contact = ({ reviews, userId, updateReviews }) => {
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, user } = useAuth0();
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
   const [deleteConfirmed, setDeleteConfirmed] = useState(null);
   // eslint-disable-next-line
@@ -120,6 +120,10 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   return (
     <div className="contact">
+
+      {user && 
+      <img className='avatar' src={user.picture}></img>
+      }
 
       <Link to="/menu">
         <button className="menu">
