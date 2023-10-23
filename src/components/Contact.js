@@ -122,10 +122,6 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   return (
     <div className="contact">
 
-      {user && 
-      <img className='avatar' src={user.picture}></img>
-      }
-
       <Link to="/menu">
         <button className="menu">
           Menu

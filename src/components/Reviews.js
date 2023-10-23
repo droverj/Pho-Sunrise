@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import UserIcon from '../images/user-icon.png';
 import '../styles/Contact.scss';
 
 const Reviews = ({ reviews }) => {
@@ -10,14 +11,16 @@ const Reviews = ({ reviews }) => {
     return starSymbols.slice(0, rating);
   };
 
-  const reversedReviews = [...reviews].reverse();
-
   return (
     <div>
       <ul>
-        {reversedReviews.map((review) => (
+        {reviews.map((review) => (
           <li key={review.id}>
-            <img className='user-image' src={review.user_image}></img>
+            <img
+              className='user-image'
+              src={review.user_image ? review.user_image : UserIcon}
+              alt="profile"
+            />
             <p>"{review.comment}"</p> &nbsp;
             <p className='submitted-review-stars'>{generateStars(review.rating)}</p>
           </li>
