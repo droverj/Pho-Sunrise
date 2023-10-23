@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   background-color: #333;
+  background-color: #808076;
+
   color: white;
 
   button.menu {
@@ -115,7 +117,7 @@
   */
   h2.shopping-centre {
     // "Located in the Sunrise Shopping Plaza"
-    background-color: $primary-colour;
+    text-align: center;
     width: 90%;
     margin: 0;
     margin-bottom: 5px;
@@ -123,8 +125,8 @@
     padding: 10px 0;
     color: white;
     font-weight: 500;
-    text-align: center;
     text-transform: uppercase;
+    background-color: $primary-colour;
   }
 
   .location-images {
@@ -268,10 +270,9 @@
   }
 
   .logged-out-review-form {
-    // Alternative HTML/CSS for ReviewForm when user is not logged in
+    // ReviewForm when user is not logged in
     // Heading styled in class: .review-form-heading
     text-align: center;
-    border-bottom: 1px solid #333;
     .review-sign-in {
       // Sign in link in heading
       font-size: 1.5rem;
