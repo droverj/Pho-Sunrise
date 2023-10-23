@@ -52,7 +52,7 @@ nav {
 
       .page-links {
         display: flex;
-        margin: 0 25px;
+        margin: 0 70px;
 
         @media (max-width: 899px) {
           display: none;
@@ -68,6 +68,8 @@ nav {
           margin-bottom: 40px;
           align-items: flex-end;
           height: 100%;
+      width: 55px;
+
         }
 
         li:hover {
