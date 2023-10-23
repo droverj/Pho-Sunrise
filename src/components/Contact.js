@@ -28,6 +28,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
       await axios.post('http://localhost:8080/api/reviews', {
         user_id: userId,
+        user_image: user.picture,
         rating,
         comment,
       });
