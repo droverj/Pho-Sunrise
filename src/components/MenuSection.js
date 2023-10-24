@@ -16,5 +16,4 @@ const MenuSection = ({ itemName, itemOptions, vietnameseName }) => {
   );
 };
 
-
 export default MenuSection;

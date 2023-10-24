@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react';
-import MenuSection from './MenuSection';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
+import MenuSections from './MenuSections';
+import MenuNavigation from './MenuNavigation';
+import MenuDropdownNav from './MenuDropdownNav';
+import { groupItemsBySectionAndName } from '../utilities/groupItemsBySectionAndName';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
@@ -19,24 +22,8 @@ const Menu = ({ items }) => {
     setIsSidenavOpen(!isSidenavOpen);
   };
 
-
   // Group items by section and name
-  const groupedItems = {};
-  items.forEach((item) => {
-    if (!groupedItems[item.section]) {
-      groupedItems[item.section] = {
-        section_vietnamese: item.section_vietnamese,
-        items: {},
-      };
-    }
-    if (!groupedItems[item.section].items[item.name]) {
-      groupedItems[item.section].items[item.name] = {
-        options: [],
-        name_vietnamese: item.name_vietnamese,
-      };
-    }
-    groupedItems[item.section].items[item.name].options.push(item);
-  });
+  const groupedItems = groupItemsBySectionAndName(items);
 
   return (
     <div className="menu">
@@ -47,67 +34,18 @@ const Menu = ({ items }) => {
       )}
 
       <div className="menu-sections">
-        {/* Menu navigation bar */}
-        <div className="menu-index">
-          <ul>
-            {Object.entries(groupedItems).map(([section], sectionIndex) => (
-              <li key={sectionIndex}>
-                <a
-                  href={`#section-${sectionIndex}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {section}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <MenuNavigation groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} />
 
         <button className='subnav-toggle' onClick={toggleSubnav}>
           {isSidenavOpen ? 'Hide Menu Sections' : 'Show Menu Sections'}
         </button>
 
-        <div className="menu-dropdown-nav" style={{ height: sidenavHeight }}>
-          <ul>
-            {Object.entries(groupedItems).map(([section], sectionIndex) => (
-              <li key={sectionIndex}>
-                <a
-                  href={`#section-${sectionIndex}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {section}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <MenuDropdownNav groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} sidenavHeight={sidenavHeight} />
 
-        {Object.entries(groupedItems).map(([section, sectionData], sectionIndex) => (
-          <div key={sectionIndex} ref={(ref) => (menuSectionsRef.current[sectionIndex] = ref)}>
-            <h2 id={`section-${sectionIndex}`}>
-              {section} - {sectionData.section_vietnamese}
-            </h2>
-            {Object.entries(sectionData.items).map(([itemName, itemData], index) => (
-              <MenuSection
-                key={index}
-                itemName={itemName}
-                itemOptions={itemData.options}
-                vietnameseName={itemData.name_vietnamese}
-                addToCart={addToCart}
-              />
-            ))}
-          </div>
-        ))}
+        <MenuSections groupedItems={groupedItems} addToCart={addToCart} menuSectionsRef={menuSectionsRef} />
       </div>
     </div>
   );
 };
 
 export default Menu;
-
