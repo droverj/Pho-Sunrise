@@ -10,7 +10,7 @@ const Menu = ({ items }) => {
   const [sidenavHeight, setSidenavHeight] = useState('0vh');
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
 
-  const toggleSidenav = () => {
+  const toggleSubnav = () => {
     if (isSidenavOpen) {
       setSidenavHeight('0vh');
     } else {
@@ -66,7 +66,7 @@ const Menu = ({ items }) => {
           </ul>
         </div>
 
-        <button className='subnav-toggle' onClick={toggleSidenav}>
+        <button className='subnav-toggle' onClick={toggleSubnav}>
           {isSidenavOpen ? 'Hide Menu Sections' : 'Show Menu Sections'}
         </button>
 
