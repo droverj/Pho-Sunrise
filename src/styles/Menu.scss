@@ -15,6 +15,9 @@
   }
 
   @media (min-width: 900px) {
+    button.show {
+      display: none;
+    }
     .menu-index {
       width: 20vw;
       margin-top: 74px;
@@ -50,30 +53,51 @@
   }
 
   // padding for top menu index
-  #section-0 {
-    @media (max-width: 899px) {
-      padding-top: 70px;
-    }
-  }
+  // #section-0 {
+  //   @media (max-width: 899px) {
+  //     padding-top: 70px;
+  //   }
+  // }
 
-  @media (max-width: 899px) {
-      .menu-index {
-        position: fixed;
-        width: 100vw;
-        background-color: pink;
-        font-size: 10px;
-        height: 70px;
-    
-        ul {
-          display: flex;
-          background-color: lightblue;
-          li {
-            padding: 10px;
-            margin: 5px;
-            background-color: gold;
-          }
-        }
+  .menu-sidenav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    margin-top: 90px;
+    height: 100%;
+    padding-top: 50px;
+    background-color: $light-colour;
+    transition: 0.9s ease;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      font-size: 3.5vw;
+      padding: 10px 5px;
+      text-transform: uppercase;
+      background-color: $light-colour;
+      width: 100%;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      padding-left: 30px;
     }
+
+    button.hide {
+      width: 20%;
+    }
+    // ul {
+    //   background-color: lightblue;
+    //   li {
+    //     padding: 10px;
+    //     margin: 5px;
+    //     background-color: gold;
+    //   }
+    // }
   }
 
   // SECTION HEADINGS
