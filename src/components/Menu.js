@@ -7,14 +7,14 @@ import '../styles/Menu.scss';
 const Menu = ({ items }) => {
   const menuSectionsRef = useRef([]);
   const { addToCart, totalItems } = useCart();
-  const [width, setWidth] = useState('0%');
+  const [height, setHeight] = useState('0vh');
 
   const openSidenav = () => {
-    setWidth('35%');
+    setHeight('100vh');
   };
 
   const closeSidenav = () => {
-    setWidth('0%');
+    setHeight('0vh');
   };
 
   // Group items by section and name
@@ -65,7 +65,7 @@ const Menu = ({ items }) => {
 
         <button className='show' onClick={openSidenav}>Menu Sections</button>
 
-        <div className="menu-sidenav" style={{ width }}>
+        <div className="menu-sidenav" style={{ height }}>
           <button className='hide' onClick={closeSidenav}>X</button>
             <ul>
               {Object.entries(groupedItems).map(([section], sectionIndex) => (
