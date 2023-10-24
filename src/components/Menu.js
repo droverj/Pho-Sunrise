@@ -7,15 +7,18 @@ import '../styles/Menu.scss';
 const Menu = ({ items }) => {
   const menuSectionsRef = useRef([]);
   const { addToCart, totalItems } = useCart();
-  const [height, setHeight] = useState('0vh');
+  const [sidenavHeight, setSidenavHeight] = useState('0vh');
+  const [isSidenavOpen, setIsSidenavOpen] = useState(false);
 
-  const openSidenav = () => {
-    setHeight('100vh');
+  const toggleSidenav = () => {
+    if (isSidenavOpen) {
+      setSidenavHeight('0vh');
+    } else {
+      setSidenavHeight('100vh');
+    }
+    setIsSidenavOpen(!isSidenavOpen);
   };
 
-  const closeSidenav = () => {
-    setHeight('0vh');
-  };
 
   // Group items by section and name
   const groupedItems = {};
@@ -63,25 +66,26 @@ const Menu = ({ items }) => {
           </ul>
         </div>
 
-        <button className='show' onClick={openSidenav}>Menu Sections</button>
+        <button className='subnav-toggle' onClick={toggleSidenav}>
+          {isSidenavOpen ? 'Hide Menu Sections' : 'Show Menu Sections'}
+        </button>
 
-        <div className="menu-sidenav" style={{ height }}>
-          <button className='hide' onClick={closeSidenav}>X</button>
-            <ul>
-              {Object.entries(groupedItems).map(([section], sectionIndex) => (
-                <li key={sectionIndex}>
-                  <a
-                    href={`#section-${sectionIndex}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                    {section}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <div className="menu-dropdown-nav" style={{ height: sidenavHeight }}>
+          <ul>
+            {Object.entries(groupedItems).map(([section], sectionIndex) => (
+              <li key={sectionIndex}>
+                <a
+                  href={`#section-${sectionIndex}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {section}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {Object.entries(groupedItems).map(([section, sectionData], sectionIndex) => (

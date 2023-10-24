@@ -81,3 +81,12 @@ $cursive-font: "WindSong";
   padding: 0;
   cursor: pointer;
 }
+
+@mixin menu-sections-btn {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 90px;
+}
