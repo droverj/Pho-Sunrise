@@ -14,67 +14,65 @@
     box-shadow: none;
   }
 
-  .menu-index-side {
-    @media (max-width: 900px) {
-      display: none;
-    }
-
-    width: 20vw;
-    margin-top: 74px;
-    margin-bottom: 200px;
-    height: 78.5vh; /* Set the height to 100% of the viewport height */
-    position: fixed; /* Set the menu-index to a fixed position */
-    top: 0; /* Position it at the top of the viewport */
-    left: 0; /* Position it at the left of the viewport */
-    background-color: white;
-    font-size: 0.9rem;
-    ul {
-      padding-left: 0;
-      text-align: end;
-    }
-    a {
-      width: 100%;
-      color: white;
-      padding: 15px 0;
-      padding-right: 10px;
-      font-weight: 600;
-      background-color: $primary-colour;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background-color 0.5s ease;
-    }
-    a:hover {
-      // background-color: $lighter-colour;
+  @media (min-width: 900px) {
+    .menu-index {
+      width: 20vw;
+      margin-top: 74px;
+      margin-bottom: 200px;
+      height: 78.5vh;
+      position: fixed;
+      top: 0;
+      left: 0;
       background-color: white;
-      color: $primary-colour;
-      text-decoration: none;
+      font-size: 0.9rem;
+      ul {
+        padding-left: 0;
+        text-align: end;
+      }
+      a {
+        width: 100%;
+        color: white;
+        padding: 15px 0;
+        padding-right: 10px;
+        font-weight: 600;
+        background-color: $primary-colour;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color 0.5s ease;
+      }
+      a:hover {
+        // background-color: $lighter-colour;
+        background-color: white;
+        color: $primary-colour;
+        text-decoration: none;
+      }
     }
   }
 
   // padding for top menu index
   #section-0 {
     @media (max-width: 899px) {
-      padding-top: 50px;
+      padding-top: 70px;
     }
   }
-  .menu-index-top {
-    @media (min-width: 899px) {
-      display: none;
-    }
-    position: fixed;
-    width: 100vw;
-    background-color: pink;
-    font-size: 10px;
-    height: 50px;
 
-    ul {
-      display: flex;
-      background-color: lightblue;
-      li {
-        padding: 10px;
-        margin: 5px;
-        background-color: gold;
-      }
+  @media (max-width: 899px) {
+      .menu-index {
+        position: fixed;
+        width: 100vw;
+        background-color: pink;
+        font-size: 10px;
+        height: 70px;
+    
+        ul {
+          display: flex;
+          background-color: lightblue;
+          li {
+            padding: 10px;
+            margin: 5px;
+            background-color: gold;
+          }
+        }
     }
   }
 
@@ -101,6 +99,9 @@
       background-color: $lighter-colour;
       padding: 20px 80px;
       padding-bottom: 10px;
+      @media (max-width: 899px) {
+        padding-left: 20px;
+      }
     }
 
     h3.english-section-title {
@@ -118,7 +119,6 @@
 
   .menu-item {
     display: flex;
-
     ///////////////////// TEST IMAGE
     .test {
       width: 25%;
@@ -138,6 +138,9 @@
         color: $secondary-colour;
         font-weight: 400;
         transition: background-color 0.3s ease;
+        @media (max-width: 899px) {
+          padding-left: 20px;
+        }
       }
       .option:hover {
         background-color: #e2e6e6;

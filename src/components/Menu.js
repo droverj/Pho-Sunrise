@@ -39,25 +39,7 @@ const Menu = ({ items }) => {
 
       <div className="menu-sections">
         {/* Menu navigation bar */}
-        <div className="menu-index-side">
-          <ul>
-            {Object.entries(groupedItems).map(([section], sectionIndex) => (
-              <li key={sectionIndex}>
-                <a
-                  href={`#section-${sectionIndex}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {section}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="menu-index-top">
+        <div className="menu-index">
           <ul>
             {Object.entries(groupedItems).map(([section], sectionIndex) => (
               <li key={sectionIndex}>
