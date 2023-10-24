@@ -1,14 +1,9 @@
 @import "variables";
 
 .menu {
-  background-color: #333;
+  // background-color: #333;
   color: white;
-  border-bottom: 2px solid $primary-colour;
-
-  .pho-sunrise-menu-banner {
-    width: 100%;
-    margin-top: 10px;
-  }
+  // border-bottom: 2px solid $primary-colour;
 
   button.review-order {
     @include right-panel-btn;
@@ -19,8 +14,12 @@
     box-shadow: none;
   }
 
-  .menu-index {
-    width: 220px;
+  .menu-index-side {
+    @media (max-width: 900px) {
+      display: none;
+    }
+
+    width: 20vw;
     margin-top: 74px;
     margin-bottom: 200px;
     height: 78.5vh; /* Set the height to 100% of the viewport height */
@@ -28,6 +27,7 @@
     top: 0; /* Position it at the top of the viewport */
     left: 0; /* Position it at the left of the viewport */
     background-color: white;
+    font-size: 0.9rem;
     ul {
       padding-left: 0;
       text-align: end;
@@ -41,11 +41,40 @@
       background-color: $primary-colour;
       text-decoration: none;
       text-transform: uppercase;
+      transition: background-color 0.5s ease;
     }
     a:hover {
+      // background-color: $lighter-colour;
       background-color: white;
-      background-color: $lighter-colour;
+      color: $primary-colour;
       text-decoration: none;
+    }
+  }
+
+  // padding for top menu index
+  #section-0 {
+    @media (max-width: 899px) {
+      padding-top: 50px;
+    }
+  }
+  .menu-index-top {
+    @media (min-width: 899px) {
+      display: none;
+    }
+    position: fixed;
+    width: 100vw;
+    background-color: pink;
+    font-size: 10px;
+    height: 50px;
+
+    ul {
+      display: flex;
+      background-color: lightblue;
+      li {
+        padding: 10px;
+        margin: 5px;
+        background-color: gold;
+      }
     }
   }
 
@@ -108,11 +137,11 @@
         background-color: #dbe0e0;
         color: $secondary-colour;
         font-weight: 400;
-        transition: background-color 0.3s ease; 
+        transition: background-color 0.3s ease;
       }
       .option:hover {
         background-color: #e2e6e6;
-        // transition: background-color 0.3s ease; 
+        // transition: background-color 0.3s ease;
       }
       .option-actions {
         display: flex;
@@ -133,11 +162,9 @@
           font-size: 16px;
           font-family: $primary-font;
           font-weight: 400;
-          opacity: 80%;
         }
         button:hover {
-          // background-color: #455251;
-          opacity: 100%;
+          background-color: #455251;
         }
 
         .quantity-added-container {

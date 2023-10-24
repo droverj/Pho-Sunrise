@@ -39,7 +39,7 @@ const Menu = ({ items }) => {
 
       <div className="menu-sections">
         {/* Menu navigation bar */}
-        <div className="menu-index">
+        <div className="menu-index-side">
           <ul>
             {Object.entries(groupedItems).map(([section], sectionIndex) => (
               <li key={sectionIndex}>
@@ -56,6 +56,25 @@ const Menu = ({ items }) => {
             ))}
           </ul>
         </div>
+
+        <div className="menu-index-top">
+          <ul>
+            {Object.entries(groupedItems).map(([section], sectionIndex) => (
+              <li key={sectionIndex}>
+                <a
+                  href={`#section-${sectionIndex}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {section}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
         {Object.entries(groupedItems).map(([section, sectionData], sectionIndex) => (
           <div key={sectionIndex} ref={(ref) => (menuSectionsRef.current[sectionIndex] = ref)}>
             <h2 id={`section-${sectionIndex}`}>
