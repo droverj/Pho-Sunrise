@@ -1,0 +1,50 @@
+@import 'variables';
+  
+  // padding for dropdown-menu button
+  .menu {
+    #section-0 {
+      @media (max-width: 899px) {
+        padding-top: 50px;
+      }
+    }
+  }
+
+  .menu-dropdown-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    margin-top: 140px;
+    width: 100%;
+    background-color: $primary-colour;
+    transition: 0.9s ease;
+    @media (min-width: 899px) {
+      display: none;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      font-size: 3.5vw;
+      padding: 10px 5px;
+      text-transform: uppercase;
+      background-color: #333;
+      width: 100%;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      padding-left: 30px;
+    }
+    // ul {
+    //   background-color: lightblue;
+    //   li {
+    //     padding: 10px;
+    //     margin: 5px;
+    //     background-color: gold;
+    //   }
+    // }
+  }

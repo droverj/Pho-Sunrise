@@ -5,6 +5,9 @@ import MenuSections from './MenuSections';
 import MenuNavigation from './MenuNavigation';
 import MenuDropdownNav from './MenuDropdownNav';
 import { groupItemsBySectionAndName } from '../utilities/groupItemsBySectionAndName';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
@@ -37,8 +40,22 @@ const Menu = ({ items }) => {
         <MenuNavigation groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} />
 
         <button className='subnav-toggle' onClick={toggleSubnav}>
-          {isSidenavOpen ? 'Hide Menu Sections' : 'Show Menu Sections'}
+          {isSidenavOpen ? (
+            <>
+              <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              Hide Sections
+              <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+            </>
+          ) : (
+            <>
+              <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              View Sections
+              <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+            </>
+          )}
         </button>
+
+
 
         <MenuDropdownNav groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} sidenavHeight={sidenavHeight} />
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import MenuSection from './MenuSection';
 
 const MenuSections = ({ groupedItems, addToCart, menuSectionsRef }) => {

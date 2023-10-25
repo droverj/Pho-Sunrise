@@ -1,3 +1,5 @@
+import React from 'react';
+
 const MenuNavigation = ({ groupedItems, menuSectionsRef }) => {
   return (
     <div className="menu-index">

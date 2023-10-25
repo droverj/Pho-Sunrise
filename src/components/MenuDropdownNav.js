@@ -1,3 +1,6 @@
+import React from 'react';
+import '../styles/MenuDropdownNav.scss';
+
 const MenuDropdownNav = ({ groupedItems, menuSectionsRef, sidenavHeight }) => {
   return (
     <div className="menu-dropdown-nav" style={{ height: sidenavHeight }}>
