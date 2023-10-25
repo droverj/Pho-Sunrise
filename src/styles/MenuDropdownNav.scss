@@ -1,14 +1,5 @@
 @import 'variables';
   
-  // padding for dropdown-menu button
-  .menu {
-    #section-0 {
-      @media (max-width: 899px) {
-        padding-top: 50px;
-      }
-    }
-  }
-
   .menu-dropdown-nav {
     display: flex;
     flex-direction: column;

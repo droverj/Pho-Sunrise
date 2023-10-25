@@ -28,6 +28,24 @@ const Menu = ({ items }) => {
   // Group items by section and name
   const groupedItems = groupItemsBySectionAndName(items);
 
+  function createSectionScrollButton(label, sectionId) {
+    return (
+      <button
+        className='scroll-button'
+        onClick={() => scrollToSection(sectionId)}
+      >
+        {label}
+      </button>
+    );
+  }
+
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className="menu">
       {totalItems > 0 && (
@@ -39,23 +57,23 @@ const Menu = ({ items }) => {
       <div className="menu-sections">
         <MenuNavigation groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} />
 
-        <button className='subnav-toggle' onClick={toggleSubnav}>
-          {isSidenavOpen ? (
-            <>
-              <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-              Hide Sections
-              <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-            </>
-          ) : (
-            <>
-              <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-              View Sections
-              <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-            </>
-          )}
-        </button>
+        <div className='menu-nav'>
+          <button className='subnav-toggle' onClick={toggleSubnav}>
+            {isSidenavOpen ? (
+              <>
+                <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              </>
+            ) : (
+              <>
+                <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+                See All
+              </>
+            )}
+          </button>
 
-
+          {createSectionScrollButton('Gluten Free', 'section-0')}
+          {createSectionScrollButton('Vegetarian', 'section-1')}
+        </div>
 
         <MenuDropdownNav groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} sidenavHeight={sidenavHeight} />
 
