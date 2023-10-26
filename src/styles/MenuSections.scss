@@ -1,3 +1,5 @@
+@import 'variables';
+
 .menu-sections {
   width: 100;
   .section-heading {
@@ -5,23 +7,28 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      height: 50px;
+      height: 45px;
       margin: 0;
       background-color: #333;
       color: white;
       font-weight: 100;
       text-shadow: -2px 2px 2px #000000;
+      font-weight: 400;
+      padding-bottom: 0;
     }
     h2.vietnamese {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 25px;
+      height: 35px;
       margin: 0;
       font-size: 1rem;
       background-color: #333;
       font-weight: 100;
       color: white;
+      font-weight: 100;
+      font-style: italic;
+      padding-top: 0;
     }
   }
   // .menu-items {

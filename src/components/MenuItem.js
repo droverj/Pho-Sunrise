@@ -40,18 +40,18 @@ const MenuItem = ({ groupedItem }) => {
             </button>
 
             <div className='quantity-added-container'>
-                  {getItemCount(option.id) > 0 ? (
-                    <div className='quantity-added'>
-                      <p className="count">{getItemCount(option.id)}</p>
-                      <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="2x" />
-                    </div>
-                  ) : null}
+              {getItemCount(option.id) > 0 ? (
+                <div className='quantity-added'>
+                  <p className="count">{getItemCount(option.id)}</p>
+                  <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="2x" />
                 </div>
+              ) : null}
+            </div>
 
           </div>
         ))}
       </div>
-      
+
       {/* PICTURE HERE */}
       <div className='test'>test</div>
     </div>
