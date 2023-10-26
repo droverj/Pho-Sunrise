@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styles/MenuSideNav.scss';
 
 const MenuSideNav = ({ groupedItems, scrollToSection }) => {
   return (
-    <div className="menu-index">
+    <div className="menu-side-nav">
       <ul>
         {groupedItems.map((section) => (
           <li key={section.id}>
