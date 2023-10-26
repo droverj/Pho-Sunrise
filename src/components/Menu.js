@@ -56,30 +56,25 @@ const Menu = ({ items }) => {
           <button className="review-order">View Your Order</button>
         </Link>
       )}
+      <MenuSideNav groupedItems={groupedItems} scrollToSection={scrollToSection} />
+      <MenuSections groupedItems={groupedItems} />
+      <div className='menu-dropdown-nav'>
+        <button className='subnav-toggle' onClick={toggleSubnav}>
+          {isSidenavOpen ? (
+            <>
+              <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+            </>
+          ) : (
+            <>
+              <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              See All
+            </>
+          )}
+        </button>
 
-      <div className="menu-sections">
-        <MenuSideNav groupedItems={groupedItems} scrollToSection={scrollToSection} />
-        <MenuSections groupedItems={groupedItems} />
-
-        <div className='menu-dropdown-nav'>
-          <button className='subnav-toggle' onClick={toggleSubnav}>
-            {isSidenavOpen ? (
-              <>
-                <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-              </>
-            ) : (
-              <>
-                <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-                See All
-              </>
-            )}
-          </button>
-
-          {createSectionScrollButton('Gluten Free', 1, 140)}
-          {createSectionScrollButton('Vegetarian', 2, 140)}
-
-          <MenuDropdownSections groupedItems={groupedItems} scrollToSection={scrollToSection} sidenavHeight={sidenavHeight} />
-        </div>
+        {createSectionScrollButton('Gluten Free', 1, 140)}
+        {createSectionScrollButton('Vegetarian', 2, 140)}
+        <MenuDropdownSections groupedItems={groupedItems} scrollToSection={scrollToSection} sidenavHeight={sidenavHeight} />
       </div>
     </div>
   );

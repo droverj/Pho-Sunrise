@@ -8,8 +8,8 @@ const MenuSections = ({ groupedItems }) => {
       {groupedItems.map((section) => (
         <div key={section.id}>
           <div id={section.id} className='section-heading'>
-          <h2>{section.section}</h2>
-          <h2>{section.section_vietnamese}</h2>
+          <h2 className='english'>{section.section}</h2>
+          <h2 className='vietnamese'>{section.section_vietnamese}</h2>
           </div>
           <div className="menu-items">
             <MenuItems items={section.items} />
