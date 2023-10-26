@@ -1,9 +1,14 @@
-@import 'variables';
-  
+@import "variables";
+
+.menu-sections {
   .menu-dropdown-nav {
+    @media (min-width: 899px) {
+      display: none;
+    }
+
     display: flex;
-    flex-direction: column;
     position: fixed;
+    flex-direction: column;
     z-index: 1;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -12,30 +17,28 @@
     margin-top: 140px;
     width: 100%;
     background-color: $primary-colour;
-    transition: 0.9s ease;
-    @media (min-width: 899px) {
-      display: none;
-    }
+    transition: 1.5s ease;
 
-    a {
-      display: flex;
-      flex-direction: column;
-      font-size: 3.5vw;
-      padding: 10px 5px;
-      text-transform: uppercase;
-      background-color: #333;
-      width: 100%;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      padding-left: 30px;
+    ul {
+      padding-left: 0;
+      text-align: end;
+      button {
+        display: flex;
+        flex-direction: column;
+        font-size: 3.5vw;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        padding: 10px 5px;
+        width: 100%;
+        border: none;
+        background-color: $primary-colour;
+        transition: background-color 0.5s ease;
+      }
+      button:hover {
+        background-color: white;
+        color: $primary-colour;
+      }
     }
-    // ul {
-    //   background-color: lightblue;
-    //   li {
-    //     padding: 10px;
-    //     margin: 5px;
-    //     background-color: gold;
-    //   }
-    // }
   }
+}

@@ -7,14 +7,14 @@ const MenuDropdownNav = ({ groupedItems, scrollToSection, sidenavHeight }) => {
       <ul>
         {groupedItems.map((section) => (
           <li key={section.id}>
-            <a
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(section.id, 140);
               }}
             >
               {section.section}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
