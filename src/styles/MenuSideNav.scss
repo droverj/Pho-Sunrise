@@ -4,7 +4,7 @@
   @media (max-width: 899px) {
     display: none;
   }
-  width: 20vw;
+  width: 19.5vw;
   margin-top: 74px;
   margin-bottom: 200px;
   height: 78.5vh;
@@ -14,12 +14,23 @@
   background-color: $primary-colour;
   font-size: 0.9rem;
 
+  @media (max-width: 1200px) {
+    width: 17vw;
+  }
+
+  @media (max-width: 1000px) {
+    width: 14.5vw;
+  }
+
   ul {
     padding-left: 0;
     // text-align: end;
     button {
+      display: flex;
+      justify-content: flex-end;
       font-weight: 600;
       font-family: $primary-font;
+      font-size: 15px;
       text-transform: uppercase;
       text-decoration: none;
       width: 100%;
@@ -29,6 +40,10 @@
       border: none;
       background-color: $primary-colour;
       transition: background-color 0.5s ease;
+
+      @media (max-width: 1000px) {
+       font-size: 11px;
+      }
     }
     button:hover {
       background-color: white;
