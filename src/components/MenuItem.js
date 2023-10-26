@@ -3,6 +3,7 @@ import React from 'react';
 import { useCart } from '../components/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import '../styles/MenuItem.scss';
 
 const MenuItem = ({ groupedItem }) => {
   const { name, name_vietnamese, item_options } = groupedItem;

@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItems from './MenuItems';
+import '../styles/MenuSections.scss';
 
 const MenuSections = ({ groupedItems }) => {
   return (

@@ -3,12 +3,13 @@ import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import MenuSections from './MenuSections';
 import MenuSideNav from './MenuSideNav';
-import MenuDropdownNav from './MenuDropdownNav';
+import MenuDropdownSections from './MenuDropdownSections';
 import { groupItemsBySection } from '../utilities/groupItemsBySection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Menu.scss';
+import '../styles/MenuDropdownNav.scss';
 
 const Menu = ({ items }) => {
   const { totalItems } = useCart();
@@ -58,10 +59,9 @@ const Menu = ({ items }) => {
 
       <div className="menu-sections">
         <MenuSideNav groupedItems={groupedItems} scrollToSection={scrollToSection} />
-        <MenuDropdownNav groupedItems={groupedItems} scrollToSection={scrollToSection} sidenavHeight={sidenavHeight} />
         <MenuSections groupedItems={groupedItems} />
 
-        <div className='menu-nav'>
+        <div className='menu-dropdown-nav'>
           <button className='subnav-toggle' onClick={toggleSubnav}>
             {isSidenavOpen ? (
               <>
@@ -77,6 +77,8 @@ const Menu = ({ items }) => {
 
           {createSectionScrollButton('Gluten Free', 1, 140)}
           {createSectionScrollButton('Vegetarian', 2, 140)}
+
+          <MenuDropdownSections groupedItems={groupedItems} scrollToSection={scrollToSection} sidenavHeight={sidenavHeight} />
         </div>
       </div>
     </div>
