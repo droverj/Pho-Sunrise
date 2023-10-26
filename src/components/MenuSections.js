@@ -1,23 +1,22 @@
 import React from 'react';
-import MenuSection from './MenuSection';
+import MenuItems from './MenuItems';
 
-const MenuSections = ({ groupedItems, addToCart, menuSectionsRef }) => {
-  return Object.entries(groupedItems).map(([section, sectionData], sectionIndex) => (
-    <div key={sectionIndex} ref={(ref) => (menuSectionsRef.current[sectionIndex] = ref)}>
-      <h2 id={`section-${sectionIndex}`}>
-        {section} - {sectionData.section_vietnamese}
-      </h2>
-      {Object.entries(sectionData.items).map(([itemName, itemData], index) => (
-        <MenuSection
-          key={index}
-          itemName={itemName}
-          itemOptions={itemData.options}
-          vietnameseName={itemData.name_vietnamese}
-          addToCart={addToCart}
-        />
+const MenuSections = ({ groupedItems }) => {
+  return (
+    <div className="menu-sections">
+      {groupedItems.map((section) => (
+        <div key={section.id}>
+          <div id={section.id} className='section-heading'>
+          <h2>{section.section}</h2>
+          <h2>{section.section_vietnamese}</h2>
+          </div>
+          <div className="menu-items">
+            <MenuItems items={section.items} />
+          </div>
+        </div>
       ))}
     </div>
-  ));
-}
+  );
+};
 
 export default MenuSections;

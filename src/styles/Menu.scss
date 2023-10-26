@@ -1,11 +1,6 @@
 @import "variables";
 
 .menu {
-  // background-color: #333;
-  color: white;
-  margin-top: 140px;
-  // border-bottom: 2px solid $primary-colour;
-
   button.review-order {
     @include right-panel-btn;
   }
@@ -13,6 +8,13 @@
   button.review-order:hover {
     background-color: red;
     box-shadow: none;
+  }
+
+  @media (max-width: 899px) {
+    .menu-index {
+      display: none;
+    }
+    margin-top: 140px;
   }
 
   @media (min-width: 900px) {
@@ -26,6 +28,7 @@
       left: 0;
       background-color: white;
       font-size: 0.9rem;
+      
       ul {
         padding-left: 0;
         text-align: end;
@@ -47,12 +50,6 @@
         color: $primary-colour;
         text-decoration: none;
       }
-    }
-  }
-
-  @media (max-width: 899px) {
-    .menu-index {
-      display: none;
     }
   }
 

@@ -1,20 +1,21 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import MenuSections from './MenuSections';
-import MenuNavigation from './MenuNavigation';
+import MenuSideNav from './MenuSideNav';
 import MenuDropdownNav from './MenuDropdownNav';
-import { groupItemsBySectionAndName } from '../utilities/groupItemsBySectionAndName';
+import { groupItemsBySection } from '../utilities/groupItemsBySection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Menu.scss';
 
 const Menu = ({ items }) => {
-  const menuSectionsRef = useRef([]);
-  const { addToCart, totalItems } = useCart();
+  const { totalItems } = useCart();
   const [sidenavHeight, setSidenavHeight] = useState('0vh');
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
+
+  const groupedItems = groupItemsBySection(items);
 
   const toggleSubnav = () => {
     if (isSidenavOpen) {
@@ -25,25 +26,26 @@ const Menu = ({ items }) => {
     setIsSidenavOpen(!isSidenavOpen);
   };
 
-  // Group items by section and name
-  const groupedItems = groupItemsBySectionAndName(items);
+  function scrollToSection(sectionId, offsetValue) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = offsetValue; // adjustment for main navbar
+      window.scrollTo({
+        top: element.offsetTop - offsetValue,
+        behavior: 'smooth',
+      });
+    }
+  }
 
-  function createSectionScrollButton(label, sectionId) {
+  function createSectionScrollButton(label, sectionId, offsetValue) {
     return (
       <button
         className='scroll-button'
-        onClick={() => scrollToSection(sectionId)}
+        onClick={() => scrollToSection(sectionId, offsetValue)}
       >
         {label}
       </button>
     );
-  }
-
-  function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   }
 
   return (
@@ -55,7 +57,9 @@ const Menu = ({ items }) => {
       )}
 
       <div className="menu-sections">
-        <MenuNavigation groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} />
+        <MenuSideNav groupedItems={groupedItems} scrollToSection={scrollToSection} />
+        <MenuDropdownNav groupedItems={groupedItems} scrollToSection={scrollToSection} sidenavHeight={sidenavHeight} />
+        <MenuSections groupedItems={groupedItems} />
 
         <div className='menu-nav'>
           <button className='subnav-toggle' onClick={toggleSubnav}>
@@ -71,13 +75,9 @@ const Menu = ({ items }) => {
             )}
           </button>
 
-          {createSectionScrollButton('Gluten Free', 'section-0')}
-          {createSectionScrollButton('Vegetarian', 'section-1')}
+          {createSectionScrollButton('Gluten Free', 1, 140)}
+          {createSectionScrollButton('Vegetarian', 2, 140)}
         </div>
-
-        <MenuDropdownNav groupedItems={groupedItems} menuSectionsRef={menuSectionsRef} sidenavHeight={sidenavHeight} />
-
-        <MenuSections groupedItems={groupedItems} addToCart={addToCart} menuSectionsRef={menuSectionsRef} />
       </div>
     </div>
   );

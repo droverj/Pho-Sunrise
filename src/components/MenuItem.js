@@ -4,7 +4,8 @@ import { useCart } from '../components/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-const MenuItem = ({ itemOptions }) => {
+const MenuItem = ({ groupedItem }) => {
+  const { name, name_vietnamese, item_options } = groupedItem;
   const { addToCart, cart } = useCart();
 
   // Function to get the count of a specific item in the cart
@@ -16,46 +17,40 @@ const MenuItem = ({ itemOptions }) => {
 
   return (
     <div className="menu-item">
+      <p>{name}</p>
+      <p>{name_vietnamese}</p>
+
       <div className="item-options">
-        {itemOptions.map((item, index) => {
-          // Generate a unique identifier for each option
-          const optionId = `${item.id}_${index}`;
-          const itemCount = getItemCount(item.id);
+        {item_options.map((option) => (
+          <div key={option.id} className='option'>
+            <span>{option.item_option}</span>
+            <span>${parseFloat(option.price).toFixed(2)}</span>
+            <button
+              onClick={() =>
+                addToCart({
+                  id: option.id,
+                  name: option.name,
+                  item_option: option.item_option,
+                  price: parseFloat(option.price).toFixed(2),
+                })
+              }
+            >
+              order
+            </button>
 
-          return (
-            <div key={optionId} className='option'>
-              {item.item_option && <span>{item.item_option}</span>}
-              <div className="option-actions">
-                <span>${parseFloat(item.price).toFixed(2)}</span>
-                <button
-                  onClick={() =>
-                    addToCart({
-                      id: item.id,
-                      name: item.name,
-                      vietnamese: item.vietnamese,
-                      optionId,
-                      item_option: item.item_option,
-                      price: parseFloat(item.price).toFixed(2),
-                    })
-                  }
-                >
-                  order
-                </button>
-
-                <div className='quantity-added-container'>
-                  {itemCount > 0 ? (
+            <div className='quantity-added-container'>
+                  {getItemCount(option.id) > 0 ? (
                     <div className='quantity-added'>
-                      <p className="count">{itemCount}</p>
+                      <p className="count">{getItemCount(option.id)}</p>
                       <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="2x" />
                     </div>
                   ) : null}
                 </div>
 
-              </div>
-            </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
+      
       {/* PICTURE HERE */}
       <div className='test'>test</div>
     </div>

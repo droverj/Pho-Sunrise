@@ -1,26 +1,25 @@
 import React from 'react';
 import '../styles/MenuDropdownNav.scss';
 
-const MenuDropdownNav = ({ groupedItems, menuSectionsRef, sidenavHeight }) => {
+const MenuDropdownNav = ({ groupedItems, scrollToSection, sidenavHeight }) => {
   return (
     <div className="menu-dropdown-nav" style={{ height: sidenavHeight }}>
       <ul>
-        {Object.entries(groupedItems).map(([section], sectionIndex) => (
-          <li key={sectionIndex}>
+        {groupedItems.map((section) => (
+          <li key={section.id}>
             <a
-              href={`#section-${sectionIndex}`}
               onClick={(e) => {
                 e.preventDefault();
-                menuSectionsRef.current[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+                scrollToSection(section.id, 140);
               }}
             >
-              {section}
+              {section.section}
             </a>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default MenuDropdownNav;
