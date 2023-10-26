@@ -18,7 +18,7 @@ const Menu = ({ items }) => {
 
   const groupedItems = groupItemsBySection(items);
 
-  const toggleSubnav = () => {
+  const toggleSidenav = () => {
     if (isSidenavOpen) {
       setSidenavHeight('0vh');
     } else {
@@ -59,7 +59,7 @@ const Menu = ({ items }) => {
       <MenuSideNav groupedItems={groupedItems} scrollToSection={scrollToSection} />
       <MenuSections groupedItems={groupedItems} />
       <div className='menu-dropdown-nav'>
-        <button className='subnav-toggle' onClick={toggleSubnav}>
+        <button className='subnav-toggle' onClick={toggleSidenav}>
           {isSidenavOpen ? (
             <>
               <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
