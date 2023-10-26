@@ -1,5 +1,93 @@
 @import 'variables';
 
 .menu-item {
-  
+  display: flex;
+  flex-direction: column;
+  ///////////////////// TEST IMAGE
+  .test {
+    width: 25%;
+    background-color: pink;
+  }
+
+  .item-name {
+    width: 100%;
+    background-color: $lighter-colour;
+    color: white;
+    padding: 10px 0;
+    h3.english-name {
+      margin: 0;
+      font-family: $primary-font;
+      font-weight: 400;
+    }
+    h3.vietnamese-name {
+      margin: 0;
+      font-family: $primary-font;
+      font-weight: 100;
+      font-style: italic;
+    }
+  }
+
+  .item-options {
+    font-size: 16px;
+    width: 75%;
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: end;
+      padding: 5px 80px;
+      background-color: #dbe0e0;
+      color: $secondary-colour;
+      font-weight: 400;
+      transition: background-color 0.3s ease;
+      @media (max-width: 899px) {
+        padding-left: 40px;
+      }
+    }
+    .option:hover {
+      background-color: #e2e6e6;
+      // transition: background-color 0.3s ease;
+    }
+    .option-actions {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      font-size: 10px;
+      // background-color: pink;
+      button {
+        margin: 0 20px;
+        padding: 5px 15px;
+        color: white;
+        cursor: pointer;
+        border: 0.5px solid white;
+        background-color: $light-colour;
+        // background-color: #333;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: $primary-font;
+        font-weight: 400;
+      }
+      button:hover {
+        background-color: #455251;
+      }
+
+      .quantity-added-container {
+        width: 2vw;
+        .quantity-added {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          width: 5vw;
+          // background-color: lightblue;
+          .count {
+            font-weight: 400;
+            font-size: 16px;
+            margin: 0;
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -18,8 +18,10 @@ const MenuItem = ({ groupedItem }) => {
 
   return (
     <div className="menu-item">
-      <p>{name}</p>
-      <p>{name_vietnamese}</p>
+      <div className='item-name'>
+        <h3 className='english-name'>{name}</h3>
+        <h3 className='vietnamese-name'>{name_vietnamese}</h3>
+      </div>
 
       <div className="item-options">
         {item_options.map((option) => (
