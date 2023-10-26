@@ -15,7 +15,6 @@ const Menu = ({ items }) => {
   const { totalItems } = useCart();
   const [sidenavHeight, setSidenavHeight] = useState('0vh');
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
-
   const groupedItems = groupItemsBySection(items);
 
   const toggleSidenav = () => {
@@ -56,8 +55,13 @@ const Menu = ({ items }) => {
           <button className="review-order">View Your Order</button>
         </Link>
       )}
-      <MenuSideNav groupedItems={groupedItems} scrollToSection={scrollToSection} />
-      <MenuSections groupedItems={groupedItems} />
+      <MenuSideNav
+        groupedItems={groupedItems}
+        scrollToSection={scrollToSection}
+      />
+      <MenuSections
+        groupedItems={groupedItems}
+      />
       <div className='menu-dropdown-nav'>
         <button className='subnav-toggle' onClick={toggleSidenav}>
           {isSidenavOpen ? (
@@ -71,10 +75,14 @@ const Menu = ({ items }) => {
             </>
           )}
         </button>
-
         {createSectionScrollButton('Gluten Free', 1, 140)}
         {createSectionScrollButton('Vegetarian', 2, 140)}
-        <MenuDropdownSections groupedItems={groupedItems} scrollToSection={scrollToSection} sidenavHeight={sidenavHeight} />
+        <MenuDropdownSections
+          groupedItems={groupedItems}
+          scrollToSection={scrollToSection}
+          sidenavHeight={sidenavHeight}
+          toggleSidenav={toggleSidenav}
+        />
       </div>
     </div>
   );
