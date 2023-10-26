@@ -23,39 +23,43 @@ const MenuItem = ({ groupedItem }) => {
         <h3 className='vietnamese-name'>{name_vietnamese}</h3>
       </div>
 
-      <div className="item-options">
-        {item_options.map((option) => (
-          <div key={option.id} className='option'>
-            <span>{option.item_option}</span>
-            <span>${parseFloat(option.price).toFixed(2)}</span>
-            <button
-              onClick={() =>
-                addToCart({
-                  id: option.id,
-                  name: option.name,
-                  item_option: option.item_option,
-                  price: parseFloat(option.price).toFixed(2),
-                })
-              }
-            >
-              order
-            </button>
+      <div className='test-container'>
+        <div className="item-options">
+          {item_options.map((option) => (
+            <div key={option.id} className='option'>
+              <div className='details'>
+                <span>{option.item_option}</span>
+                <span>${parseFloat(option.price).toFixed(2)}</span>
+              </div>
+              <button
+                onClick={() =>
+                  addToCart({
+                    id: option.id,
+                    name: option.name,
+                    item_option: option.item_option,
+                    price: parseFloat(option.price).toFixed(2),
+                  })
+                }
+              >
+                order
+              </button>
 
-            <div className='quantity-added-container'>
-              {getItemCount(option.id) > 0 ? (
-                <div className='quantity-added'>
-                  <p className="count">{getItemCount(option.id)}</p>
-                  <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="2x" />
-                </div>
-              ) : null}
+              <div className='quantity-added-container'>
+                {getItemCount(option.id) > 0 ? (
+                  <div className='quantity-added'>
+                    <p className="count">{getItemCount(option.id)}</p>
+                    <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="1x" />
+                  </div>
+                ) : null}
+              </div>
+
             </div>
-
-          </div>
-        ))}
+          ))}
+        </div>
+        {/* PICTURE HERE */}
+        <div className='test'>test</div>
       </div>
 
-      {/* PICTURE HERE */}
-      <div className='test'>test</div>
     </div>
   );
 };
