@@ -44,7 +44,7 @@ nav {
       a {
         display: flex;
         flex-direction: column;
-        font-size: 3.5vw;
+        font-size: 2.5vw;
         padding: 10px 5px;
         text-transform: uppercase;
         background-color: $light-colour;
@@ -53,11 +53,6 @@ nav {
         text-decoration: none;
         transition: background-color 0.3s ease;
         padding-left: 30px;
-
-        @media (max-width: 550px) {
-          font-size: 4.5vw;
-          padding-left: 10px;
-        }
       }
       a:hover {
         background-color: #dbe0e0;
