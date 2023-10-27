@@ -3,9 +3,7 @@
 .contact {
   display: flex;
   flex-direction: column;
-  background-color: #333;
-  // background-color: #808076; // concrete grey
-  color: white;
+  // color: white;
 
   button.menu {
     @include right-panel-btn;
