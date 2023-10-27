@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import Banner from '../images/pho-sunrise-banner.png';
+import VideoBanner from '../images/pho-sunrise-video-banner.mp4';
 import Hours from '../images/pho-sunrise-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right.png';
 import Chef from '../images/chef-image.png';
 import '../styles/Home.scss';
+// import Banner from '../images/pho-sunrise-banner.png';
+{/* <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" /> */}
 
 const Home = () => {
   return (
@@ -31,7 +33,10 @@ const Home = () => {
             ) <br></br>Delivery
           </span>
         </div>
-        <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" />
+        <video width="100%" autoPlay>
+          <source src={VideoBanner} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
       </div>
 
       <div className="restaurant-details-container">
