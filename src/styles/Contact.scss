@@ -359,8 +359,13 @@
     background-color: white;
     width: 90%;
     margin-left: 5%;
+    margin-top: 25px;
     color: $primary-colour;
-    .review-sign-in {
+    .review-form-heading {
+      margin: 0;
+      width: 100%;
+    }
+    button.review-sign-in {
       // Sign in link in heading
       font-size: 1.5rem;
       font-weight: 300;
