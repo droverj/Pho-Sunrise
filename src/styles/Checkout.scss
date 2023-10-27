@@ -3,14 +3,14 @@
 .checkout {
   padding: 40px 0;
   margin-bottom: 0;
-  background-color: white;
+  background-color: #ffffff;
 
   .checkout-navigation-container {
     @include page-back-nav-container;
 
     button.back-btn {
       @include back-btn;
-      background-color: white;
+      background-color: #ffffff;
     }
 
     button.back-btn:hover {
