@@ -33,7 +33,7 @@ const Home = () => {
             ) <br></br>Delivery
           </span>
         </div>
-        <video width="100%" autoPlay>
+        <video className='pho-sunrise-video-banner' autoPlay>
           <source src={VideoBanner} type="video/mp4" />
             Your browser does not support the video tag.
         </video>
