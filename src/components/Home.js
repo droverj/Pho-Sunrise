@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import VideoBanner from '../images/pho-sunrise-video-banner.mp4';
 import Hours from '../images/pho-sunrise-hours.png';
-import ShrimpTopLeft from '../images/shrimp-tail-left-top.png';
-import ShrimpBottomRight from '../images/shrimp-tail-bottom-right.png';
+import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
+import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
 import Chef from '../images/chef-image.png';
 import '../styles/Home.scss';
-// import Banner from '../images/pho-sunrise-banner.png';
-{/* <img src={Banner} className='pho-sunrise-banner' alt="pho-sunrise-banner" /> */}
 
 const Home = () => {
   return (
