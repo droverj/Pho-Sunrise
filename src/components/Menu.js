@@ -29,7 +29,6 @@ const Menu = ({ items }) => {
   function scrollToSection(sectionId, offsetValue) {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = offsetValue; // adjustment for main navbar
       window.scrollTo({
         top: element.offsetTop - offsetValue,
         behavior: 'smooth',

@@ -3,17 +3,22 @@
 .menu-item {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  box-shadow: $container-box-shadow;
 
   .item-name {
-    background-color: $lighter-colour;
+    // background-color: $lighter-colour;
     color: white;
+    color: $sunrise-red;
+    background-color: #ffffff;
     padding: 2px 80px;
     font-size: 14px;
 
     h3.english-name {
       margin: 0;
       font-family: $primary-font;
-      font-weight: 400;
+      font-weight: 500;
     }
     h3.vietnamese-name {
       margin: 0;
@@ -33,6 +38,7 @@
       padding-left: 80px;
       padding-right: 150px;
       background-color: #dbe0e0;
+      background-color: #ffffff;
       color: $secondary-colour;
       font-weight: 400;
       transition: background-color 0.3s ease;
@@ -55,6 +61,7 @@
         // background-color: $light-colour;
         background-color: $primary-colour;
         background-color: #333;
+        background-color: $sunrise-red;
         border: none;
         border-radius: 10px;
         font-size: 16px;
@@ -65,6 +72,7 @@
         // background-color: #455251;
         background-color: $secondary-colour;
         background-color: black;
+        background-color: red;
       }
       .quantity-added-container {
         width: 2.5vw;
@@ -84,4 +92,9 @@
       background-color: #e2e6e6;
     }
   }
+}
+.menu-item:hover {
+  // box-shadow: $form-box-shadow;
+  // border: .5px solid black;
+  background-color:  $primary-colour;
 }
