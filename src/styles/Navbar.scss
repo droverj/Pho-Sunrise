@@ -61,12 +61,12 @@ nav {
         a {
           display: flex;
           justify-content: center;
+          align-items: flex-end;
           padding: 0 24.5px;
+          padding-bottom: 40px;
           font-weight: 100;
           font-size: 14px;
           text-transform: uppercase;
-          margin-bottom: 40px;
-          align-items: flex-end;
           height: 100%;
           width: 55px;
         }
