@@ -27,7 +27,7 @@ const Menu = ({ items }) => {
   };
 
   function scrollToSection(sectionId, offsetValue) {
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(`S_${sectionId}`);
     if (element) {
       window.scrollTo({
         top: element.offsetTop - offsetValue,
