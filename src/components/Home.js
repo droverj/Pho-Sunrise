@@ -4,6 +4,7 @@ import Hours from '../images/pho-sunrise-hours-grey.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
 import Chef from '../images/chef-image-grey.png';
+import BobaDrinks from '../images/boba-drinks.png';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -45,7 +46,7 @@ const Home = () => {
         </div>
       </div>
 
-      <img src={Hours} className='restaurant-hours' alt="restaurant-hours" />
+      <img src={Hours} className='restaurant-hours' alt="restaurant hours" />
 
       <div className='takeout-button-container'>
         <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
@@ -67,6 +68,9 @@ const Home = () => {
           <span className='price'>$14.99</span>
         </div>
       </div>
+
+      <img src={BobaDrinks} className='boba-drinks' alt="boba drinks" />
+
     </div>
   );
 }
