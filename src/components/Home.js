@@ -3,7 +3,7 @@ import VideoBanner from '../images/pho-sunrise-video-banner.mp4';
 import Hours from '../images/pho-sunrise-hours-grey.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
-import Chef from '../images/chef-image-grey.png';
+import Chef from '../images/chef-image-primary.png';
 import BobaDrinks from '../images/boba-drinks.png';
 import '../styles/Home.scss';
 
@@ -76,8 +76,8 @@ const Home = () => {
           <img src={Chef} className='chef-image' alt="chef" />
         </div>
         <div className='choice'>
-          <span className='name'> Sunrise Special Beef Noodle Soup</span>
-          <span className='price'>$14.99</span>
+          <span className='name'> Sunrise Special House Beef Noodle Soup</span>
+          <span className='price'>$10.95</span>
         </div>
       </div>
 
