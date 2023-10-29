@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: $primary-colour;
+  // background-color: $grey;
   font-size: 0.9rem;
 
   @media (max-width: 1200px) {
@@ -34,11 +34,14 @@
       text-transform: uppercase;
       text-decoration: none;
       width: 100%;
-      color: white;
       padding: 10px 0;
       padding-right: 10px;
+      cursor: pointer;
       border: none;
-      background-color: $primary-colour;
+      // background-color: $grey;
+      // color: white;
+      background-color: $background-white;
+      color: $grey;
       transition: background-color 0.5s ease;
 
       @media (max-width: 1000px) {
@@ -46,8 +49,10 @@
       }
     }
     button:hover {
-      background-color: white;
-      color: $primary-colour;
+      // background-color: white;
+      // color: $grey;
+      background-color: $grey;
+      color: white;
     }
   }
 }
