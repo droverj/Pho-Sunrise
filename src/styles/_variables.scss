@@ -6,7 +6,7 @@ $secondary-colour: #39404e;
 $lighter-colour: #899a99;
 $light-colour: #576766;
 $sunrise-red: #da231c;
-$grey: 	#7F8081;
+$grey: #7f8081;
 
 // forms and containers
 $container-border: 0.5px solid silver;
@@ -94,4 +94,13 @@ $cursive-font: "WindSong";
   color: $primary-colour;
   background-color: #ffffff;
   cursor: pointer;
+}
+
+@mixin summary-conatiners {
+  padding: 5px 30px;
+  height: 100%;
+  background-color: #ffffff;
+  border: $container-border;
+  border-radius: 30px;
+  box-shadow: $form-box-shadow;
 }

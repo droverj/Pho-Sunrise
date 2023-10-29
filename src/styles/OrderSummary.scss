@@ -2,13 +2,8 @@
 
 // Customer Info section of checkout form: items, price, subtotal
 .order-summary {
-  padding: 5px 30px;
-  height: 100%;
+  @include summary-conatiners;
   width: 35%;
-  background-color: #ffffff;
-  border: $container-border;
-  border-radius: 30px;
-  box-shadow: $form-box-shadow;
   margin-top: 50px;
 
   ul {
