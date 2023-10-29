@@ -34,49 +34,39 @@ const Home = () => {
         </div>
 
         <div className='takeout-button-container'>
-        <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
-        <Link to="/menu">
-          <button className="place-order-button" >
-            ORDER TAKEOUT
-          </button>
-        </Link>
-        <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
-      </div>
-      
+          <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
+          <Link to="/menu">
+            <button className="place-order-button" >
+              ORDER TAKEOUT
+            </button>
+          </Link>
+          <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
+        </div>
+
         <video className='pho-sunrise-video-banner' autoPlay>
           <source src={VideoBanner} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-{/* 
-      <div className="restaurant-details-container">
-        <div className='restaurant-details'>
-          <p className='phone-number'>(519) 579 - 2016</p>
-          <span>|</span>
-          <p className='address'>1400 Ottawa Street South, Kitchener ON</p>
-        </div>
-      </div> */}
-
-      {/* <div className='takeout-button-container'>
-        <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
-        <Link to="/menu">
-          <button className="place-order-button" >
-            ORDER TAKEOUT
-          </button>
-        </Link>
-        <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
-      </div> */}
 
       <div className='hours-and-location-container'>
         <div className='contact-details-container'>
-        <p className='located'>Located in the Sunrise Shopping Centre</p>
-        <p className='phone-number'>(519) 579 - 2016</p>
-        <p className='address'>1400 Ottawa Street S<br /> Kitchener, ON</p>
+          <p className='located'>Located in the Sunrise Shopping Centre</p>
+          <p className='phone-number'>(519) 579 - 2016</p>
+          <p className='address'>1400 Ottawa Street S<br /> Kitchener, ON</p>
         </div>
         <img src={Hours} className='restaurant-hours' alt="restaurant hours" />
       </div>
 
-      <img src={BobaDrinks} className='boba-drinks' alt="boba drinks" />
+      <div className='boba-drinks-container'>
+        <div className='boba-drinks-sign'>
+          <h4>Boba Tea</h4>
+          <p className='drink-options'>Slushie or Milk</p>
+          <p className='boba-tea-price'>$5.95</p>
+        </div>
+        <img src={BobaDrinks} className='boba-drinks' alt="boba drinks" />
+      </div>
+
 
       <div className='chefs-choice'>
         <div className='chef'>
