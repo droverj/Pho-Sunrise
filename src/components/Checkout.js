@@ -4,6 +4,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { useCart } from '../components/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import OrderSummary from './OrderSummary';
 import PaymentForm from './PaymentForm';
 import stripePromise from '../utilities/stripe';
 import OrderForm from './OrderForm';
@@ -111,7 +112,8 @@ const Checkout = ({ userId }) => {
             <span>Contact Info</span>
           </div>
           <div className='receipt-and-form-container'>
-            <div className='order-summary'>
+            <OrderSummary />
+            {/* <div className='order-summary'>
               <ul className="cart-items">
                 {cart.map((cartItem) => (
                   <li className="cart-item" key={cartItem.id}>
@@ -128,7 +130,7 @@ const Checkout = ({ userId }) => {
                 <div>subtotal:</div>
                 <div>${subtotal}</div>
               </p>
-            </div>
+            </div> */}
             <div className='form-container'>
               <OrderForm
                 userId={userId}

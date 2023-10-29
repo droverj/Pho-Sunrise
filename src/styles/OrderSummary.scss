@@ -1,0 +1,51 @@
+@import "variables";
+
+// Customer Info section of checkout form: items, price, subtotal
+.order-summary {
+  padding: 5px 30px;
+  height: 100%;
+  width: 35%;
+  background-color: #ffffff;
+  border: $container-border;
+  border-radius: 30px;
+  box-shadow: $form-box-shadow;
+  margin-top: 50px;
+
+  ul {
+    padding: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 12px;
+
+      .items {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 10px;
+
+        .item-info {
+          width: 85%;
+          margin-right: 15px;
+        }
+        .item-price {
+          width: 10%;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+}
