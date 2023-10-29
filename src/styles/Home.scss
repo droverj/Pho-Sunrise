@@ -178,8 +178,13 @@
         margin-top: 50px;
       }
     }
-    .boba-drinks {
+    a.drinks-link {
+      margin: 0;
+      padding: 0;
       width: 40%;
+    }
+    .boba-drinks {
+      width: 100%;
     }
   }
 

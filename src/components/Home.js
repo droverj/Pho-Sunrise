@@ -64,7 +64,9 @@ const Home = () => {
           <p className='drink-options'>Slushie or Milk</p>
           <p className='boba-tea-price'>$5.95</p>
         </div>
+        <Link to="/menu#S_2"className='drinks-link'>
         <img src={BobaDrinks} className='boba-drinks' alt="boba drinks" />
+        </Link>
       </div>
 
 
