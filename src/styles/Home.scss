@@ -51,51 +51,22 @@
       }
     }
 
-    // Main Pho Sunrise banner
-    .pho-sunrise-video-banner {
-      width: 100%;
-      margin-top: 20px;
+    span {
+      font-size: 1.1vw;
+      color: white;
+      a {
+        color: rgb(231, 143, 37);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
 
-  span {
-    font-size: 1.1vw;
-    color: white;
-    a {
-      color: rgb(231, 143, 37);
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  // Phone Number | Address
-  // Offering ...
-  .restaurant-details-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    color: #333;
-    width: 80%;
-    .restaurant-details {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      p {
-        font-size: 1.5vw;
-        font-weight: 100;
-        margin: 0;
-        @media (max-width: 899px) {
-          font-size: 2.5vw;
-        }
-      }
-      span {
-        color: #333;
-        font-size: 2vw;
-        font-weight: 100;
-        width: 10%;
-      }
-    }
+  // Main Pho Sunrise banner
+  .pho-sunrise-video-banner {
+    width: 100%;
+    margin-top: 15px;
   }
 
   @keyframes shrimpAnimation {
@@ -111,30 +82,28 @@
   .takeout-button-container {
     display: flex;
     align-items: center;
-    margin: 30px;
-    padding: 0 40px;
-    @media (max-width: 899px) {
-      margin: 35px 0;
-    }
-    @media (max-width: 600px) {
-      margin: 25px 0;
-    }
+    justify-content: center;
+    margin-top: 15px;
+    // @media (max-width: 899px) {
+    //   margin: 35px 0;
+    // }
+    // @media (max-width: 600px) {
+    //   margin: 25px 0;
+    // }
 
     .shrimp {
       animation: shrimpAnimation 30s linear infinite;
-      width: 5vw;
-      padding: 0 20px;
+      width: 3vw;
       @media (max-width: 899px) {
         width: 7vw;
       }
     }
 
     button {
-      padding: 15px 0;
-      width: 30vw;
-      font-size: 2.8vw;
-      margin: 0 20px;
-      margin-bottom: 15px;
+      width: 22vw;
+      font-size: 2.3vw;
+      margin: 0 30px;
+      padding: 10px;
       border: none;
       background-color: $sunrise-red;
       color: white;
@@ -155,17 +124,13 @@
 
   .hours-and-location-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
     background-color: #333;
     padding: 10px;
-    margin-left: 2%;
     .contact-details-container {
       padding: 10px;
       background-color: $background-white;
       p {
-        // color: white;
         color: #333;
         text-transform: uppercase;
         font-weight: 400;
@@ -188,14 +153,11 @@
   // Chef image and Chef's Special
   .chefs-choice {
     display: flex;
-    width: 85%;
     color: white;
     padding: 0 30px;
     padding-top: 50px;
     margin-bottom: 30px;
     box-shadow: 0px 0px 9px 7px #333333;
-    // box-shadow: 0px 0px 15px 12px rgba(0, 0, 0, 0.75);
-    background-color: #333;
     background-color: $grey;
     @media (max-width: 899px) {
       margin-bottom: 20px;

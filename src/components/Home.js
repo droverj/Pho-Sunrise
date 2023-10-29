@@ -32,6 +32,17 @@ const Home = () => {
             ) <br></br>Delivery
           </span>
         </div>
+
+        <div className='takeout-button-container'>
+        <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
+        <Link to="/menu">
+          <button className="place-order-button" >
+            ORDER TAKEOUT
+          </button>
+        </Link>
+        <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
+      </div>
+      
         <video className='pho-sunrise-video-banner' autoPlay>
           <source src={VideoBanner} type="video/mp4" />
           Your browser does not support the video tag.
@@ -46,7 +57,7 @@ const Home = () => {
         </div>
       </div> */}
 
-      <div className='takeout-button-container'>
+      {/* <div className='takeout-button-container'>
         <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
         <Link to="/menu">
           <button className="place-order-button" >
@@ -54,7 +65,7 @@ const Home = () => {
           </button>
         </Link>
         <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
-      </div>
+      </div> */}
 
       <div className='hours-and-location-container'>
         <div className='contact-details-container'>
