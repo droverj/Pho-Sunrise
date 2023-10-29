@@ -74,8 +74,8 @@ const Menu = ({ items }) => {
             </>
           )}
         </button>
-        {createSectionScrollButton('Gluten Free', 1, 140)}
-        {createSectionScrollButton('Vegetarian', 2, 140)}
+        {createSectionScrollButton('Gluten Free', 1, 160)}
+        {createSectionScrollButton('Vegetarian', 2, 160)}
         <MenuDropdownSections
           groupedItems={groupedItems}
           scrollToSection={scrollToSection}

@@ -8,7 +8,7 @@ const MenuSideNav = ({ groupedItems, scrollToSection }) => {
         {groupedItems.map((section) => (
           <li key={section.id}>
             <button
-              onClick={() => scrollToSection(section.id, 90)}
+              onClick={() => scrollToSection(section.id, 100)}
             >
               {section.section}
             </button>

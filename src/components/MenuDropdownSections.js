@@ -10,7 +10,7 @@ const MenuDropdownSections = ({ groupedItems, toggleSidenav, scrollToSection, si
             <button
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection(section.id, 140);
+                scrollToSection(section.id, 160);
                 toggleSidenav();
               }}
             >
