@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (item) => {
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
-  
+
     if (existingItemIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += 1;
@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
       const price = parseFloat(item.price).toFixed(2);
       setCart([...cart, { ...item, quantity: 1, price }]);
     }
-  };  
+  };
 
   const removeFromCart = (item) => {
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
@@ -75,16 +75,16 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-    value={{
-      cart,
-      addToCart,
-      removeFromCart,
-      deleteItemFromCart,
-      totalItems: calculateTotalItems(),
-      subtotal: calculateSubtotal(),
-      emptyCart
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        deleteItemFromCart,
+        totalItems: calculateTotalItems(),
+        subtotal: calculateSubtotal(),
+        emptyCart
       }}
-      >
+    >
       {children}
     </CartContext.Provider>
   );

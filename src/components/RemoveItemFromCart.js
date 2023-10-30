@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/RemoveItemFromCart.scss';
 
-const RemoveItemFromCart = ({item, setShowRemoveItemComponent, handleDeleteItem }) => {
+const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem }) => {
   return (
     <div className='remove-item-from-cart'>
       <button className="close-btn" onClick={() => setShowRemoveItemComponent(false)}>X</button>
