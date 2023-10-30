@@ -76,16 +76,15 @@ const Cart = () => {
           <>
             <h2 className="cart-items-heading">Your Items</h2>
             <ul className="cart-items">
-            {cart.map((cartItem) => (
-  <CartItem
-    key={cartItem.id}
-    cartItem={cartItem}
-    handleAdd={handleAdd}
-    handleRemove={handleRemove}
-    handleDeleteItem={handleDeleteItem}
-  />
-))}
-
+              {cart.map((cartItem) => (
+                <CartItem
+                  key={cartItem.id}
+                  cartItem={cartItem}
+                  handleAdd={handleAdd}
+                  handleRemove={handleRemove}
+                  handleDeleteItem={handleDeleteItem}
+                />
+              ))}
             </ul>
           </>
         )}

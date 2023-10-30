@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import RemoveItemFromCart from './RemoveItemFromCart';
+import '../styles/CartItem.scss'
 
 const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
   const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
