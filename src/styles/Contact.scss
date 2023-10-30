@@ -26,14 +26,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    // width: 90%;
+    // margin-left: 5%;
     margin-top: 5px;
-    margin-left: 5%;
-    // margin-left: calc(5% - 5px);
-    // background-color: $secondary-colour;
-    // color: white;
-    // border-radius: 50px;
-    // padding: 0 5px;
     .social-icons {
       display: flex;
       align-items: center;
@@ -70,10 +65,10 @@
 
   // Contact & Hours
   .restaurant-info-container {
-    margin-left: 5%;
     margin-bottom: 20px;
     justify-content: center;
-    width: 90%;
+    // width: 90%;
+    // margin-left: 5%;
     .heading-container {
       width: 100%;
       background-color: $secondary-colour;
@@ -132,10 +127,10 @@
   h2.shopping-centre {
     // "Located in the Sunrise Shopping Plaza"
     text-align: center;
-    width: 90%;
+    // width: 90%;
+    // margin-left: 5%;
     margin: 0;
     margin-bottom: 5px;
-    margin-left: 5%;
     padding: 10px 0;
     color: white;
     font-weight: 400;
@@ -152,12 +147,12 @@
     justify-content: space-between;
     .building-img {
       width: 50%;
-      margin-left: 5%;
+      // margin-left: 5%;
     }
     iframe {
       // Google Map Image
-      width: 39%;
-      margin-right: 5%;
+      width: 49%;
+      // margin-right: 5%;
     }
   }
 
@@ -177,8 +172,8 @@
     text-transform: uppercase;
     margin: 0;
     margin-top: 30px;
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
     @media (min-width: 899px) {
       padding: 20px 0;
     }
@@ -197,8 +192,8 @@
     font-weight: 300;
     text-transform: uppercase;
     margin: 0;
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
     @media (min-width: 899px) {
       padding: 20px 0;
     }
@@ -217,8 +212,8 @@
     background-color: white;
     border: $container-border;
     box-shadow: $container-box-shadow;
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
     ul {
       padding: 0;
       margin: 0;
@@ -296,8 +291,8 @@
     background-color: white;
     border: $container-border;
     box-shadow: $container-box-shadow;
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
 
     p {
       font-size: 0.7rem;
@@ -361,8 +356,8 @@
     // Heading styled in class: .review-form-heading
     text-align: center;
     background-color: white;
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
     margin-top: 25px;
     color: $primary-colour;
     box-shadow: $form-box-shadow;
@@ -403,8 +398,8 @@
     text-align: center;
     padding: 20px 0;
     padding-bottom: 10px;
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
     @media (max-width: 400px) {
       font-size: .8rem;
     }
@@ -515,8 +510,8 @@
   */
 
   .reservation {
-    width: 90%;
-    margin-left: 5%;
+    // width: 90%;
+    // margin-left: 5%;
     margin-bottom: 5px;
     position: relative;
 
