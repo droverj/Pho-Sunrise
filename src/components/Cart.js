@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,7 @@ import RemoveItemFromCart from './RemoveItemFromCart';
 import '../styles/Cart.scss';
 
 const Cart = () => {
+  const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
   const { cart, addToCart, removeFromCart, subtotal, totalItems, emptyCart } = useCart();
 
   const handleAdd = (cartItem) => {
@@ -24,10 +25,13 @@ const Cart = () => {
     }
   };
 
+  const handleDeleteItem = () => {
+    // Toggle the visibility of the RemoveItemFromCart component
+    setShowRemoveItemComponent(!showRemoveItemComponent);
+  };
+
   return (
     <div className="cart">
-
-      <RemoveItemFromCart />
 
       <div className='order-navigation-container'>
         <Link to="/menu">
@@ -77,7 +81,11 @@ const Cart = () => {
                   <div className="item-info">
                     {cartItem.name} - {cartItem.item_option} ${cartItem.price}
                   </div>
-                  <button className='delete'>x</button>
+                  <button className='delete' onClick={handleDeleteItem}>x</button>
+                  {showRemoveItemComponent && (
+                    <RemoveItemFromCart
+                    />
+                  )}
                   <div className='quantity-controller'>
                     <button
                       className={`remove ${cartItem.quantity === 1 ? 'disabled-button' : ''}`}
