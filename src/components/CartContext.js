@@ -63,8 +63,28 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const deleteItemFromCart = (item) => {
+    const existingItemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
+
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart.splice(existingItemIndex, 1);
+      setCart(updatedCart);
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems: calculateTotalItems(), subtotal: calculateSubtotal(), emptyCart }}>
+    <CartContext.Provider
+    value={{
+      cart,
+      addToCart,
+      removeFromCart,
+      deleteItemFromCart,
+      totalItems: calculateTotalItems(),
+      subtotal: calculateSubtotal(),
+      emptyCart
+      }}
+      >
       {children}
     </CartContext.Provider>
   );

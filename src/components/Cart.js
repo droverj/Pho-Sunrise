@@ -9,7 +9,7 @@ import '../styles/Cart.scss';
 
 const Cart = () => {
   const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
-  const { cart, addToCart, removeFromCart, subtotal, totalItems, emptyCart } = useCart();
+  const { cart, addToCart, removeFromCart, deleteItemFromCart, subtotal, totalItems, emptyCart } = useCart();
 
   const handleAdd = (cartItem) => {
     addToCart(cartItem);
@@ -25,8 +25,8 @@ const Cart = () => {
     }
   };
 
-  const handleDeleteItem = () => {
-    // Toggle the visibility of the RemoveItemFromCart component
+  const handleDeleteItem = (itemToDelete) => {
+    deleteItemFromCart(itemToDelete);
     setShowRemoveItemComponent(!showRemoveItemComponent);
   };
 
