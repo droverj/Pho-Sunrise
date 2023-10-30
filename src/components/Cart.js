@@ -75,9 +75,15 @@ const Cart = () => {
                     {cartItem.name} - {cartItem.item_option} ${cartItem.price}
                   </div>
                   <div className='quantity-controller'>
-                  <button className='remove' onClick={() => handleRemove(cartItem)}>-</button>
-                  <div className="item-quantity">{cartItem.quantity}</div>
-                  <button className='add' onClick={() => handleAdd(cartItem)}>+</button>
+                    <button
+                      className={`remove ${cartItem.quantity === 1 ? 'disabled-button' : ''}`}
+                      onClick={() => handleRemove(cartItem)}
+                      disabled={cartItem.quantity === 1}
+                    >
+                      -
+                    </button>
+                    <div className="item-quantity">{cartItem.quantity}</div>
+                    <button className='add' onClick={() => handleAdd(cartItem)}>+</button>
                   </div>
                 </li>
               ))}
