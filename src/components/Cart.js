@@ -41,7 +41,7 @@ const Cart = () => {
       </Link>
 
       <Link to="/checkout">
-        <button className="place-order-button" disabled={totalItems < 1}>
+        <button className="checkout-button" disabled={totalItems < 1}>
           Proceed to Checkout
         </button>
       </Link>
@@ -74,9 +74,11 @@ const Cart = () => {
                   <div className="item-info">
                     {cartItem.name} - {cartItem.item_option} ${cartItem.price}
                   </div>
+                  <div className='quantity-controller'>
                   <button onClick={() => handleRemove(cartItem)}>-</button>
                   <button onClick={() => handleAdd(cartItem)}>+</button>
                   <div className="item-quantity">{cartItem.quantity}</div>
+                  </div>
                 </li>
               ))}
             </ul>

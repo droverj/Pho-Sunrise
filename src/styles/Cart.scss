@@ -33,7 +33,7 @@
     box-shadow: none;
   }
 
-  button.place-order-button {
+  button.checkout-button {
     position: fixed;
     top: 0;
     right: 0;
@@ -56,21 +56,19 @@
     @media (max-width: 1200px) {
       margin-right: 40px;
       margin-top: 220px;
-    }
-  
+    } 
     @media (max-width: 1000px) {
       margin-top: 200px;
       margin-right: 20px;
       width: 10vw;
       padding: 10px;
     }
-  
     @media (max-width: 899px) {
       display: none;
     }
   }
 
-  button.place-order-button:hover {
+  button.checkout-button:hover {
     background-color: blue;
     box-shadow: none;
   }
