@@ -40,6 +40,12 @@ const Cart = () => {
         </button>
       </Link>
 
+      <Link to="/checkout">
+        <button className="place-order-button" disabled={totalItems < 1}>
+          Proceed to Checkout
+        </button>
+      </Link>
+
       <div className="cart-page-heading">
         <h1>Review Your Order</h1>
         <button className="empty-cart-button" onClick={handleEmptyCart}>
@@ -77,12 +83,6 @@ const Cart = () => {
           </>
         )}
       </div>
-
-      <Link to="/checkout">
-        <button className="place-order-button" disabled={totalItems < 1}>
-          Proceed to Checkout
-        </button>
-      </Link>
 
     </div>
   );
