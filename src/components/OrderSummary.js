@@ -12,16 +12,16 @@ const OrderSummary = () => {
           <li className="cart-item" key={cartItem.id}>
             {Array.from({ length: cartItem.quantity }).map((_, index) => (
               <div className="items" key={index}>
-                <div className='item-info'>{cartItem.name} - {cartItem.item_option}</div>
-                <div className='item-price'>${cartItem.price}</div>
+                <div className='info'>{cartItem.name} - {cartItem.item_option}</div>
+                <div className='price'>${cartItem.price}</div>
               </div>
             ))}
           </li>
         ))}
       </ul>
       <p className='subtotal'>
-        <div>subtotal:</div>
-        <div>${subtotal}</div>
+        <div className='info'>subtotal:</div>
+        <div className='price'>${subtotal}</div>
       </p>
     </div>
   )
