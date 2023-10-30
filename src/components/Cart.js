@@ -36,7 +36,7 @@ const Cart = () => {
 
       <Link to="/menu">
         <button className="return-to-menu">
-        {totalItems === 0 ? 'Start Your Order' : 'Back to Menu'}
+          {totalItems === 0 ? 'Start Your Order' : 'Back to Menu'}
         </button>
       </Link>
 
@@ -77,11 +77,13 @@ const Cart = () => {
           </>
         )}
       </div>
+
       <Link to="/checkout">
-        <button className="place-order-button">
+        <button className="place-order-button" disabled={totalItems < 1}>
           Proceed to Checkout
         </button>
       </Link>
+
     </div>
   );
 };
