@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
-import RemoveItemFromCart from './RemoveItemFromCart';
+import CartItem from './CartItem';
 import '../styles/Cart.scss';
 
 const Cart = () => {
@@ -76,29 +76,16 @@ const Cart = () => {
           <>
             <h2 className="cart-items-heading">Your Items</h2>
             <ul className="cart-items">
-              {cart.map((cartItem) => (
-                <li className="cart-item" key={cartItem.id}>
-                  <div className="item-info">
-                    {cartItem.name} - {cartItem.item_option} ${cartItem.price}
-                  </div>
-                  <button className='delete' onClick={handleDeleteItem}>x</button>
-                  {showRemoveItemComponent && (
-                    <RemoveItemFromCart
-                    />
-                  )}
-                  <div className='quantity-controller'>
-                    <button
-                      className={`remove ${cartItem.quantity === 1 ? 'disabled-button' : ''}`}
-                      onClick={() => handleRemove(cartItem)}
-                      disabled={cartItem.quantity === 1}
-                    >
-                      -
-                    </button>
-                    <div className="item-quantity">{cartItem.quantity}</div>
-                    <button className='add' onClick={() => handleAdd(cartItem)}>+</button>
-                  </div>
-                </li>
-              ))}
+            {cart.map((cartItem) => (
+  <CartItem
+    key={cartItem.id}
+    cartItem={cartItem}
+    handleAdd={handleAdd}
+    handleRemove={handleRemove}
+    handleDeleteItem={handleDeleteItem}
+  />
+))}
+
             </ul>
           </>
         )}
