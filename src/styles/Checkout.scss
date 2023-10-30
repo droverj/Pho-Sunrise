@@ -30,6 +30,10 @@
     padding: 0 20px;
     padding-bottom: 50px;
 
+    @media (max-width: 899px) {
+      display: block;
+    }
+
     // Checkout section of checkout form: Subtotal, HST, GST, total
     .payment-summary {
       @include summary-conatiners;

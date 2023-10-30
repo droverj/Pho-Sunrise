@@ -6,6 +6,10 @@
   width: 35%;
   margin-top: 50px;
 
+  @media (max-width: 899px) {
+    width: 90%;
+  }
+
   ul {
     padding: 0;
     padding-bottom: 15px;
@@ -42,5 +46,8 @@
     font-size: 12px;
     font-weight: 600;
     margin-top: 15px;
+    @media (max-width: 899px) {
+      margin-right: 15px;
+    }
   }
 }
