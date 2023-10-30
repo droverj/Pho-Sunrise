@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import RemoveItemFromCart from './RemoveItemFromCart';
 import '../styles/Cart.scss';
 
 const Cart = () => {
@@ -25,6 +26,8 @@ const Cart = () => {
 
   return (
     <div className="cart">
+
+      <RemoveItemFromCart />
 
       <div className='order-navigation-container'>
         <Link to="/menu">
@@ -74,6 +77,7 @@ const Cart = () => {
                   <div className="item-info">
                     {cartItem.name} - {cartItem.item_option} ${cartItem.price}
                   </div>
+                  <button className='delete'>x</button>
                   <div className='quantity-controller'>
                     <button
                       className={`remove ${cartItem.quantity === 1 ? 'disabled-button' : ''}`}
