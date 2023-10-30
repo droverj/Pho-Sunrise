@@ -7,6 +7,7 @@ const OrderSummary = () => {
 
   return (
     <div className='order-summary'>
+      <p>Order Summary</p>
       <ul className="cart-items">
         {cart.map((cartItem) => (
           <li className="cart-item" key={cartItem.id}>
