@@ -10,9 +10,6 @@ const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
       <div className="item-info">
         {cartItem.name} - {cartItem.item_option} ${cartItem.price}
       </div>
-      <button className='delete' onClick={() => setShowRemoveItemComponent(true)}>
-        x
-      </button>
       {showRemoveItemComponent && (
         <RemoveItemFromCart item={cartItem} handleDeleteItem={handleDeleteItem} />
       )}
@@ -27,6 +24,9 @@ const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
         <div className="item-quantity">{cartItem.quantity}</div>
         <button className='add' onClick={() => handleAdd(cartItem)}>+</button>
       </div>
+      <button className='delete' onClick={() => setShowRemoveItemComponent(true)}>
+        x
+      </button>
     </li>
   );
 };
