@@ -8,7 +8,9 @@ const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
   return (
     <li className="cart-item" key={cartItem.id}>
       <div className="item-info">
-        {cartItem.name} - {cartItem.item_option} ${cartItem.price}
+        <p className='info'>{cartItem.name}</p>
+        <p className='option'>{cartItem.item_option}</p>
+        <p className='price'>${cartItem.price}</p>
       </div>
       {showRemoveItemComponent && (
         <RemoveItemFromCart
@@ -28,7 +30,7 @@ const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
         <div className="item-quantity">{cartItem.quantity}</div>
         <button className='add' onClick={() => handleAdd(cartItem)}>+</button>
       </div>
-      
+
       <button className='delete' onClick={() => setShowRemoveItemComponent(true)}>
         x
       </button>
