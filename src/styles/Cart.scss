@@ -99,10 +99,20 @@
     border-bottom-right-radius: 225px 15px;
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 225px;
-
+    @media (max-width: 600px) {
+      border: none;
+      background-color: $background-white;
+    }
+    
     .cart-items {
       flex-direction: column;
       margin: 30px 50px;
+      padding: 0 5px;
+
+      @media (max-width: 600px) {
+        margin: 30px 5px;
+        width: 100%;
+      }
     }
   }
 

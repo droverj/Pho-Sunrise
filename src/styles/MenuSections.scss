@@ -3,6 +3,10 @@
 .menu-sections {
   width: 95%;
   margin-left: 5%;
+  @media (max-width: 899px) {
+    margin: 0;
+    width: 100%;
+  }
   .section-heading {
     margin-bottom: 10px;
     h2.english {
