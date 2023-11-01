@@ -2,15 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/CartNavbar.scss';
 
-const CartNavbar = ({ totalItems }) => {
+const CartNavbar = ({ totalItems, subtotal }) => {
   return (
     <div className='cart-navbar'>
       {totalItems > 0 && (
+        <>
+        <p className='cart-nav-subtotal'>Subtotal: <b>${subtotal}</b></p>
         <Link to="/checkout">
           <button className="checkout-button">
             Proceed to Checkout
           </button>
         </Link>
+        </>
       )}
     </div>
   )

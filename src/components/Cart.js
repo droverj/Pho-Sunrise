@@ -35,8 +35,16 @@ const Cart = () => {
     <div className="cart">
 
       {totalItems > 0 && (
-        <CartNavbar totalItems={totalItems} />
+        <CartNavbar totalItems={totalItems} subtotal={subtotal} />
       )}
+
+      <div className='order-navigation-container' style={{ marginTop: '50px' }}>
+        <Link to="/menu">
+          <button className='back-btn'>Menu</button>
+        </Link>
+        <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
+        <span>Cart</span>
+      </div>
 
       <Link to="/menu">
         <button className="return-to-menu">
