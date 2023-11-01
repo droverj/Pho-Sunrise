@@ -35,6 +35,7 @@ const MenuItem = ({ groupedItem }) => {
                 addToCart({
                   id: option.id,
                   name: option.name,
+                  vietnamese_name: option.name_vietnamese,
                   item_option: option.item_option,
                   price: parseFloat(option.price).toFixed(2),
                 })
