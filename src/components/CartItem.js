@@ -9,7 +9,7 @@ const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
     <li className="cart-item" key={cartItem.id}>
       <div className="item-info">
         <p className='name'>{cartItem.name}</p>
-        <p className='name-vietnamese'>{cartItem.vietnamese_name}</p>
+        <p className='vietnamese-name'>{cartItem.vietnamese_name}</p>
         <p className='option'>{cartItem.item_option}</p>
         <p className='price'>${cartItem.price}</p>
       </div>

@@ -12,6 +12,12 @@
 
   .item-info {
     flex-grow: 1;
+    p {
+      margin: 0;
+    }
+    .vietnamese-name {
+      font-style: italic;
+    }
   }
 
   .quantity-controller {
