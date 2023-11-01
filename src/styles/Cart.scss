@@ -64,6 +64,11 @@
       border: none;
       background-color: $background-white;
     }
+
+    .cart-subtotal {
+      text-align: end;
+      margin-right: 10%;
+    }
     
     .cart-items {
       flex-direction: column;

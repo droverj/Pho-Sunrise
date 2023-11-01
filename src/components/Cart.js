@@ -11,7 +11,7 @@ import '../styles/Cart.scss';
 const Cart = () => {
   const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
   const { cart, addToCart, removeFromCart, deleteItemFromCart, subtotal, totalItems, emptyCart } = useCart();
-  
+
   const handleAdd = (cartItem) => {
     addToCart(cartItem);
   };
@@ -51,9 +51,6 @@ const Cart = () => {
         </button>
         <div className="cart-page-details">
           <p>Items in Cart: {totalItems}</p>
-          <p>
-            Subtotal: <b>${subtotal}</b>
-          </p>
         </div>
       </div>
       <div className="cart-items-container">
@@ -65,7 +62,7 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <h2 className="cart-items-heading">Your Items</h2>
+            <p className='cart-subtotal'>Subtotal: <b>${subtotal}</b></p>
             <ul className="cart-items">
               {cart.map((cartItem) => (
                 <CartItem
