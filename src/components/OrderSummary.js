@@ -8,9 +8,9 @@ const OrderSummary = () => {
   return (
     <div className='order-summary'>
       <p>Order Summary</p>
-      <ul className="cart-items">
+      <ul className="order-summary-cart-items">
         {cart.map((cartItem) => (
-          <li className="cart-item" key={cartItem.id}>
+          <li className="order-summary-cart-item" key={cartItem.id}>
             {Array.from({ length: cartItem.quantity }).map((_, index) => (
               <div className="items" key={index}>
                 <div className='info'>{cartItem.name} - {cartItem.item_option}</div>
