@@ -50,14 +50,6 @@ const Cart = () => {
         </button>
       </Link>
 
-      {totalItems > 0 && (
-        <Link to="/checkout">
-          <button className="checkout-button">
-            Proceed to Checkout
-          </button>
-        </Link>
-      )}
-
       <div className="cart-page-heading">
         <h1>Review Your Order</h1>
         <button className="empty-cart-button" onClick={handleEmptyCart}>

@@ -33,46 +33,6 @@
     box-shadow: none;
   }
 
-  button.checkout-button {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin-top: 300px;
-    // margin-right: 300px;
-    background-color: $button-colour;
-    color: silver;
-    font-family: $primary-font;
-    font-weight: 200;
-    font-size: 16px;
-    padding: 10px;
-    border: 1px solid silver;
-    border-radius: 10px;
-    box-shadow: $button-box-shadow;
-    cursor: pointer;
-
-    // @media (max-width: 1300px) {
-    //   margin-top: 240px;
-    // }
-    // @media (max-width: 1200px) {
-    //   margin-right: 40px;
-    //   margin-top: 220px;
-    // }
-    // @media (max-width: 1000px) {
-    //   margin-top: 200px;
-    //   margin-right: 20px;
-    //   width: 10vw;
-    //   padding: 10px;
-    // }
-    // @media (max-width: 899px) {
-    //   display: none;
-    // }
-  }
-
-  button.checkout-button:hover {
-    background-color: blue;
-    box-shadow: none;
-  }
-
   .cart-items-heading {
     text-align: center;
   }
