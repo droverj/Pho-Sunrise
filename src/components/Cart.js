@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import CartItem from './CartItem';
+import CartNavbar from './CartNavbar';
 import '../styles/Cart.scss';
 
 const Cart = () => {
   const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
   const { cart, addToCart, removeFromCart, deleteItemFromCart, subtotal, totalItems, emptyCart } = useCart();
-
+  
   const handleAdd = (cartItem) => {
     addToCart(cartItem);
   };
@@ -32,6 +33,8 @@ const Cart = () => {
 
   return (
     <div className="cart">
+
+      <CartNavbar totalItems={totalItems} />
 
       <div className='order-navigation-container'>
         <Link to="/menu">
