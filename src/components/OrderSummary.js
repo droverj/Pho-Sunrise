@@ -20,10 +20,10 @@ const OrderSummary = () => {
           </li>
         ))}
       </ul>
-      <p className='subtotal'>
+      <div className='subtotal'>
         <div className='info'>subtotal:</div>
         <div className='price'>${subtotal}</div>
-      </p>
+      </div>
     </div>
   )
 };
