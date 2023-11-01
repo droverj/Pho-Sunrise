@@ -41,17 +41,20 @@ const Cart = () => {
         <span>Cart</span>
       </div>
 
+
       <Link to="/menu">
         <button className="return-to-menu">
           {totalItems === 0 ? 'Start Your Order' : 'Back to Menu'}
         </button>
       </Link>
 
-      <Link to="/checkout">
-        <button className="checkout-button" disabled={totalItems < 1}>
-          Proceed to Checkout
-        </button>
-      </Link>
+      {totalItems > 0 && (
+        <Link to="/checkout">
+          <button className="checkout-button">
+            Proceed to Checkout
+          </button>
+        </Link>
+      )}
 
       <div className="cart-page-heading">
         <h1>Review Your Order</h1>
