@@ -10,7 +10,7 @@ import '../../styles/Footer.scss';
 function Footer() {
 
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <div>
         <Link to="/" >
           <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
@@ -35,7 +35,7 @@ function Footer() {
           <p>connect</p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
