@@ -35,26 +35,24 @@
   }
 
   .confirmation-message {
-    // text-align: center;
-    font-size: calc(16px + .8vw);
-    
+    font-size: calc(16px + 0.8vw);
+
     p {
       margin: 20px 0;
+      font-weight: 300;
     }
-
-    p.remove-text {
-      color: red;
+    p.message {
       text-transform: uppercase;
-      font-weight: 800;
+      font-weight: 700;
     }
     p.item-info-container {
       margin-bottom: 5px;
       span.item-info {
-        font-weight: 600;
+        font-weight: 500;
       }
     }
     p.item-option {
-      font-size: calc(12px + .2vw);
+      font-size: calc(12px + 0.2vw);
       margin: 0;
     }
   }
@@ -67,7 +65,7 @@
     button.safe-button:hover {
       @include safe-button-hover;
     }
-  
+
     button.danger-button {
       @include confirmation-button;
       background-color: $sunrise-red;

@@ -13,7 +13,7 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
           document.body.classList.remove('no-scroll');
         }}>X</button>
         <div className="confirmation-message">
-          <p className="remove-text">Remove</p>
+          <p className="message" style={{ color: 'red' }}>Remove</p>
           <p className='item-info-container'>
             <span className="item-info">
               {item.quantity === 1 ? `${item.quantity} order ` : `${item.quantity} orders `}
@@ -26,7 +26,7 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
           {item.item_option &&
             <p className='item-option'>item option: <span className='option'>{item.item_option}</span></p>
           }
-          <p>from your cart?</p>
+          <p className='message'>from your cart?</p>
         </div>
 
         <div className='button-options'>
