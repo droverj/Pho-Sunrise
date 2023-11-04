@@ -14,7 +14,7 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
         }}>X</button>
         <div className="confirmation-message">
           <p className="remove-text">Remove</p>
-          <p>
+          <p className='item-info-container'>
             <span className="item-info">
               {item.quantity === 1 ? `${item.quantity} order ` : `${item.quantity} orders `}
             </span>
@@ -24,7 +24,7 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
             </span>
           </p>
           {item.item_option &&
-            <p>item option: <span className='option'>{item.item_option}</span></p>
+            <p className='item-option'>item option: <span className='option'>{item.item_option}</span></p>
           }
           <p>from your cart?</p>
         </div>

@@ -36,30 +36,44 @@
 
   .confirmation-message {
     text-align: center;
-    font-size: calc(16px + 0.8vw);
+    font-size: calc(16px + .8vw);
+    
+    p {
+      margin: 20px 0;
+    }
 
     p.remove-text {
       color: red;
       text-transform: uppercase;
       font-weight: 800;
     }
-    span.item-info {
-      font-weight: 600;
+    p.item-info-container {
+      margin-bottom: 5px;
+      span.item-info {
+        font-weight: 600;
+      }
+    }
+    p.item-option {
+      font-size: calc(12px + .2vw);
+      margin: 0;
     }
   }
 
-  button.safe-button {
-    @include confirmation-button;
-  }
-  button.safe-button:hover {
-    @include safe-button-hover;
-  }
-
-  button.danger-button {
-    @include confirmation-button;
-    background-color: $sunrise-red;
-  }
-  button.danger-button:hover {
-    @include danger-button-hover;
+  .button-options {
+    margin-top: 10px;
+    button.safe-button {
+      @include confirmation-button;
+    }
+    button.safe-button:hover {
+      @include safe-button-hover;
+    }
+  
+    button.danger-button {
+      @include confirmation-button;
+      background-color: $sunrise-red;
+    }
+    button.danger-button:hover {
+      @include danger-button-hover;
+    }
   }
 }
