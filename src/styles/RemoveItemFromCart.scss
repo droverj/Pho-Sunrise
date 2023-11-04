@@ -36,7 +36,7 @@
 
   .confirmation-message {
     text-align: center;
-    font-size: calc(16px + .8vw);
+    font-size: calc(16px + 0.8vw);
 
     p.remove-text {
       color: red;
@@ -46,5 +46,20 @@
     span.item-info {
       font-weight: 600;
     }
+  }
+
+  button.safe-button {
+    @include confirmation-button;
+  }
+  button.safe-button:hover {
+    @include safe-button-hover;
+  }
+
+  button.danger-button {
+    @include confirmation-button;
+    background-color: $sunrise-red;
+  }
+  button.danger-button:hover {
+    @include danger-button-hover;
   }
 }

@@ -30,11 +30,11 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
         </div>
 
         <div className='button-options'>
-          <button onClick={() => {
+          <button className='safe-button' onClick={() => {
             setShowRemoveItemComponent(false);
             document.body.classList.remove('no-scroll');
-          }}>Return to Cart</button>
-          <button onClick={() => handleDeleteItem(item)}>Delete Item from Cart</button>
+          }}>Keep</button>
+          <button className="danger-button" onClick={() => handleDeleteItem(item)}>Remove</button>
         </div>
 
       </div>

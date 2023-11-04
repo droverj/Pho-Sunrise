@@ -401,7 +401,7 @@
     // width: 90%;
     // margin-left: 5%;
     @media (max-width: 400px) {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
     p {
@@ -446,7 +446,7 @@
     width: 80%;
     margin-left: 5%;
     @media (max-width: 500px) {
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
 
     h3 {
@@ -456,7 +456,7 @@
       font-size: 1.5rem;
       color: $sunrise-red;
       @media (max-width: 500px) {
-        font-size: .7rem;
+        font-size: 0.7rem;
       }
     }
     .confirmation {
@@ -474,31 +474,20 @@
       }
     }
     button {
-      font-size: 1.5rem;
-      width: 120px;
-      margin-right: 10px;
-      margin-top: 10px;
-      padding: 10px;
-      border: 2px solid #333;
-      border-radius: 5px;
-      background-color: green;
-      box-shadow: $button-box-shadow;
-      color: white;
-      cursor: pointer;
+      @include confirmation-button;
       @media (max-width: 500px) {
-        font-size: .9rem;
+        font-size: 0.9rem;
         width: 80px;
       }
     }
-    button.danger-btn {
+    button.danger-button {
       background-color: $sunrise-red;
     }
     button:hover {
-      background-color: #009900;
-      box-shadow: none;
+      @include safe-button-hover;
     }
-    button.danger-btn:hover {
-      background-color: red;
+    button.danger-button:hover {
+      @include danger-button-hover;
     }
   }
 
@@ -540,7 +529,7 @@
         font-weight: 300;
       }
       @media (max-width: 350px) {
-        font-size: .7rem;
+        font-size: 0.7rem;
         font-weight: 400;
       }
     }
