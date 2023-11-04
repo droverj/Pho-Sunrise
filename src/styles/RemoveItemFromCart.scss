@@ -17,11 +17,14 @@
   transform: translate(-50%, -50%);
   height: 300px;
   width: 60%;
-  background-color: pink;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 2px solid $grey;
+  border-radius: 10px;
+  box-shadow: 0px 0px 21px 1px rgba(0,0,0,0.56);
 
   .close-button {
     @include close-button;
