@@ -97,7 +97,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
                   <p className='warning'>This action is final.</p>
                 </div>
                 <button onClick={() => setDeleteConfirmed(null)}>Return</button>
-                <button className="danger-btn" onClick={() => handleDeleteReview(review)}>Delete</button>
+                <button className="danger-button" onClick={() => handleDeleteReview(review)}>Delete</button>
               </div>
             )
           ))
