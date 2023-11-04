@@ -32,10 +32,13 @@ const CartItem = ({ cartItem, handleAdd, handleRemove, handleDeleteItem }) => {
         <button className='add' onClick={() => handleAdd(cartItem)}>+</button>
       </div>
 
-      <button className='delete' onClick={() => setShowRemoveItemComponent(true)}>
+      <button className='delete' onClick={() => {
+        setShowRemoveItemComponent(true);
+        document.body.classList.add('no-scroll');
+      }}>
         x
       </button>
-    </li>
+    </li >
   );
 };
 

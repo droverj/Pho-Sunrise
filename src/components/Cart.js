@@ -29,6 +29,7 @@ const Cart = () => {
   const handleDeleteItem = (itemToDelete) => {
     deleteItemFromCart(itemToDelete);
     setShowRemoveItemComponent(!showRemoveItemComponent);
+    document.body.classList.remove('no-scroll');
   };
 
   return (

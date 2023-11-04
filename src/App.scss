@@ -21,6 +21,10 @@ body {
   background-color: #fdfcfa;
 }
 
+.no-scroll {
+  overflow-y: hidden;
+}  
+
 .main-body {
   flex: 1;
   width: 60vw;
