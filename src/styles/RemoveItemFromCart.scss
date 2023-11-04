@@ -24,12 +24,27 @@
   flex-direction: column;
   border: 2px solid $grey;
   border-radius: 10px;
-  box-shadow: 0px 0px 21px 1px rgba(0,0,0,0.56);
+  box-shadow: 0px 0px 21px 1px rgba(0, 0, 0, 0.56);
+  padding: 0 30px;
 
   .close-button {
     @include close-button;
   }
   .close-button:hover {
     @include close-button-hover;
+  }
+
+  .confirmation-message {
+    text-align: center;
+    font-size: calc(16px + .8vw);
+
+    p.remove-text {
+      color: red;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    span.item-info {
+      font-weight: 600;
+    }
   }
 }

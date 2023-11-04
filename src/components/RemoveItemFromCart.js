@@ -2,23 +2,44 @@ import React from 'react';
 import '../styles/RemoveItemFromCart.scss';
 
 const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem }) => {
+  console.log(item);
   return (
     <>
       <div className='overlay'></div>
+
       <div className='remove-item-from-cart'>
         <button className="close-button" onClick={() => {
           setShowRemoveItemComponent(false);
           document.body.classList.remove('no-scroll');
         }}>X</button>
-        <h4>Remove {item.quantity} {item.name} from cart?</h4>
-        <button onClick={() => {
-          setShowRemoveItemComponent(false);
-          document.body.classList.remove('no-scroll');
-        }}>Return to Cart</button>
-        <button onClick={() => handleDeleteItem(item)}>Delete Item from Cart</button>
+        <div className="confirmation-message">
+          <p className="remove-text">Remove</p>
+          <p>
+            <span className="item-info">
+              {item.quantity === 1 ? `${item.quantity} order ` : `${item.quantity} orders `}
+            </span>
+            of&nbsp;
+            <span className="item-info">
+              {item.name}
+            </span>
+          </p>
+          {item.item_option &&
+            <p>item option: <span className='option'>{item.item_option}</span></p>
+          }
+          <p>from your cart?</p>
+        </div>
+
+        <div className='button-options'>
+          <button onClick={() => {
+            setShowRemoveItemComponent(false);
+            document.body.classList.remove('no-scroll');
+          }}>Return to Cart</button>
+          <button onClick={() => handleDeleteItem(item)}>Delete Item from Cart</button>
+        </div>
+
       </div>
     </>
-  )
+  );
 };
 
 export default RemoveItemFromCart;
