@@ -6,7 +6,7 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
     <>
       <div className='overlay'></div>
       <div className='remove-item-from-cart'>
-        <button className="close-btn" onClick={() => {
+        <button className="close-button" onClick={() => {
           setShowRemoveItemComponent(false);
           document.body.classList.remove('no-scroll');
         }}>X</button>

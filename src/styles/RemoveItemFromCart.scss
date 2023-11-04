@@ -22,4 +22,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  .close-button {
+    @include close-button;
+  }
+  .close-button:hover {
+    @include close-button-hover;
+  }
 }
