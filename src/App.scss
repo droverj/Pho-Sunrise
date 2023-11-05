@@ -25,6 +25,16 @@ body {
   overflow-y: hidden;
 }  
 
+.overlay {
+  background-color: #333;
+  opacity: 95%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 .main-body {
   flex: 1;
   width: 60vw;
