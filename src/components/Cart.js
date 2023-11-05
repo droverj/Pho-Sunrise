@@ -54,13 +54,10 @@ const Cart = () => {
       </Link>
 
       <div className="cart-page-heading">
-        <h1>Review Your Order</h1>
-        <button className="empty-cart-button" onClick={handleEmptyCart}>
+        <h1>Review your order<span>:</span></h1>
+        {/* <button className="empty-cart-button" onClick={handleEmptyCart}>
           Empty Cart
-        </button>
-        <div className="cart-page-details">
-          <p>Items in Cart: {totalItems}</p>
-        </div>
+        </button> */}
       </div>
       <div className="cart-items-container">
         {totalItems === 0 ? (
@@ -71,7 +68,6 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <p className='cart-subtotal'>Subtotal: <b>${subtotal}</b></p>
             <ul className="cart-items">
               {cart.map((cartItem) => (
                 <CartItem
