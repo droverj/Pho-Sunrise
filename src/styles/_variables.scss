@@ -122,8 +122,22 @@ $cursive-font: "WindSong";
   opacity: 0.7;
 }
 
-@mixin close-button-hover {
-  opacity: 1;
+@mixin confirmation-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  width: 60%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid $grey;
+  border-radius: 10px;
+  box-shadow: 0px 0px 21px 1px rgba(0, 0, 0, 0.56);
+  padding: 0 30px;
 }
 
 @mixin confirmation-button {
@@ -138,6 +152,10 @@ $cursive-font: "WindSong";
   cursor: pointer;
   text-transform: uppercase;
   font-family: $primary-font;
+}
+
+@mixin close-button-hover {
+  opacity: 1;
 }
 
 @mixin safe-button-hover {

@@ -435,62 +435,6 @@
     }
   }
 
-  .delete-review-confirmation {
-    // Preview of user's review with option to delete or return
-    text-align: start;
-    color: black;
-    padding: 30px 5%;
-    border: 2px solid red;
-    background-color: #ffcccb;
-    margin-top: 25px;
-    width: 80%;
-    margin-left: 5%;
-    @media (max-width: 500px) {
-      font-size: 0.7rem;
-    }
-
-    h3 {
-      margin: 0;
-      padding-bottom: 10px;
-      font-weight: 400;
-      font-size: 1.5rem;
-      color: $sunrise-red;
-      @media (max-width: 500px) {
-        font-size: 0.7rem;
-      }
-    }
-    .confirmation {
-      display: flex;
-      @media (max-width: 300px) {
-        flex-direction: column;
-      }
-      .warning {
-        color: red;
-        padding-left: 10px;
-        font-weight: 600;
-        @media (max-width: 300px) {
-          padding-left: 0;
-        }
-      }
-    }
-    button {
-      @include confirmation-button;
-      @media (max-width: 500px) {
-        font-size: 0.9rem;
-        width: 80px;
-      }
-    }
-    button.danger-button {
-      background-color: $sunrise-red;
-    }
-    button:hover {
-      @include safe-button-hover;
-    }
-    button.danger-button:hover {
-      @include danger-button-hover;
-    }
-  }
-
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
   Section C of Contact Page: 
@@ -503,6 +447,7 @@
     // margin-left: 5%;
     margin-bottom: 5px;
     position: relative;
+    z-index: -1;
 
     h3 {
       display: flex;
