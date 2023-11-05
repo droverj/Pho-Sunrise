@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
+import ReviewInteractionMessage from './ReviewInteractionMessage';
 import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
 import InstagramIcon from '../images/Instagram_Glyph_Gradient.png';
 import FacebookIcon from '../images/Facebook_Logo_Primary.png';
@@ -59,64 +60,6 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         console.error('Server error:', error.response.data);
       }
     }
-  };
-
-  const renderReviewForm = () => {
-    return (
-      <div>
-        <h2 className='review-form-heading'>Tell us about your experience</h2>
-        <ReviewForm onSubmit={handleReviewSubmit} />
-      </div>
-    );
-  };
-
-  const renderLoggedOutReviewForm = () => {
-    return (
-      <div className='logged-out-review-form'>
-        <h2 className='review-form-heading'>
-          <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>
-          To Leave a Review
-        </h2>
-        <p>We welcome and appreciate your feedback.</p>
-      </div>
-    );
-  };
-
-  const renderReviewInteractionMessage = () => {
-    return (
-      <div>
-        {deleteConfirmed ? (
-          reviews.map((review) => (
-            review.user_id === userId && (
-              <div key={review.id} className='delete-review-confirmation'>
-                <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
-                <p>You rated Phở Sunrise {review.rating}/5 stars.</p>
-                <p>"{review.comment}"</p>
-                <div className='confirmation'>
-                  <p>Delete your review?</p>
-                  <p className='warning'>This action is final.</p>
-                </div>
-                <button onClick={() => setDeleteConfirmed(null)}>Return</button>
-                <button className="danger-button" onClick={() => handleDeleteReview(review)}>Delete</button>
-              </div>
-            )
-          ))
-        ) : (
-          <>
-            <div className='submitted-review'>
-              {reviewSubmitted ? 'Your Phở Sunrise review has been submitted successfully.' : null}
-              <br /><span>Thank you</span>
-              {!deleteConfirmed && (
-                <div className='delete-review'>
-                  <p>Delete your review?</p>
-                  <button onClick={() => setDeleteConfirmed(true)}>Delete</button>
-                </div>
-              )}
-            </div>
-          </>
-        )}
-      </div>
-    );
   };
 
   return (
@@ -195,7 +138,6 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       <div className='right-side-contact-body'>
       </div>
 
-
       <h2 className='shopping-centre'>Located in the Sunrise Shopping Centre</h2>
       <div className='location-images'>
         <img src={Building} className='building-img' alt="Pho Sunrise Plates" />
@@ -204,9 +146,34 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
       <h2 className='reviews-heading'>See what our guests are saying</h2>
       {/* <div className='reviews-container'> */}
-        <Reviews reviews={reviews} />
+      <Reviews reviews={reviews} />
       {/* </div> */}
-      {reviewSubmitted ? renderReviewInteractionMessage() : (isAuthenticated ? renderReviewForm() : renderLoggedOutReviewForm())}
+
+      {reviewSubmitted ? (
+        <ReviewInteractionMessage
+          reviews={reviews}
+          userId={userId}
+          deleteConfirmed={deleteConfirmed}
+          reviewSubmitted={reviewSubmitted}
+          setDeleteConfirmed={setDeleteConfirmed}
+          handleDeleteReview={handleDeleteReview}
+        />
+      ) : (
+        isAuthenticated ? (
+          <div>
+            <h2 className='review-form-heading'>Tell us about your experience</h2>
+            <ReviewForm onSubmit={handleReviewSubmit} />
+          </div>
+        ) : (
+          <div className='logged-out-review-form'>
+            <h2 className='review-form-heading'>
+              <button className='review-sign-in' onClick={() => loginWithRedirect()}>Sign In</button>
+              To Leave a Review
+            </h2>
+            <p>We welcome and appreciate your feedback.</p>
+          </div>
+        )
+      )}
 
       <div className='reservation'>
         <h3>Call to book your reservation</h3>
