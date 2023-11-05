@@ -6,6 +6,13 @@
     font-size: 0.7rem;
   }
 
+  .close-button {
+    @include close-button;
+  }
+  .close-button:hover {
+    @include close-button-hover;
+  }
+
   h3 {
     margin: 0;
     padding-bottom: 10px;
@@ -31,20 +38,21 @@
     }
   }
 
-  button {
-    @include confirmation-button;
-    @media (max-width: 500px) {
-      font-size: 0.9rem;
-      width: 80px;
+  .button-options {
+    margin-top: 10px;
+    button.safe-button {
+      @include confirmation-button;
     }
-  }
-  button.danger-button {
-    background-color: $sunrise-red;
-  }
-  button:hover {
-    @include safe-button-hover;
-  }
-  button.danger-button:hover {
-    @include danger-button-hover;
+    button.safe-button:hover {
+      @include safe-button-hover;
+    }
+
+    button.danger-button {
+      @include confirmation-button;
+      background-color: $sunrise-red;
+    }
+    button.danger-button:hover {
+      @include danger-button-hover;
+    }
   }
 }

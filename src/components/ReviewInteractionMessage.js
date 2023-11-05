@@ -10,6 +10,10 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
             <>
               <div className="overlay"></div>
               <div key={review.id} className='delete-review-confirmation'>
+                <button className="close-button" onClick={() => {
+                  setDeleteConfirmed(null)
+                  document.body.classList.remove('no-scroll');
+                }}>X</button>
                 <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
                 <p>You rated Phở Sunrise {review.rating}/5 stars.</p>
                 <p>"{review.comment}"</p>
@@ -17,8 +21,15 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
                   <p>Delete your review?</p>
                   <p className='warning'>This action is final.</p>
                 </div>
-                <button onClick={() => setDeleteConfirmed(null)}>Return</button>
-                <button className="danger-button" onClick={() => handleDeleteReview(review)}>Delete</button>
+
+                <div className='button-options'>
+                  <button className='safe-button' onClick={() => {
+                    setDeleteConfirmed(null);
+                    document.body.classList.remove('no-scroll');
+                  }}>Keep</button>
+                  <button className="danger-button" onClick={() => handleDeleteReview(review)}>Delete</button>
+                </div>
+
               </div>
             </>
           )
@@ -31,7 +42,10 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
             {!deleteConfirmed && (
               <div className='delete-review'>
                 <p>Delete your review?</p>
-                <button onClick={() => setDeleteConfirmed(true)}>Delete</button>
+                <button onClick={() => {
+                  document.body.classList.add('no-scroll');
+                  setDeleteConfirmed(true)
+                }}>Delete</button>
               </div>
             )}
           </div>

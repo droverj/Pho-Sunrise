@@ -33,8 +33,15 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
           <button className='safe-button' onClick={() => {
             setShowRemoveItemComponent(false);
             document.body.classList.remove('no-scroll');
-          }}>Keep</button>
-          <button className="danger-button" onClick={() => handleDeleteItem(item)}>Remove</button>
+          }}>
+            Keep
+          </button>
+          <button className="danger-button" onClick={() => {
+            document.body.classList.remove('no-scroll');
+            handleDeleteItem(item)
+          }}>
+            Remove
+          </button>
         </div>
 
       </div>
