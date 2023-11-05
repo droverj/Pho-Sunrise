@@ -10,7 +10,7 @@ const CartNavbar = ({ totalItems, subtotal }) => {
         <p className='cart-nav-subtotal'>Subtotal: <b>${subtotal}</b></p>
         <Link to="/checkout">
           <button className="checkout-button">
-            Proceed to Checkout
+            Order
           </button>
         </Link>
         </>

@@ -1,28 +1,25 @@
 @import "variables";
 
-.cart-navbar {
-  position: fixed;
-  top: 0;
-  right: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 90px;
-  width: 350px;
-  height: 70px;
-  background-color: #333;
-  background-color: #ffffff;
-  border-radius: 0px 0px 40px 40px;
-  box-shadow: $hover-box-shadow;
-  @media (max-width: 899px) {
-    right: 8%;
+@media (max-width: 899px) {
+  .cart-navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background-color: $grey;
+    margin-top: 90px;
+    width: 100%;
+    right: 0;
+    border-radius: 0;
+    border: none;
+    justify-content: flex-end;
   }
 
   p.cart-nav-subtotal {
     color: white;
-    color: #333;
-    margin: 0 10px;
-    font-size: 12px;
+    margin-right: 20px;
+    font-size: 20px;
   }
 
   button.checkout-button {
@@ -30,13 +27,54 @@
     color: silver;
     font-family: $primary-font;
     font-weight: 200;
-    font-size: 16px;
+    font-size: 20px;
     padding: 10px;
     border: 1px solid silver;
     border-radius: 10px;
     box-shadow: $button-box-shadow;
     cursor: pointer;
-    margin-right: 25px;
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
+
+  button.checkout-button:hover {
+    background-color: blue;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .cart-navbar {
+    height: 0;
+    width: 0;
+  }
+  p.cart-nav-subtotal {
+    color: white;
+    margin-right: 20px;
+    font-size: 20px;
+    display: none;
+  }
+  button.checkout-button {
+    @include right-panel-btn;
+    // margin-top: 120px;
+    margin-top: 270px;
+    background-color: $button-colour;
+    color: silver;
+    border: 1px solid silver;
+
+    @media (max-width: 1300px) {
+      margin-top: 240px;
+    }
+    @media (max-width: 1200px) {
+      margin-right: 40px;
+      margin-top: 220px;
+    }
+
+    @media (max-width: 1000px) {
+      margin-right: 20px;
+      width: 10vw;
+      padding: 10px;
+    }
   }
 
   button.checkout-button:hover {
