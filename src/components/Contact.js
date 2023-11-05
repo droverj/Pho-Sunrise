@@ -18,6 +18,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   // eslint-disable-next-line
   const [reviewDeleted, setReviewDeleted] = useState(false);
 
+  // Checks if the user has submitted a review after page refresh
   useEffect(() => {
     const userHasSubmittedReview = reviews.some((review) => review.user_id === userId);
     setReviewSubmitted(userHasSubmittedReview);
