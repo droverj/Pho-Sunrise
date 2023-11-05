@@ -39,7 +39,7 @@ const Cart = () => {
         <CartNavbar totalItems={totalItems} subtotal={subtotal} />
       )}
 
-      <div className='order-navigation-container' style={{ marginTop: '50px' }}>
+      <div className='order-navigation-container'>
         <Link to="/menu">
           <button className='back-btn'>Menu</button>
         </Link>
@@ -53,13 +53,18 @@ const Cart = () => {
         </button>
       </Link>
 
-      <div className="cart-page-heading">
-        <h1>Review your order</h1>
-        <p className='subtotal'>subtotal: <span>${subtotal}</span></p>
-        {/* <button className="empty-cart-button" onClick={handleEmptyCart}>
-          Empty Cart
-        </button> */}
-      </div>
+      {totalItems > 0 && (
+        <div className="cart-page-heading">
+          <h1>Review your order</h1>
+          <p className='subtotal'>subtotal: <span>${subtotal}</span></p>
+
+          <button className="empty-cart-button" onClick={handleEmptyCart}>
+            Empty Cart
+          </button>
+
+        </div>
+      )}
+
       <div className="cart-items-container">
         {totalItems === 0 ? (
           <div className="empty-cart-container">

@@ -7,12 +7,12 @@ const CartNavbar = ({ totalItems, subtotal }) => {
     <div className='cart-navbar'>
       {totalItems > 0 && (
         <>
-        <p className='cart-nav-subtotal'>subtotal: <span>${subtotal}</span></p>
-        <Link to="/checkout">
-          <button className="checkout-button">
-            Order
-          </button>
-        </Link>
+          <p className='cart-nav-subtotal'>subtotal: <span>${subtotal}</span></p>
+          <Link to="/checkout">
+            <button className="checkout-button">
+              Order
+            </button>
+          </Link>
         </>
       )}
     </div>
