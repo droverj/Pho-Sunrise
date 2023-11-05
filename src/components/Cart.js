@@ -54,7 +54,8 @@ const Cart = () => {
       </Link>
 
       <div className="cart-page-heading">
-        <h1>Review your order<span>:</span></h1>
+        <h1>Review your order</h1>
+        <p className='subtotal'>subtotal: <span>${subtotal}</span></p>
         {/* <button className="empty-cart-button" onClick={handleEmptyCart}>
           Empty Cart
         </button> */}

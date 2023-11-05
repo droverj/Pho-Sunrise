@@ -7,7 +7,7 @@ const CartNavbar = ({ totalItems, subtotal }) => {
     <div className='cart-navbar'>
       {totalItems > 0 && (
         <>
-        <p className='cart-nav-subtotal'>Subtotal: <b>${subtotal}</b></p>
+        <p className='cart-nav-subtotal'>subtotal: <span>${subtotal}</span></p>
         <Link to="/checkout">
           <button className="checkout-button">
             Order
