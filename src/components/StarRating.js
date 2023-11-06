@@ -22,7 +22,7 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
     }
     return null;
   };
-  
+
   return (
     <div className='star-rating-container'>
       <div className="star-rating">
@@ -37,7 +37,7 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
           />
         ))}
       </div>
-      {rating > 0 && <p>{getRatingText()}</p>}
+      {rating > 0 && getRatingText()}
     </div>
   );
 };
