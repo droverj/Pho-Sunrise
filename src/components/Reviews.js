@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import UserIcon from '../images/user-icon.png';
 import '../styles/Contact.scss';
 
-const Reviews = ({ reviews }) => {
+const Reviews = ({ reviews, dropdownDisplay }) => {
   const reviewsContainerRef = useRef(null);
 
   // Function to generate a string of stars based on the rating
@@ -20,7 +20,7 @@ const Reviews = ({ reviews }) => {
   }, [reviews]);
 
   return (
-    <div ref={reviewsContainerRef} className="reviews-container">
+    <div ref={reviewsContainerRef} className="reviews-container" style={{ display: dropdownDisplay }}>
       <ul>
         {reviews.map((review) => (
           <li key={review.id}>

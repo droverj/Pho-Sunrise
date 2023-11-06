@@ -14,45 +14,29 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.scss';
 
-// const [sidenavHeight, setSidenavHeight] = useState('0vh');
-// const [isSidenavOpen, setIsSidenavOpen] = useState(false);
-
-
-{/* <div className="menu-dropdown-sections" style={{ height: dropdownNavHeight }}></div> */}
-// const toggleSidenav = () => {
-//   if (isSidenavOpen) {
-//     setSidenavHeight('0vh');
-//   } else {
-//     setSidenavHeight('100vh');
-//   }
-//   setIsSidenavOpen(!isSidenavOpen);
-// };
-
-// <button className='subnav-toggle' onClick={toggleSidenav}>
-// {isSidenavOpen ? (
-//   <>
-//     <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-//   </>
-// ) : (
-//   <>
-//     <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
-//     See All
-//   </>
-// )}
-// </button>
-
 const Contact = ({ reviews, userId, updateReviews }) => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
   const [deleteConfirmed, setDeleteConfirmed] = useState(null);
   // eslint-disable-next-line
   const [reviewDeleted, setReviewDeleted] = useState(false);
+  const [dropdownDisplay, setDropdownDisplay] = useState('none');
+  const [displayReviews, setDisplayReviews] = useState(false);
 
   // Checks if the user has submitted a review after page refresh
   useEffect(() => {
     const userHasSubmittedReview = reviews.some((review) => review.user_id === userId);
     setReviewSubmitted(userHasSubmittedReview);
   }, [reviews, userId]);
+
+  const toggleReviews = () => {
+    if (displayReviews) {
+      setDropdownDisplay('none');
+    } else {
+      setDropdownDisplay('flex');
+    }
+    setDisplayReviews(!displayReviews);
+  };
 
   const handleReviewSubmit = async (newReview) => {
     try {
@@ -175,10 +159,23 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         <iframe title="google-maps-pho-sunrise" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.143805010259!2d-80.51546618411915!3d43.41582207913015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf597d52d08d5%3A0x1669b8de11730844!2s1400+Ottawa+St+S%2C+Kitchener%2C+ON+N2E+4E2%2C+Canada!5e0!3m2!1sen!2sru!4v1490866950787"></iframe>
       </div>
 
-      <h2 className='reviews-heading'>See what our guests are saying</h2>
-      {/* <div className='reviews-container'> */}
-      <Reviews reviews={reviews} />
-      {/* </div> */}
+      <div className='reviews-heading-container'>
+        <h2 className='reviews-heading'>See what our guests are saying</h2>
+        <button className='reviews-toggle' onClick={toggleReviews}>
+          {displayReviews ? (
+            <>
+              <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              hide
+            </>
+          ) : (
+            <>
+              <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              show
+            </>
+          )}
+        </button>
+      </div>
+      <Reviews reviews={reviews} dropdownDisplay={dropdownDisplay} />
 
       {reviewSubmitted ? (
         <ReviewInteractionMessage
