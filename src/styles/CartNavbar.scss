@@ -60,10 +60,9 @@
   }
   button.checkout-button {
     @include right-panel-button;
-    // margin-top: 120px;
     margin-top: 270px;
     background-color: $button-colour;
-    color: silver;
+    // color: silver;
     border: 1px solid silver;
 
     @media (max-width: 1300px) {
