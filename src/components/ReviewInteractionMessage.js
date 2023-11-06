@@ -7,9 +7,9 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
       {deleteConfirmed ? (
         reviews.map((review) => (
           review.user_id === userId && (
-            <>
+            <div key={review.id}>
               <div className="overlay"></div>
-              <div key={review.id} className='delete-review-confirmation'>
+              <div className='delete-review-confirmation'>
                 <button className="close-button" onClick={() => {
                   setDeleteConfirmed(null)
                   document.body.classList.remove('no-scroll');
@@ -34,7 +34,7 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
                 </div>
 
               </div>
-            </>
+            </div>
           )
         ))
       ) : (
