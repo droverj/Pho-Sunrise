@@ -2,8 +2,11 @@
 
 .delete-review-confirmation {
   @include confirmation-container;
-  @media (max-width: 500px) {
-    font-size: 0.7rem;
+  align-items: flex-start;
+
+  @media (max-width: 899px) {
+    padding-top: 50px;
+    padding-bottom: 20px;
   }
 
   .close-button {
@@ -19,27 +22,38 @@
     font-weight: 400;
     font-size: 1.5rem;
     color: $sunrise-red;
-    @media (max-width: 500px) {
-      font-size: 0.7rem;
-    }
+  }
+
+  .review-comment {
+    margin-top: 0;
+    font-weight: 100;
   }
   .confirmation {
     display: flex;
-    @media (max-width: 300px) {
+    p {
+      margin-top: 0;
+      @media (max-width: 600px) {
+        margin: 0;
+      }
+    }
+    @media (max-width: 600px) {
       flex-direction: column;
     }
     .warning {
       color: red;
       padding-left: 10px;
       font-weight: 600;
-      @media (max-width: 300px) {
+      @media (max-width: 600px) {
         padding-left: 0;
       }
     }
   }
 
   .button-options {
-    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
     button.safe-button {
       @include confirmation-button;
     }

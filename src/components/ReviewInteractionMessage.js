@@ -16,7 +16,7 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
                 }}>X</button>
                 <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
                 <p>You rated Phở Sunrise {review.rating}/5 stars.</p>
-                <p>"{review.comment}"</p>
+                <p className='review-comment'>"{review.comment}"</p>
                 <div className='confirmation'>
                   <p>Delete your review?</p>
                   <p className='warning'>This action is final.</p>
