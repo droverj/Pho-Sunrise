@@ -72,7 +72,7 @@ $cursive-font: "WindSong";
   margin-left: 20px;
 }
 
-@mixin back-btn {
+@mixin back-button {
   display: flex;
   font-family: $primary-font;
   font-size: 14px;
@@ -84,7 +84,7 @@ $cursive-font: "WindSong";
   cursor: pointer;
 }
 
-@mixin menu-sections-btn {
+@mixin menu-sections-button {
   height: 50px;
   align-items: center;
   justify-content: center;

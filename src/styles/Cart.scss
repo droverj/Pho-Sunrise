@@ -14,8 +14,8 @@
     margin-left: 0;
     margin-top: 20px;
 
-    button.back-btn {
-      @include back-btn;
+    button.back-button {
+      @include back-button;
       background-color: $background-white;
     }
 

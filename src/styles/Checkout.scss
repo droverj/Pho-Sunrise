@@ -9,7 +9,7 @@
     @include page-back-nav-container;
 
     button.back-btn {
-      @include back-btn;
+      @include back-button;
       background-color: #ffffff;
     }
 

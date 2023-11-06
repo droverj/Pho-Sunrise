@@ -40,7 +40,7 @@ const Cart = () => {
 
       <div className='order-navigation-container'>
         <Link to="/menu">
-          <button className='back-btn'>Menu</button>
+          <button className='back-button'>Menu</button>
         </Link>
         <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
         <span>Cart</span>
