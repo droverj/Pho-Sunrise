@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/MenuDropdownNav.scss';
 
-const MenuDropdownSections = ({ groupedItems, toggleSidenav, scrollToSection, sidenavHeight }) => {
+const MenuDropdownSections = ({ groupedItems, toggleSidenav, scrollToSection, dropdownNavHeight }) => {
   return (
-    <div className="menu-dropdown-sections" style={{ height: sidenavHeight }}>
+    <div className="menu-dropdown-sections" style={{ height: dropdownNavHeight }}>
       <ul>
         {groupedItems.map((section) => (
           <li key={section.id}>

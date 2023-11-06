@@ -13,17 +13,17 @@ import '../styles/MenuDropdownNav.scss';
 
 const Menu = ({ items }) => {
   const { totalItems } = useCart();
-  const [sidenavHeight, setSidenavHeight] = useState('0vh');
-  const [isSidenavOpen, setIsSidenavOpen] = useState(false);
+  const [dropdownNavHeight, setdropdownNavHeight] = useState('0vh');
+  const [menuDropped, setMenuDropped] = useState(false);
   const groupedItems = groupItemsBySection(items);
 
   const toggleSidenav = () => {
-    if (isSidenavOpen) {
-      setSidenavHeight('0vh');
+    if (menuDropped) {
+      setdropdownNavHeight('0vh');
     } else {
-      setSidenavHeight('100vh');
+      setdropdownNavHeight('100vh');
     }
-    setIsSidenavOpen(!isSidenavOpen);
+    setMenuDropped(!menuDropped);
   };
 
   function scrollToSection(sectionId, offsetValue) {
@@ -63,7 +63,7 @@ const Menu = ({ items }) => {
       />
       <div className='menu-dropdown-nav'>
         <button className='subnav-toggle' onClick={toggleSidenav}>
-          {isSidenavOpen ? (
+          {menuDropped ? (
             <>
               <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
             </>
@@ -79,7 +79,7 @@ const Menu = ({ items }) => {
         <MenuDropdownSections
           groupedItems={groupedItems}
           scrollToSection={scrollToSection}
-          sidenavHeight={sidenavHeight}
+          dropdownNavHeight={dropdownNavHeight}
           toggleSidenav={toggleSidenav}
         />
       </div>

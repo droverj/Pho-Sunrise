@@ -9,7 +9,37 @@ import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
 import InstagramIcon from '../images/Instagram_Glyph_Gradient.png';
 import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 import Building from '../images/pho-sunrise-building.jpeg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.scss';
+
+// const [sidenavHeight, setSidenavHeight] = useState('0vh');
+// const [isSidenavOpen, setIsSidenavOpen] = useState(false);
+
+
+{/* <div className="menu-dropdown-sections" style={{ height: dropdownNavHeight }}></div> */}
+// const toggleSidenav = () => {
+//   if (isSidenavOpen) {
+//     setSidenavHeight('0vh');
+//   } else {
+//     setSidenavHeight('100vh');
+//   }
+//   setIsSidenavOpen(!isSidenavOpen);
+// };
+
+// <button className='subnav-toggle' onClick={toggleSidenav}>
+// {isSidenavOpen ? (
+//   <>
+//     <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+//   </>
+// ) : (
+//   <>
+//     <FontAwesomeIcon icon={faCaretDown} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+//     See All
+//   </>
+// )}
+// </button>
 
 const Contact = ({ reviews, userId, updateReviews }) => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
