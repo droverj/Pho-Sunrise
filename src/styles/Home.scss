@@ -7,7 +7,7 @@
   text-align: center;
 
   button.menu {
-    @include right-panel-btn;
+    @include right-panel-button;
 
     &:hover {
       background-color: red;

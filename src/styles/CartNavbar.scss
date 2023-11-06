@@ -59,7 +59,7 @@
     display: none;
   }
   button.checkout-button {
-    @include right-panel-btn;
+    @include right-panel-button;
     // margin-top: 120px;
     margin-top: 270px;
     background-color: $button-colour;

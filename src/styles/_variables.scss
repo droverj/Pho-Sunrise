@@ -26,7 +26,7 @@ $order-takeout-button-box-shadow: -4px 4px 10px 3px rgba(0, 0, 0, 0.48);
 $cursive-font: "WindSong";
 
 // Right Panel Buttons
-@mixin right-panel-btn {
+@mixin right-panel-button {
   position: fixed;
   top: 0;
   right: 0;
