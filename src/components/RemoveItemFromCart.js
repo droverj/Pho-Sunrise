@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/RemoveItemFromCart.scss';
 
 const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem }) => {
-  console.log(item);
   return (
     <>
       <div className='overlay'></div>
