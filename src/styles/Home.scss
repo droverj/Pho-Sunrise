@@ -15,6 +15,45 @@
     }
   }
 
+  // Button and left/right shrimp
+  .takeout-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    .shrimp {
+      animation: shrimpAnimation 30s linear infinite;
+      width: 3vw;
+      @media (max-width: 899px) {
+        width: 7vw;
+      }
+    }
+    button {
+      width: 22vw;
+      font-size: calc(16px + 0.3vw);
+      margin: 0 30px;
+      padding: 10px;
+      border: none;
+      background-color: $sunrise-red;
+      color: white;
+      border-radius: 50px;
+      font-family: $order-takeout-button-font;
+      box-shadow: -5px 5px 7px -3px rgba(0,0,0,0.54);
+      cursor: pointer;
+      @media (max-width: 899px) {
+        width: 40vw;
+        box-shadow: none;
+      }
+      @media (max-width: 600px) {
+        margin: 0 10px;
+      }
+    }
+    button:hover {
+      background-color: red;
+      box-shadow: none;
+    }
+  }
+
   // Serving Dine-in, takeout, delivery
   .serving-container {
     position: relative;
@@ -75,50 +114,6 @@
     }
     100% {
       transform: rotate(360deg);
-    }
-  }
-
-  // Button and left/right shrimp
-  .takeout-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
-    // @media (max-width: 899px) {
-    //   margin: 35px 0;
-    // }
-    // @media (max-width: 600px) {
-    //   margin: 25px 0;
-    // }
-
-    .shrimp {
-      animation: shrimpAnimation 30s linear infinite;
-      width: 3vw;
-      @media (max-width: 899px) {
-        width: 7vw;
-      }
-    }
-
-    button {
-      width: 22vw;
-      font-size: 2.3vw;
-      margin: 0 30px;
-      padding: 10px;
-      border: none;
-      background-color: $sunrise-red;
-      color: white;
-      border-radius: 50px;
-      font-family: $order-takeout-button-font;
-      box-shadow: $order-takeout-button-box-shadow;
-      cursor: pointer;
-      @media (max-width: 899px) {
-        width: 50vw;
-      }
-    }
-
-    button:hover {
-      background-color: red;
-      box-shadow: none;
     }
   }
 
