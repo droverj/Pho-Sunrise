@@ -14,7 +14,7 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
                   setDeleteConfirmed(null)
                   document.body.classList.remove('no-scroll');
                 }}>X</button>
-                <h3>Are you sure you want to delete your Phở Sunrise review?</h3>
+                <h3>Are you sure you want to delete your review?</h3>
                 <p>You rated Phở Sunrise {review.rating}/5 stars.</p>
                 <p className='review-comment'>"{review.comment}"</p>
                 <div className='confirmation'>
