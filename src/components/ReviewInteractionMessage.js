@@ -27,7 +27,10 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
                     setDeleteConfirmed(null);
                     document.body.classList.remove('no-scroll');
                   }}>Keep</button>
-                  <button className="danger-button" onClick={() => handleDeleteReview(review)}>Delete</button>
+                  <button className="danger-button" onClick={() => {
+                    handleDeleteReview(review);
+                    document.body.classList.remove('no-scroll');
+                  }}>Delete</button>
                 </div>
 
               </div>
