@@ -27,12 +27,13 @@ body {
 
 .overlay {
   background-color: #333;
-  opacity: 95%;
+  opacity: 0.95;
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 999;
 }
 
 .main-body {

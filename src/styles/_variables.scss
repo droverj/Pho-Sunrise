@@ -138,6 +138,7 @@ $cursive-font: "WindSong";
   border-radius: 10px;
   box-shadow: 0px 0px 21px 1px rgba(0, 0, 0, 0.56);
   padding:  0 50px;
+  z-index: 999;
 }
 
 @mixin confirmation-button {

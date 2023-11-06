@@ -75,6 +75,21 @@ function App() {
     setCart(updatedCart);
   };
 
+  useEffect(() => {
+    // Add an event listener to the window object
+    const handleRouteChange = () => {
+      document.body.classList.remove('no-scroll');
+    };
+
+    // Listen for the "popstate" event, which is triggered when the URL changes
+    window.addEventListener('popstate', handleRouteChange);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+    };
+  }, []);
+
   return (
     <CartProvider>
       <BrowserRouter>
