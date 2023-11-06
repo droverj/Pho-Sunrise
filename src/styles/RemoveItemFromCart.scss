@@ -12,25 +12,22 @@
 
   .confirmation-message {
     font-size: calc(16px + 0.8vw);
-    // text-align: center;
-
     p {
-      margin: 20px 0;
+      margin: 10px 0;
       font-weight: 300;
     }
-    p.message {
+    p.remove {
       text-transform: uppercase;
       font-weight: 700;
     }
-    p.item-info-container {
-      margin-bottom: 5px;
-      span.item-info {
+    p.item-info{
+      width: 100%;
+      span {
         font-weight: 500;
       }
     }
     p.item-option {
       font-size: calc(12px + 0.2vw);
-      margin: 0;
     }
   }
 
