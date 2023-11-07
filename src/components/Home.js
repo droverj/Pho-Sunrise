@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { canPlaceOrder } from '../utilities/canPlaceOrder';
 import VideoBanner from '../images/pho-sunrise-video-banner.mp4';
 import Hours from '../images/pho-sunrise-hours-grey.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
@@ -8,6 +9,8 @@ import BobaDrinks from '../images/boba-drinks.png';
 import '../styles/Home.scss';
 
 const Home = () => {
+  const orderingAvailable = canPlaceOrder();
+
   return (
     <div className="home">
 
@@ -33,15 +36,19 @@ const Home = () => {
           </span>
         </div>
 
-        <div className='takeout-button-container'>
-          <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
-          <Link to="/menu">
-            <button className="place-order-button" >
-              ORDER TAKEOUT
-            </button>
-          </Link>
-          <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
-        </div>
+        {orderingAvailable ? (
+          <div className='takeout-button-container'>
+            <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
+            <Link to="/menu">
+              <button className="place-order-button" >
+                ORDER TAKEOUT
+              </button>
+            </Link>
+            <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
+          </div>
+        ) : (
+          <p className='ordering-availability-notice'>Ordering is unavailable until 11:30AM.</p>
+        )}
 
         <video className='pho-sunrise-video-banner' autoPlay>
           <source src={VideoBanner} type="video/mp4" />
@@ -64,8 +71,8 @@ const Home = () => {
           <p className='drink-options'>Slushie or Milk</p>
           <p className='boba-tea-price'>$5.95</p>
         </div>
-        <Link to="/menu"className='drinks-link'>
-        <img src={BobaDrinks} className='boba-drinks' alt="boba drinks" />
+        <Link to="/menu" className='drinks-link'>
+          <img src={BobaDrinks} className='boba-drinks' alt="boba drinks" />
         </Link>
       </div>
 
