@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSurprise } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import CartItem from './CartItem';
 import CartNavbar from './CartNavbar';
+import EmptyCart from './EmptyCart';
 import '../styles/Cart.scss';
 
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
@@ -69,21 +69,16 @@ const Cart = () => {
   console.log("within ordering hours: ", orderAvailable);
 
   return (
+    <>
+    {totalItems > 0 ? (
     <div className="cart">
+      <img src={ShrimpTopLeft} className='shrimp1' alt="shrimp tail" />
+      <img src={ShrimpBottomRight} className='shrimp2' alt="shrimp tail" />
+      <img src={ShrimpTopLeft} className='shrimp3' alt="shrimp tail" />
+      <img src={ShrimpBottomRight} className='shrimp4' alt="shrimp tail" />
+      <img src={ShrimpTopLeft} className='shrimp5' alt="shrimp tail" />
 
-      {totalItems > 0 &&
-        <>
-          <img src={ShrimpTopLeft} className='shrimp1' alt="shrimp tail" />
-          <img src={ShrimpBottomRight} className='shrimp2' alt="shrimp tail" />
-          <img src={ShrimpTopLeft} className='shrimp3' alt="shrimp tail" />
-          <img src={ShrimpBottomRight} className='shrimp4' alt="shrimp tail" />
-          <img src={ShrimpTopLeft} className='shrimp5' alt="shrimp tail" />
-        </>
-      }
-
-      {totalItems > 0 && (
-        <CartNavbar totalItems={totalItems} subtotal={subtotal} />
-      )}
+      <CartNavbar totalItems={totalItems} subtotal={subtotal} />
 
       <div className='order-navigation-container'>
         <Link to="/menu">
@@ -94,48 +89,37 @@ const Cart = () => {
       </div>
 
       <Link to="/menu">
-        <button className="return-to-menu">
-          {totalItems === 0 ? 'Start Your Order' : 'Back to Menu'}
-        </button>
+        <button className="return-to-menu">Back to Menu</button>
       </Link>
 
-      {totalItems > 0 && (
-        <div className="cart-page-heading">
-          <h1>Review your order</h1>
-          <p className='subtotal'>subtotal: <span>${subtotal}</span></p>
-
-          <button className="empty-cart-button" onClick={handleEmptyCart}>
-            Empty Cart
-          </button>
-
-        </div>
-      )}
-
-      <div className="cart-items-container">
-        {totalItems === 0 ? (
-          <div className="empty-cart-container">
-            <h2>Your Shopping Cart is Empty</h2>
-            <FontAwesomeIcon icon={faSurprise} />
-            <h3>Browse our menu to begin adding items to your shopping cart.</h3>
-          </div>
-        ) : (
-          <>
-            <ul className="cart-items">
-              {cart.map((cartItem) => (
-                <CartItem
-                  key={cartItem.id}
-                  cartItem={cartItem}
-                  handleAdd={handleAdd}
-                  handleRemove={handleRemove}
-                  handleDeleteItem={handleDeleteItem}
-                />
-              ))}
-            </ul>
-          </>
-        )}
+      <div className="cart-page-heading">
+        <h1>Review your order</h1>
+        <p className='subtotal'>subtotal: <span>${subtotal}</span></p>
+        <button className="empty-cart-button" onClick={handleEmptyCart}>
+          Empty Cart
+        </button>
       </div>
 
+      <div className="cart-items-container">
+        <ul className="cart-items">
+          {cart.map((cartItem) => (
+            <CartItem
+              key={cartItem.id}
+              cartItem={cartItem}
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+              handleDeleteItem={handleDeleteItem}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
+    ) : (
+      <EmptyCart />
+    )}
+
+
+    </>
   );
 };
 
