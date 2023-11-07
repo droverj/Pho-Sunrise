@@ -11,18 +11,14 @@ const EmptyCart = () => {
       <Link to="/menu">
         <button className="return-to-menu">Start your order</button>
       </Link>
-      <div className='order-navigation-container'>
-        <Link to="/menu">
-          <button className='back-button'>Menu</button>
-        </Link>
-        <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
-        <span>Cart</span>
-      </div>
-
       <div className='empty-cart-container'>
-        <h2>Your Shopping Cart is Empty</h2>
+        <h2>it's empty</h2>
         <FontAwesomeIcon icon={faSurprise} />
-        <h3>Browse our menu to begin adding items to your shopping cart.</h3>
+        <p>Browse our
+          <Link to="/menu">
+            <button className="menu-link">menu</button>
+          </Link>
+          to begin adding items to your order.</p>
       </div>
     </div>
   )
