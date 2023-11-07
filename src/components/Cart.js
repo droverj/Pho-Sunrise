@@ -71,11 +71,15 @@ const Cart = () => {
   return (
     <div className="cart">
 
-      <img src={ShrimpTopLeft} className='shrimp1' alt="shrimp tail" />
-      <img src={ShrimpBottomRight} className='shrimp2' alt="shrimp tail" />
-      <img src={ShrimpTopLeft} className='shrimp3' alt="shrimp tail" />
-      <img src={ShrimpBottomRight} className='shrimp4' alt="shrimp tail" />
-      <img src={ShrimpTopLeft} className='shrimp5' alt="shrimp tail" />
+      {totalItems > 0 &&
+        <>
+          <img src={ShrimpTopLeft} className='shrimp1' alt="shrimp tail" />
+          <img src={ShrimpBottomRight} className='shrimp2' alt="shrimp tail" />
+          <img src={ShrimpTopLeft} className='shrimp3' alt="shrimp tail" />
+          <img src={ShrimpBottomRight} className='shrimp4' alt="shrimp tail" />
+          <img src={ShrimpTopLeft} className='shrimp5' alt="shrimp tail" />
+        </>
+      }
 
       {totalItems > 0 && (
         <CartNavbar totalItems={totalItems} subtotal={subtotal} />
