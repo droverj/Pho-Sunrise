@@ -84,4 +84,26 @@
     background-color: blue;
     box-shadow: none;
   }
+
+  button.checkout-button-disabled {
+    @include right-panel-button;
+    margin-top: 270px;
+    background-color: lightgrey;
+    cursor: default;
+    border: 1px solid silver;
+
+    @media (max-width: 1300px) {
+      margin-top: 240px;
+    }
+    @media (max-width: 1200px) {
+      margin-right: 40px;
+      margin-top: 220px;
+    }
+
+    @media (max-width: 1000px) {
+      margin-right: 20px;
+      width: 10vw;
+      padding: 10px;
+    }
+  }
 }
