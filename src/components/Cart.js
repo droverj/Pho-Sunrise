@@ -3,6 +3,7 @@ import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { canPlaceOrder } from '../utilities/canPlaceOrder';
 import CartItem from './CartItem';
 import CartNavbar from './CartNavbar';
 import EmptyCart from './EmptyCart';
@@ -14,6 +15,7 @@ import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
 const Cart = () => {
   const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
   const { cart, addToCart, removeFromCart, deleteItemFromCart, subtotal, totalItems, emptyCart } = useCart();
+  const orderingAvailable = canPlaceOrder();
 
   const handleAdd = (cartItem) => {
     addToCart(cartItem);
@@ -57,6 +59,10 @@ const Cart = () => {
           <Link to="/menu">
             <button className="return-to-menu">Back to Menu</button>
           </Link>
+
+          {!orderingAvailable &&
+            <p className='ordering-availability-notice'>Ordering is unavailable until 11:30AM.</p>
+          }
 
           <div className="cart-page-heading">
             <h1>Review your order</h1>

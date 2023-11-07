@@ -2,14 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
+import { canPlaceOrder } from '../utilities/canPlaceOrder';
 import '../styles/EmptyCart.scss'
 
 const EmptyCart = () => {
+  const orderingAvailable = canPlaceOrder();
+
   return (
     <div className="empty-cart">
       <Link to="/menu">
         <button className="return-to-menu">Start your order</button>
       </Link>
+
+      {!orderingAvailable &&
+        <p className='ordering-availability-notice'>Ordering is unavailable until 11:30AM.</p>
+      }
+
       <div className='empty-cart-container'>
         <h2>it's empty</h2>
         <FontAwesomeIcon icon={faSurprise} />
