@@ -40,10 +40,24 @@
     margin-right: 20px;
     text-transform: uppercase;
   }
-
   button.checkout-button:hover {
     background-color: blue;
     box-shadow: none;
+  }
+
+  button.checkout-button-disabled {
+    background-color: lightgrey;
+    color: white;
+    font-family: $primary-font;
+    font-weight: 200;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: $button-box-shadow;
+    cursor: default;
+    margin-right: 20px;
+    text-transform: uppercase;
   }
 }
 
@@ -62,7 +76,6 @@
     @include right-panel-button;
     margin-top: 270px;
     background-color: $button-colour;
-    // color: silver;
     border: 1px solid silver;
 
     @media (max-width: 1300px) {
