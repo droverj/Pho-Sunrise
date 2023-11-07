@@ -132,7 +132,7 @@ const Checkout = ({ userId }) => {
         <div>
           <div className='checkout-navigation-container'>
             <Link to="/cart">
-              <button className='back-btn'>Cart</button>
+              <button className='back-button'>Cart</button>
             </Link>
             <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
             <span>checkout</span>

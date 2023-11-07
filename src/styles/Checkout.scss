@@ -8,12 +8,12 @@
   .checkout-navigation-container {
     @include page-back-nav-container;
 
-    button.back-btn {
+    button.back-button {
       @include back-button;
       background-color: #ffffff;
     }
 
-    button.back-btn:hover {
+    button.back-button:hover {
       text-decoration: underline;
     }
 
