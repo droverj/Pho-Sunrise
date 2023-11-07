@@ -24,10 +24,10 @@
 
   ul {
     padding-left: 0;
-    // text-align: end;
     button {
       display: flex;
       justify-content: flex-end;
+      text-align: end;
       font-weight: 600;
       font-family: $primary-font;
       font-size: 15px;
@@ -38,8 +38,6 @@
       padding-right: 10px;
       cursor: pointer;
       border: none;
-      // background-color: $grey;
-      // color: white;
       background-color: $background-white;
       color: $grey;
       transition: background-color 0.5s ease;
@@ -49,8 +47,6 @@
       }
     }
     button:hover {
-      // background-color: white;
-      // color: $grey;
       background-color: $grey;
       color: white;
     }
