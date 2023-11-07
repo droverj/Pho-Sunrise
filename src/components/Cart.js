@@ -8,6 +8,9 @@ import CartItem from './CartItem';
 import CartNavbar from './CartNavbar';
 import '../styles/Cart.scss';
 
+import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
+import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
+
 const Cart = () => {
   const [showRemoveItemComponent, setShowRemoveItemComponent] = useState(false);
   const { cart, addToCart, removeFromCart, deleteItemFromCart, subtotal, totalItems, emptyCart } = useCart();
@@ -34,7 +37,7 @@ const Cart = () => {
   function canPlaceOrder() {
     const currentDay = new Date().getDay();
     const currentTime = new Date();
-    
+
     // Define the restaurant's hours
     const hours = [
       { day: 0, open: 11 * 60, close: 20 * 60 },
@@ -45,28 +48,34 @@ const Cart = () => {
       { day: 5, open: 11 * 60, close: 21 * 60 },
       { day: 6, open: 11 * 60, close: 21 * 60 },
     ];
-  
+
     const today = hours.find((hour) => hour.day === currentDay);
-  
+
     if (today) {
       const openTime = today.open;
       const closeTime = today.close;
-      
+
       // Convert the current time to minutes since midnight
       const currentMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
-      
+
       // Check if the current time is within the open and close times
       return currentMinutes >= openTime + 30 && currentMinutes <= closeTime - 30;
     }
-  
+
     return false; // Restaurant is closed today
   }
-  
+
   const orderAvailable = canPlaceOrder();
   console.log("within ordering hours: ", orderAvailable);
 
   return (
     <div className="cart">
+
+      <img src={ShrimpTopLeft} className='shrimp1' alt="shrimp tail" />
+      <img src={ShrimpBottomRight} className='shrimp2' alt="shrimp tail" />
+      <img src={ShrimpTopLeft} className='shrimp3' alt="shrimp tail" />
+      <img src={ShrimpBottomRight} className='shrimp4' alt="shrimp tail" />
+      <img src={ShrimpTopLeft} className='shrimp5' alt="shrimp tail" />
 
       {totalItems > 0 && (
         <CartNavbar totalItems={totalItems} subtotal={subtotal} />
