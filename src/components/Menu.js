@@ -66,6 +66,7 @@ const Menu = ({ items }) => {
           {menuDropped ? (
             <>
               <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
+              Hide
             </>
           ) : (
             <>
