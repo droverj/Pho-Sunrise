@@ -95,9 +95,9 @@ const Cart = () => {
       <div className="cart-page-heading">
         <h1>Review your order</h1>
         <p className='subtotal'>subtotal: <span>${subtotal}</span></p>
-        <button className="empty-cart-button" onClick={handleEmptyCart}>
+        {/* <button className="empty-cart-button" onClick={handleEmptyCart}>
           Empty Cart
-        </button>
+        </button> */}
       </div>
 
       <div className="cart-items-container">
