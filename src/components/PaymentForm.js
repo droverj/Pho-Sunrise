@@ -134,5 +134,4 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
   );
 };
 
-
 export default PaymentForm;
