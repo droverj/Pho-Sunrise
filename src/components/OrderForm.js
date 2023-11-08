@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/OrderForm.scss';
 
 const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, total, cart, totalItems }) => {
   const [validationErrors, setValidationErrors] = useState({});

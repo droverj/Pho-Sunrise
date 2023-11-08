@@ -111,7 +111,7 @@ const Checkout = ({ userId }) => {
             <div><FontAwesomeIcon icon={faArrowRightLong} className="right-arrow-icon" style={{ color: 'silver', transform: 'scaleX(1)' }} size="1x" /></div>
             <span>Contact Info</span>
           </div>
-          <div className='receipt-and-form-container'>
+          <div className='summary-and-form-container'>
             <OrderSummary />
             <div className='form-container'>
               <OrderForm

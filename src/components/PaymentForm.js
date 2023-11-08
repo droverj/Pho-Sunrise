@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements, AddressElement } from '@stripe/react-stripe-js';
+import '../styles/PaymentForm.scss';
 
 const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep, setStatus, setCurrentTime, orderData, orderItems }) => {
   const [paymentError, setPaymentError] = useState(null);

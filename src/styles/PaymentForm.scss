@@ -1,0 +1,57 @@
+@import 'variables';
+
+.receipt-and-form-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  padding: 0 20px;
+  padding-bottom: 50px;
+
+  // @media (max-width: 899px) {
+  //   flex-direction: column;
+  // }
+
+  // Checkout section of checkout form: Subtotal, HST, GST, total
+  .payment-summary {
+    @include summary-conatiners;
+    position: sticky;
+    top: 90px;
+    flex-shrink: 0;
+    font-size: calc(12px + .3vw);
+
+    .total {
+      font-weight: 800;
+    }
+
+    // Pay Now button
+    button {
+      background-color: $button-colour;
+      color: silver;
+      font-family: $primary-font;
+      font-weight: 200;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid silver;
+      border-radius: 10px;
+      box-shadow: $button-box-shadow;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background-color: blue;
+      box-shadow: none;
+    }
+  }
+
+  // .payment-form {
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 50%;
+  //   padding: 10px 30px;
+  //   padding-bottom: 30px;
+  //   border: 0.5px solid silver;
+  //   border-radius: 10px;
+  //   box-shadow: $hover-box-shadow;
+  //   margin-top: 20px;
+  // }
+}
