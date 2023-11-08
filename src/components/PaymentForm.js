@@ -85,8 +85,17 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
         <p>HST: ${HST}</p>
         <p>GST: ${GST}</p>
         <p className="total">Total: ${total}</p>
-        <button type="submit">Pay Now</button>
+        <button className='pay-now-button' type="submit">Pay Now</button>
       </div>
+
+      <div className='payment-summary-min-900px'>
+        <p>Subtotal: ${subtotal}</p>
+        <p className='tax'>HST: ${HST}</p>
+        <p className='tax'>GST: ${GST}</p>
+        <p className="total">Total: ${total}</p>
+      </div>
+      <button className='pay-now-button-min-900px' type="submit">Pay Now</button>
+
       <div className='payment-form'>
         <div className="form-group">
           <h4>Billing Details</h4>

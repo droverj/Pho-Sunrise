@@ -7,6 +7,9 @@
 
   .checkout-navigation-container {
     @include page-back-nav-container;
+    @media (max-width: 899px) {
+      display: none;
+    }
 
     button.back-button {
       @include back-button;

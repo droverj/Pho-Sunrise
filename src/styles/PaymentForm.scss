@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .receipt-and-form-container {
   display: flex;
@@ -7,24 +7,27 @@
   padding: 0 20px;
   padding-bottom: 50px;
 
-  // @media (max-width: 899px) {
-  //   flex-direction: column;
-  // }
+  @media (max-width: 899px) {
+    flex-direction: column;
+  }
 
-  // Checkout section of checkout form: Subtotal, HST, GST, total
+  // Subtotal, HST, GST, total, Pay Now button
   .payment-summary {
+    @media (max-width: 899px) {
+      display: none;
+    }
     @include summary-conatiners;
     position: sticky;
     top: 90px;
     flex-shrink: 0;
-    font-size: calc(12px + .3vw);
+    font-size: calc(12px + 0.3vw);
 
     .total {
       font-weight: 800;
     }
 
     // Pay Now button
-    button {
+    button.pay-now-button {
       background-color: $button-colour;
       color: silver;
       font-family: $primary-font;
@@ -43,15 +46,37 @@
     }
   }
 
-  // .payment-form {
-  //   display: flex;
-  //   flex-direction: column;
-  //   width: 50%;
-  //   padding: 10px 30px;
-  //   padding-bottom: 30px;
-  //   border: 0.5px solid silver;
-  //   border-radius: 10px;
-  //   box-shadow: $hover-box-shadow;
-  //   margin-top: 20px;
-  // }
+  .payment-summary-min-900px {
+    margin-top: 30px;
+    p {
+      margin: 10px 0;
+    }
+    .tax {
+      font-size: 12px;
+    }
+    .total {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    @media (min-width: 900px) {
+      display: none;
+    }
+  }
+  button.pay-now-button-min-900px {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    font-family: $primary-font;
+    font-size: 20px;
+    font-weight: 100;
+    background-color: $button-colour;
+    color: white;
+    padding: 20px 0;
+    cursor: pointer;
+
+    @media (min-width: 900px) {
+      display: none;
+    }
+  }
 }
