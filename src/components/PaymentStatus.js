@@ -10,7 +10,7 @@ const PaymentStatus = ({ status, currentTime, setStep }) => {
           <p>Your Phở Sunrise order will be ready for pickup in approximately 20 - 25 minutes.</p>
           <div className='pickup-location'>
           <p>Your pickup location:</p>
-          <span>1400 Ottawa Street South – Unit </span>
+          <span>1400 Ottawa Street South – Unit B22 </span>
           <span>Kitchener, ON, Canada</span>
           </div>
           <p>Feel free to call us at (519) 579-2016 with any questions.</p>
