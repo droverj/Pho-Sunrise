@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { orderFormValidationSchema } from '../utilities/validationSchemas';
 import '../styles/OrderForm.scss';
 
 const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, total, cart, totalItems }) => {
@@ -18,29 +19,44 @@ const OrderForm = ({ setOrderData, setOrderItems, setStep, userId, subtotal, tot
     instructions: '',
   });
 
-  const handleOrderSubmit = (event) => {
+  const handleOrderSubmit = async (event) => {
     event.preventDefault();
 
-    const orderData = {
-      ...orderInfo,
-      user_id: userId,
-      cart: formattedCart,
-      subtotal: formattedSubtotal,
-      total: formattedTotal,
-      items_quantity: totalItems,
-    };
+    try {
+      // Validate the form data against the schema
+      await orderFormValidationSchema.validate(orderInfo, { abortEarly: false });
 
-    const orderItems = cart.map((item) => ({
-      id: item.id,
-      quantity: item.quantity,
-      name: item.name,
-      item_option: item.item_option,
-      price: parseFloat(item.price),
-    }));
+      // If validation succeeds, clear any previous errors
+      setValidationErrors({});
 
-    setOrderData(orderData);
-    setOrderItems(orderItems);
-    setStep(2);
+      const orderData = {
+        ...orderInfo,
+        user_id: userId,
+        cart: formattedCart,
+        subtotal: formattedSubtotal,
+        total: formattedTotal,
+        items_quantity: totalItems,
+      };
+
+      const orderItems = cart.map((item) => ({
+        id: item.id,
+        quantity: item.quantity,
+        name: item.name,
+        item_option: item.item_option,
+        price: parseFloat(item.price),
+      }));
+
+      setOrderData(orderData);
+      setOrderItems(orderItems);
+      setStep(2);
+    } catch (errors) {
+      // If validation fails, set the validation errors state
+      const errorsObj = {};
+      errors.inner.forEach((error) => {
+        errorsObj[error.path] = error.message;
+      });
+      setValidationErrors(errorsObj);
+    }
   };
 
   const handleInputChange = (e) => {
