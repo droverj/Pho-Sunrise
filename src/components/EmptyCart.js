@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSurprise } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,11 @@ import '../styles/EmptyCart.scss'
 
 const EmptyCart = () => {
   const orderingAvailable = canPlaceOrder();
+
+    // Scroll to the top when component mounts
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className="empty-cart">
