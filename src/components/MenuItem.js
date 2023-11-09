@@ -27,8 +27,8 @@ const MenuItem = ({ groupedItem }) => {
         {item_options.map((option) => (
           <div key={option.id} className='option'>
             <div className='details'>
+              <span className='price'>${parseFloat(option.price).toFixed(2)}</span>
               <span>{option.item_option}</span>
-              <span>${parseFloat(option.price).toFixed(2)}</span>
             </div>
             <button
               onClick={() =>

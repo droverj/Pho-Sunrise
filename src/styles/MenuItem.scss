@@ -7,7 +7,6 @@
   box-shadow: $container-box-shadow;
 
   .item-name {
-    // background-color: $lighter-colour;
     color: white;
     color: #333;
     background-color: #ffffff;
@@ -48,7 +47,10 @@
         width: 50%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
+        span.price {
+          width: 30%;
+        }
       }
 
       @media (max-width: 899px) {
