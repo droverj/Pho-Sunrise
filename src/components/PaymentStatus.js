@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { formatTime } from '../utilities/formatTime';
 
 const PaymentStatus = ({ status, currentTime, setStep }) => {
+
+  // Scroll to the top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='payment-status'>

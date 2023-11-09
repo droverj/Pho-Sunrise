@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements, AddressElement } from '@stripe/react-stripe-js';
 import '../styles/PaymentForm.scss';
 
@@ -6,6 +6,11 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
   const [paymentError, setPaymentError] = useState(null);
   const stripe = useStripe();
   const elements = useElements();
+
+  // Scroll to the top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
