@@ -8,10 +8,10 @@ import '../styles/EmptyCart.scss'
 const EmptyCart = () => {
   const orderingAvailable = canPlaceOrder();
 
-    // Scroll to the top when component mounts
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  // Scroll to the top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="empty-cart">
