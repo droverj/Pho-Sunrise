@@ -25,6 +25,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 5px;
+    margin-bottom: 10px;
     .social-icons {
       display: flex;
       align-items: center;
@@ -39,16 +40,15 @@
       // Connect With Us
       display: flex;
       justify-content: flex-end;
-      font-size: calc(8px + 0.5rem);
+      font-size: calc(8px + 0.3rem);
       padding: 0;
       padding-right: 5px;
       margin: 0;
     }
     p.website-url {
       display: flex;
-      font-size: calc(8px + 0.5rem);
+      font-size: calc(8px + 0.3rem);
       justify-content: flex-start;
-      padding-left: 10px;
       margin: 8px 0;
     }
   }
