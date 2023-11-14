@@ -109,6 +109,10 @@ const Contact = ({ reviews, userId, updateReviews }) => {
           <p className='info'>(519) 579 - 2016</p>
         </div>
         <div className='restaurant-info'>
+          <p className='label'>Email:</p>
+          <p className='info'>info@phosunrise.ca</p>
+        </div>
+        <div className='restaurant-info'>
           <p className='label'>Address:</p>
           <p className='info'>
             1400 Ottawa Street South -Unit B22 <br />
