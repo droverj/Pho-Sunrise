@@ -1,4 +1,3 @@
-// MenuItem.js
 import React from 'react';
 import { useCart } from '../components/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

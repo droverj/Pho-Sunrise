@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/MenuDropdownNav.scss';
 
-const MenuDropdownSections = ({ groupedItems, toggleSidenav, scrollToSection, dropdownNavHeight }) => {
+const MenuDropdownNav = ({ groupedItems, toggleSidenav, scrollToSection, dropdownNavHeight }) => {
   return (
     <div className="menu-dropdown-sections" style={{ height: dropdownNavHeight }}>
       <ul>
@@ -23,4 +23,4 @@ const MenuDropdownSections = ({ groupedItems, toggleSidenav, scrollToSection, dr
   );
 };
 
-export default MenuDropdownSections;
+export default MenuDropdownNav;

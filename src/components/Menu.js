@@ -3,7 +3,7 @@ import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
 import MenuSections from './MenuSections';
 import MenuSideNav from './MenuSideNav';
-import MenuDropdownSections from './MenuDropdownSections';
+import MenuDropdownNav from './MenuDropdownNav';
 import { groupItemsBySection } from '../utilities/groupItemsBySection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -78,7 +78,7 @@ const Menu = ({ items }) => {
         {createSectionScrollButton('Drinks & Desserts', 11, 160)}
         {createSectionScrollButton('Vegetarian', 10, 160)}
         {createSectionScrollButton('Add Ons', 13, 160)}
-        <MenuDropdownSections
+        <MenuDropdownNav
           groupedItems={groupedItems}
           scrollToSection={scrollToSection}
           dropdownNavHeight={dropdownNavHeight}

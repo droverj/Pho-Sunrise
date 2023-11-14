@@ -26,7 +26,3 @@ export function groupItemsBySection(items) {
   const groupedItemsArray = Object.values(groupedItems);
   return groupedItemsArray;
 }
-
-
-
-

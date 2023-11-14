@@ -29,7 +29,8 @@
       display: flex;
       align-items: center;
       img {
-        width: 15px;
+        display: flex;
+        width: 20px;
         padding: 0 4px;
       }
     }
@@ -38,24 +39,17 @@
       // Connect With Us
       display: flex;
       justify-content: flex-end;
-      text-transform: uppercase;
-      font-size: 0.5rem;
+      font-size: calc(8px + 0.5rem);
       padding: 0;
       padding-right: 5px;
       margin: 0;
-      @media (max-width: 400px) {
-        font-size: 3vw;
-      }
     }
     p.website-url {
-      font-size: 0.5rem;
       display: flex;
+      font-size: calc(8px + 0.5rem);
       justify-content: flex-start;
       padding-left: 10px;
       margin: 8px 0;
-      @media (max-width: 400px) {
-        font-size: 3vw;
-      }
     }
   }
 
@@ -177,7 +171,7 @@
       cursor: pointer;
     }
     button.reviews-toggle:hover {
-      box-shadow: 0px 0px 5px -1px rgba(255,255,255,0.54);
+      box-shadow: 0px 0px 5px -1px rgba(255, 255, 255, 0.54);
     }
   }
 

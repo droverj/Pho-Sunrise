@@ -4,8 +4,12 @@ import VideoBanner from '../images/pho-sunrise-video-banner.mp4';
 import Hours from '../images/pho-sunrise-hours-grey.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
-import Chef from '../images/chef-image-primary.png';
+import GlutenFree from '../images/gluten-free.png';
+import DairyFree from '../images/dairy-free.png';
+import Vegetarian from '../images/vegetarian.png';
+import Pescatarian from '../images/pescatarian.png';
 import BobaDrinks from '../images/boba-drinks.png';
+import Chef from '../images/chef-image-primary.png';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -76,6 +80,25 @@ const Home = () => {
         </Link>
       </div>
 
+      <h4 className='menu-options-header'>offering a wide variety of menu options</h4>
+      <div className='menu-options-container'>
+        <div className='icon-container'>
+          <img src={GlutenFree} className='icon' alt="gluten free icon" />
+          <p>Gluten Free</p>
+        </div>
+        <div className='icon-container'>
+          <img src={DairyFree} className='icon' alt="dairy free icon" />
+          <p>Dairy Free</p>
+        </div>
+        <div className='icon-container'>
+          <img src={Vegetarian} className='icon' alt="vegetarian icon" />
+          <p>Vegetarian</p>
+        </div>
+        <div className='icon-container'>
+          <img src={Pescatarian} className='icon' alt="pescatarian icon" />
+          <p>Pescatarian</p>
+        </div>
+      </div>
 
       <div className='chefs-choice'>
         <div className='chef'>

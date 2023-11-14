@@ -89,7 +89,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       <div className="socials-container">
         <p className='website-url'>phosunrise.ca</p>
         <div className='social-icons'>
-          <p className='connect'>Connect With Us</p>
+          <p className='connect'>connect with us</p>
           <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
             <img src={InstagramIcon} alt="Instagram Icon" />
           </a>
