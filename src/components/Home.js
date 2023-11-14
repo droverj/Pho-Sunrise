@@ -72,7 +72,7 @@ const Home = () => {
       <div className='boba-drinks-container'>
         <div className='boba-drinks-sign'>
           <h4>Boba Tea</h4>
-          <p className='drink-options'>Slushie or Milk</p>
+          <p className='drink-options'>Milk or Slushy</p>
           <p className='boba-tea-price'>$5.95</p>
         </div>
         <Link to="/menu" className='drinks-link'>
