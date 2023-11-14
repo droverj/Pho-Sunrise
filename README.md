@@ -1,78 +1,119 @@
-## Compiling SASS
+# Phở Sunrise
 
-To compile SASS files to CSS, run the following command:
+![Project Logo](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/logo.png?raw=true)
+
+Phở Sunrise is a dynamic restaurant web application designed to enhance the online experience for the Kitchener location.
+
+---
+
+## Table of Contents
+
+- [About](#about)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Upcoming](#upcoming)
+- [Acknowledgements](#acknowledgements)
+- [Installation](#installation)
+
+---
+
+## About
+
+Phở Sunrise's web application blends vibrant visuals, intuitive menu navigation, and interactive features for a convenient and visually appealing platform. It aims to attract and retain customers, contributing to the restaurant's growth. The application provides advanced functionalities such as secure payments via Stripe and authentication via Auth0, ensuring a familiar, safe, and user-focused experience.
+
+---
+
+## Screenshots
+
+![navbar](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/navbar.png?raw=true)
+![home-page](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/home-page.png?raw=true)
+![hours-and-location](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/hours-and-location.png?raw=true)
+![signed-out-reviews](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
+![location](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/location.png?raw=true)
+![menu](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/menu.png?raw=true)
+![after-hours-cart](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/after-hours-cart.png?raw=true)
+
+---
+
+## Features
+
+- Captivating User Interface: Eye-catching and intuitive user interface with vibrant visuals, animations and a responsive design.
+
+- Efficient Menu Navigation: Users can swiftly navigate the menu with the ability to jump to their desired menu sections.
+
+- Interactive Contact Page: The contact page is transformed into an attractive and user-friendly resource, offering essential information, an interactive Google map, and links to the restaurant's socials.
+
+- Enhanced Home Page: A captivating and exciting hub for users, the home page provides a direct link to the SkipTheDishes delivery option, improving customer convenience.
+
+- Two Versions: Both a static website and a database-driven web application are provided. The static version offers an appealing visual experience, while the database-driven version includes advanced features for online ordering.
+
+  The repository for the static version can be found [here](https://github.com/droverj/static-pho-sunrise).
+
+#### Database-Driven Features:
+
+- Shopping Cart: Customers are provided with a convenient shopping cart to manage their orders.
+- Secure Payments: Integration with the Stripe API ensures secure and hassle-free online payments.
+- User Authentication: Secure logins with Auth0/Okta for a seamless and safe user experience.
+- Order Status Updates: Customers receive a notification when their payment is processed and are provided with an estimated pickup time.
+- Order Management: Users can easily modify their orders from within the cart.
+- Order Hour Restrictions: Prevent orders outside of available ordering hours.
+- Customer Reviews: Enable users to view, post and delete reviews, enhancing the restaurant's online reputation.
+- Interactive Review Form: Engage users with interactive star-based rating.
+
+---
+
+## Technologies
+
+- **Frontend:** HTML, CSS, JavaScript, React (including JSX), SASS
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL
+- **Other:** Canva (for graphic design assets), Mockaroo (for database seeding), ChatGPT (for content generation and guidance)
+
+---
+
+## Upcoming
+
+- Email receipts to customers for successfully placed orders.
+- Add images in the menu for the items.
+- Add an image gallery.
+- Real-time order tracking.
+- Create an admin CMS for managing menu items.
+
+---
+
+## Acknowledgements
+
+- **ChatGPT**: A thank you to ChatGPT for its invaluable contributions throughout the development process. It played a pivotal role in enhancing the overall functionality of this project through content generation and idea contribution.
+
+---
+
+## Installation
 
 ```bash
+# Clone the repository
+git clone git@github.com:droverj/pho-sunrise.git
+
+# Install dependencies in the project's root directory
+npm install
+
+# Compile SASS
 npm run compile-sass
+```
 
+#### Auth0 Api
+Create an Auth0 account and application.
 
-# Getting Started with Create React App
+#### Environment Variables
+Make a .env file using .env.example as a template. Fill in the required values.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Backend
+Clone [this](https://github.com/droverj/pho-sunrise-api.git) repository and follow the set up instructions.
 
-## Available Scripts
+```bash
+# Available Scripts
+npm start
+```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
