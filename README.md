@@ -32,7 +32,10 @@ Phở Sunrise's web application blends vibrant visuals, intuitive menu navigatio
 ![signed-out-reviews](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
 ![location](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/location.png?raw=true)
 ![menu](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/menu.png?raw=true)
+![responsive-menu](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
 ![after-hours-cart](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/after-hours-cart.png?raw=true)
+![cart](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
+![remove-items](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/remove-item.png?raw=true)
 
 ---
 
