@@ -120,11 +120,9 @@
     padding: 10px 0;
     color: white;
     font-weight: 200;
+    font-size: calc(14px + 1vw);
     text-transform: uppercase;
     background-color: $secondary-colour;
-    @media (max-width: 600px) {
-      font-size: 5vw;
-    }
   }
 
   .location-images {
