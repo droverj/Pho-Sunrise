@@ -5,7 +5,7 @@
     display: none;
   }
   width: 19.5vw;
-  margin-top: 100px;
+  margin-top: 90px;
   margin-bottom: 200px;
   height: 78.5vh;
   position: fixed;
@@ -30,11 +30,11 @@
       font-weight: 600;
       font-family: $primary-font;
       font-size: 15px;
-      font-size: calc(8px + .5vw);
+      font-size: calc(8px + .4vw);
       text-transform: uppercase;
       text-decoration: none;
       width: 100%;
-      padding: 10px 0;
+      padding: 9px 0;
       padding-right: 10px;
       cursor: pointer;
       border: none;
