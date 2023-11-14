@@ -2,7 +2,7 @@
 
 ![Project Logo](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/logo.png?raw=true)
 
-Phở Sunrise is a dynamic restaurant web application designed to enhance the online experience for the Kitchener location.
+Phở Sunrise is a dynamic restaurant web application designed to enhance the online experience for the Phở Sunrise Kitchener location.
 
 ---
 
@@ -77,11 +77,11 @@ Phở Sunrise's web application blends vibrant visuals, intuitive menu navigatio
 
 ## Upcoming
 
-- Email receipts to customers for successfully placed orders.
-- Add images in the menu for the items.
-- Add an image gallery.
-- Real-time order tracking.
-- Create an admin CMS for managing menu items.
+- Email receipts will be provided to customers for successfully placed orders.
+- Images will be added into the menu for the items.
+- An image gallery will be added to display menu items.
+- Real-time order tracking will be added.
+- An admin CMS for managing menu items will be created.
 
 ---
 
