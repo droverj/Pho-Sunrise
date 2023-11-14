@@ -65,6 +65,7 @@ const Menu = ({ items }) => {
         <button className='subnav-toggle' onClick={toggleSidenav}>
           {menuDropped ? (
             <>
+      <div className='menu-overlay'></div>
               <FontAwesomeIcon icon={faCaretUp} className="caret-icon" style={{ color: '#3c4755' }} size="2x" />
               Hide
             </>
