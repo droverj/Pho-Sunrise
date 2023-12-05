@@ -68,6 +68,7 @@
   // Serving Dine-in, takeout, delivery
   .serving-container {
     position: relative;
+    width: 100%;
     .serving {
       display: flex;
       align-items: center;
@@ -110,6 +111,19 @@
       a:hover {
         text-decoration: underline;
       }
+    }
+
+    .banner {
+      font-size: calc(30px + 1.5vw);
+      font-family: $primary-font;
+      font-weight: 600;
+      padding: 30px;
+      margin: 40px 0 30px 0;
+      background-color: rgb(138, 163, 124);
+      border: 10px solid rgb(36, 87, 36);
+      border-radius: 50px;
+      color: white;
+      text-shadow: -3px 2px 2px #000000;
     }
   }
 

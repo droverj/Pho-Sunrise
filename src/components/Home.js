@@ -53,6 +53,8 @@ const Home = () => {
           <p className='ordering-availability-notice'>Ordering is unavailable until 11:30AM.</p>
         )}
 
+        <div className='banner'>Thai Basil</div>
+
       </div>
 
       <div className='hours-and-location-container'>
