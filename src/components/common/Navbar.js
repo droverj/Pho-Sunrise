@@ -8,7 +8,7 @@ import LoginButton from './Login';
 import LogoutButton from './Logout';
 import Profile from './Profile';
 import SideNav from './SideNav';
-import SteamingBowl from '../../images/steaming-bowl.png'
+import Logo from '../../images/thai-basil-logo.png'
 import '../../styles/Navbar.scss';
 
 function Navbar() {
@@ -30,7 +30,7 @@ function Navbar() {
           <div className='home-links'>
             <li>
               <Link to="/" >
-                <img src={SteamingBowl} className='home-icon' alt="steaming bowl icon" />
+                <img src={Logo} className='home-icon' alt="steaming bowl icon" />
               </Link>
             </li>
             <li className='pho-sunrise-link'>
