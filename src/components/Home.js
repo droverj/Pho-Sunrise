@@ -31,7 +31,7 @@ const Home = () => {
             Takeout <br /> <br></br>
             (
             <a
-              href="https://www.skipthedishes.com/pho-sunrise-ottawa-street-south"
+              href="https://www.skipthedishes.com"
               target="_blank"
               rel="noopener noreferrer">
               SkipTheDishes</a>

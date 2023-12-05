@@ -1,8 +1,8 @@
-# Phở Sunrise
+# Thai Basil
 
 ![Project Logo](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/logo.png?raw=true)
 
-Phở Sunrise is a dynamic restaurant web application designed to enhance the online experience for the Phở Sunrise Kitchener location.
+Thai Basil is a dynamic restaurant web application designed to enhance the online experience for the Thai Basil Kitchener location.
 
 ---
 
@@ -20,7 +20,7 @@ Phở Sunrise is a dynamic restaurant web application designed to enhance the on
 
 ## About
 
-Phở Sunrise's web application blends vibrant visuals, intuitive menu navigation, and interactive features for a convenient and visually appealing platform. It aims to attract and retain customers, contributing to the restaurant's growth. The application provides advanced functionalities such as secure payments via Stripe and authentication via Auth0, ensuring a familiar, safe, and user-focused experience.
+Thai Basil's web application blends vibrant visuals, intuitive menu navigation, and interactive features for a convenient and visually appealing platform. It aims to attract and retain customers, contributing to the restaurant's growth. The application provides advanced functionalities such as secure payments via Stripe and authentication via Auth0, ensuring a familiar, safe, and user-focused experience.
 
 ---
 

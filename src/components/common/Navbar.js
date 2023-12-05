@@ -33,9 +33,9 @@ function Navbar() {
                 <img src={Logo} className='home-icon' alt="steaming bowl icon" />
               </Link>
             </li>
-            <li className='pho-sunrise-link'>
+            <li className='thai-basil-link'>
               <Link to="/" >
-                Phở Sunrise
+                Thai Basil
               </Link>
             </li>
           </div>

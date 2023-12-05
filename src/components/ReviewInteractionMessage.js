@@ -15,7 +15,7 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
                   document.body.classList.remove('no-scroll');
                 }}>X</button>
                 <h3>Are you sure you want to delete your review?</h3>
-                <p>You rated Phở Sunrise {review.rating}/5 stars.</p>
+                <p>You rated Thai Basil {review.rating}/5 stars.</p>
                 <p className='review-comment'>"{review.comment}"</p>
                 <div className='confirmation'>
                   <p>Delete your review?</p>
@@ -40,7 +40,7 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
       ) : (
         <>
           <div className='submitted-review'>
-            {reviewSubmitted ? 'Your Phở Sunrise review has been submitted successfully.' : null}
+            {reviewSubmitted ? 'Your Thai Basil review has been submitted successfully.' : null}
             <br /><span>Thank you</span>
             {!deleteConfirmed && (
               <div className='delete-review'>

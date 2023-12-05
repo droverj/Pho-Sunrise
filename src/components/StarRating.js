@@ -8,14 +8,14 @@ const StarRating = ({ starCount, rating, onRatingChange }) => {
     if (rating < 3) {
       return (
         <>
-          <p>You gave Phở Sunrise a {rating} star rating.</p>
+          <p>You gave Thai Basil  a {rating} star rating.</p>
           <p>Please tell us more about your experience so we can improve.</p>
         </>
       );
     } else if (rating > 2) {
       return (
         <>
-          <p>You gave Phở Sunrise a {rating} star rating!</p>
+          <p>You gave Thai Basil a {rating} star rating!</p>
           <p>We are pleased you enjoyed your experience with us.</p>
         </>
       );

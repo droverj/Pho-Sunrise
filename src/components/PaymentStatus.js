@@ -13,7 +13,7 @@ const PaymentStatus = ({ status, currentTime, setStep }) => {
       {status ? (
         <div className='complete'>
           <h3>Your payment was accepted at {formatTime(currentTime)}.</h3>
-          <p>Your Phở Sunrise order will be ready for pickup in approximately 20 - 25 minutes.</p>
+          <p>Your Thai Basil order will be ready for pickup in approximately 20 - 25 minutes.</p>
           <div className='pickup-location'>
             <p>Your pickup location:</p>
             <span>1400 Ottawa Street South – Unit B22 </span><br />
