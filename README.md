@@ -1,8 +1,8 @@
 # Thai Basil
 
-![Project Logo](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/logo.png?raw=true)
+![Project Logo](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/thai-basil-logo.png?raw=true)
 
-Thai Basil is a dynamic restaurant web application designed to enhance the online experience for the Thai Basil Kitchener location.
+Thai Basil Web App is a dynamic project showcasing my ability in creating responsive and engaging web experiences. The application includes authentication, a menu, and a cart for an engaging and interactive user experience.
 
 ---
 
@@ -20,22 +20,21 @@ Thai Basil is a dynamic restaurant web application designed to enhance the onlin
 
 ## About
 
-Thai Basil's web application blends vibrant visuals, intuitive menu navigation, and interactive features for a convenient and visually appealing platform. It aims to attract and retain customers, contributing to the restaurant's growth. The application provides advanced functionalities such as secure payments via Stripe and authentication via Auth0, ensuring a familiar, safe, and user-focused experience.
+Thai Basil's web application combines playful visual elements, an intuitively designed menu navigation system and interactive features. The application offers advanced functionalities, including secure payment processing through Stripe and authentication powered by Auth0. The app was designed with the hopes of being visually appealing and user-friendly while providing users with a sense of familiarity.
 
 ---
 
 ## Screenshots
 
-![navbar](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/navbar.png?raw=true)
-![home-page](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/home-page.png?raw=true)
-![hours-and-location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/hours-and-location.png?raw=true)
-![signed-out-reviews](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
-![location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/location.png?raw=true)
-![menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/menu.png?raw=true)
-![responsive-menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
-![after-hours-cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/after-hours-cart.png?raw=true)
-![cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
-![remove-items](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/remove-item.png?raw=true)
+![Home Page](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/home.png?raw=true)
+![Boba Drinks](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/boba-drinks.png?raw=true)
+![Location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/location.png?raw=true)
+![Signed-out Reviews](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
+![Contact](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/contact.png?raw=true)
+![Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/menu.png?raw=true)
+![Responsive Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
+![Cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
+![Remove Items](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/remove-item.png?raw=true)
 
 ---
 
@@ -49,19 +48,18 @@ Thai Basil's web application blends vibrant visuals, intuitive menu navigation, 
 
 - Enhanced Home Page: A captivating and exciting hub for users, the home page provides a direct link to the SkipTheDishes delivery option, improving customer convenience.
 
-- Two Versions: Both a static website and a database-driven web application are provided. The static version offers an appealing visual experience, while the database-driven version includes advanced features for online ordering.
-
-  The repository for the static version can be found [here](https://github.com/droverj/static-thai-basil).
-
-#### Database-Driven Features:
-
 - Shopping Cart: Customers are provided with a convenient shopping cart to manage their orders.
+  
 - Secure Payments: Integration with the Stripe API ensures secure and hassle-free online payments.
+  
 - User Authentication: Secure logins with Auth0/Okta for a seamless and safe user experience.
+  
 - Order Status Updates: Customers receive a notification when their payment is processed and are provided with an estimated pickup time.
+  
 - Order Management: Users can easily modify their orders from within the cart.
-- Order Hour Restrictions: Prevent orders outside of available ordering hours.
+  
 - Customer Reviews: Enable users to view, post and delete reviews, enhancing the restaurant's online reputation.
+  
 - Interactive Review Form: Engage users with interactive star-based rating.
 
 ---
@@ -79,15 +77,6 @@ Thai Basil's web application blends vibrant visuals, intuitive menu navigation, 
 
 - Email receipts will be provided to customers for successfully placed orders.
 - Images will be added into the menu for the items.
-- An image gallery will be added to display menu items.
-- Real-time order tracking will be added.
-- An admin CMS for managing menu items will be created.
-
----
-
-## Acknowledgements
-
-- **ChatGPT**: A thank you to ChatGPT for its invaluable contributions throughout the development process. It played a pivotal role in enhancing the overall functionality of this project through content generation and idea contribution.
 
 ---
 
