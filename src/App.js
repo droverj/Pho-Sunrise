@@ -23,7 +23,9 @@ function App() {
 
   // API data
   const [items, setItems] = useState([]);
+  // eslint-disable-next-line
   const [orders, setOrders] = useState([]);
+  // eslint-disable-next-line
   const [orderItems, setOrderItems] = useState([]);
   const [reviews, setReviews] = useState([]);
 

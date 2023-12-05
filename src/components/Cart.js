@@ -25,6 +25,7 @@ const Cart = () => {
     removeFromCart(cartItem);
   };
 
+  // eslint-disable-next-line
   const handleEmptyCart = () => {
     if (window.confirm('Are you sure you want to empty your cart?')) {
       emptyCart();
