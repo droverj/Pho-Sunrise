@@ -60,7 +60,7 @@ const Home = () => {
       <div className='hours-and-location-container'>
         <div className='contact-details-container'>
           <p className='located'>Located in the Sunrise Shopping Centre</p>
-          <p className='phone-number'>(519) 579 - 2016</p>
+          <p className='phone-number'>(999) 999 - 9999</p>
           <p className='address'>1400 Ottawa Street S<br /> Kitchener, ON</p>
         </div>
         <img src={Hours} className='restaurant-hours' alt="restaurant hours" />
