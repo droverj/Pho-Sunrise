@@ -1,6 +1,6 @@
 # Phở Sunrise
 
-![Project Logo](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/logo.png?raw=true)
+![Project Logo](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/logo.png?raw=true)
 
 Phở Sunrise is a dynamic restaurant web application designed to enhance the online experience for the Phở Sunrise Kitchener location.
 
@@ -26,16 +26,16 @@ Phở Sunrise's web application blends vibrant visuals, intuitive menu navigatio
 
 ## Screenshots
 
-![navbar](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/navbar.png?raw=true)
-![home-page](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/home-page.png?raw=true)
-![hours-and-location](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/hours-and-location.png?raw=true)
-![signed-out-reviews](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
-![location](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/location.png?raw=true)
-![menu](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/menu.png?raw=true)
-![responsive-menu](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
-![after-hours-cart](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/after-hours-cart.png?raw=true)
-![cart](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
-![remove-items](https://github.com/droverj/pho-sunrise/blob/main/src/images/screenshots/remove-item.png?raw=true)
+![navbar](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/navbar.png?raw=true)
+![home-page](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/home-page.png?raw=true)
+![hours-and-location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/hours-and-location.png?raw=true)
+![signed-out-reviews](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
+![location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/location.png?raw=true)
+![menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/menu.png?raw=true)
+![responsive-menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
+![after-hours-cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/after-hours-cart.png?raw=true)
+![cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
+![remove-items](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/remove-item.png?raw=true)
 
 ---
 
@@ -51,7 +51,7 @@ Phở Sunrise's web application blends vibrant visuals, intuitive menu navigatio
 
 - Two Versions: Both a static website and a database-driven web application are provided. The static version offers an appealing visual experience, while the database-driven version includes advanced features for online ordering.
 
-  The repository for the static version can be found [here](https://github.com/droverj/static-pho-sunrise).
+  The repository for the static version can be found [here](https://github.com/droverj/static-thai-basil).
 
 #### Database-Driven Features:
 
@@ -95,7 +95,7 @@ Phở Sunrise's web application blends vibrant visuals, intuitive menu navigatio
 
 ```bash
 # Clone the repository
-git clone git@github.com:droverj/pho-sunrise.git
+git clone git@github.com:droverj/thai-basil.git
 
 # Install dependencies in the project's root directory
 npm install
@@ -111,7 +111,7 @@ Create an Auth0 account and application.
 Make a .env file using .env.example as a template. Fill in the required values.
 
 #### Backend
-Clone [this](https://github.com/droverj/pho-sunrise-api.git) repository and follow the set up instructions.
+Clone [this](https://github.com/droverj/thai-basil-api.git) repository and follow the set up instructions.
 
 ```bash
 # Available Scripts
