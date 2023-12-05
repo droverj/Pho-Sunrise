@@ -87,13 +87,13 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       </Link>
 
       <div className="socials-container">
-        <p className='website-url'>phosunrise.ca</p>
+        <p className='website-url'>thaibasil.ca</p>
         <div className='social-icons'>
           <p className='connect'>connect with us</p>
-          <a href="https://www.instagram.com/explore/locations/268429957/pho-sunrise-vietnamese-cuisine/?hl=en" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <img src={InstagramIcon} alt="Instagram Icon" />
           </a>
-          <a href="https://www.facebook.com/phosunrise.ca/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <img src={FacebookIcon} alt="Facebook Icon" />
           </a>
         </div>
@@ -106,17 +106,18 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
         <div className='restaurant-info'>
           <p className='label'>Phone:</p>
-          <p className='info'>(519) 579 - 2016</p>
+          <p className='info'>(999) 999 - 9999</p>
         </div>
         <div className='restaurant-info'>
           <p className='label'>Email:</p>
-          <p className='info'>info@phosunrise.ca</p>
+          <p className='info'>info@thaibasil.ca</p>
         </div>
         <div className='restaurant-info'>
           <p className='label'>Address:</p>
           <p className='info'>
-            1400 Ottawa Street South -Unit B22 <br />
-            Kitchener, ON, Canada &nbsp; N2E 4E2
+            1400 Ottawa Street South <br />
+            Kitchener, ON, Canada <br />
+            N2E 4E2
           </p>
         </div>
 
