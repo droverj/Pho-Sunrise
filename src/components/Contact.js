@@ -5,7 +5,7 @@ import axios from 'axios';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import ReviewInteractionMessage from './ReviewInteractionMessage';
-import PhoSunrisePlates from '../images/Pho-Sunrise-Plates.jpeg';
+import ThaiBasilPlates from '../images/Thai-Basil-Plates.jpeg';
 import InstagramIcon from '../images/Instagram_Glyph_Gradient.png';
 import FacebookIcon from '../images/Facebook_Logo_Primary.png';
 import Building from '../images/thai-basil-building.png';
@@ -212,7 +212,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
       <div className='reservation'>
         <h3>Call to book your reservation</h3>
-        <img src={PhoSunrisePlates} className='plates-img' alt="Pho Sunrise Plates" />
+        <img src={ThaiBasilPlates} className='plates-img' alt="Thai Basil Plates" />
       </div>
     </div>
   );

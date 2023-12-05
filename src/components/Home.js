@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { canPlaceOrder } from '../utilities/canPlaceOrder';
-import VideoBanner from '../images/pho-sunrise-video-banner.mp4';
-import Hours from '../images/pho-sunrise-hours-grey.png';
+import Hours from '../images/thai-basil-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
 import GlutenFree from '../images/gluten-free.png';
@@ -9,7 +8,7 @@ import DairyFree from '../images/dairy-free.png';
 import Vegetarian from '../images/vegetarian.png';
 import Pescatarian from '../images/pescatarian.png';
 import BobaDrinks from '../images/boba-drinks.png';
-import Chef from '../images/chef-image-primary.png';
+import Chef from '../images/chef.png';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -54,10 +53,6 @@ const Home = () => {
           <p className='ordering-availability-notice'>Ordering is unavailable until 11:30AM.</p>
         )}
 
-        <video className='pho-sunrise-video-banner' autoPlay>
-          <source src={VideoBanner} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
 
       <div className='hours-and-location-container'>
