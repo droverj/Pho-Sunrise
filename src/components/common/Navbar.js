@@ -4,8 +4,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import CartTracker from '../CartTracker';
-import LoginButton from './Login';
-import LogoutButton from './Logout';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 import Profile from './Profile';
 import SideNav from './SideNav';
 import Logo from '../../images/thai-basil-logo.png'
