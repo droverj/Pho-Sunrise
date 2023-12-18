@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import ReviewInteractionMessage from './ReviewInteractionMessage';
@@ -13,6 +12,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.scss';
+
+// Import the supabase client
+import { createClient } from '@supabase/supabase-js';
+const supabase = createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpicHBpeHduZXpjYmhreWZianBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI4ODA4NDQsImV4cCI6MjAxODQ1Njg0NH0.T01TmidZaXsIIF8IgAmf5AHX6KjCSd74NHbtyYWi2is');
 
 const Contact = ({ reviews, userId, updateReviews }) => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
@@ -41,18 +44,24 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const handleReviewSubmit = async (newReview) => {
     try {
       const { rating, comment } = newReview;
-
-      await axios.post('http://localhost:8080/api/reviews', {
-        user_id: userId,
-        user_image: user.picture,
-        rating,
-        comment,
-      });
-
+  
+      const { data, error } = await supabase.from('reviews').upsert([
+        {
+          user_id: userId,
+          user_image: user.picture,
+          rating,
+          comment,
+        },
+      ]);
+  
+      if (error) {
+        throw error;
+      }
+  
       setReviewSubmitted(true);
       setReviewDeleted(false);
       updateReviews();
-      console.log('Review submitted successfully');
+      console.log('Review submitted successfully:', data);
     } catch (error) {
       console.error('Error submitting review:', error);
       if (error.response && error.response.data) {
@@ -63,8 +72,12 @@ const Contact = ({ reviews, userId, updateReviews }) => {
 
   const handleDeleteReview = async (review) => {
     try {
-      await axios.delete(`http://localhost:8080/api/reviews/${review.id}`);
-
+      const { error } = await supabase.from('reviews').delete().eq('id', review.id);
+  
+      if (error) {
+        throw error;
+      }
+  
       updateReviews();
       setDeleteConfirmed(null);
       setReviewDeleted(true);
@@ -75,7 +88,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         console.error('Server error:', error.response.data);
       }
     }
-  };
+  };  
 
   return (
     <div className="contact">

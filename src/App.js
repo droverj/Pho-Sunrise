@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
+import { createClient } from '@supabase/supabase-js';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
@@ -12,6 +12,8 @@ import Contact from './components/Contact';
 import Cart from './components/Cart';
 import { CartProvider } from './components/CartContext';
 import './App.scss';
+
+const supabase = createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpicHBpeHduZXpjYmhreWZianBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI4ODA4NDQsImV4cCI6MjAxODQ1Njg0NH0.T01TmidZaXsIIF8IgAmf5AHX6KjCSd74NHbtyYWi2is');
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -29,44 +31,71 @@ function App() {
   const [orderItems, setOrderItems] = useState([]);
   const [reviews, setReviews] = useState([]);
 
+
   useEffect(() => {
+
     const fetchData = async () => {
       try {
-        const itemsResponse = await axios.get('http://localhost:8080/api/items');
-        setItems(itemsResponse.data);
+        const { data: reviews } = await supabase.from('reviews').select('*');
+        setReviews(reviews);
 
-        const ordersResponse = await axios.get('http://localhost:8080/api/orders');
-        setOrders(ordersResponse.data);
+        const { data: items } = await supabase.from('items').select('*');
+        setItems(items);
 
-        const orderItemsResponse = await axios.get('http://localhost:8080/api/order-items');
-        setOrderItems(orderItemsResponse.data);
+        const { data: orders } = await supabase.from('orders').select('*');
+        setOrders(orders);
 
-        const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
-        setReviews(reviewsResponse.data);
+        const { data: orderItems } = await supabase.from('order_items').select('*');
+        setOrderItems(orderItems);
 
-        // All data has been fetched
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        // Handle errors here (e.g., display error message to the user)
+        // Handle errors here (e.g., display an error message to the user)
       }
     };
+
+    // const fetchData = async () => {
+    //   try {
+    //     const itemsResponse = await axios.get('http://localhost:8080/api/items');
+    //     setItems(itemsResponse.data);
+
+    //     const ordersResponse = await axios.get('http://localhost:8080/api/orders');
+    //     setOrders(ordersResponse.data);
+
+    //     const orderItemsResponse = await axios.get('http://localhost:8080/api/order-items');
+    //     setOrderItems(orderItemsResponse.data);
+
+    //     // const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
+    //     // setReviews(reviewsResponse.data);
+
+    //     // All data has been fetched
+    //     setIsLoading(false);
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //     // Handle errors here (e.g., display error message to the user)
+    //   }
+    // };
 
     fetchData();
   }, []);
 
   const updateReviews = async () => {
     try {
-      // Make a GET request to fetch the latest reviews from the server
-      const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
-      const updatedReviews = reviewsResponse.data;
-
+      // Use Supabase client to fetch the latest reviews
+      const { data: updatedReviews, error } = await supabase.from('reviews').select('*');
+  
+      if (error) {
+        throw error;
+      }
+  
       // Update the state with the latest reviews
       setReviews(updatedReviews);
     } catch (error) {
       console.error('Error fetching updated reviews:', error);
     }
   };
+  
 
   const addToCart = (item) => {
     setCart([...cart, item]);
