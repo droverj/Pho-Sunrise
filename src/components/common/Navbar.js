@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import CartTracker from '../CartTracker';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
-import Profile from './Profile';
+// import Profile from './Profile';
 import SideNav from './SideNav';
 import Logo from '../../images/thai-basil-logo.png'
 import '../../styles/Navbar.scss';
@@ -65,7 +65,7 @@ function Navbar() {
         <div className="nav-imports">
           <CartTracker className="cart-tracker" />
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-          <Profile />
+          {/* <Profile /> */}
         </div>
 
       </ul>
