@@ -4,7 +4,7 @@
 
 Thai Basil Web App is a dynamic project showcasing my ability in creating responsive and engaging web experiences. The application includes authentication, a menu, and a cart for an engaging and interactive user experience.
 
-The project can be viewed at https://thai-basil.netlify.app/
+The project can be viewed at [https://thai-basil.netlify.app/](https://thai-basil.netlify.app/)
 
 ---
 
