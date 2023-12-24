@@ -2,9 +2,11 @@
 
 ![Project Logo](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/thai-basil-logo.png?raw=true)
 
-Thai Basil Web App is a dynamic project showcasing my ability in creating responsive and engaging web experiences. The application includes authentication, a menu, and a cart for an engaging and interactive user experience.
+Thai Basil Web App is a dynamic project showcasing my ability in creating responsive and engaging web experiences. The application includes authentication, stripe payments, a menu and a cart for an engaging and interactive user experience.
 
-The project can be viewed at [https://thai-basil.netlify.app/](https://thai-basil.netlify.app/)
+This project is hosted on Netlify and uses Supabase for backend services.
+
+You can explore the Thai Basil Web App by [clicking here](https://thai-basil.netlify.app/).
 
 ---
 
@@ -69,7 +71,7 @@ Thai Basil's web application combines playful visual elements, an intuitively de
 ## Technologies
 
 - **Frontend:** HTML, CSS, JavaScript, React (including JSX), SASS
-- **Backend:** Node.js, Express
+- **Backend:** Supabase
 - **Database:** PostgreSQL
 - **Other:** Canva (for graphic design assets), Mockaroo (for database seeding), ChatGPT (for content generation and guidance)
 
