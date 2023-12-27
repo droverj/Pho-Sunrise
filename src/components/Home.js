@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { canPlaceOrder } from '../utilities/canPlaceOrder';
 import Hours from '../images/thai-basil-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
@@ -12,7 +11,6 @@ import Chef from '../images/chef.png';
 import '../styles/Home.scss';
 
 const Home = () => {
-  const orderingAvailable = canPlaceOrder();
 
   return (
     <div className="home">
@@ -39,19 +37,15 @@ const Home = () => {
           </span>
         </div>
 
-        {orderingAvailable ? (
-          <div className='takeout-button-container'>
-            <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
-            <Link to="/menu">
-              <button className="place-order-button" >
-                ORDER TAKEOUT
-              </button>
-            </Link>
-            <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
-          </div>
-        ) : (
-          <p className='ordering-availability-notice'>Ordering is unavailable until 11:30AM.</p>
-        )}
+        <div className='takeout-button-container'>
+          <img src={ShrimpTopLeft} className='shrimp' alt="shrimp tail" />
+          <Link to="/menu">
+            <button className="place-order-button" >
+              ORDER TAKEOUT
+            </button>
+          </Link>
+          <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
+        </div>
 
         <div className='banner'>Thai Basil</div>
 
