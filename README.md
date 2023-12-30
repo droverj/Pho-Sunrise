@@ -111,10 +111,6 @@ git clone git@github.com:droverj/thai-basil.git
 # Install dependencies in the project's root directory
 npm install
 
-# Compile SASS
-npm run compile-sass
-```
-
 #### Auth0 Api
 Create an Auth0 account and application.
 
