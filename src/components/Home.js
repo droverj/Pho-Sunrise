@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { getDateTwoWeeksFromNow } from '../utilities/getDateTwoWeeksFromNow';
 import Hours from '../images/thai-basil-hours.png';
 import ShrimpTopLeft from '../images/shrimp-tail-left-top-white.png';
 import ShrimpBottomRight from '../images/shrimp-tail-bottom-right-white.png';
@@ -11,6 +12,8 @@ import Chef from '../images/chef.png';
 import '../styles/Home.scss';
 
 const Home = () => {
+
+  const date = getDateTwoWeeksFromNow();
 
   return (
     <div className="home">
@@ -48,12 +51,13 @@ const Home = () => {
         </div>
 
         <div className='coupon-container'>
-          <h2>SAVE 10%</h2>
-          <p>OFF YOUR ORDER</p>
-          <p>Online only</p>
-          <h3>Offer valid until DATE</h3>
+          <h2>save 10%</h2>
+          <h3>off your entire order</h3>
+          <p>online only</p>
+          <p>offer valid until DATE</p>
         </div>
-        <div className='banner'>Thai Basil</div>
+
+        {/* <div className='banner'>Thai Basil</div> */}
 
       </div>
 
