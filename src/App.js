@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { CartProvider } from './providers/CartContext';
@@ -14,7 +14,7 @@ import Cart from './components/Cart';
 import './App.scss';
 
 function App() {
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
   const { user } = useAuth0();
 
@@ -102,7 +102,7 @@ function App() {
               />
               <Route
                 path="/temp"
-                element={<Cart cart={cart} />}
+                element={<Cart />}
               // element={<Cart cart={cart} removeFromCart={removeFromCart} />}
               />
             </Routes>
