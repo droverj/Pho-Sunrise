@@ -22,7 +22,7 @@ Utilize the following Canadian test card number provided by Stripe for successfu
 
 For detailed information on testing cards with Stripe, refer to their [documentation](https://stripe.com/docs/testing).
 
-We appreciate your understanding and support. Feel free to reach out if you have any questions or feedback.
+Feel free to reach out if you have any questions or feedback.
 
 Thank you!
 
