@@ -22,6 +22,18 @@
     flex-shrink: 0;
     font-size: calc(12px + 0.3vw);
 
+    .promo-container {
+      display: flex;
+      margin: 10px 0;
+      p {
+        margin: 0;
+      }
+      span {
+        margin-left: 4px;
+        color: red;
+      }
+    }
+
     .total {
       font-weight: 800;
     }
@@ -54,6 +66,19 @@
     .tax {
       font-size: 12px;
     }
+    .promo-container {
+      display: flex;
+      margin: 10px 0;
+      font-size: 12px;
+      p {
+        margin: 0;
+      }
+      span {
+        margin-left: 4px;
+        color: red;
+      }
+    }
+
     .total {
       font-size: 20px;
       font-weight: 600;

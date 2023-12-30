@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements, AddressElement } from '@stripe/react-stripe-js';
+import { calculateDiscount } from '../utilities/calculateDiscount';
 import '../styles/PaymentForm.scss';
 
 const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep, setStatus, setCurrentTime, orderData, orderItems }) => {
   const [paymentError, setPaymentError] = useState(null);
   const stripe = useStripe();
   const elements = useElements();
+  const discount = calculateDiscount(total);
+  const totalWithDiscount = (total - discount).toFixed(2);
+  const formattedDiscount  = discount * 100;
+  const amountWithDiscount = (amount - formattedDiscount);
 
   // Scroll to the top when component mounts
   useEffect(() => {
@@ -47,7 +52,7 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
           },
           body: JSON.stringify({
             paymentMethodId: paymentMethod.id,
-            amount,
+            amount: amountWithDiscount,
           }),
         });
 
@@ -89,7 +94,11 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
         <p>Subtotal: ${subtotal}</p>
         <p>HST: ${HST}</p>
         <p>GST: ${GST}</p>
-        <p className="total">Total: ${total}</p>
+        <div className='promo-container'>
+          <p>PROMO:</p>
+          <span>-${discount}</span>
+        </div>
+        <p className="total">Total: ${totalWithDiscount}</p>
         <button className='pay-now-button' type="submit">Pay Now</button>
       </div>
 
@@ -97,7 +106,11 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
         <p>Subtotal: ${subtotal}</p>
         <p className='tax'>HST: ${HST}</p>
         <p className='tax'>GST: ${GST}</p>
-        <p className="total">Total: ${total}</p>
+        <div className='promo-container'>
+          <p>PROMO:</p>
+          <span>-${discount}</span>
+        </div>
+        <p className="total">Total: ${totalWithDiscount}</p>
       </div>
       <button className='pay-now-button-min-900px' type="submit">Pay Now</button>
 
