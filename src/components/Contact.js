@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useSupabase } from '../providers/SupabaseContext';
 import { Link } from 'react-router-dom';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
@@ -13,11 +14,9 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.scss';
 
-// Import the supabase client
-import { createClient } from '@supabase/supabase-js';
-const supabase = createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpicHBpeHduZXpjYmhreWZianBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI4ODA4NDQsImV4cCI6MjAxODQ1Njg0NH0.T01TmidZaXsIIF8IgAmf5AHX6KjCSd74NHbtyYWi2is');
 
-const Contact = ({ reviews, userId, updateReviews }) => {
+const Contact = ({userId}) => {
+  const supabase = useSupabase();
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
   const [deleteConfirmed, setDeleteConfirmed] = useState(null);
@@ -25,6 +24,41 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const [reviewDeleted, setReviewDeleted] = useState(false);
   const [dropdownDisplay, setDropdownDisplay] = useState('none');
   const [displayReviews, setDisplayReviews] = useState(false);
+
+  const [reviews, setReviews] = useState([]);
+
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const { data: reviews } = await supabase.from('reviews').select('*');
+        setReviews(reviews);
+
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle errors here (e.g., display an error message to the user)
+      }
+    };
+
+    fetchData();
+  }, [supabase]);
+
+  const updateReviews = async () => {
+    try {
+      // Use Supabase client to fetch the latest reviews
+      const { data: updatedReviews, error } = await supabase.from('reviews').select('*');
+
+      if (error) {
+        throw error;
+      }
+
+      // Update the state with the latest reviews
+      setReviews(updatedReviews);
+    } catch (error) {
+      console.error('Error fetching updated reviews:', error);
+    }
+  };
 
   // Checks if the user has submitted a review after page refresh
   useEffect(() => {
@@ -44,7 +78,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const handleReviewSubmit = async (newReview) => {
     try {
       const { rating, comment } = newReview;
-  
+
       const { data, error } = await supabase.from('reviews').upsert([
         {
           user_id: userId,
@@ -53,11 +87,11 @@ const Contact = ({ reviews, userId, updateReviews }) => {
           comment,
         },
       ]);
-  
+
       if (error) {
         throw error;
       }
-  
+
       setReviewSubmitted(true);
       setReviewDeleted(false);
       updateReviews();
@@ -73,11 +107,11 @@ const Contact = ({ reviews, userId, updateReviews }) => {
   const handleDeleteReview = async (review) => {
     try {
       const { error } = await supabase.from('reviews').delete().eq('id', review.id);
-  
+
       if (error) {
         throw error;
       }
-  
+
       updateReviews();
       setDeleteConfirmed(null);
       setReviewDeleted(true);
@@ -88,7 +122,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
         console.error('Server error:', error.response.data);
       }
     }
-  };  
+  };
 
   return (
     <div className="contact">
@@ -178,8 +212,8 @@ const Contact = ({ reviews, userId, updateReviews }) => {
       </div>
 
       {/* <div className='reviews-heading-container'> */}
-        <div className='reviews-heading'>
-          See what our guests are saying
+      <div className='reviews-heading'>
+        See what our guests are saying
         <button className='reviews-toggle' onClick={toggleReviews}>
           {displayReviews ? (
             <>
@@ -193,7 +227,7 @@ const Contact = ({ reviews, userId, updateReviews }) => {
             </>
           )}
         </button>
-        </div>
+      </div>
       {/* </div> */}
       <Reviews reviews={reviews} dropdownDisplay={dropdownDisplay} />
 

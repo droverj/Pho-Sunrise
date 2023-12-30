@@ -34,7 +34,7 @@ const Menu = () => {
     };
 
     fetchMenuItems();
-  }, []);
+  }, [supabase]);
 
   const toggleSidenav = () => {
     if (menuDropped) {
