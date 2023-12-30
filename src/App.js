@@ -11,6 +11,7 @@ import Checkout from './components/Checkout';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import { CartProvider } from './components/CartContext';
+import { SupabaseProvider } from './providers/SupabaseContext';
 import './App.scss';
 
 const supabase = createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpicHBpeHduZXpjYmhreWZianBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI4ODA4NDQsImV4cCI6MjAxODQ1Njg0NH0.T01TmidZaXsIIF8IgAmf5AHX6KjCSd74NHbtyYWi2is');
@@ -24,11 +25,6 @@ function App() {
   const userId = user ? user.sub : null;
 
   // API data
-
-  // eslint-disable-next-line
-  const [orders, setOrders] = useState([]);
-  // eslint-disable-next-line
-  const [orderItems, setOrderItems] = useState([]);
   const [reviews, setReviews] = useState([]);
 
 
@@ -38,12 +34,6 @@ function App() {
       try {
         const { data: reviews } = await supabase.from('reviews').select('*');
         setReviews(reviews);
-
-        const { data: orders } = await supabase.from('orders').select('*');
-        setOrders(orders);
-
-        const { data: orderItems } = await supabase.from('order_items').select('*');
-        setOrderItems(orderItems);
 
         setIsLoading(false);
       } catch (error) {
@@ -92,39 +82,41 @@ function App() {
   }, []);
 
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Navbar />
-        <ScrollToTop />
-        <div className="main-body">
-          {isLoading ? (
-            <p>Loading...</p> // replace this with a loading spinner
-          ) : (
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/checkout" element={<Checkout userId={userId} />} />
-              <Route
-                path="/contact"
-                element={<Contact userId={userId} reviews={reviews} updateReviews={updateReviews} />}
-              />
-              <Route
-                path="/menu"
-                element={<Menu />}
-              />
-              <Route
-                path="/cart"
-                element={<Cart/>}
-              />
-              <Route
-                path="/temp"
-                element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-              />
-            </Routes>
-          )}
-        </div>
-        <Footer />
-      </BrowserRouter>
-    </CartProvider>
+    <SupabaseProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <Navbar />
+          <ScrollToTop />
+          <div className="main-body">
+            {isLoading ? (
+              <p>Loading...</p> // replace this with a loading spinner
+            ) : (
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/checkout" element={<Checkout userId={userId} />} />
+                <Route
+                  path="/contact"
+                  element={<Contact userId={userId} reviews={reviews} updateReviews={updateReviews} />}
+                />
+                <Route
+                  path="/menu"
+                  element={<Menu />}
+                />
+                <Route
+                  path="/cart"
+                  element={<Cart />}
+                />
+                <Route
+                  path="/temp"
+                  element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+                />
+              </Routes>
+            )}
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </SupabaseProvider>
   );
 }
 

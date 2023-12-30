@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../components/CartContext';
+import { useSupabase } from '../providers/SupabaseContext';
 import { Link } from 'react-router-dom';
-import { createClient } from '@supabase/supabase-js';
 import { groupItemsBySection } from '../utilities/groupItemsBySection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -12,14 +12,16 @@ import MenuDropdownNav from './MenuDropdownNav';
 import '../styles/Menu.scss';
 import '../styles/MenuDropdownNav.scss';
 
-const supabase = createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpicHBpeHduZXpjYmhreWZianBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI4ODA4NDQsImV4cCI6MjAxODQ1Njg0NH0.T01TmidZaXsIIF8IgAmf5AHX6KjCSd74NHbtyYWi2is');
 
 const Menu = () => {
+  const supabase = useSupabase();
+  const { totalItems } = useCart();
+
   const [dropdownNavHeight, setdropdownNavHeight] = useState('0vh');
   const [menuDropped, setMenuDropped] = useState(false);
   const [items, setItems] = useState([]);
+  
   const groupedItems = groupItemsBySection(items);
-  const { totalItems } = useCart();
 
   useEffect(() => {
     const fetchMenuItems = async () => {
