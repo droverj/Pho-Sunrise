@@ -20,7 +20,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const { user } = useAuth0();
-  
+
   const userId = user ? user.sub : null;
 
   // API data
@@ -62,21 +62,16 @@ function App() {
     try {
       // Use Supabase client to fetch the latest reviews
       const { data: updatedReviews, error } = await supabase.from('reviews').select('*');
-  
+
       if (error) {
         throw error;
       }
-  
+
       // Update the state with the latest reviews
       setReviews(updatedReviews);
     } catch (error) {
       console.error('Error fetching updated reviews:', error);
     }
-  };
-  
-
-  const addToCart = (item) => {
-    setCart([...cart, item]);
   };
 
   const removeFromCart = (item) => {
@@ -117,10 +112,14 @@ function App() {
               />
               <Route
                 path="/menu"
-                element={<Menu items={items} addToCart={addToCart} removeFromCart={removeFromCart} />}
+                element={<Menu items={items} />}
               />
               <Route
                 path="/cart"
+                element={<Cart/>}
+              />
+              <Route
+                path="/temp"
                 element={<Cart cart={cart} removeFromCart={removeFromCart} />}
               />
             </Routes>
