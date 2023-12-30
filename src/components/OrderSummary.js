@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../components/CartContext';
+import { useCart } from '../providers/CartContext';
 import '../styles/OrderSummary.scss';
 
 const OrderSummary = () => {

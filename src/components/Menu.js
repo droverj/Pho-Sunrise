@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useCart } from '../components/CartContext';
+import { useCart } from '../providers/CartContext';
 import { useSupabase } from '../providers/SupabaseContext';
 import { Link } from 'react-router-dom';
 import { groupItemsBySection } from '../utilities/groupItemsBySection';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../components/CartContext';
+import { useCart } from '../providers/CartContext';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';

@@ -10,7 +10,7 @@ import Menu from './components/Menu';
 import Checkout from './components/Checkout';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
-import { CartProvider } from './components/CartContext';
+import { CartProvider } from './providers/CartContext';
 import { SupabaseProvider } from './providers/SupabaseContext';
 import './App.scss';
 

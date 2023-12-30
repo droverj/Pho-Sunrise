@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
-import { useCart } from '../components/CartContext';
+import { useCart } from '../providers/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import OrderSummary from './OrderSummary';
