@@ -24,7 +24,7 @@ function App() {
   const userId = user ? user.sub : null;
 
   // API data
-  const [items, setItems] = useState([]);
+
   // eslint-disable-next-line
   const [orders, setOrders] = useState([]);
   // eslint-disable-next-line
@@ -38,9 +38,6 @@ function App() {
       try {
         const { data: reviews } = await supabase.from('reviews').select('*');
         setReviews(reviews);
-
-        const { data: items } = await supabase.from('items').select('*');
-        setItems(items);
 
         const { data: orders } = await supabase.from('orders').select('*');
         setOrders(orders);
@@ -112,7 +109,7 @@ function App() {
               />
               <Route
                 path="/menu"
-                element={<Menu items={items} />}
+                element={<Menu />}
               />
               <Route
                 path="/cart"
