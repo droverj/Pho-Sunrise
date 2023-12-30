@@ -51,7 +51,6 @@ const Checkout = ({ userId }) => {
 
       if (orderResponse.ok) {
         const orderResponseData = await orderResponse.json();
-        console.log('Order submitted successfully');
 
         // Step 2: Extract the order_id from the response
         const orderId = orderResponseData.order.id;

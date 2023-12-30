@@ -57,9 +57,6 @@ const PaymentForm = ({ subtotal, HST, GST, total, amount, onSubmitOrder, setStep
         });
 
         if (response.ok) {
-          // Payment succeeded, handle success on the frontend (e.g., show a confirmation message)
-          console.log('Payment succeeded!');
-
           // Clear form fields on successful payment
           onSubmitOrder(orderData, orderItems);
           setStep(3);
