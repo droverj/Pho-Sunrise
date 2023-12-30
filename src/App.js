@@ -55,28 +55,6 @@ function App() {
       }
     };
 
-    // const fetchData = async () => {
-    //   try {
-    //     const itemsResponse = await axios.get('http://localhost:8080/api/items');
-    //     setItems(itemsResponse.data);
-
-    //     const ordersResponse = await axios.get('http://localhost:8080/api/orders');
-    //     setOrders(ordersResponse.data);
-
-    //     const orderItemsResponse = await axios.get('http://localhost:8080/api/order-items');
-    //     setOrderItems(orderItemsResponse.data);
-
-    //     // const reviewsResponse = await axios.get('http://localhost:8080/api/reviews');
-    //     // setReviews(reviewsResponse.data);
-
-    //     // All data has been fetched
-    //     setIsLoading(false);
-    //   } catch (error) {
-    //     console.error('Error fetching data:', error);
-    //     // Handle errors here (e.g., display error message to the user)
-    //   }
-    // };
-
     fetchData();
   }, []);
 
