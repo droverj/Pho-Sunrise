@@ -41,7 +41,7 @@ const ReviewInteractionMessage = ({ reviews, userId, deleteConfirmed, reviewSubm
         <>
           <div className='submitted-review'>
             {reviewSubmitted ? 'Your Thai Basil review has been submitted successfully.' : null}
-            <br /><span>Thank you</span>
+            <br /><span>Thank you.</span>
             {!deleteConfirmed && (
               <div className='delete-review'>
                 <p>Delete your review?</p>
