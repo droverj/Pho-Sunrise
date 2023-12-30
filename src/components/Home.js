@@ -47,6 +47,12 @@ const Home = () => {
           <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
         </div>
 
+        <div className='coupon-container'>
+          <h2>SAVE 10%</h2>
+          <p>OFF YOUR ORDER</p>
+          <p>Online only</p>
+          <h3>Offer valid until DATE</h3>
+        </div>
         <div className='banner'>Thai Basil</div>
 
       </div>
