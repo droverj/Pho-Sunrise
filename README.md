@@ -8,6 +8,19 @@ This project is hosted on Netlify and uses Supabase for backend services.
 
 You can explore the Thai Basil Web App by [clicking here](https://thai-basil.netlify.app/).
 
+## Important Information Regarding Payments
+
+**Attention:** Please be aware that while the Thai Basil app is live, payment processing capabilities are limited to testing mode only.
+
+If you wish to explore the full functionality of the app, including payment processing, we recommend running the project locally on your machine.
+
+Utilize the following Canadian test card number provided by Stripe for successful payments:
+   - Test Card Number: `4000001240000000` (Failed Payment Test Card: `4000 0000 0000 0341`)
+
+We appreciate your understanding and support. Feel free to reach out if you have any questions or feedback.
+
+Thank you!
+
 ---
 
 ## Table of Contents
