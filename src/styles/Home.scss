@@ -104,9 +104,9 @@
 
     .coupon-container {
       width: 100%;
-      border: 10px dashed $logo-light-green;
+      border: 8px dashed $logo-light-green;
       text-transform: uppercase;
-      margin: 10px 0;
+      margin: 40px 0 10px 0;
       padding: 10px;
       box-sizing: border-box;
       h2 {
@@ -124,6 +124,7 @@
       p {
         font-weight: 600;
         color: #333;
+        font-size: .7rem;
       }
     }
 

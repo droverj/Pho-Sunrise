@@ -54,7 +54,7 @@ const Home = () => {
           <h2>save 10%</h2>
           <h3>off your entire order</h3>
           <p>online only</p>
-          <p>offer valid until DATE</p>
+          <p>offer valid until {date}</p>
         </div>
 
         {/* <div className='banner'>Thai Basil</div> */}
