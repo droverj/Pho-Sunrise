@@ -12,7 +12,7 @@ You can explore the Thai Basil Web App by [clicking here](https://thai-basil.net
 
 **Attention:** Please be aware that while the Thai Basil app is live, payment processing capabilities are limited to testing mode only.
 
-If you wish to explore the full functionality of the app, including payment processing, we recommend running the project locally on your machine.
+If you wish to explore the full functionality of the app, including payment processing, I recommend running the project locally on your machine.
 
 Utilize the following Canadian test card number provided by Stripe for successful payments:
    - Test Card Number: `4000001240000000` (Failed Payment Test Card: `4000 0000 0000 0341`)
