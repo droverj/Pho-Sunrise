@@ -17,7 +17,7 @@ If you wish to explore the full functionality of the app, including payment proc
 Utilize the following Canadian test card number provided by Stripe for successful payments:
    - Test Card Number: `4000001240000000` (Failed Payment Test Card: `4000 0000 0000 0341`)
    - Use a valid future date, such as 12/34.
-   - Use any three-digit CVC (four digits for American Express cards).
+   - Use any three-digit CVC.
    - Use any value you like for other form fields.
 
 For detailed information on testing cards with Stripe, refer to their [documentation](https://stripe.com/docs/testing).
