@@ -14,53 +14,8 @@ import Cart from './components/Cart';
 import './App.scss';
 
 function App() {
-  // const [cart, setCart] = useState([]);
-
   const { user } = useAuth0();
-
   const userId = user ? user.sub : null;
-
-  // API data
-  // const [reviews, setReviews] = useState([]);
-
-
-  // useEffect(() => {
-
-  //   const fetchData = async () => {
-  //     try {
-  //       const { data: reviews } = await supabase.from('reviews').select('*');
-  //       setReviews(reviews);
-
-  //       setIsLoading(false);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //       // Handle errors here (e.g., display an error message to the user)
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // const updateReviews = async () => {
-  //   try {
-  //     // Use Supabase client to fetch the latest reviews
-  //     const { data: updatedReviews, error } = await supabase.from('reviews').select('*');
-
-  //     if (error) {
-  //       throw error;
-  //     }
-
-  //     // Update the state with the latest reviews
-  //     setReviews(updatedReviews);
-  //   } catch (error) {
-  //     console.error('Error fetching updated reviews:', error);
-  //   }
-  // };
-
-  // const removeFromCart = (item) => {
-  //   const updatedCart = cart.filter((cartItem) => cartItem.name !== item.name);
-  //   setCart(updatedCart);
-  // };
 
   useEffect(() => {
     // Add an event listener to the window object
