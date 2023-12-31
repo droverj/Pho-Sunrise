@@ -1,10 +1,10 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
 const SupabaseContext = createContext();
 
 export const SupabaseProvider = ({ children }) => {
-  const supabase = createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', process.env.REACT_APP_SUPABASE_KEY);
+  const [supabase] = useState(() => createClient('https://jbppixwnezcbhkyfbjpa.supabase.co', process.env.REACT_APP_SUPABASE_KEY));
 
   return (
     <SupabaseContext.Provider value={supabase}>
