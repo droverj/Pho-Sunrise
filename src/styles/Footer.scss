@@ -6,19 +6,19 @@
   height: 70px;
   color: #fff;
   padding-bottom: 5px;
-  padding-left: 14.5px; // right gap fill max-width 899px
   width: 100vw;
   font-family: $primary-font;
   background-color: $light-colour;
   box-sizing: border-box;
+  padding: 0 15vw;
   @media (max-width: 450px) {
-    padding-left: 2px; // right gap fill max-width 450px
+    padding: 0;
+    padding-left: 5px; // right gap fill max-width 450px
     align-items: center;
   }
 
   .home-icon {
-    width: 45px;
-    height: 55px;
+    width: 50px;
     padding-left: 30px;
     @media (max-width: 450px) {
       display: none;
