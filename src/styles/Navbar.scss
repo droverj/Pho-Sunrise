@@ -37,19 +37,20 @@ nav {
       .home-links {
         display: flex;
         align-items: flex-end;
-        padding-bottom: 20px;
         text-shadow: -2px 2px 2px #000000;
         @media (max-width: 899px) {
           display: none;
         }
         .thai-basil-link {
+          padding-bottom: 20px;
           font-weight: 600;
           font-size: 22px;
           width: 136px;
-          margin-left: 5px;
+          margin-left: 10px;
         }
         .home-icon {
-          width: 40px;
+          width: 50px;
+          padding-bottom: 15px;
         }
       }
 
