@@ -7,5 +7,5 @@ export function getDateTwoWeeksFromNow() {
 
   const options = { month: 'long', day: 'numeric', year: 'numeric' };
 
-  return twoWeeksFromNow.toLocaleDateString(undefined, options);
+  return twoWeeksFromNow.toLocaleDateString('en-US', options);
 }
