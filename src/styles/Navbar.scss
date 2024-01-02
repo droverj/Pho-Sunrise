@@ -5,6 +5,7 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: $primary-colour;
+  background-color: $logo-light-green;
   color: #fff;
   position: fixed;
   top: 0;
@@ -80,6 +81,8 @@ nav {
         li:hover {
           transition: background-color 0.5s ease;
           background-color: $lighter-colour;
+          background-color: $light-colour;
+          // background-color: $sunrise-red;
         }
       }
     }
