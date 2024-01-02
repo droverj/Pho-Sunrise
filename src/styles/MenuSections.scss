@@ -11,9 +11,9 @@
     margin-bottom: 10px;
     h2.english {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      height: 45px;
+      height: 60px;
       margin: 0;
       background-color: $secondary-colour;
       color: white;
@@ -21,20 +21,6 @@
       text-shadow: -2px 2px 2px #000000;
       font-weight: 400;
       padding-bottom: 0;
-    }
-    h2.vietnamese {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 25px;
-      margin: 0;
-      font-size: 1rem;
-      background-color: $secondary-colour;
-      font-weight: 100;
-      color: white;
-      font-weight: 100;
-      font-style: italic;
-      padding-top: 0;
     }
   }
 }
