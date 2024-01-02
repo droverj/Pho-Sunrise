@@ -161,26 +161,47 @@
     align-items: center;
     background-color: #333;
     padding: 10px;
+    @media (max-width: 450px) {
+      flex-direction: column-reverse;
+      background-color: $background-white;
+      padding: 0;
+    }
     .contact-details-container {
       padding: 10px;
       background-color: $background-white;
+      @media (max-width: 450px) {
+        padding-bottom: 0;
+      }
       p {
         color: #333;
         text-transform: uppercase;
         font-weight: 400;
-        font-size: 1.1rem;
+        font-size: calc(10px + 0.9vw);
         text-align: start;
+        @media (max-width: 450px) {
+          text-align: center;
+          font-weight: 500;
+        }
       }
       p.located {
         margin-bottom: 50px;
         font-weight: 500;
         font-size: calc(16px + 1.5vw);
+        @media (max-width: 450px) {
+          margin: 0;
+          font-size: calc(3.5vw);
+          font-weight: 700;
+        }
       }
     }
     img.restaurant-hours {
       width: 55%;
       background-color: #fdfcfa;
       padding: 0 20px;
+      @media (max-width: 450px) {
+        width: 100%;
+        padding: 0;
+      }
     }
   }
 
@@ -192,6 +213,12 @@
     margin: 15px 0;
     color: #333;
     padding: 20px 0;
+    @media (max-width: 450px) {
+      font-size: 10px;
+      margin-top: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
     .boba-drinks-sign {
       display: flex;
       flex-direction: column;
@@ -199,17 +226,25 @@
       width: 40%;
       h4 {
         text-transform: uppercase;
-        font-size: 4vw;
+        font-size: calc(25px + 2vw);
         margin: 0;
+        @media (max-width: 450px) {
+          font-size: 20px;
+        }
       }
       p.drink-options {
         margin: 0;
       }
       p.boba-tea-price {
         font-family: $cursive-font;
-        font-size: 2vw;
+        font-size: calc(16px + 2vw);
         margin: 0;
         margin-top: 50px;
+        @media (max-width: 450px) {
+          font-size: 20px;
+          margin-top: 10px;
+          font-weight: 600;
+        }
       }
     }
     a.drinks-link {
@@ -235,18 +270,33 @@
     background-color: #333;
     color: white;
     color: lightgrey;
+    @media (max-width: 450px) {
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+      width: calc(100vw - 40px);
+    }
   }
   .menu-options-container {
     display: flex;
     width: 95%;
     margin-bottom: 40px;
     margin-top: 30px;
+    @media (max-width: 450px) {
+      margin: 10px 0;
+    }
     p {
       font-size: calc(10px + 0.5vw);
       margin: 0;
       text-transform: uppercase;
       color: #333;
       font-weight: 200;
+      @media (max-width: 450px) {
+        font-size: 6px;
+        font-weight: 400;
+      }
     }
     .icon-container {
       display: flex;
@@ -254,6 +304,10 @@
       .icon {
         width: 25%;
         margin-right: 10px;
+        @media (max-width: 450px) {
+          width: 25%;
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -264,23 +318,34 @@
     color: white;
     padding: 0 30px;
     padding-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: 90%;
     background-color: $primary-colour;
     @media (max-width: 899px) {
       margin-bottom: 20px;
     }
-
+    @media (max-width: 450px) {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      width: 100%;
+      padding-top: 15px;
+      margin-left: 20px;
+      margin-right: 20px;
+      width: calc(100vw - 40px);
+    }
     .chef {
       h2 {
         text-shadow: -4px 4px 2px #333;
-        font-family: $cursive-font;
         width: 100%;
         font-size: calc(16px + 1.6vw);
+        font-family: $cursive-font;
         color: $sunrise-red;
         transform: rotate(-10deg);
         padding: 0;
         margin: 0;
+        @media (max-width: 450px) {
+          font-size: 19px;
+        }
       }
       .chef-image {
         margin-left: 80px;
