@@ -8,14 +8,16 @@
   top: 0;
   left: 0;
   margin-top: 90px;
-  margin-left: 5px;
   padding-left: 1px;
   display: flex;
   align-items: center;
-  width: calc(100% - 10px);
-  height: 50px;
+  width: 100vw;
+  height: 60px;
   background-color: $primary-colour;
   box-shadow: (0 0 10px #333);
+  @media (max-width: 450px) {
+    height: 40px;
+  }
 
   button.subnav-toggle {
     @include menu-sections-button;
@@ -25,13 +27,28 @@
     display: flex;
     padding: 0 20px;
     width: 80%;
+    @media (max-width: 450px) {
+      font-size: 0;
+      height: 40px;
+      width: 30%;
+    }
 
     .caret-icon {
       margin: 0 10px;
+      @media (max-width: 450px) {
+        font-size: 40px;
+        margin-right: 5px;
+      }
     }
   }
   button.scroll-button {
     @include menu-sections-button;
+    @media (max-width: 450px) {
+      font-size: 8px;
+      padding: 0;
+      height: 40px;
+      width: 100%;
+    }
   }
 }
 
@@ -45,23 +62,31 @@
   flex-direction: column;
   z-index: 1;
   overflow-x: hidden;
-  overflow-y: hidden;
   top: 0;
   left: 0;
-  margin-top: 140px;
+  margin-top: 149px;
+  border-left: 1px solid black;
   width: 40%;
   transition: 1s ease;
-
+  
+  @media (max-width: 450px) {
+    width: 70vw;
+    margin-top: 128px;
+  }
+  
   ul {
     padding: 0;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 160px;
+    background-color: $grey;
+
     button {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       text-align: end;
-      font-size: calc(12px + .4vw);
-      font-weight: 100;
+      font-size: calc(12px + 0.5vw);
+      font-weight: 300;
       font-family: $primary-font;
       text-transform: uppercase;
       text-decoration: none;
@@ -73,6 +98,9 @@
       background-color: $grey;
       transition: background-color 0.5s ease;
       cursor: pointer;
+      @media (max-width: 450px) {
+        font-size: 15px;
+      }
     }
     button:hover {
       background-color: $primary-colour;
