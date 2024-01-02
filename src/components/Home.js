@@ -109,7 +109,7 @@ const Home = () => {
           <img src={Chef} className='chef-image' alt="chef" />
         </div>
         <div className='choice'>
-          <span className='name'> Sunrise Special House Beef Noodle Soup</span>
+          <span className='name'> Special House Beef Noodle Soup</span>
           <span className='price'>$10.95</span>
         </div>
       </div>
