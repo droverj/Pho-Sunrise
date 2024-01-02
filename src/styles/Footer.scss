@@ -3,34 +3,47 @@
 .footer {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
   height: 70px;
   color: #fff;
   padding-bottom: 5px;
   padding-left: 14.5px; // right gap fill max-width 899px
-  width: 100%;
+  width: 100vw;
   font-family: $primary-font;
-  background-color: $lighter-colour;
   background-color: $light-colour;
   box-sizing: border-box;
+  @media (max-width: 450px) {
+    padding-left: 2px; // right gap fill max-width 450px
+    align-items: center;
+  }
 
   .home-icon {
     width: 45px;
     height: 55px;
     padding-left: 30px;
+    @media (max-width: 450px) {
+      display: none;
+    }
   }
 
   .content-container {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 56.5%;
+    width: 100%;
     margin-right: 50px;
     margin-left: 20px;
     padding-bottom: 3px;
+    @media (max-width: 450px) {
+      margin: 0;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
     p {
       margin: 0;
       font-weight: 100;
+      @media (max-width: 450px) {
+       font-weight: 400;
+      }
     }
 
     .contact-container {
@@ -50,6 +63,11 @@
       text-align: center;
       @media (max-width: 899px) {
         font-size: 8px;
+      }
+      @media (max-width: 450px) {
+       width: 50%;
+       font-size: 6px;
+       text-align: start;
       }
     }
 
