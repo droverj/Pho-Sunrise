@@ -283,11 +283,14 @@
     display: flex;
     width: 95%;
     margin-bottom: 40px;
+    // background-color: red;
     margin-top: 30px;
     @media (max-width: 450px) {
       margin: 10px 0;
     }
     p {
+      // background-color: blue;
+      width: 100%;
       font-size: calc(10px + 0.5vw);
       margin: 0;
       text-transform: uppercase;
@@ -303,7 +306,7 @@
       align-items: center;
       .icon {
         width: 25%;
-        margin-right: 10px;
+        margin: 0 5px;
         @media (max-width: 450px) {
           width: 25%;
           margin-right: 5px;
