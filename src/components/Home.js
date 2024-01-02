@@ -50,12 +50,14 @@ const Home = () => {
           <img src={ShrimpBottomRight} className='shrimp' alt="shrimp tail" />
         </div>
 
-        <div className='coupon-container'>
-          <h2>save 10%</h2>
-          <h3>off your entire order</h3>
-          <p>online only</p>
-          <p>offer valid until {date}</p>
-        </div>
+        <Link to="/menu">
+          <div className='coupon-container'>
+            <h2>save 10%</h2>
+            <h3>off your entire order</h3>
+            <p>online only</p>
+            <p>offer valid until {date}</p>
+          </div>
+        </Link>
 
         {/* <div className='banner'>Thai Basil</div> */}
 

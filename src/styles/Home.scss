@@ -101,7 +101,7 @@
         text-decoration: underline;
       }
     }
-
+    
     .coupon-container {
       width: 100%;
       border: 8px dashed $logo-light-green;
@@ -109,6 +109,11 @@
       margin: 40px 0 10px 0;
       padding: 10px;
       box-sizing: border-box;
+      transition: box-shadow 0.3s ease-in-out;
+      &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
       h2 {
         color: $logo-dark-green;
         font-size: calc(3rem + 2vw);
