@@ -65,16 +65,29 @@ Thai Basil's web application combines playful visual elements, an intuitively de
 
 ## Screenshots
 
+### Home Page
+
 ![Home Page](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/home.png?raw=true)
 ![Boba Drinks](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/boba-drinks.png?raw=true)
+
+### Contact Page
+
 ![Location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/location.png?raw=true)
 ![Signed-out Reviews](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
 ![Contact](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/contact.png?raw=true)
-![Desktop Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/desktop-menu.png?raw=true)
-![Mobile Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/mobile-menu.png?raw=true)
-![Responsive Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
+
+### Cart
+
 ![Cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
 ![Remove Items](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/remove-item.png?raw=true)
+
+### Menu
+
+![Desktop Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/desktop-menu.png?raw=true)
+![Responsive Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-menu.png?raw=true)
+
+### Menu: Mobile
+![Mobile Menu](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/mobile-menu.png?raw=true)
 
 ---
 
