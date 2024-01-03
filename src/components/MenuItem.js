@@ -15,8 +15,6 @@ const MenuItem = ({ groupedItem }) => {
     }, 0);
   };
 
-  console.log(image);
-
   return (
     <div className="menu-item">
       <div className='container'>

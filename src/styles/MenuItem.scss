@@ -63,6 +63,8 @@
         }
 
         .mobile-container {
+          display: flex;
+          align-items: center;
           @media (max-width: 400px) {
             display: flex;
             width: 100%;

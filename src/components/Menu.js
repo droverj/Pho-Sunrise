@@ -22,7 +22,6 @@ const Menu = () => {
   const [items, setItems] = useState([]);
   
   const groupedItems = groupItemsBySection(items);
-  console.log(groupedItems)
 
   useEffect(() => {
     const fetchMenuItems = async () => {
