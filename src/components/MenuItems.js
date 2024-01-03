@@ -8,7 +8,7 @@ const MenuItems = ({ items }) => {
     if (!groupedItems[item.name]) {
       groupedItems[item.name] = {
         name: item.name,
-        name_vietnamese: item.name_vietnamese,
+        description: item.description,
         item_options: [],
       };
     }

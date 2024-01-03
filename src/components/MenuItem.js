@@ -5,7 +5,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import '../styles/MenuItem.scss';
 
 const MenuItem = ({ groupedItem }) => {
-  const { name, name_vietnamese, item_options } = groupedItem;
+  const { name, description, item_options } = groupedItem;
   const { addToCart, cart } = useCart();
 
   // Function to get the count of a specific item in the cart
@@ -19,7 +19,7 @@ const MenuItem = ({ groupedItem }) => {
     <div className="menu-item">
       <div className='item-name'>
         <h3 className='english-name'>{name}</h3>
-        <h3 className='vietnamese-name'>{name_vietnamese}</h3>
+        <h3 className='description'>{description}</h3>
       </div>
 
       <div className="item-options">
@@ -34,7 +34,6 @@ const MenuItem = ({ groupedItem }) => {
                 addToCart({
                   id: option.id,
                   name: option.name,
-                  vietnamese_name: option.name_vietnamese,
                   item_option: option.item_option,
                   price: parseFloat(option.price).toFixed(2),
                 })

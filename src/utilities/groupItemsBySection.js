@@ -7,7 +7,6 @@ export function groupItemsBySection(items) {
       groupedItems[item.section] = {
         id: sectionId++,
         section: item.section,
-        section_vietnamese: item.section_vietnamese,
         items: [],
       };
     }
@@ -16,7 +15,7 @@ export function groupItemsBySection(items) {
       groupedItems[item.section].items.push({
         id: item.id,
         name: item.name,
-        name_vietnamese: item.name_vietnamese,
+        description: item.description,
         item_option: item.item_option,
         price: item.price,
       });
