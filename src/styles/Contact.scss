@@ -12,13 +12,6 @@
     box-shadow: none;
   }
 
-  /*
-  /////////////////////////////////////////////////////////////////////////////////////////
-  Section A of Contact Page: 
-  Socials, Contact Info, Restaurant Hours
-  /////////////////////////////////////////////////////////////////////////////////////////
-  */
-
   // Socials Container: Website, Social Media Icons
   .socials-container {
     display: flex;
@@ -26,6 +19,9 @@
     align-items: center;
     margin-top: 5px;
     margin-bottom: 10px;
+    @media (max-width: 400px) {
+      padding: 10px 5px 0 5px;
+    }
     .social-icons {
       display: flex;
       align-items: center;
@@ -106,12 +102,6 @@
     }
   }
 
-  /*
-  /////////////////////////////////////////////////////////////////////////////////////////
-  Section B of Contact Page: 
-  Sunrise Shopping Plaza Heading, Location Images
-  /////////////////////////////////////////////////////////////////////////////////////////
-  */
   h2.shopping-centre {
     // "Located in the Sunrise Shopping Plaza"
     text-align: center;
@@ -140,7 +130,6 @@
 
   /*
   /////////////////////////////////////////////////////////////////////////////////////////
-  Section C of Contact Page: 
   Customer Reviews, Review Form
   /////////////////////////////////////////////////////////////////////////////////////////
   */
@@ -158,6 +147,11 @@
     margin-top: 30px;
     font-size: calc(16px + 0.3vw);
     padding: 20px 0;
+    @media (max-width: 400px) {
+      text-align: center;
+      padding: 20px;
+      margin-top: 10px;
+    }
 
     button.reviews-toggle {
       display: flex;
@@ -413,7 +407,7 @@
       width: 100%;
       margin-top: 30px;
       @media (max-width: 400px) {
-        margin-top: 15px;
+        margin-top: 10px;
       }
     }
   }
