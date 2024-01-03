@@ -13,7 +13,11 @@ const OrderSummary = () => {
           <li className="order-summary-cart-item" key={cartItem.id}>
             {Array.from({ length: cartItem.quantity }).map((_, index) => (
               <div className="items" key={index}>
-                <div className='info'>{cartItem.name} - {cartItem.item_option}</div>
+                {cartItem.item_option ? (
+                  <div className='info'>{cartItem.name} - {cartItem.item_option}</div>
+                ) : (
+                  <div className='info'>{cartItem.name}</div>
+                )}
                 <div className='price'>${cartItem.price}</div>
               </div>
             ))}
