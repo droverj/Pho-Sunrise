@@ -14,13 +14,23 @@
     flex-grow: 1;
     width: 60%;
     p {
-      margin: 0;
+      margin: 5px 0;
+      @media (max-width: 400px) {
+        font-size: 12px;
+      }
     }
     .name {
       font-weight: 600;
     }
+    .option {
+      font-weight: 300;
+      font-style: italic;
+      @media (max-width: 400px) {
+        font-size: 10px;
+      }
+    }
     .price {
-      font-weight: 600;
+      font-weight: 400;
     }
   }
 
@@ -38,6 +48,11 @@
       font-size: 1.5rem;
       cursor: pointer;
       box-shadow: 0px 0px 3px 1px rgba(51, 51, 51, 0.41);
+      @media (max-width: 400px) {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+      }
     }
     button:hover {
       box-shadow: 0px 0px 3px 1px rgba(51, 51, 51, 0.17);
@@ -67,6 +82,11 @@
       box-shadow: 0px 0px 3px 1px rgba(51, 51, 51, 0.41);
       font-size: 1.5rem;
       font-weight: 500;
+      @media (max-width: 400px) {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -84,6 +104,11 @@
     cursor: pointer;
     padding-bottom: 2px;
     border: 1px solid silver;
+    @media (max-width: 400px) {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 1rem;
+    }
   }
   button.delete:hover {
     background-color: red;
