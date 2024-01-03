@@ -9,6 +9,7 @@ const MenuItems = ({ items }) => {
       groupedItems[item.name] = {
         name: item.name,
         description: item.description,
+        image: item.image,
         item_options: [],
       };
     }

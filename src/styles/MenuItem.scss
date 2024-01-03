@@ -2,100 +2,100 @@
 
 .menu-item {
   display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
   box-shadow: $container-box-shadow;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #333;
 
-  .item-name {
-    color: white;
-    color: #333;
-    background-color: #ffffff;
-    padding: 2px 80px;
-    font-size: 14px;
-    @media (max-width: 899px) {
-      padding-left: 40px;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 40px;
 
-    h3.name {
-      margin: 0;
-      font-family: $primary-font;
-      font-weight: 500;
-    }
-    h3.description {
-      margin: 0;
-      font-family: $primary-font;
-      font-weight: 300;
-      font-size: 12px;
-      font-style: italic;
-    }
-  }
-
-  .item-options {
-    font-size: 14px;
-    .option {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 0;
-      padding-left: 80px;
-      padding-right: 150px;
-      background-color: #dbe0e0;
-      background-color: #ffffff;
-      color: $secondary-colour;
-      font-weight: 400;
-      transition: background-color 0.3s ease;
-      .details {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        // justify-content: space-between;
-        span.price {
-          width: 30%;
-          margin-right: 10px;
-        }
-      }
-
+    .item {
+      font-size: 14px;
       @media (max-width: 899px) {
         padding-left: 40px;
       }
 
-      button {
-        padding: 3px 15px;
-        color: white;
-        cursor: pointer;
-        background-color: $primary-colour;
-        background-color: #333;
-        background-color: $sunrise-red;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
+      h3.name {
+        margin: 0;
         font-family: $primary-font;
+        font-weight: 500;
+      }
+      h3.description {
+        margin: 0;
+        font-family: $primary-font;
+        font-weight: 300;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+
+    .item-options {
+      font-size: 14px;
+      .option {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 5px 0;
         font-weight: 400;
-      }
-      button:hover {
-        background-color: $secondary-colour;
-        background-color: black;
-        background-color: red;
-      }
-      .quantity-added-container {
-        width: 2.5vw;
-        .quantity-added {
+        .details {
+          // background-color: lightcoral;
+          width: 100%;
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          font-size: 18px;
-          p.count {
-            font-weight: 400;
-            margin: 0;
+          // justify-content: space-between;
+          span.price {
+            // width: 30%;
+            margin-right: 10px;
+          }
+        }
+
+        @media (max-width: 899px) {
+          padding-left: 40px;
+        }
+
+        button {
+          padding: 3px 15px;
+          color: white;
+          cursor: pointer;
+          background-color: $primary-colour;
+          background-color: #333;
+          background-color: $sunrise-red;
+          border: none;
+          border-radius: 10px;
+          font-size: 16px;
+          font-family: $primary-font;
+          font-weight: 400;
+          margin-right: 10px;
+        }
+        button:hover {
+          background-color: $secondary-colour;
+          background-color: black;
+          background-color: red;
+        }
+        .quantity-added-container {
+          width: 60px;
+          .quantity-added {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            p.count {
+              font-weight: 400;
+              margin: 0;
+            }
           }
         }
       }
     }
-    .option:hover {
-      background-color: #e2e6e6;
-    }
   }
-}
-.menu-item:hover {
-  background-color: $primary-colour;
+
+  img {
+    width: 200px;
+  }
 }

@@ -18,6 +18,7 @@ export function groupItemsBySection(items) {
         description: item.description,
         item_option: item.item_option,
         price: item.price,
+        image: item.image_url,
       });
     }
   });
