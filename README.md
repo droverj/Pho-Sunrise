@@ -8,6 +8,15 @@ This project is hosted on Netlify and uses Supabase for backend services.
 
 You can explore the Thai Basil Web App by [clicking here](https://thai-basil.netlify.app/).
 
+## Login
+
+Only authenticated users are able to leave reviews. If you wish to explore this feature, feel free to use the following credentials:
+
+- **Email:** abc@123.com
+- **Password:** Password123!
+
+Alternatively, you can create your own credentials for testing purposes.
+
 ## Important Information Regarding Payments
 
 **Attention:** Please be aware that while the Thai Basil app is live, payment processing capabilities are limited to testing mode only.
