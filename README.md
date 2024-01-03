@@ -72,13 +72,13 @@ Thai Basil's web application combines playful visual elements, an intuitively de
 
 ### Contact Page
 
+![Contact](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/contact.png?raw=true)
 ![Location](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/location.png?raw=true)
 ![Signed-out Reviews](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/signed-out-reviews.png?raw=true)
-![Contact](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/contact.png?raw=true)
 
 ### Cart
-
-![Cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
+![Cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/cart.png?raw=true)
+![Responsive Cart](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/responsive-cart.png?raw=true)
 ![Remove Items](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/remove-item.png?raw=true)
 
 ### Menu
