@@ -2,7 +2,17 @@
 
 ![Project Logo](https://github.com/droverj/thai-basil/blob/main/src/images/screenshots/thai-basil-logo.png?raw=true)
 
-Thai Basil Web App is a dynamic project showcasing my ability in creating responsive and engaging web experiences. The application includes authentication, stripe payments, a menu and a cart for an engaging and interactive user experience.
+# About Thai Basil Web App
+
+Thai Basil Web App is a dynamic showcase of my expertise in crafting responsive and immersive web experiences. The application boasts:
+
+- **Authentication:** Secure user accounts for personalized interactions.
+- **Stripe Payments:** Familiar design for test transactions.
+- **Menu with Images:** Engaging visuals, intuitive scroll features, and easy readability.
+- **Interactive Cart:** Easily modify items, view quantities and costs.
+- **Mobile Responsiveness:** Enjoy a seamless experience across various devices.
+
+This project demonstrates my skills in delivering a user-friendly and visually appealing web environment.
 
 This project is hosted on Netlify and uses Supabase for backend services.
 
