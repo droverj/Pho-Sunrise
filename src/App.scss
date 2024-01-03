@@ -85,7 +85,6 @@ body {
   }
 
   @media (max-width: 899px) {
-    width: calc(100% - 10px);
-    margin-left: 5px;
+    width: 100vw;
   }
 }
