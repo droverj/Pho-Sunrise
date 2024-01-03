@@ -82,6 +82,10 @@
         width: 22vw;
         height: 28vw;
       }
+      @media (max-width: 411px) {
+        min-width: 90px;
+        height: 100px;
+      }
 
       span {
         color: white;
