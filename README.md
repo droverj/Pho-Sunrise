@@ -4,15 +4,13 @@
 
 # About Thai Basil Web App
 
-Thai Basil Web App is a dynamic showcase of my expertise in crafting responsive and immersive web experiences. The application boasts:
+Thai Basil Web App is a dynamic showcase of my ability in delivering a responsive, user-friendly and visually appealing web environment. The application boasts:
 
 - **Authentication:** Secure user accounts for personalized interactions.
 - **Stripe Payments:** Familiar design for test transactions.
 - **Menu with Images:** Engaging visuals, intuitive scroll features, and easy readability.
 - **Interactive Cart:** Easily modify items, view quantities and costs.
 - **Mobile Responsiveness:** Enjoy a seamless experience across various devices.
-
-This project demonstrates my skills in delivering a user-friendly and visually appealing web environment.
 
 This project is hosted on Netlify and uses Supabase for backend services.
 
