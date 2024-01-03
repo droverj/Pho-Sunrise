@@ -122,7 +122,7 @@ Thai Basil's web application combines playful visual elements, an intuitively de
 - **Frontend:** HTML, CSS, JavaScript, React (including JSX), SASS
 - **Backend:** Supabase
 - **Database:** PostgreSQL
-- **Other:** Canva (for graphic design assets), Mockaroo (for database seeding), ChatGPT (for content generation and guidance)
+- **Other:** Canva (for graphic design assets), Mockaroo (for database seeding), ChatGPT (for content generation and guidance), DALL·E 3 (for menu images)
 
 ---
 
