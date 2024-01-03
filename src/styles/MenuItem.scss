@@ -14,13 +14,17 @@
     justify-content: center;
     width: 100%;
     padding: 0 40px;
+    box-sizing: border-box;
+
+    @media (max-width: 899px) {
+      padding: 0 15px;
+    }
+    @media (max-width: 400px) {
+      padding: 5px;
+    }
 
     .item {
       font-size: 14px;
-      @media (max-width: 899px) {
-        padding-left: 40px;
-      }
-
       h3.name {
         margin: 0;
         font-family: $primary-font;
@@ -42,29 +46,36 @@
         align-items: center;
         height: 40px;
         padding: 5px 0;
-        font-weight: 400;
+        font-weight: 300;
+        @media (max-width: 400px) {
+          flex-direction: column;
+          margin-top: 5px;
+        }
         .details {
-          // background-color: lightcoral;
           width: 100%;
           display: flex;
           align-items: center;
-          // justify-content: space-between;
           span.price {
-            // width: 30%;
             margin-right: 10px;
+            font-weight: 600;
+            width: 50px;
           }
         }
 
-        @media (max-width: 899px) {
-          padding-left: 40px;
+        .mobile-container {
+          @media (max-width: 400px) {
+            display: flex;
+            width: 100%;
+            margin-top: 5px;
+          }
+          @media (min-width: 400px) {
+            display: flex;
+          }
         }
-
         button {
           padding: 3px 15px;
           color: white;
           cursor: pointer;
-          background-color: $primary-colour;
-          background-color: #333;
           background-color: $sunrise-red;
           border: none;
           border-radius: 10px;
@@ -72,6 +83,12 @@
           font-family: $primary-font;
           font-weight: 400;
           margin-right: 10px;
+          @media (max-width: 400px) {
+            font-size: 12px;
+            padding: 3px 5px;
+            margin-right: 5px;
+            width: 45px;
+          }
         }
         button:hover {
           background-color: $secondary-colour;
@@ -79,12 +96,17 @@
           background-color: red;
         }
         .quantity-added-container {
-          width: 60px;
+          width: 35px;
           .quantity-added {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 18px;
+            @media (max-width: 400px) {
+              font-size: 12px;
+              justify-content: space-evenly;
+              width: 40px;
+            }
             p.count {
               font-weight: 400;
               margin: 0;
@@ -97,5 +119,10 @@
 
   img {
     width: 200px;
+    height: 200px;
+    @media (max-width: 400px) {
+      width: 150px;
+      height: 150px;
+    }
   }
 }

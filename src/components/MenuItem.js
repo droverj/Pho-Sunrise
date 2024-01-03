@@ -32,6 +32,8 @@ const MenuItem = ({ groupedItem }) => {
                 <span className='price'>${parseFloat(option.price).toFixed(2)}</span>
                 <span>{option.item_option}</span>
               </div>
+
+              <div className='mobile-container'>
               <button
                 onClick={() =>
                   addToCart({
@@ -53,6 +55,8 @@ const MenuItem = ({ groupedItem }) => {
                   </div>
                 ) : null}
               </div>
+              </div>
+              
             </div>
           ))}
         </div>
