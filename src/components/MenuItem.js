@@ -18,7 +18,7 @@ const MenuItem = ({ groupedItem }) => {
   return (
     <div className="menu-item">
       <div className='item-name'>
-        <h3 className='english-name'>{name}</h3>
+        <h3 className='name'>{name}</h3>
         <h3 className='description'>{description}</h3>
       </div>
 
