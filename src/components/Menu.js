@@ -95,9 +95,9 @@ const Menu = () => {
             </>
           )}
         </button>
-        {createSectionScrollButton('Vegetarian', 10, 140)}
-        {createSectionScrollButton('Drinks & Desserts', 11, 140)}
-        {createSectionScrollButton('Add Ons', 13, 140)}
+        {createSectionScrollButton('Vegetarian', 2, 140)}
+        {createSectionScrollButton('Drinks & Desserts', 8, 140)}
+        {createSectionScrollButton('Add Ons', 4, 140)}
         <MenuDropdownNav
           groupedItems={groupedItems}
           scrollToSection={scrollToSection}
