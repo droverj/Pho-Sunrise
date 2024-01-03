@@ -95,7 +95,6 @@ const Contact = ({userId}) => {
       setReviewSubmitted(true);
       setReviewDeleted(false);
       updateReviews();
-      console.log('Review submitted successfully:', data);
     } catch (error) {
       console.error('Error submitting review:', error);
       if (error.response && error.response.data) {
@@ -115,7 +114,6 @@ const Contact = ({userId}) => {
       updateReviews();
       setDeleteConfirmed(null);
       setReviewDeleted(true);
-      console.log('Review deleted successfully');
     } catch (error) {
       console.error('Error deleting review:', error);
       if (error.response && error.response.data) {
