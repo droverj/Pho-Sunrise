@@ -9,7 +9,6 @@ const MenuSections = ({ groupedItems }) => {
         <div key={section.id}>
           <div id={`S_${section.id}`} className='section-heading'>
             <h2 className='english'>{section.section}</h2>
-            <h2 className='vietnamese'>{section.section_vietnamese}</h2>
           </div>
           <div className="menu-items">
             <MenuItems items={section.items} />
