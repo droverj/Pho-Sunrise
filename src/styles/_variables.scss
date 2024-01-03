@@ -105,6 +105,10 @@ $cursive-font: "WindSong";
   background-color: #ffffff;
   border-radius: 30px;
   box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  @media (max-width: 899px) {
+    width: 95%;
+  }
 }
 
 @mixin close-button {
