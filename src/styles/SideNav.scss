@@ -38,7 +38,7 @@ nav {
       left: 0;
       height: 100%;
       padding-top: 50px;
-      background-color: $light-colour;
+      background-color: $light-green;
       transition: 0.9s ease;
   
       a {
@@ -47,7 +47,7 @@ nav {
         font-size: 2.5vw;
         padding: 10px 5px;
         text-transform: uppercase;
-        background-color: $light-colour;
+        background-color: $light-green;
         width: 100%;
         color: white;
         text-decoration: none;
@@ -56,7 +56,7 @@ nav {
       }
       a:hover {
         background-color: #dbe0e0;
-        color: $primary-colour;
+        color: $accent-colour;
       }
   
       button {
@@ -67,7 +67,7 @@ nav {
       }
   
       a.active {
-        background-color: $lighter-colour;
+        background-color: $lighter-green;
         color: white;
         cursor: default;
       }

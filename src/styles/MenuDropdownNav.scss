@@ -78,8 +78,6 @@
     padding: 0;
     margin-top: 0;
     margin-bottom: 160px;
-    // background-color: $grey;
-    // border-radius: 0px 20px 20px 0px;
 
     button {
       display: flex;
@@ -106,7 +104,7 @@
       }
     }
     button:hover {
-      background-color: $primary-colour;
+      background-color: $logo-dark-green;
       color: white;
     }
   }

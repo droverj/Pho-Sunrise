@@ -55,7 +55,7 @@
     justify-content: center;
     .heading-container {
       width: 100%;
-      background-color: $secondary-colour;
+      background-color: $accent-colour;
       margin-top: 10px;
       h4.restaurant-info-heading {
         display: flex;
@@ -112,7 +112,7 @@
     font-weight: 200;
     font-size: calc(14px + 1vw);
     text-transform: uppercase;
-    background-color: $secondary-colour;
+    background-color: $accent-colour;
   }
 
   .location-images {
@@ -139,7 +139,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $secondary-colour;
+    background-color: $accent-colour;
     color: white;
     font-weight: 200;
     text-transform: uppercase;
@@ -170,7 +170,7 @@
   .review-form-heading {
     // Heading for Review Form - Signed In and Signed Out
     text-align: center;
-    background-color: $secondary-colour;
+    background-color: $accent-colour;
     color: white;
     font-size: calc(16px + 0.3vw);
     font-weight: 300;
@@ -228,7 +228,7 @@
       display: flex;
       align-items: center;
       font-family: "Reenie Beanie";
-      color: $primary-colour;
+      color: $accent-colour;
       max-width: 65%;
       word-wrap: break-word;
       overflow: hidden;
@@ -266,7 +266,7 @@
     // Review form including stars for rating
     // HTML in ReviewForm.js
     padding-bottom: 15px;
-    color: $primary-colour;
+    color: $accent-colour;
     background-color: white;
     border: $container-border;
     box-shadow: $container-box-shadow;
@@ -333,7 +333,7 @@
     text-align: center;
     background-color: white;
     margin-top: 25px;
-    color: $primary-colour;
+    color: $accent-colour;
     box-shadow: $form-box-shadow;
     .review-form-heading {
       margin: 0;

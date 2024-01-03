@@ -1,10 +1,11 @@
 // primaries
+// $primary-colour: #3c4755;
+// $secondary-colour: #39404e;
 $background-white: #fdfcfa;
 $primary-font: "Montserrat";
-$primary-colour: #3c4755;
-$secondary-colour: #39404e;
-$lighter-colour: #899a99;
-$light-colour: #576766;
+$accent-colour: #333;
+$light-green: #576766;
+$lighter-green: #899a99;
 $sunrise-red: #da231c;
 $grey: #7f8081;
 $safe-hover: #009900;
@@ -92,7 +93,7 @@ $cursive-font: "WindSong";
   font-size: calc(10px + .5vw);
   text-transform: uppercase;
   font-family: $primary-font;
-  color: $primary-colour;
+  color: $accent-colour;
   background-color: #ffffff;
   cursor: pointer;
   width: 100%;

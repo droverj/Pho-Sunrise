@@ -38,7 +38,7 @@
       cursor: pointer;
       border: none;
       background-color: $background-white;
-      color: $grey;
+      color: $logo-dark-green;
       // transition: background-color 0.5s ease;
       border-radius: 0px 40px 40px 0px;
 
@@ -47,7 +47,7 @@
       }
     }
     button:hover {
-      background-color: $grey;
+      background-color: $logo-dark-green;
       color: white;
     }
   }
