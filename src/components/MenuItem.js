@@ -3,6 +3,7 @@ import { useCart } from '../providers/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import '../styles/MenuItem.scss';
+import Logo from '../images/screenshots/thai-basil-logo.png';
 
 const MenuItem = ({ groupedItem }) => {
   const { name, description, item_options, image } = groupedItem;
@@ -32,35 +33,41 @@ const MenuItem = ({ groupedItem }) => {
               </div>
 
               <div className='mobile-container'>
-              <button
-                onClick={() =>
-                  addToCart({
-                    id: option.id,
-                    name: option.name,
-                    item_option: option.item_option,
-                    price: parseFloat(option.price).toFixed(2),
-                  })
-                }
-              >
-                order
-              </button>
+                <button
+                  onClick={() =>
+                    addToCart({
+                      id: option.id,
+                      name: option.name,
+                      item_option: option.item_option,
+                      price: parseFloat(option.price).toFixed(2),
+                    })
+                  }
+                >
+                  order
+                </button>
 
-              <div className='quantity-added-container'>
-                {getItemCount(option.id) > 0 ? (
-                  <div className='quantity-added'>
-                    <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="1x" />
-                    <p className="count">{getItemCount(option.id)}</p>
-                  </div>
-                ) : null}
+                <div className='quantity-added-container'>
+                  {getItemCount(option.id) > 0 ? (
+                    <div className='quantity-added'>
+                      <FontAwesomeIcon icon={faCartShopping} className="cart-icon" style={{ color: '#3C4755' }} size="1x" />
+                      <p className="count">{getItemCount(option.id)}</p>
+                    </div>
+                  ) : null}
+                </div>
               </div>
-              </div>
-              
+
             </div>
           ))}
         </div>
       </div>
 
-      <img src={image} alt={name} />
+      {image ? (
+        <img className='item-image' src={image} alt={name} />
+      ) : (
+        <div className='image-container'>
+          <img className='logo' src={Logo} alt={name} />
+        </div>
+      )}
 
     </div>
   );
