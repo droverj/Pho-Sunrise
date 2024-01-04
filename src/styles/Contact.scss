@@ -331,6 +331,9 @@
     margin-top: 25px;
     color: $accent-colour;
     box-shadow: $form-box-shadow;
+    @media (max-width: 400px) {
+      margin-top: 10px;
+    }
     .review-form-heading {
       margin: 0;
       width: 100%;
