@@ -33,6 +33,7 @@
 
   .button-options {
     margin-top: 10px;
+    display: flex;
     button.safe-button {
       @include confirmation-button;
     }
