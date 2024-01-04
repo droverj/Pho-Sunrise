@@ -14,14 +14,12 @@ const RemoveItemFromCart = ({ item, setShowRemoveItemComponent, handleDeleteItem
         <div className="confirmation-message">
           <p className="remove" style={{ color: 'red' }}>Remove</p>
           <p className='item-info'>
-           <span>{item.quantity === 1 ? `${item.quantity} order ` : `${item.quantity} orders `}</span>
-            of&nbsp;
             <span>{item.name}</span>
           </p>
           {item.item_option &&
             <p className='item-option'>item option: <span className='option'>{item.item_option}</span></p>
           }
-          <p>from your cart?</p>
+          <span>{item.quantity === 1 ? `${item.quantity} order ` : `${item.quantity} orders `} will be removed from your cart.</span>
         </div>
 
         <div className='button-options'>

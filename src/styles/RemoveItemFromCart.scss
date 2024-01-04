@@ -27,12 +27,14 @@
       }
     }
     p.item-option {
+      margin-bottom: 20px;
       font-size: calc(12px + 0.2vw);
+      font-weight: 400;
     }
   }
 
   .button-options {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     button.safe-button {
       @include confirmation-button;
