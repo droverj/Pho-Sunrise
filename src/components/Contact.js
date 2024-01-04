@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useSupabase } from '../providers/SupabaseContext';
-import { Link } from 'react-router-dom';
 import ReviewForm from './ReviewForm';
 import Reviews from './Reviews';
 import ReviewInteractionMessage from './ReviewInteractionMessage';
@@ -125,12 +124,6 @@ const Contact = ({userId}) => {
 
   return (
     <div className="contact">
-
-      <Link to="/menu">
-        <button className="menu">
-          Menu
-        </button>
-      </Link>
 
       <div className="socials-container">
         <p className='website-url'>thaibasil.ca</p>

@@ -3,14 +3,6 @@
 .contact {
   display: flex;
   flex-direction: column;
-  button.menu {
-    @include right-panel-button;
-  }
-
-  button.menu:hover {
-    background-color: red;
-    box-shadow: none;
-  }
 
   // Socials Container: Website, Social Media Icons
   .socials-container {
