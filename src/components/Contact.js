@@ -95,6 +95,7 @@ const Contact = ({userId}) => {
       setReviewSubmitted(true);
       setReviewDeleted(false);
       updateReviews();
+      console.log('Review submitted successfully:', data);
     } catch (error) {
       console.error('Error submitting review:', error);
       if (error.response && error.response.data) {
